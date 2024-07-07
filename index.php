@@ -3,7 +3,9 @@
 <!DOCTYPE html>
 <html lang="en">
   
-
+<?php
+include_once('header2.php');
+?>
 <style>
   .alert {
   font-size: 14px;
