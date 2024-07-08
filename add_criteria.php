@@ -6,12 +6,17 @@
   <?php 
   include('header.php');
     include('session.php');
-    
+
     
                                                                                                               
-    $sub_event_id=$_GET['sub_event_id'];
-    $se_name=$_GET['se_name'];
-    
+    // Check if the sub_event_id and se_name are set in the URL parameters
+  if (isset($_GET['sub_event_id']) && isset($_GET['se_name'])) {
+    $sub_event_id = $_GET['sub_event_id'];
+    $se_name = $_GET['se_name'];
+} else {
+    // Handle the error gracefully, e.g., redirect to an error page or show a message
+    die('sub_event_id and se_name are required.');
+}
      
   ?>
   
