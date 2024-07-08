@@ -8,6 +8,7 @@
     include('session.php');
     
     
+                                                                                                              
     $sub_event_id=$_GET['sub_event_id'];
     $se_name=$_GET['se_name'];
     
