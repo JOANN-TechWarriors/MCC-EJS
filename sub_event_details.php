@@ -222,267 +222,195 @@ input.addon {
  
 <div id="main">
      
-    <div class="my-form">
-       <a href="#" style="float: right" onclick="$('.addon').show();return false;">+ Category/Department</a>
-            <p class="text-box">
-                <label for="box1">Contestant No. <span class="box-number">1</span></label> <br />
-                <input type="file" name="photo1" required="true" />
-                <input type="text" placeholder="Contestant Fullname" name="con1" value="" id="box1" required="true" />
-                <input type="text" placeholder="Addon" class="addon" name="addon1" value="" id="addon1" />
-                <input type="hidden" value="<?php echo rand(100000,999999); ?>" name="rand1" value="" id="box2" required="true"/> <br />
-                
-                <br />
-                
-                <label for="box2">Contestant No. <span class="box-number">2</span></label> <br />
-                <input type="file" name="photo2" required="true" />
-                <input type="text" placeholder="Contestant Fullname" name="con2" value="" id="box2" required="true"/>
-                <input type="text" placeholder="Addon" class="addon" name="addon2" value="" id="addon2" />
-                <input type="hidden" value="<?php echo rand(100000,999999); ?>" name="rand2" value="" id="box2" required="true"/> <br />
-                
-       
-                
-            </p>
-            <p><a class="add-box" href="#">Add Contestant</a></p>
-      
-    </div>
+<div class="my-form">
+    <a href="# style="display:none;"" onclick="$('addon)(show); return false;">+ Category/Department</a>
+    <p class="text-box">
+        <label for="box1">Contestant No. <span class="box-number">1</span></label> <br />
+        <input type="file" name="photo1" required="true" />
+        <input type="text" placeholder="Contestant Fullname" name="con1" value="" id="box1" required="true" />
+        <input type="text" placeholder="Addon" class="addon" name="addon1" value="" id="addon1" style="display:none;" />
+        <input type="hidden" value="<?php echo rand(100000, 999999); ?>" name="rand1" id="rand1" required="true" /> <br />
+        
+        <br />
+        
+        <label for="box2">Contestant No. <span class="box-number">2</span></label> <br />
+        <input type="file" name="photo2" required="true" />
+        <input type="text" placeholder="Contestant Fullname" name="con2" value="" id="box2" required="true" />
+        <input type="text" placeholder="Addon" class="addon" name="addon2" value="" id="addon2" style="display:none;" />
+        <input type="hidden" value="<?php echo rand(100000, 999999); ?>" name="rand2" id="rand2" required="true" /> <br />
+    </p>
+    <p><a class="add-box" href="#>Add Contestant</a></p>
 </div>
+
 <script type="text/javascript">
-jQuery(document).ready(function($){
-    $('.my-form .add-box').click(function(){
-        var n = $('.text-box').length + 2;
-        if( 24 < n ) {
+jQuery(document)ready(function($)) {
+    $('.my-form .add-box').click(function() {
+        var n = $('.text-box').length + 1;
+        if (24 < n) {
             alert('Maximum Number of Contestant reach!');
             return false;
         }
-        var box_html = $('<br /> <p class="text-box"><label for="box' + n + '">Contestant No. <span class="box-number">' + n + '</span></label> <br /> <input type="file" name="photo'+n+'" required="true" /> <input type="text" placeholder="Contestant Fullname" name="con' + n + '" value="" id="box' + n + '" required="true" /> <input type="text" placeholder="Addon" class="addon" name="addon' + n + '" value="" id="addon' + n + '" /> <input type="hidden" value="<?php echo rand(100000,999999); ?>' + n + '" name="rand' + n + '" id="box' + n + '" required="true" /> <br /> <a href="#" class="remove-box">Remove</a></p>');
+        var rand = Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000;
+        var box_html = $('<p class="text-box"><label for="box' + n + '">Contestant No. <span class="box-number">' + n + '</span></label> <br /> <input type="file" name="photo' + n + '" required="true" /> <input type="text" placeholder="Contestant Fullname" name="con' + n + '" value="" id="box' + n + '" required="true" /> <input type="text" placeholder="Addon" class="addon" name="addon' + n + '" value="" id="addon' + n + '" style="display:none;" /> <input type="hidden" value="' + rand + '" name="rand' + n + '" id="rand' + n + '" required="true" /> <br /> <a href="#" class="remove-box">Remove</a></p>');
         box_html.hide();
-        $('.my-form p.text-box:last').after(box_html);
+        $('.my-form p.text-box:last')after(box_html);
         box_html.fadeIn('slow');
         return false;
     });
-    $('.my-form').on('click', '.remove-box', function(){
-        $(this).parent().css( 'background-color', '#FF6C6C' );
+    $('my-form')on('click', 'remove-box', function() {
+        $(this).parent().css('background-color', '#FF6C6C');
         $(this).parent().fadeOut("slow", function() {
             $(this).remove();
-            $('.box-number').each(function(index){
-                $(this).text( index + 1 );
+            $('.box-number').each(function(index) {
+                $(this).text(index + 1);
             });
         });
         return false;
     });
 });
 </script>
- 
- 
-</div>
- 
-          </div>
-          
-        
-  </div>
-  
-  
-   <div class="col-lg-4">
- <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title">Judge's Settings</h3>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Judge's Settings</h3>
+    </div>
+    <div class="panel-body">
+        <div id="main">
+            <div class="my-formx">
+                <p class="text-boxx">
+                    <label for="boxx1">Judge No. <span class="boxx-number">1</span></label>
+                    <input type="text" name="jud1" placeholder="Judge Fullname" value="" id="boxx1" required="true" />
+                    
+                    <label for="boxx2">Judge No. <span class="boxx-number">2</span></label>
+                    <input type="text" name="jud2" placeholder="Judge Fullname" value="" id="boxx2" required="true" />
+                </p>
+                <p><a class="add-boxx" href="#">Add Judge</a></p>
             </div>
- 
- 
-
-
- 
-     <div class="panel-body">
-  
-<style type="text/css">
-<!--
-#main {
-    max-width: 800px;
-    margin: 0 auto;
-}
--->
-</style>
- 
-<div id="main">
-     
-    <div class="my-formx">
-      
-            <p class="text-boxx">
-                <label for="boxx1">Judge No. <span class="boxx-number">1</span></label>
-                <input type="text" name="jud1" placeholder="Judge Fullname" value="" id="boxx1" required="true" />
-         
-                <label for="boxx2">Judge No. <span class="boxx-number">2</span></label>
-                <input type="text" name="jud2" placeholder="Judge Fullname" value="" id="boxx2" required="true" />
-           
-              
-            </p>
-            <p><a class="add-boxx" href="#">Add Judge</a></p>
-      
+        </div>
+        <script type="text/javascript">
+        jQuery(document)ready(function($) {
+            $('.my-formx .add-boxx').click(function() {
+                var m = $('.text-boxx').length + 1;
+                if (10 < m) {
+                    alert('Maximum Number of Judges reach!');
+                    return false;
+                }
+                var boxx_html = $('<p class="text-boxx"><label for="boxx' + m + '">Judge No. <span class="boxx-number">' + m + '</span></label> <input type="text" placeholder="Judge Fullname" name="jud' + m + '" value="" id="boxx' + m + '" required="true" /> <a href="#" class="remove-boxx">Remove</a></p>');
+                boxx_html.hide();
+                $('.my-formx p.text-boxx:last')after(boxx_html);
+                boxx_html.fadeIn('slow');
+                return false;
+            });
+            $('my-formx')on('click', 'remove-boxx', function() {
+                $(this).parent().css('background-color', '#FF6C6C');
+                $(this).parent().fadeOut("slow", function() {
+                    $(this).remove();
+                    $('.boxx-number').each(function(index) {
+                        $(this).text(index + 1);
+                    });
+                });
+                return false;
+            });
+        });
+        </script>
     </div>
 </div>
-<script type="text/javascript">
-jQuery(document).ready(function($){
-    $('.my-formx .add-boxx').click(function(){
-        var m = $('.text-boxx').length + 2;
-        if( 10 < m ) {
-            alert('Maximum Number of Judges reach!');
-            return false;
-        }
-        var boxx_html = $('<p class="text-boxx"><label for="boxx' + m + '">Judge No. <span class="boxx-number">' + m + '</span></label> <input type="text" placeholder="Judge Fullname" name="jud' + m + '" value="" id="boxx' + m + '" required="true" /> <a href="#" class="remove-boxx">Remove</a></p>');
-        boxx_html.hide();
-        $('.my-formx p.text-boxx:last').after(boxx_html);
-        boxx_html.fadeIn('slow');
-        return false;
-    });
-    $('.my-formx').on('click', '.remove-boxx', function(){
-        $(this).parent().css( 'background-color', '#FF6C6C' );
-        $(this).parent().fadeOut("slow", function() {
-            $(this).remove();
-            $('.boxx-number').each(function(index){
-                $(this).text( index + 1 );
-            });
-        });
-        return false;
-    });
-});
-</script>
- 
- 
-</div>
- 
-          </div>
-          
-        
-  </div>
-  
-  
-  
-   <div class="col-lg-4">
- <div class="panel panel-primary">
-            <div class="panel-heading">
-             <h3 class="panel-title">Criteria Settings </h3>
-            </div>
-       <div class="panel-body">
- 
- 
-  
-<style type="text/css">
-<!--
-#main {
-    max-width: 800px;
-    margin: 0 auto;
-}
-input[type=file] {
-    font-size: 12px;
-}
--->
-</style>
- 
-<div id="main">
-     
-    <div class="my-formxj">
-       
-            <p class="text-boxxj">
-                <label for="boxxj1">Criteria No. <span class="boxxj-number">1</span></label>
-               
-                <input type="text" name="crit1" placeholder="Description" value="" id="boxxj1" required="true" />
-                
-        &nbsp;&nbsp;&nbsp;Criteria Points: <select onchange="totalThis()" style="margin-top: 5px !important;" class="ctrprcnt" name="cp1"> 
-  <?php
-  $n5=-5;
-  while($n5<100)
-  { $n5=$n5+5;
-    
-    ?>
-    <option><?php echo $n5; ?></option>
-  <?php } ?>
-  </select>%<br />
-                <label for="boxxj2">Criteria No. <span class="boxxj-number">2</span></label>
-                <input type="text" name="crit2" placeholder="Description" value="" id="boxxj2" required="true" />
-            &nbsp;&nbsp;&nbsp;Criteria Points: <select onchange="totalThis()" style="margin-top: 5px !important;" class="ctrprcnt" name="cp2"> 
-  <?php
-  $n5=-5;
-  while($n5<100)
-  { $n5=$n5+5;
-    
-    ?>
-    <option><?php echo $n5; ?></option>
-  <?php } ?>
-  </select>%<br />
 
-  
-                
-            </p>
-            <p><a class="add-boxxj" href="#">Add Criteria</a></p>
-      
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Criteria Settings</h3>
     </div>
-    <b><p class="msgresult"></p><b>
-</div>
-<script type="text/javascript">
-jQuery(document).ready(function($){
-    $('.my-formxj .add-boxxj').click(function(){
-        var j = $('.text-boxxj').length + 2;
-        if( 10 < j ) {
-            alert('Maximum Number of Criteria reach!');
-            return false;
-        }
-        var boxxj_html = $('<p class="text-boxxj"><label for="boxxj' + j + '">Criteria No. <span class="boxxj-number">' + j + '</span></label> <input type="text" placeholder="Description" name="crit' + j + '" value="" id="boxxj' + j + '" required="true" /> &nbsp;&nbsp;&nbsp;Criteria Points: <select onchange="totalThis()" style="margin-top: 5px !important;" class="ctrprcnt" name="cp' + j + '"> <?php  $n5=-5; while($n5<100){ $n5=$n5+5; echo "<option>".$n5."</option>"; } ?> </select>% <a href="#" class="remove-boxxj">Remove</a></p>');
-        boxxj_html.hide();
-        $('.my-formxj p.text-boxxj:last').after(boxxj_html);
-        boxxj_html.fadeIn('slow');
-        return false;
-    });
-    $('.my-formxj').on('click', '.remove-boxxj', function(){
-        $(this).parent().css( 'background-color', '#FF6C6C' );
-        $(this).parent().fadeOut("slow", function() {
-            $(this).remove();
-            $('.boxxj-number').each(function(index){
-                $(this).text( index + 1 );
+    <div class="panel-body">
+        <div id="main">
+            <div class="my-formxj">
+                <p class="text-boxxj">
+                    <label for="boxxj1">Criteria No. <span class="boxxj-number">1</span></label>
+                    <input type="text" name="crit1" placeholder="Description" value="" id="boxxj1" required="true" />
+                    &nbsp;&nbsp;&nbsp;Criteria Points: <select onchange="totalThis()" style="margin-top: 5px !important;" class="ctrprcnt" name="cp1">
+                        <?php
+                        $n5 = -5;
+                        while ($n5 < 100) {
+                            $n5 += 5;
+                            echo "<option>" . $n5 . "</option>";
+                        }
+                        ?>
+                    </select>%<br />
+                    <label for="boxxj2">Criteria No. <span class="boxxj-number">2</span></label>
+                    <input type="text" name="crit2" placeholder="Description" value="" id="boxxj2" required="true" />
+                    &nbsp;&nbsp;&nbsp;Criteria Points: <select onchange="totalThis()" style="margin-top: 5px !important;" class="ctrprcnt" name="cp2">
+                        <?php
+                        $n5 = -5;
+                        while ($n5 < 100) {
+                            $n5 += 5;
+                            echo "<option>" . $n5 . "</option>";
+                        }
+                        ?>
+                    </select>%<br />
+                </p>
+                <p><a class="add-boxxj" href="#">Add Criteria</a></p>
+            </div>
+            <b><p class="msgresult"></p><b>
+        </div>
+        <script type="text/javascript">
+        jQuery(document)ready(function($) {
+            $('.my-formxj .add-boxxj').click(function() {
+                var j = $('.text-boxxj').length + 1;
+                if (10 < j) {
+                    alert('Maximum Number of Criteria reach!');
+                    return false;
+                }
+                var boxxj_html = $('<p class="text-boxxj"><label for="boxxj' + j + '">Criteria No. <span class="boxxj-number">' + j + '</span></label> <input type="text" placeholder="Description" name="crit' + j + '" value="" id="boxxj' + j + '" required="true" /> &nbsp;&nbsp;&nbsp;Criteria Points: <select onchange="totalThis()" style="margin-top: 5px !important;" class="ctrprcnt" name="cp' + j + '"> <?php $n5 = -5; while ($n5 < 100) { $n5 += 5; echo "<option>" . $n5 . "</option>"; } ?> </select>% <a href="#" class="remove-boxxj">Remove</a></p>');
+                boxxj_html.hide();
+                $('.my-formxj p.text-boxxj:last')after(boxxj_html);
+                boxxj_html.fadeIn('slow');
+                return false;
+            });
+            $('my-formxj')on('click', 'remove-boxxj', function() {
+                $(this).parent().css('background-color', '#FF6C6C');
+                $(this).parent().fadeOut("slow", function() {
+                    $(this).remove();
+                    $('.boxxj-number').each(function(index) {
+                        $(this).text(index + 1);
+                    });
+                });
+                return false;
             });
         });
-        return false;
-    });
-});
-</script>
 
-<script type="text/javascript">
+        function totalThis() {
+            var sum = 0;
+            $('.ctrprcnt').each(function() {
+                sum += parseFloat($(this).val());
+            });
 
-function totalThis() {
-
-       var sum = 0;
-$('.ctrprcnt').each(function()
-{
-    sum += parseFloat($(this).val());
-});
-
-        if (sum == '100') {
-            $('.msgresult').html('Total Already 100%');
-             $("button#submit").attr("disabled", false);
-             $('.msgresult').css('color', 'green');
-        } else if (sum > '100') {
-            $('.msgresult').html('Total Percentage is Over');
-            $('.msgresult').css('color', 'red');
-            $("button#submit").attr("disabled", true);
-        } else if (sum < '100') {
-            $('.msgresult').html('Total Percentage is Low');
-            $('.msgresult').css('color', 'red');
-            $("button#submit").attr("disabled", true);
+            if (sum == 100) {
+                $('.msgresult').html('Total Already 100%');
+                $("button#submit").attr("disabled", false);
+                $('.msgresult').css('color', 'green');
+            } else if (sum > 100) {
+                $('.msgresult').html('Total Percentage is Over');
+                $('.msgresult').css('color', 'red');
+                $("button#submit").attr("disabled", true);
+            } else if (sum < 100) {
+                $('.msgresult').html('Total Percentage is Low');
+                $('.msgresult').css('color', 'red');
+                $("button#submit").attr("disabled", true);
+            }
         }
-
-}
-
-
-</script>
- 
- 
+        </script>
+    </div>
 </div>
- 
-          </div>
-          
-        
-  </div>
- 
- 
+
+<style type="text/css">
+    #main {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    input[type=file] {
+        font-size: 12px;
+    }
+</style>
 
  <div id="footer">
  
