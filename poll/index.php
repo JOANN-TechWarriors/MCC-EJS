@@ -60,7 +60,7 @@ if (isset($_POST['vote'])) {
 <div class="container">
 
 <?php 
-$geteventinfo = mysqli_query($dbconnection,"SELECT * FROM contestants c, sub_event s WHERE c.subevent_id='$event' AND s.subevent_id='$event'");
+$geteventinfo = mysqli_query($conn,"SELECT * FROM contestants c, sub_event s WHERE c.subevent_id='$event' AND s.subevent_id='$event'");
 $rowinfo = $geteventinfo->fetch_assoc();
 $eventname = $rowinfo['event_name'];
 ?>
