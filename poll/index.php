@@ -24,8 +24,8 @@
 
 <?php
 
-$dbconnection = mysqli_connect('mysql:host=127.0.0.1;port=3306;dbname=u510162695_judging', 'u510162695_judging_root', '1Judging_root');
-if($dbconnection === false){
+$dbcon = mysqli_connect('mysql:host=127.0.0.1;port=3306;dbname=u510162695_judging', 'u510162695_judging_root', '1Judging_root');
+if($dbcon === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
 
@@ -50,7 +50,7 @@ if (isset($_POST['vote'])) {
 	if (!isset($_COOKIE[$event])) {
     echo "<script>alert('Successfully Voted for ".$contestant_name."');</script>";
     setcookie($event, '1', time()+60*60*24*30,$cookiePath); //30days
-    mysqli_query($dbconnection,"UPDATE contestants SET txtPollScore = txtPollScore+1 WHERE contestant_id='$contestant_id'");
+    mysqli_query($dbcon,"UPDATE contestants SET txtPollScore = txtPollScore+1 WHERE contestant_id='$contestant_id'");
 	} else {
 	echo "<script>alert('already voted');</script>";
 	}
@@ -64,7 +64,7 @@ if (isset($_POST['vote'])) {
 <div class="container">
 
 <?php 
-$geteventinfo = mysqli_query($dbconnection,"SELECT * FROM contestants c, sub_event s WHERE c.subevent_id='$event' AND s.subevent_id='$event'");
+$geteventinfo = mysqli_query($dbcon,"SELECT * FROM contestants c, sub_event s WHERE c.subevent_id='$event' AND s.subevent_id='$event'");
 $rowinfo = $geteventinfo->fetch_assoc();
 $eventname = $rowinfo['event_name'];
 ?>
@@ -76,7 +76,7 @@ $eventname = $rowinfo['event_name'];
 <div class="row">
 <?php
 
-  $result = mysqli_query($dbconnection,"SELECT * FROM contestants WHERE subevent_id='$event'");
+  $result = mysqli_query($dbcon,"SELECT * FROM contestants WHERE subevent_id='$event'");
   while($row = $result->fetch_assoc()) { ?>
 
 <div class="col-md-3 col-6">
