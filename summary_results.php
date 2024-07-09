@@ -13,37 +13,45 @@
     }
 
     $active_main_event = $_GET['main_event_id'];
+
+    // Fetch main event details
+    $event_query = $conn->prepare("SELECT * FROM main_event WHERE mainevent_id = :active_main_event");
+    $event_query->bindParam(':active_main_event', $active_main_event, PDO::PARAM_INT);
+    $event_query->execute();
+    $event_row = $event_query->fetch(PDO::FETCH_ASSOC);
+
+    if (!$event_row) {
+        // Main event not found, handle error
+        echo "Main Event not found.";
+        exit; // Stop further execution
+    }
+
+    $event_name = $event_row['event_name'];
     ?>
+    <title><?php echo $event_name; ?> - Tally Sheet</title>
 </head>
 <body>
 <div class="container">
     <div class="span12">
-        <?php
-        // Fetch main event details
-        $event_query = $conn->prepare("SELECT * FROM main_event WHERE mainevent_id = :active_main_event");
-        $event_query->bindParam(':active_main_event', $active_main_event, PDO::PARAM_INT);
-        $event_query->execute();
-        while ($event_row = $event_query->fetch(PDO::FETCH_ASSOC)) {
-            ?>
-            <center>
-                <?php include('doc_header.php'); ?>
-                <table>
-                    <tr>
-                        <td align="center">
-                            <h3><strong><?php echo $event_row['event_name']; ?></strong></h3>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="center">
-                            <h3>Tally Sheet</h3>
-                        </td>
-                    </tr>
-                </table>
-            </center>
-        <?php } ?>
+        <center>
+            <?php include('doc_header.php'); ?>
+            <table>
+                <tr>
+                    <td align="center">
+                        <h3><strong><?php echo $event_name; ?></strong></h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <h3>Tally Sheet</h3>
+                    </td>
+                </tr>
+            </table>
+        </center>
+
         <section id="download-bootstrap">
             <div class="page-header">
-                <table style="width: 100% !important;" align="center">
+                <table class="table table-bordered" align="center">
                     <?php
                     $sy_query = $conn->prepare("SELECT DISTINCT sy FROM main_event WHERE organizer_id = :session_id AND mainevent_id = :active_main_event");
                     $sy_query->bindParam(':session_id', $session_id, PDO::PARAM_INT);
@@ -53,33 +61,26 @@
                     while ($sy_row = $sy_query->fetch(PDO::FETCH_ASSOC)) {
                         $sy = $sy_row['sy'];
 
-                        $MEctrQuery = $conn->prepare("SELECT * FROM main_event WHERE sy = :sy");
-                        $MEctrQuery->bindParam(':sy', $sy, PDO::PARAM_STR);
-                        $MEctrQuery->execute();
-                        $MECtr = $MEctrQuery->rowCount();
+                        $event_query = $conn->prepare("SELECT * FROM main_event WHERE organizer_id = :session_id AND sy = :sy");
+                        $event_query->bindParam(':session_id', $session_id, PDO::PARAM_INT);
+                        $event_query->bindParam(':sy', $sy, PDO::PARAM_STR);
+                        $event_query->execute();
 
-                        ?>
-                        <tr>
-                            <td>
-                                <?php
-                                $event_query = $conn->prepare("SELECT * FROM main_event WHERE organizer_id = :session_id AND sy = :sy");
-                                $event_query->bindParam(':session_id', $session_id, PDO::PARAM_INT);
-                                $event_query->bindParam(':sy', $sy, PDO::PARAM_STR);
-                                $event_query->execute();
+                        while ($event_row = $event_query->fetch(PDO::FETCH_ASSOC)) {
+                            $main_event_id = $event_row['mainevent_id'];
 
-                                while ($event_row = $event_query->fetch(PDO::FETCH_ASSOC)) {
-                                    $main_event_id = $event_row['mainevent_id'];
+                            $SEctrQuery = $conn->prepare("SELECT * FROM sub_event WHERE mainevent_id = :main_event_id");
+                            $SEctrQuery->bindParam(':main_event_id', $main_event_id, PDO::PARAM_INT);
+                            $SEctrQuery->execute();
 
-                                    $SEctrQuery = $conn->prepare("SELECT * FROM sub_event WHERE mainevent_id = :main_event_id");
-                                    $SEctrQuery->bindParam(':main_event_id', $main_event_id, PDO::PARAM_INT);
-                                    $SEctrQuery->execute();
-
-                                    while ($SECtr = $SEctrQuery->fetch(PDO::FETCH_ASSOC)) {
-                                        $rs_subevent_id = $SECtr['subevent_id'];
-                                        ?>
+                            while ($SECtr = $SEctrQuery->fetch(PDO::FETCH_ASSOC)) {
+                                $rs_subevent_id = $SECtr['subevent_id'];
+                                ?>
+                                <tr>
+                                    <td>
                                         <h4>EVENT: <strong><?php echo $SECtr['event_name']; ?></strong></h4>
                                         <hr />
-                                        <table align="center" class="table table-bordered" id="example">
+                                        <table class="table table-bordered" align="center">
                                             <tr>
                                                 <?php
                                                 $contxx_query = $conn->prepare("SELECT DISTINCT fullname FROM contestants WHERE subevent_id = :rs_subevent_id");
@@ -112,11 +113,11 @@
                                                 } ?>
                                             </tr>
                                         </table>
-                                    <?php }
-                                } ?>
-                            </td>
-                        </tr>
-                    <?php } ?>
+                                    </td>
+                                </tr>
+                            <?php }
+                        }
+                    } ?>
                 </table>
             </div>
         </section>
