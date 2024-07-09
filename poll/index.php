@@ -24,7 +24,7 @@
 
 <?php
 
-$dbconnection = mysqli_connect("mysql:host=127.0.0.1;port=3306;dbname=u510162695_judging', 'u510162695_judging_root', '1Judging_root");
+$dbconnection = mysqli_connect("mysql:host=127.0.0.1, 'u510162695_judging_root', '1Judging_root");
 if($dbconnection === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
