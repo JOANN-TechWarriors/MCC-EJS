@@ -72,7 +72,7 @@ $eventname = $rowinfo['event_name'];
 <div class="row">
 <?php
 
-  $result = mysqli_query($dbconnection,"SELECT * FROM contestants WHERE subevent_id='$event'");
+  $result = mysqli_query($conn,"SELECT * FROM contestants WHERE subevent_id='$event'");
   while($row = $result->fetch_assoc()) { ?>
 
 <div class="col-md-3 col-6">
