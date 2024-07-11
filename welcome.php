@@ -122,10 +122,10 @@
 <div id="myGroup" >
 
 
-<button class="btn btn-success pull-right" data-toggle="collapse" data-target="#judge" data-parent="#myGroup"><i class="icon-chevron-right"></i> <strong>JUDGE</strong></button>  
+<!-- <button class="btn btn-success pull-right" data-toggle="collapse" data-target="#judge" data-parent="#myGroup"><i class="icon-chevron-right"></i> <strong>JUDGE</strong></button>  
                                
 <div class="collapse indent" id="judge">
-             
+              -->
 <div class="input-group">
        <div class="alert alert-success">
       <form method="POST" action="judge_profile.php" >
