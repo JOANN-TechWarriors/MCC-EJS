@@ -76,14 +76,14 @@ include_once('header2.php');
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title" id="Login">About Event Judging System</h4>
+                        <h4 class="modal-title" id="Login">About MCC Event Judging System</h4>
                     </div>
                     <div class="modal-body">
                     
                     <table align="center">
                     
                     <tr>
-                    <td colspan="2" align="center"> <img src="ejs_logo.png" width="50" height="50" class="thumbnail" /></td>                    
+                                  
                     </tr>
                     
                     <tr>
@@ -144,7 +144,7 @@ include_once('header2.php');
  <br />  
  <table cellpadding="10" cellspacing="0" border="0" align="center">
  <thead>
- <th align="left" style="background-color: #4976f5; text-indent: 7px; color: white; "><h4><img src="" width="50" height="50" /> &nbsp;ORGANIZER LOGIN</h4></th>
+ <th align="left" style="background-color: #4976f5; text-indent: 7px; color: white; "><h4> &nbsp;ORGANIZER LOGIN</h4></th>
  </thead>
  
  <tr style="background-color: #d7def2;">
