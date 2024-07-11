@@ -28,40 +28,30 @@
         
         ?>	<script>window.location = 'dashboard.php';</script><?php
         	
-     }
-	 if($row['access']=="Judge")
-     {
-        $_SESSION['useraccess']="Judge";
-        $_SESSION['id']=$row['judge_id'];
-		$_SESSION['email']=$row['email'];
+    //  }
+	//  if($row['access']=="Judge")
+    //  {
+    //     $_SESSION['useraccess']="Judge";
+    //     $_SESSION['id']=$row['judge_id'];
+	// 	// $_SESSION['email']=$row['email'];
         
         // ?>	<script>window.location = 'judge_panel.php'</script><?php
-     }
-
-    }else{ 
-        ?>	<script>
-          alert('Username and Password did not Match');
-          window.location = 'judge_panel.php';
-            </script><?php	
-    }	
-            
-    ?>
         	
-    <!-- //  } -->
+    //  }
     //  else
 	//  if($row['access']=="Student")
-    <!-- //  { -->
+    //  {
     //     $_SESSION['useraccess']="Student";
     //     $_SESSION['id']=$row['student_id'];
 	// 	// $_SESSION['email']=$row['email'];
         
     //     ?>	<script>window.location = 'home.php';</script><?php
         	
-     {
+     }
 		}else{ 
 			?>	<script>
               alert('Username and Password did not Match');
-			  window.location = 'judge_panel.php';
+			  window.location = 'index.php';
 			    </script><?php	
 		}	
 				
