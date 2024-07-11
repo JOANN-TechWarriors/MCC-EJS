@@ -144,7 +144,7 @@ include_once('header2.php');
  <br />  
  <table cellpadding="10" cellspacing="0" border="0" align="center">
  <thead>
- <th align="left" style="background-color: #4976f5; text-indent: 7px; color: white; "><h4><img src="ejs_logo.png" width="50" height="50" /> &nbsp;ORGANIZER LOGIN</h4></th>
+ <th align="left" style="background-color: #4976f5; text-indent: 7px; color: white; "><h4><img src="" width="50" height="50" /> &nbsp;ORGANIZER LOGIN</h4></th>
  </thead>
  
  <tr style="background-color: #d7def2;">
