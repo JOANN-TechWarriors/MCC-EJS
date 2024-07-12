@@ -17,7 +17,7 @@
     <header class="jumbotron subhead" id="overview">
       <div class="container">
         <h1>Student Registration</h1>
-        <p class="lead">Event Judging System</p>
+        <p class="lead">MCC Event Judging System</p>
       </div>
     </header>
     <div class="container">
@@ -40,9 +40,9 @@
                   </td>
                 </tr>
                 <tr>
-                  <td>Course with Year and Section:</td>
+                  <td>Course/Year/Section:</td>
                   <td colspan="2">
-                    <input type="text" name="course" class="form-control" placeholder="Course with Year and Section" required>
+                    <input type="text" name="course" class="form-control" placeholder="Course/ Year/ Section" required>
                   </td>
                 </tr>
                 <tr>
@@ -56,7 +56,7 @@
                 </tr>
               </table>
               <div class="btn-group pull-right">
-                <a href="index.php" type="button" class="btn btn-default">Cancel</a>
+                <a href="student_login.php" type="button" class="btn btn-default">Cancel</a>
                 <button name="register" type="submit" class="btn btn-primary">Register</button>
               </div>
             </form>
@@ -70,7 +70,7 @@
     ================================================== -->
     <footer class="footer">
       <div class="container">
-        <font size="2" class="pull-left"><strong>Event Judging System &middot; 2023 &COPY;</strong> </font> <br />
+        <font size="2" class="pull-left"><strong>MCC Event Judging System &middot; 2023 &COPY;</strong> </font> <br />
       </div>
     </footer>      
 
@@ -94,7 +94,7 @@ if(isset($_POST['register']))
 
 ?>
 <script>
-  window.location = 'index.php';
+  window.location = 'student_login.php';
   alert('Student <?php echo $name; ?> registered successfully!');
 </script>
 <?php  
