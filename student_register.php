@@ -127,7 +127,7 @@ include_once('header2.php');
       </table>
     </form>
 
-    <!-- Student Registration Form
+    <!-- Student Registration Form -->
     <form method="POST" action="student_register.php">
       <br />
       <table cellpadding="10" cellspacing="0" border="0" align="center">
@@ -148,7 +148,7 @@ include_once('header2.php');
           </td>
         </tr>
       </table>
-    </form> -->
+    </form>
 
     <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" style="display: none;">
       <div class="toast-header">
