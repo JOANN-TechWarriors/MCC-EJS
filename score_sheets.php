@@ -262,7 +262,7 @@ $MEidxxx=$sy_row['mainevent_id'];
             </tbody>
      
           </table>
-          <br / >
+        </br  >
         <hr />  
         
         </div>
