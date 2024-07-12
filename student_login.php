@@ -121,7 +121,11 @@ include_once('header2.php');
           <td>
             <h5><i class="icon-user"></i> STUDENT ID:</h5>
             <input style="font-size: large; height: 35px !important; text-indent: 7px !important;" class="form-control btn-block" type="text" name="student_id" placeholder="Student ID" required="true" autofocus="true" />
+            <br /><strong><a data-toggle="modal" data-target="#forgot-password-modal">Forgot password?</a></strong><br />
+            <h6>if you have no account, pls</h6>
             <button style="width: 160px !important;" type="submit" class="btn btn-primary pull-right"><i class="icon-ok"></i> <strong>LOGIN</strong></button>
+
+            <strong>Register <a href="create_account.php">here &raquo;</a></strong> &nbsp;&nbsp;&nbsp;<br><br>
           </td>
         </tr>
       </table>
