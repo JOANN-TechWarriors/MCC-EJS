@@ -125,7 +125,7 @@ include_once('header2.php');
             <h6>if you have no account, pls</h6>
             <button style="width: 160px !important;" type="submit" class="btn btn-primary pull-right"><i class="icon-ok"></i> <strong>LOGIN</strong></button>
 
-            <strong>Register <a href="create_account.php">here &raquo;</a></strong> &nbsp;&nbsp;&nbsp;<br><br>
+            <strong>Register <a href="student_register.php">here &raquo;</a></strong> &nbsp;&nbsp;&nbsp;<br><br>
           </td>
         </tr>
       </table>
