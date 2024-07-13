@@ -4,6 +4,7 @@ date_default_timezone_set('Asia/Manila');
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <?php
 include_once('header2.php');
 ?>
@@ -19,50 +20,20 @@ include_once('header2.php');
     right: 20px;
     z-index: 9999;
   }
-
-  .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-top: 50px;
-  }
-
-  .welcome-text {
-    font-size: 24px;
+  .login-container {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    padding: 50px 0;
   }
-
   .login-form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 45%;
   }
-
-  .login-form table {
-    background-color: #d7def2;
-    padding: 20px;
-    border-radius: 8px;
-  }
-
-  .login-form h4 {
-    background-color: #4976f5;
-    color: white;
-    padding: 10px;
-    border-radius: 8px 8px 0 0;
-    margin: 0;
-  }
-
-  .login-form input {
-    font-size: large;
-    height: 35px !important;
-    text-indent: 7px !important;
-  }
-
-  .login-form button {
-    width: 160px !important;
+  .welcome-text {
+    width: 45%;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
   }
 </style>
 
@@ -88,8 +59,7 @@ include_once('header2.php');
         <div class="modal-header">
           <h5 class="modal-title"></h5>
         </div>
-        <div class="modal-body">
-        </div>
+        <div class="modal-body"></div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" id='submit' onclick="$('#uni_modal form').submit()">Save</button>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -98,39 +68,33 @@ include_once('header2.php');
     </div>
   </div>
 
-  <div class="container">
-    <div class="welcome-text">
-      Welcome to MCC Event Judging System
-    </div>
+  <div class="container login-container">
     <div class="login-form">
       <form method="POST" action="login.php">
+        <br />
         <table cellpadding="10" cellspacing="0" border="0" align="center">
           <thead>
-            <tr>
-              <th align="left" style="background-color: #4976f5; text-indent: 7px; color: white;">
-                <h4> &nbsp;ORGANIZER LOGIN</h4>
-              </th>
-            </tr>
+            <th align="left" style="background-color: #4976f5; text-indent: 7px; color: white;">
+              <h4>&nbsp;ORGANIZER LOGIN</h4>
+            </th>
           </thead>
-          <tbody>
-            <tr>
-              <td>
-                <h5><i class="icon-user"></i> USERNAME:</h5>
-                <input class="form-control btn-block" type="text" name="username" placeholder="Username" required="true" autofocus="true" />
-                <h5><i class="icon-lock"></i> PASSWORD:</h5>
-                <input class="form-control btn-block" type="password" name="password" placeholder="Password" required="true" autofocus="true" />
-                <br />
-                <strong><a data-toggle="modal" data-target="#forgot-password-modal">Forgot password?</a></strong>
-                <br />
-                <h6>if you have no account, pls</h6>
-                <button type="submit" class="btn btn-primary pull-right"><i class="icon-ok"></i> <strong>LOGIN</strong></button>
-                <strong>Register <a href="create_account.php">here &raquo;</a></strong> &nbsp;&nbsp;&nbsp;
-                <br><br>
-              </td>
-            </tr>
-          </tbody>
+          <tr style="background-color: #d7def2;">
+            <td>
+              <h5><i class="icon-user"></i> USERNAME:</h5>
+              <input style="font-size: large; height: 35px !important; text-indent: 7px !important;" class="form-control btn-block" type="text" name="username" placeholder="Username" required="true" autofocus="true" />
+              <h5><i class="icon-lock"></i> PASSWORD:</h5>
+              <input style="font-size: large; height: 35px !important; text-indent: 7px !important;" class="form-control btn-block" type="password" name="password" placeholder="Password" required="true" autofocus="true" />
+              <br /><strong><a data-toggle="modal" data-target="#forgot-password-modal">Forgot password?</a></strong><br />
+              <h6>if you have no account, pls</h6>
+              <button style="width: 160px !important;" type="submit" class="btn btn-primary pull-right"><i class="icon-ok"></i> <strong>LOGIN</strong></button>
+              <strong>Register <a href="create_account.php">here &raquo;</a></strong> &nbsp;&nbsp;&nbsp;<br><br>
+            </td>
+          </tr>
         </table>
       </form>
+    </div>
+    <div class="welcome-text">
+      Welcome to MCC Event Judging System
     </div>
   </div>
 
@@ -171,8 +135,7 @@ include_once('header2.php');
   <!-- Footer ================================================== -->
   <footer class="footer">
     <div class="container">
-      <font size="2" class="" align="center"><strong>Event Judging System &middot; 2023 &COPY; </strong></font>
-      <br />
+      <font size="2" class="" align="center"><strong>Event Judging System &middot; 2023 &COPY; </strong></font> <br />
     </div>
   </footer>
 
@@ -196,7 +159,7 @@ include_once('header2.php');
   <script src="assets/js/google-code-prettify/prettify.js"></script>
   <script src="assets/js/application.js"></script>
   <script>
-    window.uni_modal = function($title = '', $url = '', $size = "") {
+    window.uni_modal = function ($title = '', $url = '', $size = "") {
       start_load()
       $.ajax({
         url: $url,
@@ -204,7 +167,7 @@ include_once('header2.php');
           console.log()
           alert("An error occured")
         },
-        success: function(resp) {
+        success: function (resp) {
           if (resp) {
             $('#uni_modal .modal-title').html($title)
             $('#uni_modal .modal-body').html(resp)
@@ -230,12 +193,14 @@ include_once('header2.php');
     }
 
     // Hide the alert after 3 seconds
-    setTimeout(function() {
+    setTimeout(function () {
       var alert = document.querySelector('.alert');
       if (alert) {
         alert.style.display = 'none';
       }
     }, 3000);
+
   </script>
+
 </body>
 </html>
