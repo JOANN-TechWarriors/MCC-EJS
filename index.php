@@ -31,7 +31,7 @@ include_once('header2.php');
   }
   .welcome-text {
     width: 45%;
-    text-align: center;
+    text-align: right;
     font-size: 24px;
     font-weight: bold;
   }
@@ -72,6 +72,10 @@ include_once('header2.php');
     </div>
   </div>
 
+  <div class="welcome-text">
+      Welcome to MCC Event Judging System
+    </div>
+  </div>
   <div class="container login-container">
     <div class="login-form">
       <form method="POST" action="login.php">
