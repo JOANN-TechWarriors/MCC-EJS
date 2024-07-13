@@ -16,7 +16,7 @@ include_once('header2.php');
   .alert {
   font-size: 14px;
   padding: 8px 12px;
-  text-align: center;
+  text-align: right;
   margin: 10px;
   max-width: 600px;
   position: fixed;
