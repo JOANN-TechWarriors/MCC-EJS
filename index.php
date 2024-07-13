@@ -40,8 +40,7 @@ include_once('header2.php');
     </div>
     <!-- Subhead
  ================================================== -->
-<header class="jumbotron subhead" id="overview">
-  <div class="logo">
+<header class=<div class="logo">
   <div class="container">
     <h1> MCC Event Judging System</h1>
     <p class="lead">Ready to serve you...</p>
