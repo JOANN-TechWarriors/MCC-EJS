@@ -53,6 +53,10 @@ include_once('header2.php');
     </div>
   </header>
 
+  <div class="welcome-text">
+      Welcome to MCC Event Judging System
+    </div>
+  </div>
   <div class="modal fade" id="uni_modal" role='dialog'>
     <div class="modal-dialog modal-md" role="document">
       <div class="modal-content">
@@ -93,10 +97,7 @@ include_once('header2.php');
         </table>
       </form>
     </div>
-    <div class="welcome-text">
-      Welcome to MCC Event Judging System
-    </div>
-  </div>
+    
 
   <div class="modal fade" id="forgot-password-modal" tabindex="-1" role="dialog" aria-labelledby="forgot-password-modal-label" aria-hidden="true">
     <div class="modal-dialog" role="document">
