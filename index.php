@@ -252,8 +252,8 @@
         <div class="logo">
             <a href="#" style="font-family: impact; color: #1153D0;">
                 <img src="assets/img/mcc_logo.png" style="height: 40px; vertical-align: middle;">
-                MCC <span class="text-light">EVENT</span>
             </a>
+            MCC <span class="text-light">EVENT</span>
         </div>
         <div class="main_list" id="mainListDiv">
         <ul>
