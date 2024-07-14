@@ -115,7 +115,7 @@ div.panel {
         }
 </style>
 </head>
-  
+  <body>
 <div class="sidebar">
     <div class="sidebar-heading">
         MCC Event Judging System
