@@ -14,48 +14,72 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
   <script src="..//assets/fullcalendar/moment.js"></script>
   <style>
-    .sidebar {
-      height: 100%;
-      width: 250px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      background-color: #f8f9fa;
-      padding-top: 20px;
-    }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
 
-    .sidebar-heading {
-      padding: 10px 15px;
-      font-size: 1.2em;
-      text-align: center;
-    }
+        .sidebar-heading {
+            top: 100px;
+            text-align: center;
+            padding: 10px 0;
+            background-color: #555;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .sidebar {
+            position: fixed;
+            top: 100;
+            left: 100;
+            height: 100%;
+            width: 250px;
+            background-color: #333;
+            color: #fff;
+            padding-top: 60px; /* Adjusted to match the height of the navbar */
+            overflow-y: auto; /* Enable scrolling if content exceeds height */
+        }
 
-    .sidebar ul {
-      list-style-type: none;
-      padding: 0;
-    }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
 
-    .sidebar ul li {
-      padding: 8px 16px;
-      text-align: center;
-    }
+        .sidebar ul li {
+            padding: 10px;
+            border-bottom: 1px solid #555;
+        }
 
-    .sidebar ul li a {
-      text-decoration: none;
-      color: #000;
-      display: block;
-    }
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+        }
 
-    .sidebar ul li a:hover {
-      background-color: #ddd;
-      color: #000;
-    }
+        .sidebar ul li a:hover {
+            background-color: #555;
+        }
 
-    .content {
-      margin-left: 260px;
-      padding: 20px;
-    }
-  </style>
+        .main {
+            margin-left: 250px; /* Adjusted to match the width of the sidebar */
+            padding: 20px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%; /* Full width on small screens */
+                height: auto;
+                position: relative;
+            }
+
+            .main {
+                margin-left: 0;
+            }
+        }
+    </style>
 </head>
 <body>
   <div class="sidebar">
