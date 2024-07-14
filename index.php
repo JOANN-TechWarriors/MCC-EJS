@@ -248,10 +248,10 @@
 </head>
 <body>
 <nav class="nav">
-    <div class="container"  style=" url logo(/assets/img/mcc_logo.png);">
+    <div class="container" >
         <div class="logo">
             <a href="#" style="font-family:impact ;color: #1153D0;" >
-				MCC <span class="text-light">EVENT judging </span>
+				MCC <span class="text-light">EVENT </span>
         </div>
           <div class="main_list" id="mainListDiv">
         <ul>
