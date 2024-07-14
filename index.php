@@ -285,7 +285,22 @@
 
 
 <section class="home" style="background-image: linear-gradient(45deg, rgba(0,0,0,0.3), rgba(0, 0, 0 ,0.3)), url(img/Community-College-Madridejos.jpeg);">
-
+<section id="banner" class="banner-section"> 
+    <div class="container">
+      <div class="div_zindex">
+        <div class="row">
+          <div class="col-md-5 col-md-push-7">
+            <div class="banner_content">
+              <h1>Find Your Perfect motorcycle</h1>
+              <p>We have different motorcycles for you to choose. </p>
+              <a href="#" class="btn">Read More <span class="angle_arrow"><i class="fa fa-angle-right"
+                    aria-hidden="true"></i></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </section>
 <br>
 
