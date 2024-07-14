@@ -14,7 +14,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
   <script src="..//assets/fullcalendar/moment.js"></script>
   <style>
-        body {
+    
+    body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
@@ -66,6 +67,10 @@
             margin-left: 250px; /* Adjusted to match the width of the sidebar */
             padding: 20px;
         }
+        .content {
+      margin-left: 260px;
+      padding: 20px;
+    }
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
@@ -79,7 +84,9 @@
                 margin-left: 0;
             }
         }
-    </style>
+
+    
+  </style>
 </head>
 <body>
   <div class="sidebar">
