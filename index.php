@@ -251,7 +251,7 @@
     <div class="container">
         <div class="logo">
             <a href="#" style="font-family:impact ;color: #1153D0;" >
-				MCC <span class="text-light">EVENT </span><span class="text-light">JUDGING </span><span class="text-light">SYSTEM </span>
+				MCC <span class="text-light">EVENT judging </span><span class="text-light">JUDGING </span><span class="text-light">SYSTEM </span>
 			</a>
         </div>
           <div class="main_list" id="mainListDiv">
@@ -291,9 +291,8 @@
         <div class="row">
           <div class="col-md-5 col-md-push-7">
             <div class="banner_content">
-              <h1>Welcome to MCC Event Judging System</h1>
+              <h1>Welcome to MCC Event Judging System</h1><span class="angle_arrow"><i class="fa fa-angle-right"
                     aria-hidden="true"></i></span></a>
-            </div>
           </div>
         </div>
       </div>
