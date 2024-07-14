@@ -43,6 +43,71 @@ div.panel {
     overflow: hidden;
     transition: max-height 0.2s ease-out;
 }
+body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidebar-heading {
+            top: 100px;
+            text-align: center;
+            padding: 10px 0;
+            background-color: #555;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .sidebar {
+            position: fixed;
+            top: 100;
+            left: 100;
+            height: 100%;
+            width: 250px;
+            background-color: #333;
+            color: #fff;
+            padding-top: 60px; /* Adjusted to match the height of the navbar */
+            overflow-y: auto; /* Enable scrolling if content exceeds height */
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar ul li {
+            padding: 10px;
+            border-bottom: 1px solid #555;
+        }
+
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #555;
+        }
+
+        .main {
+            margin-left: 250px; /* Adjusted to match the width of the sidebar */
+            padding: 20px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%; /* Full width on small screens */
+                height: auto;
+                position: relative;
+            }
+
+            .main {
+                margin-left: 0;
+            }
+        }
 </style>
 </head>
   <!-- Sidebar -->
