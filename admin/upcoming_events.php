@@ -7,12 +7,12 @@ include('session.php');
 <html>
 <head>
   <title>Event Calendar</title>
-  <link href="assets/fullcalendar/main.css" rel="stylesheet">
+  <link href="..//assets/fullcalendar/main.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script type="text/javascript" src="assets/fullcalendar/main.js"></script>
+  <script type="text/javascript" src="..//assets/fullcalendar/main.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
-  <script src="assets/fullcalendar/moment.js"></script>
+  <script src="..//assets/fullcalendar/moment.js"></script>
 </head>
 <body>
   <div class="container">
