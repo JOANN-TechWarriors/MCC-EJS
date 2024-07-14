@@ -6,6 +6,21 @@ include('session.php');
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- Sidebar -->
+  <div class="sidebar">
+        <div class="sidebar-heading">
+            MCC Event Judging System
+        </div>
+        <br>
+        <br>
+        <ul>
+
+            <li><a href="dashboard.php">DASHBOARD</a></li>
+            <li><a href="home.php">ONGOING EVENTS</a></li>
+            <li><a href="upcoming_events.php">UPCOMING EVENTS</a></li>
+            <li><a href="score_sheets.php">SCORE SHEETS</a></li>
+            <li><a href="rev_main_event.php">DATA REVIEWS</a></li>
+            <li><a href="index.php">LOGOUT</a></li>
   <title>Event Calendar</title>
   <link href="..//assets/fullcalendar/main.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
