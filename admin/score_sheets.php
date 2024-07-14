@@ -95,6 +95,10 @@ body {
             margin-left: 250px; /* Adjusted to match the width of the sidebar */
             padding: 20px;
         }
+        .content {
+      margin-left: 260px;
+      padding: 20px;
+    }
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
