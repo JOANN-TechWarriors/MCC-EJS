@@ -179,7 +179,7 @@
                 <div class="col-md-15">
                     <ul class="breadcrumb">
                         <li>
-                            <a href="dashboard.php">Dashboard/</a>
+                            <a href="dashboard.php">Dashboard</a> /
                         </li>
                         <li>Ongoing Events</li>
                     </ul>
