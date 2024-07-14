@@ -159,18 +159,7 @@
             <li>
                 <a href="index.php">LOGOUT</a>
             </li>
-            <!-- <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">MY ACCOUNT<span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
- 
-              
-              <li>
-                  <a target="_blank" href="edit_organizer.php">Settings</a>
-              </li>
- 
-              <li>
-                <a href="logout.php">Logout <?php echo $name; ?></a>
-              </li> -->
+            
               
                 </ul>
             </li>
@@ -179,50 +168,7 @@
 
     <!-- Main content -->
     <div class="main">
-        <!-- Navbar -->
-        <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
-                <a class="navbar-brand" href="#">MCC Event Judging System</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="home.php"><strong>ONGOING EVENTS</strong></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="upcoming_events.php"><strong>UPCOMING EVENTS</strong></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="score_sheets.php">SCORE SHEETS</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="rev_main_event.php">DATA REVIEWS</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                MY ACCOUNT -->
-                            <!-- </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="edit_organizer.php" target="_blank">Settings</a>
-                                <a class="dropdown-item" href="logout.php">Logout <?php echo $name; ?></a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav> -->
-
-        <!-- Page content -->
-        <!-- <div class="container-fluid">
-            <header class="jumbotron subhead" id="overview">
-                <div class="container">
-                    <h1>Ongoing Events</h1>
-                    <p class="lead">Event Judging System</p>
-                </div>
-            </header> -->
+        
             <div class="container">
                     <h1>Ongoing Events</h1>
                     

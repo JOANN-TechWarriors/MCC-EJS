@@ -136,16 +136,7 @@ div.panel {
   <div class="container">
     <h1>Score Sheets</h1>
       </div>
- 
 
-
-                
-                
- 
-        
-        <section id="download-bootstrap">
- 
-       <table align="center">
        
       
 <?php
