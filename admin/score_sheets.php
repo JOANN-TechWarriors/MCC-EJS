@@ -45,71 +45,22 @@ div.panel {
 }
 </style>
 </head>
-  <body data-spy="scroll" data-target=".bs-docs-sidebar">
-
-    <!-- Navbar
-    ================================================== -->
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-             <a class="brand" href="#">&nbsp; <font size="3">Event Judging System</font></a> 
- 
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-            
-            <li>
-                <a href="dashboard.php">DASHBOARD</a>
-              </li>
-               
-              
-              
-                <li>
-                <a href="home.php">ONGOING EVENTS</a>
-              </li>
-              
-              <li>
-                <a href="upcoming_events.php">UPCOMING EVENTS</a>
-              </li>
-              <li class="active">
-            
-                <a href="score_sheets.php">SCORE SHEETS</a>
-              </li>
-              
-            
-               <li>
-                  <a href="rev_main_event.php"><strong>DATA REVIEWS</strong></a>
-              </li>
- 
-              
-              
-              
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">MY ACCOUNT <span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
- 
-              
-              <li>
-                  <a target="_blank" href="edit_organizer.php">Settings</a>
-              </li>
- 
-              <li>
-                <a href="logout.php">Logout <?php echo $name; ?></a>
-              </li>
-
-      
-                
-                
- 
-            </ul>
-          </div>
-        </div>
-      </div>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-heading">
+        MCC Event Judging System
     </div>
+    <br>
+    <br>
+    <ul>
+        <li><a href="dashboard.php">DASHBOARD</a></li>
+        <li><a href="home.php">ONGOING EVENTS</a></li>
+        <li><a href="upcoming_events.php">UPCOMING EVENTS</a></li>
+        <li><a href="score_sheets.php">SCORE SHEETS</a></li>
+        <li><a href="rev_main_event.php">DATA REVIEWS</a></li>
+        <li><a href="index.php">LOGOUT</a></li>
+    </ul>
+</div>
 
 <!-- Subhead
 ================================================== -->
