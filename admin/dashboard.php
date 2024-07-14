@@ -81,38 +81,24 @@
 </head>
 <body>
     <!-- Sidebar -->
-            <div class="sidebar">
-        <div class="sidebar-heading">
-            MCC Event Judging System
-        </div>
-        <br>
-        <br>
-        <ul>
-
-            <li><a href="dashboard.php">DASHBOARD</a></li>
-            <li><a href="home.php">ONGOING EVENTS</a></li>
-            <li><a href="upcoming_events.php">UPCOMING EVENTS</a></li>
-            <li><a href="score_sheets.php">SCORE SHEETS</a></li>
-            <li><a href="rev_main_event.php">DATA REVIEWS</a></li>
-            <li><a href="index.php">LOGOUT</a></li>
-            <!-- <li class="dropdown"> -->
-            <!-- <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">MY ACCOUNT<span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
- 
-              
-              <li>
-                  <a target="_blank" href="edit_organizer.php">Settings</a>
-              </li>
- 
-              <li>
-                <a href="logout.php">Logout <?php echo $name; ?></a>
-              </li> -->
-              
-                </ul>
-            </li>
-        </ul>
+    <div class="sidebar">
+    <div class="sidebar-heading">
+        MCC Event Judging System
     </div>
+    <br>
+    <br>
+    <ul>
+        <li><a href="dashboard.php">DASHBOARD</a></li>
+        <li><a href="home.php">ONGOING EVENTS</a></li>
+        <li><a href="upcoming_events.php">UPCOMING EVENTS</a></li>
+        <li><a href="score_sheets.php">SCORE SHEETS</a></li>
+        <li><a href="rev_main_event.php">DATA REVIEWS</a></li>
+        <li><a href="index.php">LOGOUT</a></li>
+    </ul>
+</div>
+
+            
+       
 
     <!-- Main content -->
     <div class="main">
