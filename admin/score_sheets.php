@@ -116,26 +116,6 @@ div.panel {
 </style>
 </head>
   
-
-<!-- Subhead
-================================================== -->
-<?php if($tabname==""){ ?>
-<header class="jumbotron subhead" id="overview">
-  <div class="container">
-    <h1>Score Sheets</h1>
-  <p class="lead">Event Judging System</p>
-  </div>
-</header>
-<?php  } else {?>
-<header class="jumbotron subhead" id="overview">
-
-  <div class="container">
-    <h1>Score Sheets</h1>
-  <p class="lead">Event Judging System - Tabulator's Panel</p>
-  </div>
-</header>       
-<?php } ?>
-
 <div class="sidebar">
     <div class="sidebar-heading">
         MCC Event Judging System
@@ -151,6 +131,10 @@ div.panel {
         <li><a href="index.php">LOGOUT</a></li>
     </ul>
   </div>
+<!-- Subhead
+================================================== -->
+
+
                 
                 
  
