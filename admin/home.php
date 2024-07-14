@@ -956,7 +956,7 @@ while ($sy_row = $sy_query->fetch()) {
                         </td>
                         </tr>
                         
-                        <?php  } ?>
+                        
       
                         </table>
                                  
