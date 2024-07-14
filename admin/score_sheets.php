@@ -144,13 +144,13 @@ div.panel {
                 <div class="col-md-15">
                     <ul class="breadcrumb">
                         <li>
-                            <a href="dashboard.php">Dashboard</a>
+                            <a href="dashboard.php">Dashboard/</a>
                         </li>
                         <li>
-                            <a href="home.php">Ongoing Events</a>
+                            <a href="home.php">Ongoing Events/</a>
                         </li>
                         <li>
-                            <a href="upcoming_events.php">Upcoming Events</a>
+                            <a href="upcoming_events.php">Upcoming Events/</a>
                         </li>
                         <li>Score Sheets</li>
                     </ul>
