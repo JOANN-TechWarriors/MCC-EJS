@@ -285,21 +285,17 @@
 
 
 
-<section class="home" style="background-image: linear-gradient(45deg, rgba(0,0,0,0.3), rgba(0, 0, 0 ,0.3)), url(img/Community-College-Madridejos.jpeg);">
-<section id="banner" class="banner-section"> 
+<section class="home" style="background-image: linear-gradient(45deg, rgba(0,0,0,0.3), rgba(0, 0, 0 ,0.3)), url(img/Community-College-Madridejos.jpeg); height: 100vh; display: flex; justify-content: center; align-items: center;">
+  <section id="banner" class="banner-section" style="width: 100%;">
     <div class="container">
-      <div class="div_zindex">
-        <div class="row">
-          <div class="col-md-5 col-md-push-7">
-            <div class="banner_content">
-              <h1>Welcome to MCC Event Judging System</h1><span class="angle_arrow"><i class="fa fa-angle-right"
-                    aria-hidden="true"></i></span></a>
-          </div>
-        </div>
+      <div class="div_zindex" style="text-align: center;">
+        <h1>Welcome to MCC Event Judging System</h1>
+        <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
       </div>
     </div>
   </section>
 </section>
+
 <br>
 
 
