@@ -116,6 +116,7 @@ div.panel {
 </style>
 </head>
   <body>
+    
 <div class="sidebar">
     <div class="sidebar-heading">
         MCC Event Judging System
@@ -133,7 +134,8 @@ div.panel {
   </div>
 <!-- Subhead
 ================================================== -->
-  <div class="container">
+<div class="main">
+<div class="container">
     <h1>Score Sheets</h1>
       </div>
 
@@ -145,12 +147,12 @@ div.panel {
                             <a href="dashboard.php">Dashboard</a>
                         </li>
                         <li>
-                            <a href="home.php">Ongoing</a>
+                            <a href="home.php">Ongoing Events</a>
                         </li>
                         <li>
-                            <a href="upcoming_events.php">Upcoming</a>
+                            <a href="upcoming_events.php">Upcoming Events</a>
                         </li>
-                        <li>Ongoing Events</li>
+                        <li>Score Sheets</li>
                     </ul>
                 </div>
             </div>
