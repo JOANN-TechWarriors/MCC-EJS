@@ -253,7 +253,7 @@
             <a href="#" style="font-family: impact; color: #1153D0;">
                 <img src="assets/img/mcc_logo.png" style="height: 40px; vertical-align: middle;">
             </a>
-             <span class="text-light"MCC-JES>
+             <span class="text-light"MCC>
         </div>
         <div class="main_list" id="mainListDiv">
         <ul>
@@ -289,7 +289,7 @@
   <section id="banner" class="banner-section" style="width: 100%;">
     <div class="container">
       <div class="div_zindex" style="text-align: center;">
-        <h1 style="color: #1153D0;"> Welcome to MCC Event Judging System</h1>
+        <h1 style="color: white;"> Welcome to MCC Event Judging System</h1>
         <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
       </div>
     </div>
