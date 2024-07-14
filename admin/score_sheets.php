@@ -7,43 +7,7 @@
     ?>
 <head>
 <style>
-button.accordion {
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-    transition: 0.4s;
-}
-
-button.accordion.active, button.accordion:hover {
-    background-color: #ddd;
-}
-
-button.accordion:after {
-    content: '\002B';
-    color: #777;
-    font-weight: bold;
-    float: right;
-    margin-left: 5px;
-}
-
-button.accordion.active:after {
-    content: "\2212";
-}
-
-div.panel {
-    padding: 0 18px;
-    background-color: white;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-}
-body {
+  body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
@@ -100,8 +64,45 @@ body {
       padding: 20px;
     }
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
+       
+button.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #ddd;
+}
+
+button.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: "\2212";
+}
+
+div.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+ /* Responsive adjustments */
+ @media (max-width: 768px) {
             .sidebar {
                 width: 100%; /* Full width on small screens */
                 height: auto;
@@ -114,22 +115,7 @@ body {
         }
 </style>
 </head>
-  <!-- Sidebar -->
-  <div class="sidebar">
-    <div class="sidebar-heading">
-        MCC Event Judging System
-    </div>
-    <br>
-    <br>
-    <ul>
-        <li><a href="dashboard.php">DASHBOARD</a></li>
-        <li><a href="home.php">ONGOING EVENTS</a></li>
-        <li><a href="upcoming_events.php">UPCOMING EVENTS</a></li>
-        <li><a href="score_sheets.php">SCORE SHEETS</a></li>
-        <li><a href="rev_main_event.php">DATA REVIEWS</a></li>
-        <li><a href="index.php">LOGOUT</a></li>
-    </ul>
-</div>
+  
 
 <!-- Subhead
 ================================================== -->
@@ -150,28 +136,21 @@ body {
 </header>       
 <?php } ?>
 
-  <div class="container">
-
-   
-    <div class="row">
-      
-      <div class="span12">
-      
-      
-      <br />
-                <div class="col-md-12">
-                    <ul class="breadcrumb">
-                    
-                    <li>
-                <a href="dashboard.php">Dashboard</a> /
-              </li>
-                    
-                        <li><a href="home.php">Ongoing Events</a> / </li>
-                        <li><a href="upcoming_events.php">Upcoming Events</a> / </li>
-                        <li>Score Sheets</li>
-                        
-                    </ul>
-                </div>
+<div class="sidebar">
+    <div class="sidebar-heading">
+        MCC Event Judging System
+    </div>
+    <br>
+    <br>
+    <ul>
+        <li><a href="dashboard.php">DASHBOARD</a></li>
+        <li><a href="home.php">ONGOING EVENTS</a></li>
+        <li><a href="upcoming_events.php">UPCOMING EVENTS</a></li>
+        <li><a href="score_sheets.php">SCORE SHEETS</a></li>
+        <li><a href="rev_main_event.php">DATA REVIEWS</a></li>
+        <li><a href="index.php">LOGOUT</a></li>
+    </ul>
+  </div>
                 
                 
  
