@@ -137,6 +137,23 @@ div.panel {
     <h1>Score Sheets</h1>
       </div>
 
+      <div class="span15">
+                <br />
+                <div class="col-md-15">
+                    <ul class="breadcrumb">
+                        <li>
+                            <a href="dashboard.php">Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="home.php">Ongoing</a>
+                        </li>
+                        <li>
+                            <a href="upcoming_events.php">Upcoming</a>
+                        </li>
+                        <li>Ongoing Events</li>
+                    </ul>
+                </div>
+            </div>
        
       
 <?php
