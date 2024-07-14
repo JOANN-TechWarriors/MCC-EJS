@@ -956,7 +956,6 @@ while ($sy_row = $sy_query->fetch()) {
                         </td>
                         </tr>
                         
-                        
       
                         </table>
                                  
@@ -966,7 +965,6 @@ while ($sy_row = $sy_query->fetch()) {
  </tr>
  
  
-  <?php  }  ?>
  
   </table>
  
