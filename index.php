@@ -248,12 +248,14 @@
 </head>
 <body>
 <nav class="nav">
-    <div class="container" >
+    <div class="container">
         <div class="logo">
-            <a href="#" style="font-family:impact ;color: #1153D0;" >
-				MCC <span class="text-light">EVENT </span>
+            <a href="#" style="font-family: impact; color: #1153D0;">
+                <img src="assets/image/mcc_logo.png" alt="MCC Logo" style="height: 40px; vertical-align: middle;">
+                MCC <span class="text-light">EVENT</span>
+            </a>
         </div>
-          <div class="main_list" id="mainListDiv">
+        <div class="main_list" id="mainListDiv">
         <ul>
             <li><a href="#" style="color: #1153D0;">Home</a></li>
             <li style="margin-right:20px"><a href="#ongoing">Ongoing</a></li>
