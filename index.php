@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Judging System</title>
+    <title>MCC Event Judging System</title>
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
@@ -251,7 +251,7 @@
     <div class="container">
         <div class="logo">
             <a href="#" style="font-family:impact ;color: #1153D0;" >
-				MCC <span class="text-light">EVENT'S</span>
+				MCC <span class="text-light">EVENT Judging System</span>
 			</a>
         </div>
           <div class="main_list" id="mainListDiv">
@@ -260,7 +260,6 @@
             <li style="margin-right:20px"><a href="#ongoing">Ongoing</a></li>
             <li><a href="#upcoming">Upcoming</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#event">Event</a></li>
             <li><a href="#live">Live</a></li>
             <li>
                 <a href="#login">Login</a>
