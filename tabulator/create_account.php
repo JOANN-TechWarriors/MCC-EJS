@@ -31,7 +31,7 @@
   <div class="col-lg-6">
  <div class="panel panel-primary">
             <div class="panel-heading">
-              <h3 class="panel-title">Event Organizer Registration Form</h3>
+              <h3 class="panel-title">Event Tabulator Registration Form</h3>
             </div>
             <div class="panel-body">
             
@@ -126,7 +126,7 @@
 
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="..//assets/js/ie10-viewport-bug-workaround.js"></script>
     <script src="javascript/jquery1102.min.js"></script>
     
     
