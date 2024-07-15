@@ -95,16 +95,8 @@ $se_row = $se_query->fetch();
 
     <!-- Navbar
     ================================================== -->
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
         <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-            <a class="brand" href="#"><img src="uploads/<?php echo $company_logo; ?>" width="23" height="23" />&nbsp; <font size="3">Event Judging System</font></a>
-            <div class="sidebar">
+                      <div class="sidebar">
     <br>
     <br>
     <ul>
@@ -117,12 +109,12 @@ $se_row = $se_query->fetch();
     </ul>
   </div>
  
- 
+  <div class="main">
   <div class="container">
     <h1><?php echo $se_name; ?> Settings</h1>
     <p class="lead">Event Judging System</p>
   </div>
-
+      </div>
 
 <div class="container">
 
