@@ -2,10 +2,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="css/bootstrap.css" media="screen"/>
-    <link rel="stylesheet" href="css/custom.min.css"/>
-    <link rel="stylesheet" href="css/font-awesome.css" media="screen"/>
-    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="..//css/bootstrap.css" media="screen"/>
+    <link rel="stylesheet" href="..//css/custom.min.css"/>
+    <link rel="stylesheet" href="..//css/font-awesome.css" media="screen"/>
+    <link rel="stylesheet" href="..//css/font-awesome.min.css"/>
 </head>
    
    <?php
@@ -236,31 +236,31 @@ $showContTP_query = $conn->query("select * from contestants WHERE subevent_id='$
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/bootstrap-transition.js"></script>
-    <script src="assets/js/bootstrap-alert.js"></script>
-    <script src="assets/js/bootstrap-modal.js"></script>
-    <script src="assets/js/bootstrap-dropdown.js"></script>
-    <script src="assets/js/bootstrap-scrollspy.js"></script>
-    <script src="assets/js/bootstrap-tab.js"></script>
-    <script src="assets/js/bootstrap-tooltip.js"></script>
-    <script src="assets/js/bootstrap-popover.js"></script>
-    <script src="assets/js/bootstrap-button.js"></script>
-    <script src="assets/js/bootstrap-collapse.js"></script>
-    <script src="assets/js/bootstrap-carousel.js"></script>
-    <script src="assets/js/bootstrap-typeahead.js"></script>
-    <script src="assets/js/bootstrap-affix.js"></script>
+    <script src="..//assets/js/jquery.js"></script>
+    <script src="..//assets/js/bootstrap-transition.js"></script>
+    <script src="..//assets/js/bootstrap-alert.js"></script>
+    <script src="..//assets/js/bootstrap-modal.js"></script>
+    <script src="..//assets/js/bootstrap-dropdown.js"></script>
+    <script src="..//assets/js/bootstrap-scrollspy.js"></script>
+    <script src="..//assets/js/bootstrap-tab.js"></script>
+    <script src="..//assets/js/bootstrap-tooltip.js"></script>
+    <script src="..//assets/js/bootstrap-popover.js"></script>
+    <script src="..//assets/js/bootstrap-button.js"></script>
+    <script src="..//assets/js/bootstrap-collapse.js"></script>
+    <script src="..//assets/js/bootstrap-carousel.js"></script>
+    <script src="..//assets/js/bootstrap-typeahead.js"></script>
+    <script src="..//assets/js/bootstrap-affix.js"></script>
 
-    <script src="assets/js/holder/holder.js"></script>
-    <script src="assets/js/google-code-prettify/prettify.js"></script>
+    <script src="..//assets/js/holder/holder.js"></script>
+    <script src="..//assets/js/google-code-prettify/prettify.js"></script>
 
-    <script src="assets/js/application.js"></script>
+    <script src="..//assets/js/application.js"></script>
     
     
     
-    <script src="javascript/jquery1102.min.js"></script>
-    <script src="javascript/bootstrap.min.js"></script>
-    <script src="javascript/custom.js"></script>
+    <script src="..//javascript/jquery1102.min.js"></script>
+    <script src="..//javascript/bootstrap.min.js"></script>
+    <script src="..//javascript/custom.js"></script>
 
  
 
