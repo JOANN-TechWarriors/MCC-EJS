@@ -114,9 +114,8 @@ $se_row = $se_query->fetch();
     <h1><?php echo $se_name; ?> Settings</h1>
     <p class="lead">Event Judging System</p>
   </div>
-      </div>
 
-<div class="container">
+      </div >
 
 
 
@@ -140,7 +139,8 @@ $se_row = $se_query->fetch();
                     </ul>
                 </div>
                 
-                
+                </div>
+           
                 
 
 <form method="POST">
