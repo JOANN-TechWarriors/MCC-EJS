@@ -32,63 +32,24 @@ $se_row = $se_query->fetch();
             <span class="icon-bar"></span>
           </button>
             <a class="brand" href="#"><img src="uploads/<?php echo $company_logo; ?>" width="23" height="23" />&nbsp; <font size="3">Event Judging System</font></a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-
-             <li>
-                <a href="dashboard.php">DASHBOARD</a>
-              </li>
-               
-              
-
-                <li class="active">
-                <a href="home.php"><strong>ONGOING EVENTS</strong></a>
-              </li>
-              <li>
-                <a href="#">UPCOMING EVENTS</a>
-              </li>
-              <li>
-                <a href="score_sheets.php">SCORE SHEETS</a>
-              </li>
-              
-            
-               <li>
-                  <a href="rev_main_event.php">DATA REVIEWS</a>
-              </li>
- 
-              
-              
-              
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My Account <span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
- 
-              
-              <li>
-                  <a target="_blank" href="edit_organizer.php">Settings</a>
-              </li>
- 
-              <li>
-                <a href="logout.php">Logout <?php echo $name; ?></a>
-              </li>
-              
-              
-                    </ul>
-                    </li>
-          
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+            <div class="sidebar">
+    <br>
+    <br>
+    <ul>
+        <li><a href="dashboard.php">DASHBOARD</a></li>
+        <li><a href="home.php">ONGOING EVENTS</a></li>
+        <li><a href="upcoming_events.php">UPCOMING EVENTS</a></li>
+        <li><a href="score_sheets.php">SCORE SHEETS</a></li>
+        <li><a href="rev_main_event.php">DATA REVIEWS</a></li>
+        <li><a href="..//index.php">LOGOUT</a></li>
+    </ul>
+  </div>
  
  
-<header class="jumbotron subhead" id="overview">
   <div class="container">
     <h1><?php echo $se_name; ?> Settings</h1>
     <p class="lead">Event Judging System</p>
   </div>
-</header>
 
 
 <div class="container">
