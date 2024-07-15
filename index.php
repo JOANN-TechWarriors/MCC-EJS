@@ -301,7 +301,7 @@
 <div class="p-3" id="candidates">
     <h1 class="text-center" style="color: #1153D0; font-family: impact;">MISS IT 2023 CANDIDATES</h1><br>
     <div class="row g-2">
-        <div class="col-lg-3 col-12 mb-3">
+        <div class="col-lg-3 col-12 mb-3" style="z-index: index -1000;">
             <div class="card shadow bg-dark text-light p-2">
                 <img src="img/mcc1.jpg">
                 <center>
