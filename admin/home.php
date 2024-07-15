@@ -219,61 +219,72 @@
                                  
                                 
                                  
-                                 <table align="center" class="table table-bordered cp" id="example">
-            <thead>
-                <tr>
-                    <th>
-                        <h4>
-                            <strong>ADD MAIN EVENT</strong>
-                            <button class="btn btn-default pull-right" data-toggle="collapse" data-target="#addMEcollapse" title="Click to add Main Event"><i class="icon-remove"></i> CANCEL</button>
-                        </h4>
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <div id="addMEcollapse" class="collapse">
-                            <form>
+                                <table align="center" class="table table-bordered cp" id="example">
+                                    
+                                <thead>
+                                    <th>
+                                    <h4><strong>ADD MAIN EVENT</strong>
+                                    <a data-toggle="collapse" class="btn btn-default pull-right" href="#addMEcollapse" title="Click to add Main Event"><i class="icon-remove"></i> CANCEL</a>
+                                    </h4>
+                                    </th>
+                                    </thead>
+                           
+                                <tr>
+                                <td>
+                              
                                 <strong>Event #:</strong><br />
+ 
                                 <input name="sy" class="form-control btn-block" style="text-indent: 5px !important; height: 30px !important;" type="number" placeholder="0" required="true"/>
-                                <br />
+                                 <br /> 
+
+                                 <strong>Event Name:</strong><br />
+                                 <input type="text" name="main_event" class="form-control btn-block" style="text-indent: 5px !important; height: 30px !important;" placeholder="Event Name" required="true"/>
+                                 <br />
+                                 
+                                 
+                          
+                                  <strong>Date Start:</strong><br />
+                                  <div class="container">
+                                         
+                                         <input type="date" id="demo" min="2023-04-25" class="form-control btn-block" required="true">
+
+                                         </div>
+                                  <strong>Date End:</strong><br />
+                                  <div class="container">
+                                         
+                                         <input type="date" id="demo" min="2023-04-25" class="form-control btn-block" required="true">
+
+                                         </div>
+                                  <strong>Time Start:</strong><br />
+                                  <div class="container">
+                                         
+                                         <input type="time" name="event_time" type="text" required="true" placeholder="hh:mm" class="form-control btn-block">
+
+                                         </div>
+
+                                   
+
+                                  <strong>Venue:</strong><br />
+                                  <textarea name="place" type="text" class="form-control btn-block" style="text-indent: 10px !important;" placeholder="Event Venue" required="true" rows="2"></textarea>
+                                  <br />
+                           
+                                 
+                                 <div class="modal-footer">
+                                 <button title="Clear form" type="reset" class="btn btn-default"><i class="icon-ban-circle"></i> <strong>RESET</strong></button>
+                                 <button title="Click to save" name="create" type="submit" class="btn btn-primary"><i class="icon-ok"></i> <strong>SAVE</strong></button> 
+                                  
+                                 </div>
+             
+                                  </td>
+                                  </tr>
+                                  </table>
+                                  </form>
+                                  </div>
                                 
-                                <strong>Event Name:</strong><br />
-                                <input type="text" name="main_event" class="form-control btn-block" style="text-indent: 5px !important; height: 30px !important;" placeholder="Event Name" required="true"/>
-                                <br />
+                            <a style="margin-bottom: 20px !important;" data-toggle="collapse" class="btn btn-info pull-right"  href="#addMEcollapse" title="Click to add Main Event"><i class="icon icon-plus" float="center"></i> <strong>MAIN EVENT</strong></a> 
                                 
-                                <strong>Date Start:</strong><br />
-                                <div class="container">
-                                    <input type="date" id="demo" min="2023-04-25" class="form-control btn-block" required="true">
-                                </div>
-                                
-                                <strong>Date End:</strong><br />
-                                <div class="container">
-                                    <input type="date" id="demo" min="2023-04-25" class="form-control btn-block" required="true">
-                                </div>
-                                
-                                <strong>Time Start:</strong><br />
-                                <div class="container">
-                                    <input type="time" name="event_time" required="true" placeholder="hh:mm" class="form-control btn-block">
-                                </div>
-                                
-                                <strong>Venue:</strong><br />
-                                <textarea name="place" class="form-control btn-block" style="text-indent: 10px !important;" placeholder="Event Venue" required="true" rows="2"></textarea>
-                                <br />
-                                
-                                <div class="modal-footer">
-                                    <button title="Clear form" type="reset" class="btn btn-default"><i class="icon-ban-circle"></i> <strong>RESET</strong></button>
-                                    <button title="Click to save" name="create" type="submit" class="btn btn-primary"><i class="icon-ok"></i> <strong>SAVE</strong></button>
-                                </div>
-                            </form>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <button class="btn btn-info pull-right" data-toggle="collapse" data-target="#addMEcollapse" title="Click to add Main Event" style="margin-bottom: 20px !important;"><i class="icon icon-plus"></i> <strong>MAIN EVENT</strong></button>
-    </div>
+                            </td>
+                            </tr>
                             
                             
                             
