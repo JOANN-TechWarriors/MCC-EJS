@@ -16,106 +16,82 @@ $se_query = $conn->query("select * from sub_event where subevent_id = '$sub_even
 $se_row = $se_query->fetch();
      
   ?>
-  <head>
-<style>
-  body {
-            font-family: Arial, sans-serif;
-            background-color: #fff;
-            margin: 0;
-            padding: 0;
-        }
-
-        .sidebar-heading {
-            top: 100px;
-            text-align: center;
-            padding: 10px 0;
-            background-color: #555;
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-        .sidebar {
-            position: fixed;
-            top: 100;
-            left: 100;
-            height: 100%;
-            width: 250px;
-            background-color: #333;
-            color: #fff;
-            padding-top: 60px; /* Adjusted to match the height of the navbar */
-            overflow-y: auto; /* Enable scrolling if content exceeds height */
-        }
-
-        .sidebar ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .sidebar ul li {
-            padding: 10px;
-            border-bottom: 1px solid #555;
-        }
-
-        .sidebar ul li a {
-            color: #fff;
-            text-decoration: none;
-            display: block;
-        }
-
-        .sidebar ul li a:hover {
-            background-color: #555;
-        }
-
-        .main {
-            margin-left: 250px; /* Adjusted to match the width of the sidebar */
-            padding: 20px;
-        }
-        .content {
-      margin-left: 260px;
-      padding: 20px;
-    }
-
- /* Responsive adjustments */
- @media (max-width: 768px) {
-            .sidebar {
-                width: 100%; /* Full width on small screens */
-                height: auto;
-                position: relative;
-            }
-
-            .main {
-                margin-left: 0;
-            }
-        }
-</style>
-</head>
+  
  
 
  <body data-spy="scroll" data-target=".bs-docs-sidebar">
 
     <!-- Navbar
     ================================================== -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
         <div class="container">
-                      <div class="sidebar">
-    <br>
-    <br>
-    <ul>
-        <li><a href="dashboard.php">DASHBOARD</a></li>
-        <li><a href="home.php">ONGOING EVENTS</a></li>
-        <li><a href="upcoming_events.php">UPCOMING EVENTS</a></li>
-        <li><a href="score_sheets.php">SCORE SHEETS</a></li>
-        <li><a href="rev_main_event.php">DATA REVIEWS</a></li>
-        <li><a href="..//index.php">LOGOUT</a></li>
-    </ul>
-  </div>
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+            <a class="brand" href="#"><img src="uploads/<?php echo $company_logo; ?>" width="23" height="23" />&nbsp; <font size="3">Event Judging System</font></a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+
+             <li>
+                <a href="dashboard.php">DASHBOARD</a>
+              </li>
+               
+              
+
+                <li class="active">
+                <a href="home.php"><strong>ONGOING EVENTS</strong></a>
+              </li>
+              <li>
+                <a href="#">UPCOMING EVENTS</a>
+              </li>
+              <li>
+                <a href="score_sheets.php">SCORE SHEETS</a>
+              </li>
+              
+            
+               <li>
+                  <a href="rev_main_event.php">DATA REVIEWS</a>
+              </li>
  
-  <div class="main">
+              
+              
+              
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My Account <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+ 
+              
+              <li>
+                  <a target="_blank" href="edit_organizer.php">Settings</a>
+              </li>
+ 
+              <li>
+                <a href="logout.php">Logout <?php echo $name; ?></a>
+              </li>
+              
+              
+                    </ul>
+                    </li>
+          
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+ 
+<header class="jumbotron subhead" id="overview">
   <div class="container">
     <h1><?php echo $se_name; ?> Settings</h1>
     <p class="lead">Event Judging System</p>
   </div>
+</header>
 
-      </div >
+
+<div class="container">
 
 
 
@@ -139,8 +115,7 @@ $se_row = $se_query->fetch();
                     </ul>
                 </div>
                 
-                </div>
-           
+                
                 
 
 <form method="POST">
@@ -1015,7 +990,7 @@ else
     <script src="..//assets/js/bootstrap-affix.js"></script>
     <script src="..//assets/js/holder/holder.js"></script>
     <script src="..//assets/js/google-code-prettify/prettify.js"></script>
-    <script src="..//assets/js/application.js"></script>
+    <script src="../assets/js/application.js"></script>
     
   </body>
 </html>
