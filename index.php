@@ -267,7 +267,7 @@
                     <a href="admin/index.php">Organizer Login</a>
                     <a href="tabulator/index.php">Tabulator Login</a>
                     <a href="judge/welcome.php">Judge Login</a>
-                    <a href="#logout">Student Login</a>
+                    <a href="student/student_login.php">Student Login</a>
                 </div>
             </li>
         </ul>
