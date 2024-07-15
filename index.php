@@ -243,23 +243,6 @@
             background-color: #333;
             color:red;
         }
-        @keyframes popup {
-            0% {
-                transform: scale(0.8);
-                opacity: 0;
-            }
-            50% {
-                transform: scale(1.3);
-                opacity: 1;
-            }
-            100% {
-                transform: scale(3);
-            }
-        }
-
-        .popup-animation {
-            animation: popup 0.10s ease-in-out;
-        }
     </style>
 </head>
 <body>
@@ -557,23 +540,26 @@
            
    </div>
    <section>
-    <div class="container-fluid" style="background-color:#12100e;">
-        <div class="row">
-            <div class="col-md-12 p-5" id="about">
-                <div class="row popup-animation">
-                    <div class="col-md-4">
-                        <img src="img/updates.jpg" class="w-100">
-                    </div>
-                    <div class="col-md-6">
-                        <h3 style="color: #1153D0;">Happening Now!</h3>
-                        <p class="text-light" style="font-size: 13px;">
-                            The Guided Outsourcing Company and InfiNET Solutions are jointly hosting a seminar titled "VoIP Technology Basics," led by Mr. Jareth Mara, Technical Account Manager at InfiNET Solutions, and Mr. Chris Walters, VOIP Team Leader. The event is taking place at the Cisco Laboratory, Mabalacat City College, where students of BSIT 2A are being enlightened on the fundamental aspects of Voice over Internet Protocol (VoIP) technology.
-                        </p>
-                    </div>
+<div class="container-fluid " style="background-color:#12100e ;">
+	<div class="row">
+		 <div class="col-md-12 p-5" id="about">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="img/updates.jpg" class="w-100">
                 </div>
+
+                <div class="col-md-6">
+                    <h3  style="color:  #1153D0;">Happening Now!</h3>
+         
+             <p class="text-light" style="font-size: 13px;">
+The Guided Outsourcing Company and InfiNET Solutions are jointly hosting a seminar titled "VoIP Technology Basics," led by Mr. Jareth Mara, Technical Account Manager at InfiNET Solutions, and Mr. Chris Walters, VOIP Team Leader. The event is taking place at the Cisco Laboratory, Mabalacat City College, where students of BSIT 2A are being enlightened on the fundamental aspects of Voice over Internet Protocol (VoIP) technology</p>
+
+                </div>
+
+              
+                       
             </div>
         </div>
-    </div>
 </section>
 
 
