@@ -297,6 +297,273 @@
 </section>
 
 <br>
+<section id="room">
+<div class="p-3" id="candidates">
+    <h1 class="text-center" style="color: #1153D0; font-family: impact;">MISS IT 2023 CANDIDATES</h1><br>
+    <div class="row g-2">
+        <div class="col-lg-3 col-12 mb-3">
+            <div class="card shadow bg-dark text-light p-2">
+                <img src="img/mcc1.jpg">
+                <center>
+                    <h1 class="card-title room-type" style="color:#eca62d; font-size: 150%;">
+                        <a href="#" style="color:#eca62d; text-decoration: none;">Rona Liza Fernandez</a>
+                    </h1>
+                    <h4>3-East</h4>
+                    <p style="font-size:10px">
+                        <i class="bi bi-check-circle-fill" style="color: #cda45e;"></i> Ratings<br>
+                    </p>
+                </center>
+            </div>
+        </div>
+        <div class="col-lg-3 col-12 mb-3">
+            <div class="card shadow bg-dark text-light p-2">
+                <img src="img/mcc2.jpg">
+                <center>
+                    <h1 class="card-title room-type" style="color:#eca62d; font-size: 150%;">
+                        <a href="#" style="color:#eca62d; text-decoration: none;">Jasmine Carascal</a>
+                    </h1>
+                    <h4>3-North</h4>
+                    <p style="font-size:10px">
+                        <i class="bi bi-check-circle-fill" style="color: #cda45e;"></i> Ratings<br>
+                    </p>
+                </center>
+            </div>
+        </div>
+        <div class="col-lg-3 col-12 mb-3">
+            <div class="card shadow bg-dark text-light p-2">
+                <img src="img/mcc3.jpg">
+                <center>
+                    <h1 class="card-title room-type" style="color:#eca62d; font-size: 150%;">
+                        <a href="#" style="color:#eca62d; text-decoration: none;">Khrisna Mae Sacnahon</a>
+                    </h1>
+                    <h4>1-West</h4>
+                    <p style="font-size:10px">
+                        <i class="bi bi-check-circle-fill" style="color: #cda45e;"></i> Ratings<br>
+                    </p>
+                </center>
+            </div>
+        </div>
+   <div class="col-lg-3 col-12  mb-3" >
+       <div class="card shadow bg-dark text-light p-2">
+           <img src="img/mcc4.jpg">
+           <center>   <h1 class="card-title room-type" style="color:#eca62d; font-size: 150%;">
+            <a href="#" style="color:#eca62d; text-decoration: none;">Jhanna Joy Durias</a>
+            </h1>
+         
+           <h4>1-Southwest</h4>
+       
+           <p style="font-size:10px"><i class="bi bi-check-circle-fill" style="color:  #cda45e;"></i> Ratings<br>
+         
+               </p></center> 
+
+           </div>
+           
+   </div>
+    <div class="col-lg-3 col-12  mb-3" >
+       <div class="card shadow bg-dark text-light p-2">
+           <img src="img/mcc5.jpg">
+           <center>   <h1 class="card-title room-type" style="color:#eca62d; font-size: 150%;">
+            <a href="#" style="color:#eca62d; text-decoration: none;">Jimelyn Capuras</a>
+            </h1>
+                     
+           <h4>2-East</h4>
+       
+           <p style="font-size:10px"><i class="bi bi-check-circle-fill" style="color:  #cda45e;"></i> Ratings<br>
+         
+               </p></center>
+ 
+           </div>
+           
+   </div>
+   <div class="col-lg-3 col-12  mb-3" >
+       <div class="card shadow bg-dark text-light p-2">
+           <img src="img/mcc6.jpg">
+            <center>  <h1 class="card-title room-type" style="color:#eca62d; font-size: 150%;">
+            <a href="#" style="color:#eca62d; text-decoration: none;">Marjanny Alob</a>
+            </h1>
+           <h4>2-North</h4>
+       
+           <p style="font-size:10px"><i class="bi bi-check-circle-fill" style="color:  #cda45e;"></i> Ratings<br>
+         
+               </p></center>
+        
+
+           </div>
+           
+   </div>
+   <div class="col-lg-3 col-12  mb-3" >
+       <div class="card shadow bg-dark text-light p-2">
+           <img src="img/mcc7.jpg">
+            <center>  <h1 class="card-title room-type" style="color:#eca62d; font-size: 150%;">
+            <a href="#" style="color:#eca62d; text-decoration: none;">Renalyn Caracena</a>
+            </h1> 
+         
+           <h4>1-Northeast</h4>
+       
+           <p style="font-size:10px"><i class="bi bi-check-circle-fill" style="color:  #cda45e;"></i> Ratings<br>
+         
+               </p></center>    
+
+           </div>
+           
+   </div>
+   <div class="col-lg-3 col-12  mb-3" >
+       <div class="card shadow bg-dark text-light p-2">
+           <img src="img/mcc8.jpg">
+           <center>  <h1 class="card-title room-type" style="color:#eca62d; font-size: 150%;">
+            <a href="#" style="color:#eca62d; text-decoration: none;">Mercy Marie Diongson</a>
+            </h1> 
+         
+           <h4>1-Northwest</h4>
+       
+           <p style="font-size:10px"><i class="bi bi-check-circle-fill" style="color:  #cda45e;"></i> Ratings<br>
+         
+               </p></center>
+            
+
+           </div>
+           
+   </div>
+                                      
+   <div class="col-lg-3 col-12  mb-3" >
+       <div class="card shadow bg-dark text-light p-2">
+           <img src="img/mcc9.jpg">
+           <center>  <h1 class="card-title room-type" style="color:#eca62d; font-size: 150%;">
+            <a href="#" style="color:#eca62d; text-decoration: none;">Jessamen Ilustrisimo</a>
+            </h1> 
+         
+           <h4>2-West</h4>
+       
+           <p style="font-size:10px"><i class="bi bi-check-circle-fill" style="color:  #cda45e;"></i> Ratings<br>
+         
+               </p></center>
+ 
+           </div>
+           
+   </div>
+   <div class="col-lg-3 col-12  mb-3" >
+       <div class="card shadow bg-dark text-light p-2">
+           <img src="img/mcc10.jpg">
+            <center>  <h1 class="card-title room-type" style="color:#eca62d; font-size: 150%;">
+            <a href="#" style="color:#eca62d; text-decoration: none;">Kristine Mae Manggiran</a>
+            </h1> 
+         
+           <h4>1-North</h4>
+       
+           <p style="font-size:10px"><i class="bi bi-check-circle-fill" style="color:  #cda45e;"></i> Ratings<br>
+         
+               </p></center>
+        
+
+           </div>
+           
+   </div>
+   <div class="col-lg-3 col-12  mb-3" >
+       <div class="card shadow bg-dark text-light p-2">
+           <img src="img/mcc11.jpg">
+            <center>    <h1 class="card-title room-type" style="color:#eca62d; font-size: 150%;">
+            <a href="#" style="color:#eca62d; text-decoration: none;">Yvonne Crystal Vismanos</a>
+            </h1> 
+         
+           <h4>3-West</h4>
+       
+           <p style="font-size:10px"><i class="bi bi-check-circle-fill" style="color:  #cda45e;"></i> Ratings<br>
+         
+               </p></center>    
+
+           </div>
+           
+   </div>
+   <div class="col-lg-3 col-12  mb-3" >
+       <div class="card shadow bg-dark text-light p-2">
+           <img src="img/mcc12.jpg">
+           <center>  
+           <h1 class="card-title room-type" style="color:#eca62d; font-size: 150%;">
+            <a href="#" style="color:#eca62d; text-decoration: none;">Lyca Chavez</a>
+            </h1> 
+         
+           <h4>1-Southeast</h4>
+       
+           <p style="font-size:10px"><i class="bi bi-check-circle-fill" style="color:  #cda45e;"></i> Ratings<br>
+         
+               </p></center>
+            
+
+           </div>
+           
+   </div>
+   <div class="col-lg-3 col-12  mb-3" >
+       <div class="card shadow bg-dark text-light p-2">
+           <img src="img/mcc13.jpg">
+            <center>   <h1 class="card-title room-type" style="color:#eca62d; font-size: 150%;">
+            <a href="#" style="color:#eca62d; text-decoration: none;">Shanine Zaspa</a>
+            </h1> 
+         
+           <h4>3-South</h4>
+       
+           <p style="font-size:10px"><i class="bi bi-check-circle-fill" style="color:  #cda45e;"></i> Ratings<br>
+         
+               </p></center>
+        
+
+           </div>
+           
+   </div>
+   <div class="col-lg-3 col-12  mb-3" >
+       <div class="card shadow bg-dark text-light p-2">
+           <img src="img/mcc14.jpg">
+            <center>  <h1 class="card-title room-type" style="color:#eca62d; font-size: 150%;">
+            <a href="#" style="color:#eca62d; text-decoration: none;">Riza Ybanez Salinas</a>
+            </h1> 
+         
+           <h4>1-South</h4>
+       
+           <p style="font-size:10px"><i class="bi bi-check-circle-fill" style="color:  #cda45e;"></i> Ratings<br>
+         
+               </p></center>    
+
+           </div>
+           
+   </div>
+   <div class="col-lg-3 col-12  mb-3" >
+       <div class="card shadow bg-dark text-light p-2">
+           <img src="img/mcc15.jpg">
+           <center>  <h1 class="card-title room-type" style="color:#eca62d; font-size: 150%;">
+            <a href="#" style="color:#eca62d; text-decoration: none;">Rose Ann Forosuelo</a>
+            </h1> 
+         
+           <h4>1-East</h4>
+       
+           <p style="font-size:10px"><i class="bi bi-check-circle-fill" style="color:  #cda45e;"></i> Ratings<br>
+         
+               </p></center>
+            
+
+           </div>
+           
+   </div>
+   <section>
+<div class="container-fluid " style="background-color:#12100e ;">
+	<div class="row">
+		 <div class="col-md-12 p-5" id="about">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="img/updates.jpg" class="w-100">
+                </div>
+
+                <div class="col-md-6">
+                    <h3  style="color:  #1153D0;">Happening Now!</h3>
+         
+             <p class="text-light" style="font-size: 13px;">
+The Guided Outsourcing Company and InfiNET Solutions are jointly hosting a seminar titled "VoIP Technology Basics," led by Mr. Jareth Mara, Technical Account Manager at InfiNET Solutions, and Mr. Chris Walters, VOIP Team Leader. The event is taking place at the Cisco Laboratory, Mabalacat City College, where students of BSIT 2A are being enlightened on the fundamental aspects of Voice over Internet Protocol (VoIP) technology</p>
+
+                </div>
+
+              
+                       
+            </div>
+        </div>
+</section>
 
 
 </div>
@@ -348,6 +615,6 @@
 
 
     </footer>
-			</section>	
+			</section>		
 </body>
 </html>
