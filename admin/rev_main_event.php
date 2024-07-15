@@ -100,14 +100,12 @@
     </ul>
   </div>
     
-    
-<header class="jumbotron subhead" id="overview">
+   <!-- Subhead
+================================================== -->
+<div class="main"> 
   <div class="container">
     <h1>Data Reviews</h1>
-    <p class="lead">Event Judging System</p>
   </div>
-</header>
-    <div class="container">
     
     <br />
                 <div class="col-md-12">
@@ -212,7 +210,7 @@
  
           </div>
  
-
+  </div>
      
     
    <?php include('footer.php'); ?>
