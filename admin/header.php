@@ -6,11 +6,11 @@
     <meta name="description" content=""/>
     <meta name="author" content=""/>
     <link rel="shortcut icon" href="ejs_logo.png"/>
-    <title>MCC Event Judging System</title>
+    <title>Event Judging System</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-      <link href="assets/css/docs.css" rel="stylesheet"/>
+    <link href="..//includes/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+      <link href="..//assets/css/docs.css" rel="stylesheet"/>
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
