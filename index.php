@@ -266,8 +266,8 @@
                 <a href="#login">Login</a>
                 <div class="dropdown">
                     <a href="admin/index.php">Organizer Login</a>
-                    <a href="#settings">Tabulator Login</a>
-                    <a href="#dashboard">Judge Login</a>
+                    <a href="tabulator/index.php">Tabulator Login</a>
+                    <a href="judge/welcome.php">Judge Login</a>
                     <a href="#logout">Student Login</a>
                 </div>
             </li>
