@@ -27,9 +27,6 @@ include_once('header2.php');
 </style>
 
   <body>
-  
-    <!-- Subhead
- ================================================== -->
 <header class="jumbotron subhead" id="overview">
   <div class="container">
     <h1> MCC Event Judging System</h1>

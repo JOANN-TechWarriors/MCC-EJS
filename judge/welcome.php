@@ -9,9 +9,6 @@
   ?>
 
   <body>
-  
-    <!-- Subhead
- ================================================== -->
 <header class="jumbotron subhead" id="overview">
   <div class="container">
     <h1>Event Judging System</h1>
