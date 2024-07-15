@@ -101,7 +101,7 @@
         <li><a href="upcoming_events.php">UPCOMING EVENTS</a></li>
         <li><a href="score_sheets.php">SCORE SHEETS</a></li>
         <li><a href="rev_main_event.php">DATA REVIEWS</a></li>
-        <li><a href="index.php">LOGOUT</a></li>
+        <li><a href="..//index.php">LOGOUT</a></li>
     </ul>
   </div>
 

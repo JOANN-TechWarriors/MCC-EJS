@@ -157,7 +157,7 @@
                 <a href="rev_main_event.php">DATA REVIEWS</a>
             </li>
             <li>
-                <a href="index.php">LOGOUT</a>
+                <a href="..//index.php">LOGOUT</a>
             </li>
             
               
