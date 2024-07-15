@@ -245,20 +245,20 @@
         }
         @keyframes popup {
             0% {
-                transform: scale(0.5);
+                transform: scale(0.8);
                 opacity: 0;
             }
             50% {
-                transform: scale(1.1);
+                transform: scale(1.3);
                 opacity: 1;
             }
             100% {
-                transform: scale(1);
+                transform: scale(3);
             }
         }
 
         .popup-animation {
-            animation: popup 0.5s ease-in-out;
+            animation: popup 0.10s ease-in-out;
         }
     </style>
 </head>
