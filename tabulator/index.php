@@ -27,6 +27,19 @@ include_once('header2.php');
 </style>
 
   <body>
+   <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+
+
+
+        </div>
+      </div>
+    </div>
+    <!-- Subhead
+ ================================================== -->
 <header class="jumbotron subhead" id="overview">
   <div class="container">
     <h1> MCC Event Judging System</h1>

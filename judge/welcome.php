@@ -9,6 +9,19 @@
   ?>
 
   <body>
+   <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+        <ul class="nav">
+
+
+        </div>
+      </div>
+    </div>
+    <!-- Subhead
+ ================================================== -->
 <header class="jumbotron subhead" id="overview">
   <div class="container">
     <h1>Event Judging System</h1>
