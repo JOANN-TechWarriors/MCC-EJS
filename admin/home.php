@@ -219,8 +219,7 @@
                                  
                                 
                                  
-                                 <div class="container">
-        <table align="center" class="table table-bordered cp" id="example">
+                                 <table align="center" class="table table-bordered cp" id="example">
             <thead>
                 <tr>
                     <th>
