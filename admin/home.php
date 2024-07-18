@@ -841,7 +841,8 @@ $MECtr = $MEctrQuery->rowCount();  ?>
                                         <strong>Date Start:</strong><br /> 
                                         <div class="container">
                                          
-                                         <input type="date" id="demo" min="2022-12-12" class="form-control btn-block" required="true">
+                                         <input type="date" id="demo"  class="form-control btn-block" min="<?php echo date('Y-m-d'); ?>" required="true">
+                                         <!-- /<input type="date" class="form-control" name="fromdate" id="fromdate" min="->
 
                                          </div>
                                         <strong>Date End:</strong><br /> 
