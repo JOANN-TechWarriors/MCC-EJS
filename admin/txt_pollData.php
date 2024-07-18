@@ -5,13 +5,18 @@
    <?php
    include('header.php');
     include('session.php');
-    $active_sub_event=$_GET['side'];
+    if (isset($_GET['sid'])) {
+      $active_sub_event = $_GET['sid'];
+  } else {
+      // Handle the case when 'sid' is not set
+      $active_sub_event = null; // or set to a default value
+      echo "<script>alert('Warning: Undefined array key \"sid\"');</script>";
+  }
+  
   error_reporting(0);
-    ?>
-
+  ?>
+  
   <body data-spy="scroll" data-target=".bs-docs-sidebar">
- 
-  <div class="container">
 
     <!-- Docs nav
     ================================================== -->
