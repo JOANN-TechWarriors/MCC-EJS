@@ -7,84 +7,85 @@
 <html>
 <head>
   <title>Event Calendar</title>
-  <link href="../assets/fullcalendar/main.css" rel="stylesheet">
+  <link href="..//assets/fullcalendar/main.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script type="text/javascript" src="../assets/fullcalendar/main.js"></script>
+  <script type="text/javascript" src="..//assets/fullcalendar/main.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
-  <script src="../assets/fullcalendar/moment.js"></script>
+  <script src="..//assets/fullcalendar/moment.js"></script>
   <style>
+    
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
 
-    .sidebar-heading {
-      top: 100px;
-      text-align: center;
-      padding: 10px 0;
-      background-color: #555;
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
+        .sidebar-heading {
+            top: 100px;
+            text-align: center;
+            padding: 10px 0;
+            background-color: #555;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .sidebar {
+            position: fixed;
+            top: 100;
+            left: 100;
+            height: 100%;
+            width: 250px;
+            background-color: #333;
+            color: #fff;
+            padding-top: 60px; /* Adjusted to match the height of the navbar */
+            overflow-y: auto; /* Enable scrolling if content exceeds height */
+        }
 
-    .sidebar {
-      position: fixed;
-      top: 100px;
-      left: 0;
-      height: 100%;
-      width: 250px;
-      background-color: #333;
-      color: #fff;
-      padding-top: 60px; /* Adjusted to match the height of the navbar */
-      overflow-y: auto; /* Enable scrolling if content exceeds height */
-    }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
 
-    .sidebar ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-    }
+        .sidebar ul li {
+            padding: 10px;
+            border-bottom: 1px solid #555;
+        }
 
-    .sidebar ul li {
-      padding: 10px;
-      border-bottom: 1px solid #555;
-    }
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+        }
 
-    .sidebar ul li a {
-      color: #fff;
-      text-decoration: none;
-      display: block;
-    }
+        .sidebar ul li a:hover {
+            background-color: #555;
+        }
 
-    .sidebar ul li a:hover {
-      background-color: #555;
-    }
-
-    .content {
+        .main {
+            margin-left: 250px; /* Adjusted to match the width of the sidebar */
+            padding: 20px;
+        }
+        .content {
       margin-left: 260px;
       padding: 20px;
     }
 
-    #calendar {
-      max-width: 900px;
-      margin: 0 auto;
-    }
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%; /* Full width on small screens */
+                height: auto;
+                position: relative;
+            }
 
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      .sidebar {
-        width: 100%; /* Full width on small screens */
-        height: auto;
-        position: relative;
-      }
+            .main {
+                margin-left: 0;
+            }
+        }
 
-      .content {
-        margin-left: 0;
-      }
-    }
+    
   </style>
 </head>
 <body>
@@ -100,7 +101,7 @@
         <li><a href="upcoming_events.php">UPCOMING EVENTS</a></li>
         <li><a href="score_sheets.php">SCORE SHEETS</a></li>
         <li><a href="rev_main_event.php">DATA REVIEWS</a></li>
-        <li><a href="../index.php">LOGOUT</a></li>
+        <li><a href="..//index.php">LOGOUT</a></li>
     </ul>
   </div>
 
@@ -187,7 +188,7 @@
     var calendar;
 
     document.addEventListener('DOMContentLoaded', function() {
-      calendar = new FullCalendar.Calendar(calendarEl, {
+      calendar = new FullCalendar.Calendar(calendarEl, 
         headerToolbar: {
           left: 'prev,next today',
           center: 'title',
@@ -201,7 +202,6 @@
         selectConstraint: { // Constraint for date selection
           start: new Date().toISOString().slice(0, 10), // Today's date
           end: null // No end date (allow future dates)
-        },
         nowIndicator: true,
         dayMaxEvents: true,
         events: 'get-events.php',
@@ -297,9 +297,39 @@
       calendar.render();
     });
 
-    function datetimeLocal(dateTimeStr) {
-      return moment(dateTimeStr).format('YYYY-MM-DDTHH:mm');
+    $('#addEventButton').on('click', function() {
+      var title = $('#eventTitle').val();
+      var start = $('#eventStart').val();
+      var end = $('#eventEnd').val();
+      if (title && start && end) {
+        var eventData = {
+          title: title,
+          start: start,
+          end: end
+        };
+        $.ajax({
+          url: 'add-event.php',
+          type: 'POST',
+          data: eventData,
+          success: function(data) {
+            calendar.refetchEvents();
+            $('#addEventModal').modal('hide');
+            $('#eventTitle').val('');
+            $('#eventStart').val('');
+            $('#eventEnd').val('');
+          }
+        });
+      } else {
+        alert('Please fill all required fields');
+      }
+    });
+
+    function datetimeLocal(datetime) {
+      const dt = new Date(datetime);
+      dt.setMinutes(dt.getMinutes() - dt.getTimezoneOffset());
+      return dt.toISOString().slice(0, 16);
     }
   </script>
+
 </body>
 </html>
