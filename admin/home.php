@@ -760,14 +760,14 @@ $MECtr = $MEctrQuery->rowCount();  ?>
 <strong>Date Start</strong>:<br />
 <div class="container">
    
-   <input type="date" id="demo" min="2023-04-25" class="form-control btn-block" required="true">
+   <input type="date" id="demo" min="<?php echo date('Y-m-d'); ?>" class="form-control btn-block" required="true">
 
    </div>
 
    <strong>Date End</strong>:<br />
 <div class="container">
    
-   <input type="date" id="demo" min="2023-04-25" class="form-control btn-block" required="true">
+   <input type="date" id="demo" min="<?php echo date('Y-m-d'); ?>" class="form-control btn-block" required="true">
 
    </div>
 
