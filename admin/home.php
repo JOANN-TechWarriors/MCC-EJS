@@ -213,7 +213,8 @@
                             
                            
                             
-                            <div id="addMEcollapse" class="panel-collapse collapse">   
+                            <div id="addMEcollapse" class="panel-collapse collapse">
+                                   
                                     
                                  <form method="POST">
                                  
