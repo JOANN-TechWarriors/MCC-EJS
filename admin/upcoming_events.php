@@ -296,7 +296,15 @@
         }
       });
       calendar.render();
+
+      var currentDateTime = new Date().toISOString().slice(0, 16);
+      $('#eventStart').attr('min', currentDateTime);
+      $('#eventEnd').attr('min', currentDateTime);
+      $('#updateeventStart').attr('min', currentDateTime);
+      $('#updateeventEnd').attr('min', currentDateTime);
     });
+
+  
 
     $('#addEventButton').on('click', function() {
       var title = $('#eventTitle').val();
@@ -323,19 +331,12 @@
       } else {
         alert('Please fill all required fields');
       }
-    
-    var currentDateTime = new Date().toISOString().slice(0, 16);
-      $('#eventStart').attr('min', currentDateTime);
-      $('#eventEnd').attr('min', currentDateTime);
-      $('#updateeventStart').attr('min', currentDateTime);
-      $('#updateeventEnd').attr('min', currentDateTime);
+
     });
 
 
-    function datetimeLocal(datetime) {
-      const dt = new Date(datetime);
-      dt.setMinutes(dt.getMinutes() - dt.getTimezoneOffset());
-      return dt.toISOString().slice(0, 16);
+    function datetimeLocal(dateTimeStr) {
+      return moment(dateTimeStr).format('YYYY-MM-DDTHH:mm');
     }
   </script>
 
