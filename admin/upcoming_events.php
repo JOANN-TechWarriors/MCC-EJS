@@ -188,7 +188,7 @@
     var calendar;
 
     document.addEventListener('DOMContentLoaded', function() {
-      calendar = new FullCalendar.Calendar(calendarEl, 
+      calendar = new FullCalendar.Calendar(calendarEl, {
         headerToolbar: {
           left: 'prev,next today',
           center: 'title',
