@@ -323,7 +323,14 @@
       } else {
         alert('Please fill all required fields');
       }
+    
+    var currentDateTime = new Date().toISOString().slice(0, 16);
+      $('#eventStart').attr('min', currentDateTime);
+      $('#eventEnd').attr('min', currentDateTime);
+      $('#updateeventStart').attr('min', currentDateTime);
+      $('#updateeventEnd').attr('min', currentDateTime);
     });
+
 
     function datetimeLocal(datetime) {
       const dt = new Date(datetime);
