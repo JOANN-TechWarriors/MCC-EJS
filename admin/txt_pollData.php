@@ -5,7 +5,7 @@
    <?php
    include('header.php');
     include('session.php');
-    $active_sub_event=$_GET['sid'];
+    $active_sub_event=$_GET['side'];
   error_reporting(0);
     ?>
 
