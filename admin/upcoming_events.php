@@ -198,10 +198,11 @@
         weekNumbers: true,
         navLinks: true,
         editable: true,
-        selectable: true, // Enable date selection
-        selectConstraint: { // Constraint for date selection
-          start: new Date().toISOString().slice(0, 10), // Today's date
-          end: null // No end date (allow future dates)
+        selectable:true,
+        selectConstraint:{
+          start:new Date().toISOString().slice(0,10),
+          end:null
+        },
         nowIndicator: true,
         dayMaxEvents: true,
         events: 'get-events.php',
