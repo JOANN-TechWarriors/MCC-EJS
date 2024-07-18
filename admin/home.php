@@ -246,13 +246,13 @@
                                   <strong>Date Start:</strong><br />
                                   <div class="container">
                                          
-                                         <input type="date" id="demo" min="<?php echo date('Y-m-d'); ?>" class="form-control btn-block" required="true">
+                                         <input type="date" id="demo" min="2023-04-25" class="form-control btn-block" required="true">
 
                                          </div>
                                   <strong>Date End:</strong><br />
                                   <div class="container">
                                          
-                                         <input type="date" id="demo" min="<?php echo date('Y-m-d'); ?>" class="form-control btn-block" required="true">
+                                         <input type="date" id="demo" min="2023-04-25" class="form-control btn-block" required="true">
 
                                          </div>
                                   <strong>Time Start:</strong><br />
@@ -760,14 +760,14 @@ $MECtr = $MEctrQuery->rowCount();  ?>
 <strong>Date Start</strong>:<br />
 <div class="container">
    
-   <input type="date" id="demo" min="<?php echo date('Y-m-d'); ?>" class="form-control btn-block" required="true">
+   <input type="date" id="demo" min="2023-04-25" class="form-control btn-block" required="true">
 
    </div>
 
    <strong>Date End</strong>:<br />
 <div class="container">
    
-   <input type="date" id="demo" min="<?php echo date('Y-m-d'); ?>" class="form-control btn-block" required="true">
+   <input type="date" id="demo" min="2023-04-25" class="form-control btn-block" required="true">
 
    </div>
 
@@ -841,8 +841,7 @@ $MECtr = $MEctrQuery->rowCount();  ?>
                                         <strong>Date Start:</strong><br /> 
                                         <div class="container">
                                          
-                                         <input type="date" id="demo"  class="form-control btn-block" min="<?php echo date('Y-m-d'); ?>" required="true">
-                                         <!-- /<input type="date" class="form-control" name="fromdate" id="fromdate" min="->
+                                         <input type="date" id="demo" min="2022-12-12" class="form-control btn-block" required="true">
 
                                          </div>
                                         <strong>Date End:</strong><br /> 
