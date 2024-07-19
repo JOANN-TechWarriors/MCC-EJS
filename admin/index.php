@@ -57,7 +57,7 @@ include_once('header2.php');
   <h5><i class="icon-lock"></i>  PASSWORD:</h5>
   <input style="font-size: large; height: 35px !important; text-indent: 7px !important;" class="form-control btn-block" type="password"  name="password" placeholder="Password" required="true" />
 <br /><strong><a data-toggle="modal" data-target="#forgot-password-modal">Forgot password?</a></strong><br />
-<h6>if you have no account, pls</h6>
+<h6>If you have no account, pls</h6>
   <button style="width: 160px !important;" type="submit" class="btn btn-primary pull-right"><i class="icon-ok"></i> <strong>LOGIN</strong></button>
   
   <strong>Register <a href="create_account.php">here &raquo;</a></strong> &nbsp;&nbsp;&nbsp;<br><br>
@@ -77,7 +77,7 @@ include_once('header2.php');
         </button>
       </div>
       <div class="modal-body">
-        <form action="forgot_password.php" method="post" autocomplete="off">
+        <form id="forgot-password-form" action="forgot_password.php" method="post" autocomplete="off">
           <div class="form-group">
             <label for="email">Email address:</label>
             <input type="email" class="form-control" id="email" name="email" required>
