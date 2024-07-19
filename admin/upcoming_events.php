@@ -15,130 +15,143 @@
   <script src="..//assets/fullcalendar/moment.js"></script>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    .sidebar-heading {
+        text-align: center;
+        padding: 10px 0;
+        background-color: #555;
+        font-size: 18px;
+        margin-bottom: 10px;
     }
 
     .sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 250px;
-      background-color: #333;
-      color: #fff;
-      padding-top: 60px; /* Adjusted to match the height of the navbar */
-      overflow-y: auto; /* Enable scrolling if content exceeds height */
-      transition: width 0.3s; /* Smooth width transition */
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 250px;
+        background-color: #333;
+        color: #fff;
+        padding-top: 60px;
+        overflow-y: auto;
+        transition: width 0.3s;
     }
 
     .sidebar.minimized {
-      width: 80px;
+        width: 80px;
     }
 
     .sidebar ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
     }
 
     .sidebar ul li {
-      padding: 10px;
-      border-bottom: 1px solid #555;
+        padding: 10px;
+        border-bottom: 1px solid #555;
     }
 
     .sidebar ul li a {
-      color: #fff;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
+        color: #fff;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+    }
+
+    .sidebar ul li a i {
+        margin-right: 10px;
     }
 
     .sidebar ul li a span {
-      margin-left: 10px;
-      transition: opacity 0.3s;
+        display: inline-block;
+        transition: opacity 0.3s;
     }
 
     .sidebar.minimized ul li a span {
-      opacity: 0;
+        opacity: 0;
     }
 
     .sidebar ul li a:hover {
-      background-color: #555;
+        background-color: #555;
     }
 
-    .logo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 20px;
+    .main {
+        margin-left: 250px;
+        padding: 20px;
+        transition: margin-left 0.3s;
     }
 
-    .logo img {
-      max-width: 100px;
-    }
-
-    .content {
-      margin-left: 250px; /* Adjusted to match the width of the sidebar */
-      padding: 20px;
-      transition: margin-left 0.3s; /* Smooth margin-left transition */
-    }
-
-    .content.minimized {
-      margin-left: 80px;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      .sidebar {
-        width: 100%; /* Full width on small screens */
-        height: auto;
-        position: relative;
-      }
-
-      .content {
-        margin-left: 0;
-      }
+    .main.minimized {
+        margin-left: 80px;
     }
 
     .toggle-btn {
-      position: fixed;
-      top: 20px;
-      left: 220px;
-      background-color: #333;
-      color: #fff;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-      transition: left 0.3s; /* Smooth left transition */
-      z-index: 1000; /* Ensure button is on top of other elements */
+        position: fixed;
+        top: 20px;
+        left: 220px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        transition: left 0.3s;
     }
 
     .toggle-btn.minimized {
-      left: 50px;
+        left: 50px;
     }
-  </style>
+
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .logo img {
+        max-width: 100px;
+    }
+
+    @media (max-width: 768px) {
+        .sidebar {
+            width: 100%;
+            height: auto;
+            position: relative;
+        }
+
+        .main {
+            margin-left: 0;
+        }
+
+        .toggle-btn {
+            left: 90;
+        }
+    }
+</style>
 </head>
 <body>
-
 <!-- Sidebar -->
 <div class="sidebar" id="sidebar">
-  <button class="toggle-btn" id="toggle-btn">☰</button>
-  <div class="logo">
-    <img src="../assets/img/mcc_logo.png" alt="Event Judging System Logo">
-  </div>
-  
-  <ul>
-    <li><a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> <span>DASHBOARD</span></a></li>
-    <li><a href="home.php"><i class="fas fa-calendar-check"></i> <span>ONGOING EVENTS</span></a></li>
-    <li><a href="upcoming_events.php"><i class="fas fa-calendar-alt"></i> <span>UPCOMING EVENTS</span></a></li>
-    <li><a href="score_sheets.php"><i class="fas fa-clipboard-list"></i> <span>SCORE SHEETS</span></a></li>
-    <li><a href="rev_main_event.php"><i class="fas fa-chart-line"></i> <span>DATA REVIEWS</span></a></li>
-    <li><a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> <span>LOGOUT</span></a></li>
-  </ul>
-
+    <button class="toggle-btn" id="toggle-btn">☰</button>
+    <div class="logo">
+        <img src="../assets/img/mcc_logo.png" alt="Event Judging System Logo">
+    </div>
+    
+    <ul>
+        <li><a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> <span>DASHBOARD</span></a></li>
+        <li><a href="home.php"><i class="fas fa-calendar-check"></i> <span>ONGOING EVENTS</span></a></li>
+        <li><a href="upcoming_events.php"><i class="fas fa-calendar-alt"></i> <span>UPCOMING EVENTS</span></a></li>
+        <li><a href="score_sheets.php"><i class="fas fa-clipboard-list"></i> <span>SCORE SHEETS</span></a></li>
+        <li><a href="rev_main_event.php"><i class="fas fa-chart-line"></i> <span>DATA REVIEWS</span></a></li>
+        <li><a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> <span>LOGOUT</span></a></li>
+    </ul>
+</div>>
 
   <div class="content">
     <div class="container">
