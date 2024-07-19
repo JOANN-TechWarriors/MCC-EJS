@@ -126,13 +126,13 @@
     
    <input name="fullname" placeholder="Enter Name" type="text" class="form-control" required="true" /></td>
    </tr>
-  
+   <input name="addon" placeholder="Enter Name" type="text" class="form-control" required="true" /></td>
+
    
    <td>
-   <a href="#" style="float: right" onclick="$('.addon').show();return false;">+ Add On</a>
-   <input type="text" placeholder="Addon" class="addon" name="addon1" value="" id="addon1" />
+   
     <strong>Upload Photo:</strong> <br />
-    <input type="file" name="image">
+    <input type="file" name="picture">
    <div id="wrapper">
        <!specify the encoding type of the form using the enctype attribute >
                  
@@ -170,14 +170,15 @@ if(isset($_POST['add_contestant']))
     $contestant_ctr=$_POST['contestant_ctr'];
     $picture=$_POST['picture'];
     $fullname=$_POST['fullname'];
-    $image=$_FILES['image']['name'];
-    $target = 'img/'.basename($image);
+    $course=$_POST['addon'];
+    $picture=$_FILES['picture']['name'];
+    $target = 'img/'.basename($picture);
     
   
    /* contestants */
    
-    $conn->query("insert into contestants(fullname,subevent_id,contestant_ctr,picture)VALUES('$fullname','$sub_event_id','$contestant_ctr','$image')");
-   move_uploaded_file($_FILES['image']['tmp_name'],$target);
+    $conn->query("insert into contestants(fullname,subevent_id,contestant_ctr,picture, AddOn)VALUES('$fullname','$sub_event_id','$contestant_ctr','$picture', '$course' )");
+   move_uploaded_file($_FILES['picture']['tmp_name'],$target);
   
  ?>
 <script>

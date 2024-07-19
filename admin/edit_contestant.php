@@ -33,7 +33,7 @@
 </header>
     <div class="container">
 
-   <form method="POST">
+   <form method="POST" enctype="multipart/form-data">
     <input value="<?php echo $sub_event_id; ?>" name="sub_event_id" type="hidden" />
  <input value="<?php echo $se_name; ?>" name="se_name" type="hidden" />
  <input value="<?php echo $contestant_id; ?>" name="contestant_id" type="hidden" />
@@ -67,30 +67,7 @@
    <select name="contestant_ctr" class="form-control">
    <option><?php echo $cont_row['contestant_ctr']; ?></option>
    
-                    <?php 
                     
-                    $n1=0;
-                    
-                    while($n1<12)
-                    { 
-                        $n1++;
-                     
-                    
-                    $cont_query = $conn->query("SELECT * FROM contestants WHERE contestant_ctr='$n1' AND subevent_id='$sub_event_id'") or die(mysql_error());
-                   
-            
-                    if($cont_query->rowCount()>0)
-                    {
-                        
-                    }
-                    else
-                    {
-                        echo "<option>".$n1."</option>";
-                    }
-                      
-                    } 
-                    
-                    ?>
  
    </select></td>
    <td>&nbsp;</td>
@@ -98,10 +75,11 @@
     Contestant Fullname <br />
    <input name="fullname" type="text" class="form-control" value="<?php echo $cont_row['fullname']; ?>" /></td>
    </tr>
+   <input name="addon" type="text" class="form-control" value="<?php echo $cont_row['AddOn']; ?>" /></td>
 
    <td>
     <strong>Upload Photo:</strong> <br />
-    <input type="file" name="image">
+    <input type="file" name="picture" value="<?php echo $cont_row['Picture']; ?>">
    <div id="wrapper">
    <!specify the encoding type of the form using the enctype attribute >
    
@@ -128,38 +106,45 @@
           </div>
           
           
-<?php 
-
+          <?php
 if(isset($_POST['edit_contestant']))
 {
+
+  $se_name = $_POST['se_name'];
+  $sub_event_id = $_POST['sub_event_id'];
+  $contestant_id = $_POST['contestant_id'];
+  $contestant_ctr = $_POST['contestant_ctr'];
+  $course = $_POST['addon'];
+  $fullname = $_POST['fullname'];
+  
+  // File upload handling
+  $picture = $_FILES['picture']['name'];
+  
+  if (!empty($picture)) {
+      $target = 'img/' . basename($picture);
+      move_uploaded_file($_FILES['picture']['tmp_name'], $target);
+  
+      // SQL update statement with picture
+      $sql = "UPDATE contestants SET fullname='$fullname', contestant_ctr='$contestant_ctr', Picture='$picture', AddOn='$course' WHERE contestant_id='$contestant_id'";
+  } else {
+      // SQL update statement without picture
+      $sql = "UPDATE contestants SET fullname='$fullname', contestant_ctr='$contestant_ctr', AddOn='$course' WHERE contestant_id='$contestant_id'";
+  }
+  
+  $conn->query($sql);
+  
     
-    $se_name=$_POST['se_name'];
-    $sub_event_id=$_POST['sub_event_id'];
-    $contestant_id=$_POST['contestant_id'];
-    $contestant_ctr=$_POST['contestant_ctr'];
-     $fullname=$_POST['fullname'];
-     $image=$_FILES['image']['name'];
-    $target = 'img/'.basename($image);
-  
-   /* contestants */
-   
-    $conn->query("update contestants set fullname='$fullname',contestant_ctr='$contestant_ctr '$image'where contestant_id='$contestant_id',')");
-    move_uploaded_file($_FILES['image']['tmp_name'],$target);
-   
-  
- ?>
-<script>
-			                                      
-			      								window.location = 'sub_event_details_edit.php?sub_event_id=<?php echo $sub_event_id;?>&se_name=<?php echo $se_name;?>';
-			      							   	alert('Contestant <?php echo $fullname; ?> updated successfully!');						
-			      								</script>
-<?php  
- 
- 
-} ?>
+    // Redirect and alert
+    echo "<script>
+            alert('Contestant $fullname updated successfully!');
+            window.location = 'sub_event_details_edit.php?sub_event_id=$sub_event_id&se_name=$se_name';
+          </script>";
+}
+?>
+
   
   
-<?php include('footer.php'); ?>
+<?php include("footer.php") ?>
 
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
