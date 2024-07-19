@@ -13,6 +13,7 @@
   <script type="text/javascript" src="..//assets/fullcalendar/main.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
   <script src="..//assets/fullcalendar/moment.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     body {
         font-family: Arial, sans-serif;
