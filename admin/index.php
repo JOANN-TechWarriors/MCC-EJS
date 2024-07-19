@@ -1,8 +1,11 @@
-<?php 
-session_start();
-include('dbcon.php');
-date_default_timezone_set('Asia/Manila'); 
-?>
+ 
+
+ <?php 
+    
+    include('dbcon.php');
+    date_default_timezone_set('Asia/Manila'); 
+    
+    ?>
 <!DOCTYPE html>
 <html lang="en">
   
@@ -29,6 +32,9 @@ include_once('header2.php');
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
+
+
+
         </div>
       </div>
     </div>
@@ -36,11 +42,104 @@ include_once('header2.php');
  ================================================== -->
 <header class="jumbotron subhead" id="overview">
   <div class="container">
-    <h1 style="font-size: 30px;"> MCC Event Judging System</h1>
-    <p class="lead" style="font-size: 20px;">Ready to serve you...</p>
+    <h1> MCC Event Judging System</h1>
+    <p class="lead">Ready to serve you...</p>
   </div>
 </header>
 
+
+<div class="modal fade" id="uni_modal" role='dialog'>
+    <div class="modal-dialog modal-md" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title"></h5>
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id='submit' onclick="$('#uni_modal form').submit()">Save</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+      </div>
+      </div>
+    </div>
+  </div>
+
+
+    <div class="container">
+    
+      
+      
+    <!-- About EJS Modal -->
+    <div class="modal fade" id="about-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="Login">About MCC Event Judging System</h4>
+                    </div>
+                    <div class="modal-body">
+                    
+                    <table align="center">
+                    
+                    <tr>
+                                  
+                    </tr>
+                    
+                    <tr>
+                    <td>&nbsp;</td>
+                    </tr>
+                    
+                    <tr>
+                    <td align="right">Developer:</td>
+                    <td><strong> Christian Paul L. Salvado</strong> - Software and Web Developer</td>
+                    </tr>
+      
+                    
+                    <tr>
+                    <td>&nbsp;</td>
+                    </tr>
+                    
+                    <tr>
+                    <td align="right">Email:</td>
+                    <td><strong> salvadochristianpaul5@gmail.com</strong></td>
+                    </tr>
+                    
+                    <tr>
+                    <td>&nbsp;</td>
+                    </tr>
+                    
+                    <tr>
+                    <td align="right">Mobile Number:</td>
+                    <td><strong> +639385974999</strong></td>
+                    </tr>
+                    
+                    <tr>
+                    <td>&nbsp;</td>
+                    </tr>
+                    
+                    <tr>
+                    <td align="right">Website:</td>
+                    <td><a href="www.bee4ten.ml" target="_blank"><strong> www.bee4ten.ml</strong></a></td>
+                    </tr>
+        
+                    </table>
+                    
+           
+                    <br />
+                    <p>Check my website or get in touch with me for more informations and system supports. All rights reserved 2023 &COPY;</p>
+
+                        <hr />
+                        <p class="text-center text-muted"><button class="btn btn-default" data-dismiss="modal" aria-hidden="true"><strong>Close</strong></button></p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END About EJS Modal -->
+        
+        
+              
    <form method="POST" action="login.php" >
  <br />  
  <table cellpadding="10" cellspacing="0" border="0" align="center">
@@ -51,11 +150,13 @@ include_once('header2.php');
  <tr style="background-color: #d7def2;">
  
  <td>
+ 
+ 
   <h5><i class="icon-user"></i>  USERNAME:</h5>
   <input style="font-size: large; height: 35px !important; text-indent: 7px !important;" class="form-control btn-block" type="text" name="username" placeholder="Username" required="true" autofocus="true" />
  
-  <h5><i class="icon-lock"></i>  PASSWORD:</h5>
-  <input style="font-size: large; height: 35px !important; text-indent: 7px !important;" class="form-control btn-block" type="password"  name="password" placeholder="Password" required="true" />
+ <h5><i class="icon-lock"></i>  PASSWORD:</h5>
+  <input style="font-size: large; height: 35px !important; text-indent: 7px !important;" class="form-control btn-block" type="password"  name="password" placeholder="Password" required="true" autofocus="true" />
 <br /><strong><a data-toggle="modal" data-target="#forgot-password-modal">Forgot password?</a></strong><br />
 <h6>if you have no account, pls</h6>
   <button style="width: 160px !important;" type="submit" class="btn btn-primary pull-right"><i class="icon-ok"></i> <strong>LOGIN</strong></button>
@@ -64,8 +165,11 @@ include_once('header2.php');
   
  </td>
  </tr>
+ 
+ 
  </table>
- </form>
+ 
+   </form>
    
    <div class="modal fade" id="forgot-password-modal" tabindex="-1" role="dialog" aria-labelledby="forgot-password-modal-label" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -89,12 +193,36 @@ include_once('header2.php');
   </div>
 </div>
 
-<?php include("footer.php") ?>
+<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" style="display: none;">
+    <div class="toast-header">
+        <strong class="toast-title">Title</strong>
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="toast-body">
+        Body
+    </div>
+</div>
+
+
+
+
+    <!-- Footer
+    ================================================== -->
+    <footer class="footer">
+      <div class="container">
+      
+        <font size="2" class="" align="center"><strong>Event Judging System &middot; 2023 &COPY; </strong></font> <br />
+        
+      </div>
+    </footer>
 
 
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+ 
     <script src="..//assets/js/jquery.js"></script>
     <script src="..//assets/js/bootstrap-transition.js"></script>
     <script src="..//assets/js/bootstrap-alert.js"></script>
@@ -112,65 +240,49 @@ include_once('header2.php');
     <script src="..//assets/js/holder/holder.js"></script>
     <script src="..//assets/js/google-code-prettify/prettify.js"></script>
     <script src="..//assets/js/application.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-      window.onload = function() {
-          <?php if(isset($_SESSION['login_success']) && $_SESSION['login_success'] == true): ?>
-          Swal.fire({
-              title: "Success!",
-              text: "You are Successfully logged in!",
-              icon: "success"
-          }).then((result) => {
-              if (result.isConfirmed) {
-                  window.location.href = "dashboard.php";
-              }
-          });
-          <?php 
-            unset($_SESSION['login_success']);
-            endif; 
-          ?>
-      };
-
-      window.uni_modal = function($title = '' , $url='',$size=""){
-          start_load()
-          $.ajax({
-              url:$url,
-              error:err=>{
-                  console.log()
-                  alert("An error occurred")
-              },
-              success:function(resp){
-                  if(resp){
-                      $('#uni_modal .modal-title').html($title)
-                      $('#uni_modal .modal-body').html(resp)
-                      if($size != ''){
-                          $('#uni_modal .modal-dialog').addClass($size)
-                      }else{
-                          $('#uni_modal .modal-dialog').removeAttr("class").addClass("modal-dialog modal-md")
-                      }
-                      $('#uni_modal').modal({
-                        show:true,
-                        backdrop:'static',
-                        keyboard:false,
-                        focus:true
-                      })
-                      end_load()
-                  }
-              }
-          })
-      }
-
-      function clearEmail() {
-        document.getElementById("forgot-password-form").reset();
-      }
-
-      // Hide the alert after 3 seconds
-      setTimeout(function(){
-        var alert = document.querySelector('.alert');
-        if (alert) {
-          alert.style.display = 'none';
+       window.uni_modal = function($title = '' , $url='',$size=""){
+    start_load()
+    $.ajax({
+        url:$url,
+        error:err=>{
+            console.log()
+            alert("An error occured")
+        },
+        success:function(resp){
+            if(resp){
+                $('#uni_modal .modal-title').html($title)
+                $('#uni_modal .modal-body').html(resp)
+                if($size != ''){
+                    $('#uni_modal .modal-dialog').addClass($size)
+                }else{
+                    $('#uni_modal .modal-dialog').removeAttr("class").addClass("modal-dialog modal-md")
+                }
+                $('#uni_modal').modal({
+                  show:true,
+                  backdrop:'static',
+                  keyboard:false,
+                  focus:true
+                })
+                end_load()
+            }
         }
-      }, 3000);
+    })
+}
+
+function clearEmail() {
+  document.getElementById("forgot-password-form").reset();
+}
+
+    // Hide the alert after 3 seconds
+    setTimeout(function(){
+      var alert = document.querySelector('.alert');
+      if (alert) {
+        alert.style.display = 'none';
+      }
+    }, 3000);
+
     </script>
+    
   </body>
 </html>
