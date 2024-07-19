@@ -154,7 +154,7 @@
 
 <!-- Subhead
 ================================================== -->
-<div class="main">
+<div class="main" id="main">
 <div class="container">
     <h1> Ongoing Events</h1>
       </div>
