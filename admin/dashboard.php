@@ -164,7 +164,7 @@
                 <div class="card-body">
                     <h4 class="font-weight-normal mb-3">Ongoing Events</h4>
                     <?php 
-                    $database = mysqli_connect('localhost', 'root', '', 'judging');
+                    $database = mysqli_connect('127.0.0.1', 'u510162695_judging_root', '1Judging_root', 'u510162695_judging');
                     $sql = "SELECT count(1) FROM sub_event";
                     $result = mysqli_query($database, $sql);
                     $row = mysqli_fetch_array($result);
