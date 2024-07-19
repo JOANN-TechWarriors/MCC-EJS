@@ -155,6 +155,7 @@
 
   <div class="content">
     <div class="container">
+    <div class="main" id="main">
       <div class="row">
         <div class="col-md-12">
           <br>
