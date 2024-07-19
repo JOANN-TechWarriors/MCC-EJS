@@ -140,7 +140,17 @@
     <li><a href="rev_main_event.php"><i class="fas fa-chart-line"></i> <span>DATA REVIEWS</span></a></li>
     <li><a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> <span>LOGOUT</span></a></li>
   </ul>
-
+</div
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.getElementById('toggle-btn').addEventListener('click', function() {
+    document.getElementById('sidebar').classList.toggle('minimized');
+    document.getElementById('content').classList.toggle('minimized');
+    document.getElementById('toggle-btn').classList.toggle('minimized');
+  });
+</script>
+<div class="main" id="main">
   <div class="content">
     <div class="container">
       <div class="row">
@@ -153,7 +163,6 @@
           <div id="calendar"></div>
         </div>
       </div>
-    </div>
     </div>
 
     <div class="modal fade" id="addEventModal" tabindex="-1" aria-labelledby="addEventModalLabel" aria-hidden="true">
