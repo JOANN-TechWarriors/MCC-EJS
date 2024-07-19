@@ -59,6 +59,16 @@
             display: block;
         }
 
+        .sidebar ul li a span {
+        display: inline-block;
+        transition: opacity 0.3s;
+    }
+
+    .sidebar.minimized ul li a span {
+        opacity: 0;
+    }
+
+
         .sidebar ul li a:hover {
             background-color: #555;
         }
@@ -67,6 +77,39 @@
             margin-left: 250px; /* Adjusted to match the width of the sidebar */
             padding: 20px;
         }
+
+        .main.minimized {
+        margin-left: 80px;
+    }
+
+
+        .toggle-btn {
+        position: fixed;
+        top: 20px;
+        left: 220px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        transition: left 0.3s;
+    }
+
+    .toggle-btn.minimized {
+        left: 50px;
+    }
+
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .logo img {
+        max-width: 100px;
+    }
+
         .content {
       margin-left: 260px;
       padding: 20px;
@@ -83,27 +126,32 @@
             .main {
                 margin-left: 0;
             }
+
+            .toggle-btn {
+            left: 90;
+        }
         }
 
     
   </style>
 </head>
 <body>
-  <div class="sidebar">
-    <div class="sidebar-heading">
-        MCC Event Judging System
+  <!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+    <button class="toggle-btn" id="toggle-btn">☰</button>
+    <div class="logo">
+        <img src="../assets/img/mcc_logo.png" alt="Event Judging System Logo">
     </div>
-    <br>
-    <br>
+    
     <ul>
-        <li><a href="dashboard.php">DASHBOARD</a></li>
-        <li><a href="home.php">ONGOING EVENTS</a></li>
-        <li><a href="upcoming_events.php">UPCOMING EVENTS</a></li>
-        <li><a href="score_sheets.php">SCORE SHEETS</a></li>
-        <li><a href="rev_main_event.php">DATA REVIEWS</a></li>
-        <li><a href="..//index.php">LOGOUT</a></li>
+        <li><a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> <span>DASHBOARD</span></a></li>
+        <li><a href="home.php"><i class="fas fa-calendar-check"></i> <span>ONGOING EVENTS</span></a></li>
+        <li><a href="upcoming_events.php"><i class="fas fa-calendar-alt"></i> <span>UPCOMING EVENTS</span></a></li>
+        <li><a href="score_sheets.php"><i class="fas fa-clipboard-list"></i> <span>SCORE SHEETS</span></a></li>
+        <li><a href="rev_main_event.php"><i class="fas fa-chart-line"></i> <span>DATA REVIEWS</span></a></li>
+        <li><a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> <span>LOGOUT</span></a></li>
     </ul>
-  </div>
+</div>
 
   <div class="content">
     <div class="container">
