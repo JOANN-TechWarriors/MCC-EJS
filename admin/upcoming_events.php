@@ -13,8 +13,6 @@
   <script type="text/javascript" src="..//assets/fullcalendar/main.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
   <script src="..//assets/fullcalendar/moment.js"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -142,7 +140,6 @@
   </ul>
 
 
-<div class="main" id="main">
   <div class="content">
     <div class="container">
       <div class="row">
@@ -376,7 +373,7 @@
     function datetimeLocal(dateTimeStr) {
       return moment(dateTimeStr).format('YYYY-MM-DDTHH:mm');
     }
-  
+  </script>
 
 </body>
 </html>
