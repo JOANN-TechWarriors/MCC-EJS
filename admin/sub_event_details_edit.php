@@ -176,7 +176,7 @@ $se_row = $se_query->fetch();
                                     <input name="selector[]" type="checkbox" value="<?php echo $cont_id; ?>" title="Check to select <?php echo $cont_row['fullname']; ?> "/></td>
                                     
                                     <td width="10"><?php echo $cont_row['contestant_ctr']; ?></td>
-                                    <td><img width="50" src="img/<?php echo $cont_row['Picture']; ?>" /></td>
+                                    <td><img width="50" src="..//img/<?php echo $cont_row['Picture']; ?>" /></td>
                                     <td><?php echo $cont_row['fullname']; ?></td>
                                     <td><?php echo $cont_row['AddOn']; ?></td>
                                     <td width="10"><a title="Click to edit <?php echo $cont_row['fullname']; ?>  datas" href="edit_contestant.php?contestant_id=<?php echo $cont_row['contestant_id'];?>&sub_event_id=<?php echo $sub_event_id;?>&se_name=<?php echo $se_name;?>" class="btn btn-success"><i class="icon icon-pencil"></i></a></td>

@@ -748,10 +748,7 @@ $MECtr = $MEctrQuery->rowCount();  ?>
                                       
                                       <input name="main_event_id" type="hidden" value="<?php echo $main_event_id; ?>" />
                
-                                       <strong>Banner</strong>:<br />
-                                      <input name="banner" class="form-control btn-block" style="text-indent: 7px !important; height: 30px !important;" type="file" required="true"/> 
-                                      <br />
-
+                                       
 
                                       <strong>Event Name</strong>:<br />
                                       <input placeholder="Enter Event title" name="event_name" class="form-control btn-block" style="text-indent: 7px !important; height: 30px !important;" type="text" required="true"/> 
@@ -1019,17 +1016,16 @@ if(isset($_POST['add_event']))
 {
  
    $main_event_id=$_POST['main_event_id']; 
-   $banner = $_FILES['banner']['name'];
-   $target = "img/".basename($banner);
+  
    $sub_event_name=$_POST['event_name'];  
    $event_date=$_POST['event_date']; 
    $event_time=$_POST['event_time']; 
    $event_place=$_POST['event_place']; 
   
-  $conn->query("insert into sub_event(mainevent_id,event_name,status,eventdate,eventtime,place,organizer_id,banner)
-  values('$main_event_id','$sub_event_name','activated','$event_date','$event_time','$event_place','$session_id','$banner')");
+  $conn->query("insert into sub_event(mainevent_id,event_name,status,eventdate,eventtime,place,organizer_id)
+  values('$main_event_id','$sub_event_name','activated','$event_date','$event_time','$event_place','$session_id')");
 
-  move_uploaded_file($_FILES['banner']['tmp_name'], $target);
+  
 
  ?>
  <script>
