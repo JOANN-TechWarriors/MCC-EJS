@@ -42,6 +42,10 @@
             overflow-y: auto; /* Enable scrolling if content exceeds height */
         }
 
+        .sidebar.minimized {
+        width: 80px;
+    }
+
         .sidebar ul {
             list-style-type: none;
             padding: 0;
