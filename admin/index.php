@@ -23,7 +23,7 @@ include_once('header2.php');
 }
 
 .logo-small {
-  width: 300px; /* Adjust the width as needed */
+  width: 250px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
 }
 
@@ -85,7 +85,7 @@ include_once('header2.php');
              <br/> 
              <table cellpadding="50" cellspacing="40" border="3" align="center">
              <thead>
-             <th align="left" style="background-color: black; text-indent: 10px; color: white; "><h4> &nbsp;ORGANIZER LOGIN</h4></th>
+             <th align="left" style="background-color: black; text-indent: 10px; color: white; "><h4>ORGANIZER LOGIN</h4></th>
              </thead>
              
              <tr style="background-color: #fff;">
