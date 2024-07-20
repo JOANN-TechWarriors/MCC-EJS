@@ -8,7 +8,7 @@
       <hr />
       
       
-      <table border="0">
+      <!-- <table border="0">
       
       <tr>
       <td align="center"><img src="uploads/<?php echo $company_logo; ?>" width="50" height="50" /></td>
@@ -28,9 +28,9 @@
         Website: <a href="<?php echo $company_website; ?>" target="_blank"><?php echo $company_website; ?></a></font>
       
       </td>
-      </tr>
+      </tr> -->
   
-      </table>
+      <!-- </table> -->
       
       
       </center>
