@@ -7,7 +7,7 @@ include('..//admin/session.php');
 ?>
 
 <head>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         body {
@@ -177,7 +177,7 @@ include('..//admin/session.php');
 <div class="sidebar" id="sidebar">
         <button class="toggle-btn" id="toggle-btn">☰</button>
         <div class="sidebar-heading">
-            <img src="../img/logo.png" alt="Logo">
+            <img src="..//admin/ejs_logo.png" alt="Logo">
             <div>Event Judging System</div>
         </div>
         <ul>

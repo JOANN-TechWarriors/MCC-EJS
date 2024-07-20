@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style type="text/css">
         .pic {
-            height: 300px;
+            height: 400px;
             object-fit: cover;
         }
         .card-title {
@@ -18,14 +18,24 @@
             height: 70px;
             font-size: 17px;
         }
+        .votebtn {
+            display: block;
+            margin-top: 10px;
+        }
+        .fa-heart {
+            color: white;
+        }
+        .btn.voted .fa-heart {
+            color: red;
+        }
     </style>
 </head>
 <body>
 
 <?php
-$dsn = 'mysql:host=127.0.0.1;port=3306;dbname=u510162695_judging';
-$username = 'u510162695_judging_root';
-$password = '1Judging_root';
+$dsn = 'mysql:host=localhost;port=3306;dbname=judging';
+$username = 'root';
+$password = '';
 try {
     $conn = new PDO($dsn, $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -69,7 +79,7 @@ $rowinfo = $stmt->fetch(PDO::FETCH_ASSOC);
 $eventname = $rowinfo['event_name'];
 ?>
 <br />
-<h1 class="text-center"><?php echo htmlspecialchars($eventname); ?></h1>
+<h1 class="text-center" style="font-size: 20px;"><?php echo htmlspecialchars($eventname); ?></h1>
 <h5 class="text-center text-muted">ONLINE VOTE POLL</h5>
 <br />
 
@@ -89,7 +99,9 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
         <input type="hidden" name="contestant_id" value="<?php echo htmlspecialchars($row['contestant_id']); ?>">
         <input type="hidden" name="contestant_name" value="<?php echo htmlspecialchars($row['fullname']); ?>">
         <?php if (!isset($_COOKIE[$event])) { ?>
-        <button type="submit" name="vote" class="btn btn-primary votebtn"><span id="loading"></span><i class="fa fa-thumbs-up" aria-hidden="true"></i> VOTE</button>
+        <button type="submit" name="vote" class="btn btn-primary votebtn" style="background-color: white; color:black; border-color: white;"><span id="loading"></span><i class="fa fa-heart" aria-hidden="true"></i> VOTE</button>
+        <?php } else { ?>
+        <button type="submit" name="vote" class="btn btn-primary votebtn voted" style="background-color: white; color:black; border-color: white;" disabled><span id="loading"></span><i class="fa fa-heart" aria-hidden="true"></i> VOTED</button>
         <?php } ?>
     </form>
     

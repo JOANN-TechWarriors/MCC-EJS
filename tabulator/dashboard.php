@@ -7,7 +7,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <meta name="theme-color" content="#3e454c">
-<link rel="shortcut icon" href="../img/logo.png"/>
+<link rel="shortcut icon" href="../admin/ejs_logo.png"/>
 <title>Event Judging System</title> 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -221,7 +221,7 @@
         <button class="toggle-btn" id="toggle-btn">☰</button>
         <br><br>
         <div class="sidebar-heading">
-            <img src="../img/logo.png" alt="Logo">
+            <img src="../admin/ejs_logo.png" alt="Logo">
             <span>Event Judging System</span>
         </div>
         <ul>
@@ -240,8 +240,8 @@
         </div>
         <div class="profile-dropdown">
             <img src="path_to_profile_image.jpg" alt="Profile Image">
+            <br>
             <div class="dropdown-menu">
-                <a href="edit_organizer.php">Settings</a>
                 <a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> <span>LOGOUT</span></a>
             </div>
         </div>
@@ -257,7 +257,7 @@
                     <div class="card-body">
                         <h4 class="font-weight-normal mb-3" style="font-size: 20px;">Ongoing Events</h4>
                         <?php 
-                        $database = mysqli_connect('127.0.0.1', 'u510162695_judging_root', '1Judging_root', 'u510162695_judging');
+                        $database = mysqli_connect('localhost', 'root', '', 'judging');
                         $sql = "SELECT count(1) FROM sub_event";
                         $result = mysqli_query($database, $sql);
                         $row = mysqli_fetch_array($result);

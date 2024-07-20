@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php 
+    include('session.php');
+  ?>
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -239,9 +242,9 @@
             <!-- Add any left-aligned content here if needed -->
         </div>
         <div class="profile-dropdown">
-            <img src="path_to_profile_image.jpg" alt="Profile Image">
+           <div style="font-size:small;"> <?php echo $name; ?></div>
             <div class="dropdown-menu">
-                <a href="edit_organizer.php">Settings</a>
+                <a href="edit_organizer.php"> Account Settings</a>
                 <a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> <span>LOGOUT</span></a>
             </div>
         </div>
@@ -257,7 +260,8 @@
                     <div class="card-body">
                         <h4 class="font-weight-normal mb-3" style="font-size: 20px;">Ongoing Events</h4>
                         <?php 
-                        $database = mysqli_connect('localhost', 'root', '', 'judging');
+                        $database = mysqli_connect('127.0.0.1', 'u510162695_judging_root', '1judging_root', '$dbname = "u510162695_judging";
+                        ');
                         $sql = "SELECT count(1) FROM sub_event";
                         $result = mysqli_query($database, $sql);
                         $row = mysqli_fetch_array($result);

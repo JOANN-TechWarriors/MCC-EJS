@@ -5,7 +5,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content=""/>
     <meta name="author" content=""/>
-    <link rel="shortcut icon" href="../img/logo.png"/>
+    <link rel="shortcut icon" href="ejs_logo.png"/>
     <title>Event Judging System</title>
 
     <!-- Bootstrap core CSS -->

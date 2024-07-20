@@ -31,7 +31,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             $_SESSION['userid'] = $row['organizer_id'];
             ?>
             <script>
-                window.location = 'dashboard.php';
+                window.location = 'score_sheets.php';
             </script>
             <?php
         }

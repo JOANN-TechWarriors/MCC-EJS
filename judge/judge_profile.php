@@ -1,5 +1,5 @@
 <?php 
-include('session.php');
+include('..//admin/session.php');
 
 $judge_code=$_POST['judge_code'];
 

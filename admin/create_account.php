@@ -7,22 +7,7 @@
     ?>
 
   <body>
-    <!-- Navbar
-    ================================================== -->
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-       
-            
-        </div>
-      </div>
-    </div>
-<header class="jumbotron subhead" id="overview">
-  <div class="container">
-    <h1>Account Registration</h1>
-    <p class="lead">Event Judging System</p>
-  </div>
-</header>
+    
     <div class="container">
 
   <div class="col-lg-3">
