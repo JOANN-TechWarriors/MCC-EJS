@@ -287,6 +287,13 @@
 <section class="home" style="background-image: linear-gradient(45deg, rgba(0,0,0,0.3), rgba(0, 0, 0 ,0.3)), url(img/Community-College-Madridejos.jpeg); height: 100vh; display: flex; justify-content: center; align-items: center;">
   <section id="banner" class="banner-section" style="width: 100%;">
     <div class="container">
+        <div class ="background background6"></div>
+        <div class ="background background7"></div>
+        <div class ="background background8"></div> 
+        <div class ="criterion">
+            <div class= "text text0">welcome</div>
+            <div class= "text text1">MCC</div>
+    </div>
       <div class="div_zindex" style="text-align: center;">
         <h1 style="color: white;"> Welcome to MCC Event Judging System</h1>
         <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
