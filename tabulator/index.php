@@ -97,7 +97,7 @@ thead th {
    <br/>
    <br/> 
  <br />  
- <table cellpadding="50" cellspacing="40" border="0" align="center">
+ <table cellpadding="50" cellspacing="40" border="3" align="center">
  <thead>
  <th align="left"  style="background-color: aquamarine; text-indent: 10px; color: black; "><h4> &nbsp;TABULATOR LOGIN</h4></th>
  </thead>
