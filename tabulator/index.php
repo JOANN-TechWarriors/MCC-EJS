@@ -34,6 +34,12 @@ include_once('header2.php');
   margin-top: 20px; /* Add space above the motto */
   margin-right: 100px; /* Add space to the left */
 }
+
+.form-container {
+  width: 400%; /* Adjust the width as needed */
+  max-width: 600px;
+  margin: 2 auto;
+}
 </style>
 </head>
   <body>
@@ -72,6 +78,7 @@ include_once('header2.php');
       </div>
 
 
+      <div class="form-container">
    <form method="POST" action="login.php" >
  <br />  
  <table cellpadding="10" cellspacing="0" border="0" align="center">
@@ -92,6 +99,7 @@ include_once('header2.php');
  </tr>
  </table>
  </form>
+</div>
   
 
 
