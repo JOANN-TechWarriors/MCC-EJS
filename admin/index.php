@@ -25,11 +25,12 @@ include_once('header2.php');
 .logo-small {
   width: 250px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
-  margin-top: 50px; /* Add space below the logo */
+  margin-top: 100px; /* Add space below the logo */
 }
 
 .motto {
   margin-top: 20px; /* Add space above the motto */
+  margin-left: 20px; /* Add space to the left */
 }
 
 .form-container {
@@ -43,7 +44,7 @@ thead th {
   text-indent: 10px;
   color: black;
   font-size: 14px; /* Adjust the font size as needed */
-  padding: 5px; /* Adjust the padding as needed */
+  padding: 10px; /* Adjust the padding as needed */
 }
 </style>
 
