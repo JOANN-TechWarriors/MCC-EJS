@@ -33,13 +33,39 @@ include_once('header2.php');
       </div>
     </div>
     <!-- Subhead
+    
  ================================================== -->
+
 <header class="jumbotron subhead" id="overview">
   <div class="container">
     <h1 style="font-size: 30px;"> MCC Event Judging System</h1>
     <p class="lead" style="font-size: 20px;">Ready to serve you...</p>
   </div>
 </header>
+<div class="container">
+    <div class="row-fluid">
+
+      <div class="span6">
+        <div class="title_index">
+
+              <div class="row-fluid">
+                <div class="span12"></div>
+                    <div class="row-fluid">
+                      <div class="span10">
+                      <img class="index_logo" src="img/santotomas.png">
+                      </div>  
+                      <div class="span12">
+                        <div class="motto">
+                        
+                        <h3><p>WELCOME&nbsp;&nbsp;TO:</p></h3>
+                        <h2><p>School Event Management System&nbsp;(S.E.M.S)</p></h2>                      
+                        </div>                      
+                      </div>              
+                    </div>                    
+              </div>  
+            <?php //include('title_index.php'); ?>
+        </div>
+      </div>
 
    <form method="POST" action="login.php" >
  <br />  
