@@ -204,8 +204,7 @@
         <div class="profile-dropdown">
             <img src="path_to_profile_image.jpg" alt="Profile Image">
             <div class="dropdown-menu">
-                <a href="#">Profile</a>
-                <a href="#">Settings</a>
+                <a href="edit_organizer.php">Settings</a>
                 <a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> <span>LOGOUT</span></a>
             </div>
         </div>
