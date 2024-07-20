@@ -21,6 +21,11 @@ include_once('header2.php');
   right: 20px;
   z-index: 9999;
 }
+
+.logo-small {
+  width: 200px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
 </style>
 
   <body>
@@ -48,7 +53,7 @@ include_once('header2.php');
                 <div class="span12"></div>
                     <div class="row-fluid">
                       <div class="span10">
-                      <img class="index_logo" src="../img/logo.png">
+                      <img class="index_logo logo-small" src="../img/logo.png">
                       </div>  
                       <div class="span12">
                         <div class="motto">
@@ -118,9 +123,6 @@ include_once('header2.php');
   </div>
 </div>
 
-
-
-
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -145,6 +147,7 @@ include_once('header2.php');
     <script>
       window.onload = function() {
           <?php if(isset($_SESSION['login_success']) && $_SESSION['login_success'] == true): ?>
+          console.log("Session variable is set.");
           Swal.fire({
               title: "Success!",
               text: "You are Successfully logged in!",
@@ -156,6 +159,8 @@ include_once('header2.php');
           });
           <?php 
             unset($_SESSION['login_success']);
+            else:
+              console.log("Session variable is not set.");
             endif; 
           ?>
       };
