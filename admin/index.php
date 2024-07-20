@@ -36,12 +36,7 @@ include_once('header2.php');
     
  ================================================== -->
  <body id="login" style="background:url(..img/Community-College-Madridejos.jpeg)"> 
-<header class="jumbotron subhead" id="overview">
-  <div class="container">
-    <h1 style="font-size: 30px;"> MCC Event Judging System</h1>
-    <p class="lead" style="font-size: 20px;">Ready to serve you...</p>
-  </div>
-</header>
+
 <div class="container">
     <div class="row-fluid">
 
