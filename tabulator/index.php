@@ -100,6 +100,7 @@ include_once('header2.php');
  </table>
  </form>
 </div>
+</body>
   
 
 
