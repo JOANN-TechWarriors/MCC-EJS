@@ -54,7 +54,7 @@ include_once('header2.php');
                         <div class="motto">
                         
                         <h3><p>WELCOME&nbsp;&nbsp;TO:</p></h3>
-                        <h2><p>MCC Event Judging System</p></h2>                      
+                        <h2><p><strong>MCC Event Judging System</strong></p></h2>                      
                         </div>                      
                       </div>              
                     </div>                    
@@ -69,7 +69,7 @@ include_once('header2.php');
         <div class="overlay">
    <form method="POST" action="login.php" >
  <br />  
- <table cellpadding="50" cellspacing="0" border="0" align="center">
+ <table cellpadding="50" cellspacing="10" border="0" align="center">
  <thead>
  <th align="left" style="background-color: black; text-indent: 7px; color: white; "><h4> &nbsp;ORGANIZER LOGIN</h4></th>
  </thead>
@@ -84,7 +84,7 @@ include_once('header2.php');
   <input style="font-size: large; height: 35px !important; text-indent: 7px !important;" class="form-control btn-block" type="password"  name="password" placeholder="Password" required="true" />
 <br /><strong><a data-toggle="modal" data-target="#forgot-password-modal">Forgot password?</a></strong><br />
 <h6>If you have no account, pls</h6>
-  <button style="width: 160px !important;" type="submit" class="btn btn-primary pull-right"><i class="icon-ok"></i> <strong>LOGIN</strong></button>
+  <button style="width: 150px !important;" type="submit" class="btn btn-primary pull-right"><i class="icon-ok"></i> <strong>LOGIN</strong></button>
   
   <strong>Register <a href="create_account.php">here &raquo;</a></strong> &nbsp;&nbsp;&nbsp;<br><br>
   
