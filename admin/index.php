@@ -23,7 +23,7 @@ include_once('header2.php');
 }
 
 .logo-small {
-  width: 200px; /* Adjust the width as needed */
+  width: 300px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
 }
 
