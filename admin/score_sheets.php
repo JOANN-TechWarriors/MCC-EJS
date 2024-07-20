@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-   
-   <?php
-   include('header2.php');
-    include('session.php');
-    ?>
+
+<?php
+include('header2.php');
+include('session.php');
+?>
+
 <head>
-<style>
-  body {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
             font-family: Arial, sans-serif;
             background-color: #fff;
             margin: 0;
@@ -15,23 +18,47 @@
         }
 
         .sidebar-heading {
-            top: 100px;
             text-align: center;
             padding: 10px 0;
-            background-color: #555;
             font-size: 18px;
             margin-bottom: 10px;
         }
+
         .sidebar {
             position: fixed;
-            top: 100;
-            left: 100;
+            top: 0;
+            left: 0;
             height: 100%;
             width: 250px;
             background-color: #333;
             color: #fff;
-            padding-top: 60px; /* Adjusted to match the height of the navbar */
-            overflow-y: auto; /* Enable scrolling if content exceeds height */
+            padding-top: 60px;
+            transition: all 0.3s;
+            overflow: hidden;
+        }
+
+        .sidebar.collapsed {
+            width: 80px;
+        }
+
+        .sidebar .toggle-btn {
+            position: absolute;
+            top: 15px;
+            right: -0px;
+            background-color: transparent;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .sidebar .toggle-btn i {
+            font-size: 18px;
+        }
+
+        .sidebar-heading img {
+            max-width: 100px;
+            max-height: 100px;
         }
 
         .sidebar ul {
@@ -42,13 +69,35 @@
 
         .sidebar ul li {
             padding: 10px;
-            border-bottom: 1px solid #555;
+            transition: all 0.3s;
+            font-size: 15px;
         }
 
         .sidebar ul li a {
             color: #fff;
             text-decoration: none;
-            display: block;
+            display: flex;
+            align-items: center;
+        }
+
+        .sidebar ul li a i {
+            margin-right: 10px;
+            transition: margin 0.3s;
+        }
+
+        .sidebar.collapsed ul li a i {
+            margin-right: 0;
+        }
+
+        .sidebar ul li a span {
+            display: inline-block;
+            transition: opacity 0.3s;
+        }
+
+        .sidebar.collapsed ul li a span {
+            opacity: 0;
+            width: 0;
+            overflow: hidden;
         }
 
         .sidebar ul li a:hover {
@@ -56,55 +105,62 @@
         }
 
         .main {
-            margin-left: 250px; /* Adjusted to match the width of the sidebar */
+            margin-left: 250px;
+            padding: 20px;
+            transition: all 0.3s;
+        }
+
+        .main.collapsed {
+            margin-left: 80px;
+        }
+
+        .content {
+            margin-left: 260px;
             padding: 20px;
         }
-        .content {
-      margin-left: 260px;
-      padding: 20px;
-    }
 
-       
-button.accordion {
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-    transition: 0.4s;
-}
+        button.accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
 
-button.accordion.active, button.accordion:hover {
-    background-color: #ddd;
-}
+        button.accordion.active,
+        button.accordion:hover {
+            background-color: #ddd;
+        }
 
-button.accordion:after {
-    content: '\002B';
-    color: #777;
-    font-weight: bold;
-    float: right;
-    margin-left: 5px;
-}
+        button.accordion:after {
+            content: '\002B';
+            color: #777;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
 
-button.accordion.active:after {
-    content: "\2212";
-}
+        button.accordion.active:after {
+            content: "\2212";
+        }
 
-div.panel {
-    padding: 0 18px;
-    background-color: white;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-}
- /* Responsive adjustments */
- @media (max-width: 768px) {
+        div.panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
             .sidebar {
-                width: 100%; /* Full width on small screens */
+                width: 100%;
                 height: auto;
                 position: relative;
             }
@@ -113,181 +169,170 @@ div.panel {
                 margin-left: 0;
             }
         }
-</style>
+    </style>
 </head>
-  <body>
-    
-<div class="sidebar">
-    <div class="sidebar-heading">
-        MCC Event Judging System
-    </div>
-    <br>
-    <br>
-    <ul>
-        <li><a href="dashboard.php">DASHBOARD</a></li>
-        <li><a href="home.php">ONGOING EVENTS</a></li>
-        <li><a href="upcoming_events.php">UPCOMING EVENTS</a></li>
-        <li><a href="score_sheets.php">SCORE SHEETS</a></li>
-        <li><a href="rev_main_event.php">DATA REVIEWS</a></li>
-        <li><a href="..//index.php">LOGOUT</a></li>
-    </ul>
-  </div>
-<!-- Subhead
-================================================== -->
-<div class="main">
-<div class="container">
-    <h1>Score Sheets</h1>
-      </div>
 
-      <div class="span15">
-                <br />
-                <div class="col-md-15">
-                    <ul class="breadcrumb">
-                        <li>
-                            <a href="dashboard.php">Dashboard</a> /
-                        </li>
-                        <li>
-                            <a href="home.php">Ongoing Events</a> /
-                        </li>
-                        <li>
-                            <a href="upcoming_events.php">Upcoming Events</a> /
-                        </li>
-                        <li>Score Sheets</li>
-                    </ul>
-                </div>
+<body>
+
+<div class="sidebar" id="sidebar">
+        <button class="toggle-btn" id="toggle-btn">☰</button>
+        <div class="sidebar-heading">
+            <img src="..//admin/ejs_logo.png" alt="Logo">
+            <div>Event Judging System</div>
+        </div>
+        <ul>
+            <li><a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> <span>DASHBOARD</span></a></li>
+            <li><a href="#"><i class="fas fa-calendar-check"></i> <span>ONGOING EVENTS</span></a></li>
+            <li><a href="#"><i class="fas fa-calendar-alt"></i> <span>UPCOMING EVENTS</span></a></li>
+            <li><a href="score_sheets.php"><i class="fas fa-clipboard-list"></i> <span>SCORE SHEETS</span></a></li>
+            <li><a href="#"><i class="fas fa-chart-line"></i> <span>DATA REVIEWS</span></a></li>
+            <li><a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> <span>LOGOUT</span></a></li>
+        </ul>
+    </div>
+
+    <!-- Subhead ================================================== -->
+    <div class="main" id="main-content">
+        <div class="container">
+            <h1>Score Sheets</h1>
+        </div>
+
+        <div class="span15">
+            <br />
+            <div class="col-md-15">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="dashboard.php">Dashboard</a> /
+                    </li>
+                    <li>
+                        <a href="#">Ongoing Events</a> /
+                    </li>
+                    <li>
+                        <a href="#">Upcoming Events</a> /
+                    </li>
+                    <li>Score Sheets</li>
+                </ul>
             </div>
-       
-      
+        </div>
+
 <?php
     
-$sy_query = $conn->query("select * FROM main_event where organizer_id='$session_id' AND status='activated'") or die(mysql_error());
-while ($sy_row = $sy_query->fetch()) 
-{ ?>
-
-<tr>
-<td>
-       
-<?php 
- 
-$sy=$sy_row['sy'];
-$MEidxxx=$sy_row['mainevent_id'];
-  
-          $event_query = $conn->query("select * from main_event where mainevent_id='$MEidxxx' AND status='activated'") or die(mysql_error());
-		while ($event_row = $event_query->fetch()) 
-        { ?>
-       
-           <button class="accordion"><strong><?php echo $event_row['event_name']; ?></strong></button> 
-              <?php }   ?>
+    $sy_query = $conn->query("select * FROM main_event where organizer_id='$session_id' AND status='activated'") or die(mysql_error());
+    while ($sy_row = $sy_query->fetch()) 
+    { ?>
+    
+    <tr>
+    <td>
+           
+    <?php 
+     
+    $sy=$sy_row['sy'];
+    $MEidxxx=$sy_row['mainevent_id'];
+      
+              $event_query = $conn->query("select * from main_event where mainevent_id='$MEidxxx' AND status='activated'") or die(mysql_error());
+            while ($event_row = $event_query->fetch()) 
+            { ?>
+           
+               <button class="accordion"><strong><?php echo $event_row['event_name']; ?></strong></button> 
+                  <?php }   ?>
+                  
+             <div class="panel">
+             
+             
+             <table class="table table-striped">
               
-         <div class="panel">
-         
-         
-         <table class="table table-striped">
-          
-          <thead>
-        <th>Event Name</th>
+              <thead>
+            <th>Event Name</th>
+            
+            <th>View Score Sheet - Select Judge</th>
+              </thead>
+              
+              <tbody>
+             <?php   
+              $s_event_query = $conn->query("select * from sub_event where mainevent_id='$MEidxxx'") or die(mysql_error());
+            while ($s_event_row = $s_event_query->fetch()) 
+            { 
+                $se_id=$s_event_row['subevent_id'];
+                ?>
+         <tr>
+         <td>
+         <div class="nav-collapse collapse">
+  <ul class="nav">
+    <li>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><strong><?php echo $s_event_row['event_name']; ?></strong> <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a title="Go to live viewing of this Sub-Event scores." target="_blank" href="updateview.php?sid=<?php echo $se_id; ?>">Live View</a> 
+        </li>
         
-        <th>View Score Sheet - Select Judge</th>
-          </thead>
+        <?php if($s_event_row['txtpoll_status'] == "active") { ?>
+          <li>
+            <a title="Go to live viewing of this Sub-Event Text Poll." target="_blank" href="updateBlankTxtview.php?sid=<?php echo $se_id; ?>">Text Poll Live View</a> 
+          </li>
           
-          <tbody>
+          <li>
+            <a title="Go to live viewing of this Sub-Event Text Poll Data." target="_blank" href="txt_pollData.php?sid=<?php echo $se_id; ?>">TP - Text Code</a> 
+          </li>
+        <?php } ?>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+         </td>
+         <td>
+     <br>
          <?php   
-          $s_event_query = $conn->query("select * from sub_event where mainevent_id='$MEidxxx'") or die(mysql_error());
-		while ($s_event_row = $s_event_query->fetch()) 
-        { 
-            $se_id=$s_event_row['subevent_id'];
-            ?>
-     <tr>
-     <td>
-     <div class="nav-collapse collapse">
-     <ul class="nav">
-     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><strong><?php echo $s_event_row['event_name']; ?></strong> <span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
-                  
-                  <li>
-                  <a title="Go to live viewing of this Sub-Event scores." target="_blank" href="updateview.php?sid=<?php echo $se_id; ?>">Live View</a> 
-                  </li>
-                  
-                  
-                  <?php if($s_event_row['txtpoll_status']=="active")
-                  {?>
-                  
-                  <li>
-                  <a title="Go to live viewing of this Sub-Event Text Poll." target="_blank" href="updateBlankTxtview.php?sid=<?php echo $se_id; ?>">Text Poll Live View</a> 
-                  </li>
-                  
-                  
-                  <li>
-                  <a title="Go to live viewing of this Sub-Event Text Poll Data." target="_blank" href="txt_pollData.php?sid=<?php echo $se_id; ?>">TP - Text Code</a> 
-                  </li>
-                  
-                  <?php } ?>
-                  
-                  
-                  
-                  
-                  </ul>
-               
-     </ul>
-     </div>
-     </td>
-     <td>
- 
-     <?php   
-          $judge_query = $conn->query("select * from judges where subevent_id='$se_id' order by judge_ctr") or die(mysql_error());
-		while ($judge_row = $judge_query->fetch()) 
-        { ?>
+              $judge_query = $conn->query("select * from judges where subevent_id='$se_id' order by judge_ctr") or die(mysql_error());
+            while ($judge_row = $judge_query->fetch()) 
+            { ?>
+         
+         <a style="margin-top: 4px !important;" title="click to rank contestant score's for this judge" target="_blank" href="view_score_sheet.php?event_id=<?php echo $se_id ; ?>&judge_id=<?php echo $judge_row['judge_id']; ?>" class="btn btn-info"><i class="icon icon-tasks"></i> <?php echo $judge_row['judge_ctr']; ?>. <?php echo $judge_row['fullname']; ?></a>
+          <?php } ?>
      
-     <a style="margin-top: 4px !important;" title="click to rank contestant score's for this judge" target="_blank" href="view_score_sheet.php?event_id=<?php echo $se_id ; ?>&judge_id=<?php echo $judge_row['judge_id']; ?>" class="btn btn-info"><i class="icon icon-tasks"></i> <?php echo $judge_row['judge_ctr']; ?>. <?php echo $judge_row['fullname']; ?></a>
-      <?php } ?>
- 
-     </td>
+         </td>
+         
+         <td width="128">
+            <a title="click to set points deductions" target="_blank" href="deductScores.php?event_id=<?php echo $se_id ; ?>" class="btn btn-danger"><i class="icon icon-minus-sign"></i></a>
+    
+            <a title="click to set final result for this sub-event" target="_blank" href="result_title.php?event_id=<?php echo $se_id ; ?>" class="btn btn-primary"><i class="icon icon-star"></i></a>
+            
+            <a title="click to print results" target="_blank" href="result_sheet.php?event_id=<?php echo $se_id ; ?>" class="btn btn-primary"><i class="icon icon-print"></i></a>
      
-     <td width="128">
-        <a title="click to set points deductions" target="_blank" href="deductScores.php?event_id=<?php echo $se_id ; ?>" class="btn btn-danger"><i class="icon icon-minus-sign"></i></a>
-
-        <a title="click to set final result for this sub-event" target="_blank" href="result_title.php?event_id=<?php echo $se_id ; ?>" class="btn btn-primary"><i class="icon icon-star"></i></a>
-        
-        <a title="click to print results" target="_blank" href="result_sheet.php?event_id=<?php echo $se_id ; ?>" class="btn btn-primary"><i class="icon icon-print"></i></a>
- 
-     </td>
-     
-     </tr>
-     <?php } ?>
+         </td>
+         
+         </tr>
+         <?php } ?>
+         
+         
+                </tbody>
+         
+              </table>
+            </br  >
+            <hr />  
+            
+            </div>
+              
+           
+            
+            
+            </td>
+          </tr>
+            
+            
+            <?php } ?>     
+              
+             </table>
+            
+            </section>
      
      
-            </tbody>
-     
-          </table>
-        </br  >
-        <hr />  
-        
+          </div>
         </div>
-          
-       
-        
-        
-        </td>
-      </tr>
-        
-        
-        <?php } ?>     
-          
-         </table>
-        
-        </section>
- 
- 
+    
       </div>
-    </div>
 
-  </div>
- 
-
-    <?php include('footer.php'); ?>
-
-
-    <!-- Le javascript
+      <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
@@ -310,24 +355,46 @@ $MEidxxx=$sy_row['mainevent_id'];
     <script src="..//assets/js/google-code-prettify/prettify.js"></script>
 
     <script src="..//assets/js/application.js"></script>
-    
-    <script>
-    var acc = document.getElementsByClassName("accordion");
-    var i;
-    
-    for (i = 0; i < acc.length; i++) {
-      acc[i].onclick = function() {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.maxHeight){
-          panel.style.maxHeight = null;
-        } else {
-          panel.style.maxHeight = panel.scrollHeight + "px";
-        } 
-      }
-    }
-    </script>
- 
 
-  </body>
+    <script>
+        document.getElementById('logout').addEventListener('click', function(event) {
+            event.preventDefault();
+            Swal.fire({
+                title: 'Are you sure you want to log out?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes',
+                cancelButtonText: 'No'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = '..//index.php';
+                }
+            });
+        });
+
+        document.getElementById("toggle-btn").addEventListener("click", function () {
+            var sidebar = document.getElementById("sidebar");
+            var mainContent = document.getElementById("main-content");
+
+            sidebar.classList.toggle("collapsed");
+            mainContent.classList.toggle("collapsed");
+
+            var isCollapsed = sidebar.classList.contains("collapsed");
+            this.innerHTML = isCollapsed ? "☰" : "☰";
+        });
+
+        var acc = document.getElementsByClassName("accordion");
+        for (var i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+</body>
 </html>

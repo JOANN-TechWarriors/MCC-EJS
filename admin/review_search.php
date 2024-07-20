@@ -1,322 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
-   
-   <?php
-   
-   include('header2.php');
-   include('session.php');
-  
-  $txtsearch=$_POST['txtsearch'];
-   
-    ?>
- 
-  
-  <body>
-    <!-- Navbar
-    ================================================== -->
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-              <a class="brand" href="#"><img src="uploads/<?php echo $company_logo; ?>" width="23" height="23" />&nbsp; <font size="3">Electronic Judging System</font></a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
- 
-              
-              <li>
-                <a href="selection.php">User Selection</a>
-              </li>
- 
-                <li>
-                <a href="home.php">List of Events</a>
-              </li>
- 
-              <li>
-                <a href="score_sheets.php">Score Sheets</a>
-              </li>
-              
-            
-               <li class="active">
-                  <a href="rev_main_event.php"><strong>DATA REVIEWS</strong></a>
-              </li>
- 
-              
-              
-              
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My Account <span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
- 
-              
-              <li>
-                  <a target="_blank" href="edit_organizer.php">Settings</a>
-              </li>
- 
-              <li>
-                <a href="logout.php">Logout <?php echo $name; ?></a>
-              </li>
-              
-              
-                    </ul>
-                    </li>
-              
-          
-            </ul>
-          </div>
-        </div>
+<?php
+include('header2.php');
+include('session.php');
+$txtsearch = $_POST['txtsearch'];
+?>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 250px;
+      background-color: #333;
+      color: #fff;
+      padding-top: 20px;
+      transition: all 0.3s;
+      overflow: hidden;
+    }
+
+    .sidebar.collapsed {
+      width: 80px;
+    }
+
+    .sidebar .toggle-btn {
+      position: absolute;
+      top: 15px;
+      right: -0px;
+      background-color: transparent;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .sidebar .toggle-btn i {
+      font-size: 18px;
+    }
+
+    .sidebar-heading {
+      text-align: center;
+      padding: 10px 0;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .sidebar-heading img {
+      max-width: 100px;
+      max-height: 100px;
+    }
+
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar ul li {
+      padding: 10px;
+      border-bottom: 1px solid #555;
+      transition: all 0.3s;
+    }
+
+    .sidebar ul li a {
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .sidebar ul li a i {
+      margin-right: 10px;
+      transition: margin 0.3s;
+    }
+
+    .sidebar.collapsed ul li a i {
+      margin-right: 0;
+    }
+
+    .sidebar ul li a span {
+      display: inline-block;
+      transition: opacity 0.3s;
+    }
+
+    .sidebar.collapsed ul li a span {
+      opacity: 0;
+      width: 0;
+      overflow: hidden;
+    }
+
+    .sidebar ul li a:hover {
+      background-color: #555;
+    }
+
+    .main {
+      margin-left: 250px;
+      padding: 20px;
+      transition: all 0.3s;
+    }
+
+    .main.collapsed {
+      margin-left: 80px;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+
+      .main {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar" id="sidebar">
+    <button class="toggle-btn" id="toggle-btn"><i class="fas fa-bars"></i></button>
+    <div class="sidebar-heading">
+      <img src="ejs_logo.png" alt="Logo">
+      <div>Event Judging System</div>
+    </div>
+    <ul>
+      <li><a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> <span>DASHBOARD</span></a></li>
+      <li><a href="home.php"><i class="fas fa-calendar-check"></i> <span>ONGOING EVENTS</span></a></li>
+      <li><a href="upcoming_events.php"><i class="fas fa-calendar-alt"></i> <span>UPCOMING EVENTS</span></a></li>
+      <li><a href="score_sheets.php"><i class="fas fa-clipboard-list"></i> <span>SCORE SHEETS</span></a></li>
+      <li><a href="rev_main_event.php"><i class="fas fa-chart-line"></i> <span>DATA REVIEWS</span></a></li>
+      <li><a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> <span>LOGOUT</span></a></li>
+    </ul>
+  </div>
+  <div class="main" id="main-content">
+    <div class="container">
+      <h1>Data Reviews</h1>
+    </div>
+    <div class="container">
+      <br />
+      <div class="col-md-12">
+        <ul class="breadcrumb">
+          <li><a href="dashboard.php">Dashboard</a> / </li>
+          <li><a href="home.php">Ongoing Events</a> / </li>
+          <li><a href="rev_main_event.php">Data Reviews</a> / </li>
+          <li>Data Reviews: Search</li>
+        </ul>
+      </div>
+      <br />
+    </div>
+    <div class="col-lg-10">
+      <form method="POST" target="_self" action="review_search.php">
+        <input style="font-size: large; height: 45px !important; text-indent: 7px !important;" class="form-control btn-block" name="txtsearch" placeholder="Enter a keyword and search..." value="<?php echo $txtsearch; ?>" />
+        <br />
+        <button class="btn btn-info pull-right" style="width: 150px !important;"><i class="icon-search"></i> <strong>SEARCH</strong></button>
+      </form>
+    </div>
+    <div class="col-lg-1">
+    </div>
+    <div class="row">
+      <div class="span12">
+        <h3>Search Results for <i><ins><?php echo $txtsearch; ?></ins></i></h3>
+        <hr />
       </div>
     </div>
-    
-    
-<header class="jumbotron subhead" id="overview">
-  <div class="container">
-    <h1>Data Reviews</h1>
-    <p class="lead">Electronic Judging System</p>
-  </div>
-</header>
-    <div class="container">
-    
-    <br />
-                <div class="col-md-12">
-                    <ul class="breadcrumb">
-                    
-                        <li><a href="selection.php">User Selection</a> / </li>
-                    
-                        <li><a href="home.php">List of Events</a> / </li>
-                        
-                        <li><a href="rev_main_event.php">Data Reviews</a> / </li>
-                        
-                        <li>Data Reviews: Search</li>
-                        
-                    </ul>
-                </div>
-                
-                
-    <br />
-    <div class="col-lg-1">
-   </div>
-    <div class="col-lg-10">
-    
-    <form method="POST" target="_self" action="review_search.php">
-    
-     <input style="font-size: large; height: 45px !important; text-indent: 7px !important;" class="form-control btn-block" name="txtsearch" placeholder="Enter a keyword and search..." value="<?php echo $txtsearch; ?>" />  
-     <br />
-      <button class="btn btn-info pull-right" style="width: 150px !important;"><i class="icon-search"></i> <strong>SEARCH</strong></button> 
-     
-      </form>
-   </div>
-   <div class="col-lg-1">
-   </div>
- 
-  
-  <div class="row">
-      
-      <div class="span12">
-
- <h3>Search Results for <i><ins><?php echo $txtsearch; ?></ins></i></h3>
-        
-        
-  <hr />
-  
-  
-       
-    <!-- main event --> 
-     
-     
-          
-           
- <?php   
-          $event_query = $conn->query("select * from main_event where event_name like '%$txtsearch%'") or die(mysql_error());
-	 
-            
-     
-     $menum_row = $event_query->rowcount();
-        if( $menum_row > 0)
-        { ?>
-         <h3>Main Events</h3>
-     	<?php while ($event_row = $event_query->fetch()) 
-        {
-            $search_mainevent_id=$event_row['mainevent_id'];
-            ?>
-          
-           
-         
-          <table class="table table-bordered">
-        <thead>
-        
-     <th><a title="click to view full details" target="_blank" href="print_all_results.php?main_event_id=<?php echo $search_mainevent_id; ?>"><?php echo $event_row['event_name']; ?> &raquo;</a></th>
-       
-       
-         
-        </thead>
-     <tbody>
-     
-     
-         
-      
-        
-    
-     </tbody>
-     
-          </table>
-          
-      <?php } } ?>
-    
-    
-    <!-- sub event -->
-    
+    <!-- main event -->
     <?php   
-          $event_query = $conn->query("select * from sub_event where event_name like '%$txtsearch%'") or die(mysql_error());
-	 
-           
-     
-     $menum_row = $event_query->rowcount();
-        if( $menum_row > 0){ ?>
+      $event_query = $conn->query("select * from main_event where event_name like '%$txtsearch%'") or die(mysql_error());
+      $menum_row = $event_query->rowcount();
+      if( $menum_row > 0) { ?>
+        <h3>Main Events</h3>
+        <?php while ($event_row = $event_query->fetch()) {
+          $search_mainevent_id = $event_row['mainevent_id']; ?>
+          <table class="table table-bordered">
+            <thead>
+              <th><a title="click to view full details" target="_blank" href="print_all_results.php?main_event_id=<?php echo $search_mainevent_id; ?>"><?php echo $event_row['event_name']; ?> &raquo;</a></th>
+            </thead>
+          </table>
+        <?php } } ?>
+    <!-- sub event -->
+    <?php   
+      $event_query = $conn->query("select * from sub_event where event_name like '%$txtsearch%'") or die(mysql_error());
+      $menum_row = $event_query->rowcount();
+      if( $menum_row > 0) { ?>
         <h3>Sub Events</h3>
-        
-        <?php 
-        while ($event_row = $event_query->fetch()) 
-        { 
-             $search_mainevent_id=$event_row['mainevent_id'];
-             $search_subevent_id=$event_row['subevent_id'];
-            ?>
-          
-           
-         
+        <?php while ($event_row = $event_query->fetch()) {
+          $search_mainevent_id = $event_row['mainevent_id'];
+          $search_subevent_id = $event_row['subevent_id']; ?>
           <table class="table table-bordered">
-        <thead>
-        
-     <th><a title="click to view full details" target="_blank" href="review_result.php?mainevent_id=<?php echo $search_mainevent_id; ?>&sub_event_id=<?php echo $search_subevent_id; ?>"><?php echo $event_row['event_name']; ?> &raquo;</a></th>
-       
-       
-         
-        </thead>
-     <tbody>
-     
-     
-         
-      
-        
-    
-     </tbody>
-     
+            <thead>
+              <th><a title="click to view full details" target="_blank" href="review_result.php?mainevent_id=<?php echo $search_mainevent_id; ?>&sub_event_id=<?php echo $search_subevent_id; ?>"><?php echo $event_row['event_name']; ?> &raquo;</a></th>
+            </thead>
           </table>
-          
-      <?php } } ?>
-      
-      
-        <!-- contestants -->  
-      
-      <?php   
-          $event_query = $conn->query("select * from contestants where fullname like '%$txtsearch%'") or die(mysql_error());
-	
-     $menum_row = $event_query->rowcount();
-        if( $menum_row > 0)
-        { ?>
-              <h3>Contestants</h3>
-            <?php	while ($event_row = $event_query->fetch()) 
-        { 
-            $search_contestant_id=$event_row['contestant_id'];
-     
-     
-            ?>
-          
-          
-         
+        <?php } } ?>
+    <!-- contestants -->
+    <?php   
+      $event_query = $conn->query("select * from contestants where fullname like '%$txtsearch%'") or die(mysql_error());
+      $menum_row = $event_query->rowcount();
+      if( $menum_row > 0) { ?>
+        <h3>Contestants</h3>
+        <?php while ($event_row = $event_query->fetch()) {
+          $search_contestant_id = $event_row['contestant_id']; ?>
           <table class="table table-bordered">
-        <thead>
-        
-     <th><a title="click to view full details" href="#"><?php echo $event_row['fullname']; ?> &raquo;</a></th>
-       
-       
-         
-        </thead>
-     <tbody>
-     
-     
-         
-      
-        
-    
-     </tbody>
-     
+            <thead>
+              <th><a title="click to view full details" href="#"><?php echo $event_row['fullname']; ?> &raquo;</a></th>
+            </thead>
           </table>
-          
-      <?php } } ?>
-      
-      
-      <!-- judges -->  
-      
-      <?php   
-          $event_query = $conn->query("select * from judges where fullname like '%$txtsearch%'") or die(mysql_error());
- 
-     $menum_row = $event_query->rowcount();
-        if( $menum_row > 0)
-        { ?>
+        <?php } } ?>
+    <!-- judges -->
+    <?php   
+      $event_query = $conn->query("select * from judges where fullname like '%$txtsearch%'") or die(mysql_error());
+      $menum_row = $event_query->rowcount();
+      if( $menum_row > 0) { ?>
         <h3>Judges</h3>
-     	<?php while ($event_row = $event_query->fetch()) 
-        { 
-             $search_judge_id=$event_row['judge_id'];
-             
-            ?>
-          
-            
-         
+        <?php while ($event_row = $event_query->fetch()) {
+          $search_judge_id = $event_row['judge_id']; ?>
           <table class="table table-bordered">
-        <thead>
-        
-     <th><a title="click to view full details" href="#"><?php echo $event_row['fullname']; ?> &raquo;</a></th>
-       
-       
-         
-        </thead>
-     <tbody>
-     
-     
-         
-      
-        
-    
-     </tbody>
-     
+            <thead>
+              <th><a title="click to view full details" href="#"><?php echo $event_row['fullname']; ?> &raquo;</a></th>
+            </thead>
           </table>
-          
-      <?php } } ?>
-      
- 
+        <?php } } ?>
     </div>
-
   </div>
- 
+  <?php include("footer.php") ?>
+  <!-- Le javascript -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="..//assets/js/jquery.js"></script>
+  <script src="..//assets/js/bootstrap-transition.js"></script>
+  <script src="..//assets/js/bootstrap-alert.js"></script>
+  <script src="..//assets/js/bootstrap-modal.js"></script>
+  <script src="..//assets/js/bootstrap-dropdown.js"></script>
+  <script src="..//assets/js/bootstrap-scrollspy.js"></script>
+  <script src="..//assets/js/bootstrap-tab.js"></script>
+  <script src="..//assets/js/bootstrap-tooltip.js"></script>
+  <script src="..//assets/js/bootstrap-popover.js"></script>
+  <script src="..//assets/js/bootstrap-button.js"></script>
+  <script src="..//assets/js/bootstrap-collapse.js"></script>
+  <script src="..//assets/js/bootstrap-carousel.js"></script>
+  <script src="..//assets/js/bootstrap-typeahead.js"></script>
+  <script src="..//assets/js/bootstrap-affix.js"></script>
+  <script src="..//assets/js/holder/holder.js"></script>
+  <script src="..//assets/js/google-code-prettify/prettify.js"></script>
+  <script src="..//assets/js/application.js"></script>
+  <!-- SweetAlert JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    document.getElementById('logout').addEventListener('click', function(event) {
+      event.preventDefault();
+      Swal.fire({
+        title: 'Are you sure you want to log out?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes',
+        cancelButtonText: 'No'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // Redirect to logout.php
+          window.location.href = '..//index.php';
+        }
+      });
+    });
 
+    document.getElementById("toggle-btn").addEventListener("click", function () {
+      var sidebar = document.getElementById("sidebar");
+      var mainContent = document.getElementById("main-content");
 
-    <?php include('footer.php'); ?>
-    
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
- 
-    <script src="..//assets/js/jquery.js"></script>
-    <script src="..//assets/js/bootstrap-transition.js"></script>
-    <script src="..//assets/js/bootstrap-alert.js"></script>
-    <script src="..//assets/js/bootstrap-modal.js"></script>
-    <script src="..//assets/js/bootstrap-dropdown.js"></script>
-    <script src="..//assets/js/bootstrap-scrollspy.js"></script>
-    <script src="..//assets/js/bootstrap-tab.js"></script>
-    <script src="..//assets/js/bootstrap-tooltip.js"></script>
-    <script src="..//assets/js/bootstrap-popover.js"></script>
-    <script src="..//assets/js/bootstrap-button.js"></script>
-    <script src="..//assets/js/bootstrap-collapse.js"></script>
-    <script src="..//assets/js/bootstrap-carousel.js"></script>
-    <script src="..//assets/js/bootstrap-typeahead.js"></script>
-    <script src="..//assets/js/bootstrap-affix.js"></script>
-    <script src="..//assets/js/holder/holder.js"></script>
-    <script src="..//assets/js/google-code-prettify/prettify.js"></script>
-    <script src="..//assets/js/application.js"></script>
+      sidebar.classList.toggle("collapsed");
+      mainContent.classList.toggle("collapsed");
 
-  </body>
+      var isCollapsed = sidebar.classList.contains("collapsed");
+      this.innerHTML = isCollapsed ? "<i class='fas fa-bars'></i>" : "<i class='fas fa-bars'></i>";
+    });
+  </script>
+</body>
 </html>

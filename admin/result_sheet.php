@@ -289,7 +289,6 @@ while ($jjn_result_row = $jjn_result_query->fetch()) {
 </div>
 
 
-   <?php include('footer.php'); ?>
 
     <!-- Le javascript
     ================================================== -->

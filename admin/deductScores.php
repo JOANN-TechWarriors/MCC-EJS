@@ -201,22 +201,35 @@ while ($tot_score_row = $tot_score_query->fetch())
   </div>
   
   </div>
- <?php 
- if(isset($_POST['submit_place']))
- {
-    $MEidxx=$_POST['active_main_event'];
-    $active_sub_event=$_POST['active_sub_event'];
-    $contestant_id=$_POST['contestant_id'];
-    $deduction=$_POST['deduction'];
-    
-    $conn->query("update sub_results set deduction='$deduction' where subevent_id='$active_sub_event' and contestant_id='$contestant_id'");
-   ?>
- <script>
-window.location = 'deductScores.php?event_id=<?php echo $active_sub_event; ?>';
-alert('Participant scores deducted...');						
-</script>        
- <?php }
- ?>
+  <?php 
+if (isset($_POST['submit_place'])) {
+    $MEidxx = $_POST['active_main_event'];
+    $active_sub_event = $_POST['active_sub_event'];
+    $contestant_id = $_POST['contestant_id'];
+    $deduction = $_POST['deduction'];
+
+    // Update the database
+    $conn->query("UPDATE sub_results SET deduction='$deduction' WHERE subevent_id='$active_sub_event' AND contestant_id='$contestant_id'");
+
+    // Output JavaScript for SweetAlert
+    ?>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        Swal.fire({
+            title: 'Deducted!',
+            text: 'Participant scores have been deducted.',
+            icon: 'success',
+            confirmButtonText: 'OK'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location = 'deductScores.php?event_id=<?php echo $active_sub_event; ?>';
+            }
+        });
+    </script>
+    <?php
+}
+?>
+
 
     <?php include('footer.php'); ?>
 

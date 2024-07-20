@@ -1,9 +1,7 @@
- 
-
 <!DOCTYPE html>
 <html lang="en">
-  
-  <?php 
+
+<?php 
   include('header2.php');
     include('session.php');
     
@@ -16,129 +14,248 @@ $se_query = $conn->query("select * from sub_event where subevent_id = '$sub_even
 $se_row = $se_query->fetch();
      
   ?>
-  
- 
+  <head>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+        }
 
- <body data-spy="scroll" data-target=".bs-docs-sidebar">
+        .sidebar-heading {
+            text-align: center;
+            padding: 10px 0;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
 
-    <!-- Navbar
-    ================================================== -->
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-            <a class="brand" href="#"><img src="uploads/<?php echo $company_logo; ?>" width="23" height="23" />&nbsp; <font size="3">Event Judging System</font></a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 250px;
+            background-color: #333;
+            color: #fff;
+            padding-top: 60px;
+            transition: all 0.3s;
+            overflow: hidden;
+        }
 
-             <li>
-                <a href="dashboard.php">DASHBOARD</a>
-              </li>
-               
-              
+        .sidebar.collapsed {
+            width: 80px;
+        }
 
-                <li class="active">
-                <a href="home.php"><strong>ONGOING EVENTS</strong></a>
-              </li>
-              <li>
-                <a href="#">UPCOMING EVENTS</a>
-              </li>
-              <li>
-                <a href="score_sheets.php">SCORE SHEETS</a>
-              </li>
-              
-            
-               <li>
-                  <a href="rev_main_event.php">DATA REVIEWS</a>
-              </li>
- 
-              
-              
-              
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My Account <span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
- 
-              
-              <li>
-                  <a target="_blank" href="edit_organizer.php">Settings</a>
-              </li>
- 
-              <li>
-                <a href="logout.php">Logout <?php echo $name; ?></a>
-              </li>
-              
-              
-                    </ul>
-                    </li>
-          
-            </ul>
-          </div>
+        .sidebar .toggle-btn {
+            position: absolute;
+            top: 15px;
+            right: -0px;
+            background-color: transparent;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .sidebar .toggle-btn i {
+            font-size: 18px;
+        }
+
+        .sidebar-heading img {
+            max-width: 100px;
+            max-height: 100px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar ul li {
+            padding: 10px;
+            transition: all 0.3s;
+            font-size: 15px;
+        }
+
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .sidebar ul li a i {
+            margin-right: 10px;
+            transition: margin 0.3s;
+        }
+
+        .sidebar.collapsed ul li a i {
+            margin-right: 0;
+        }
+
+        .sidebar ul li a span {
+            display: inline-block;
+            transition: opacity 0.3s;
+        }
+
+        .sidebar.collapsed ul li a span {
+            opacity: 0;
+            width: 0;
+            overflow: hidden;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #555;
+        }
+
+        .main {
+            margin-left: 250px;
+            padding: 20px;
+            transition: all 0.3s;
+        }
+
+        .main.collapsed {
+            margin-left: 80px;
+        }
+
+        .content {
+            margin-left: 260px;
+            padding: 20px;
+        }
+
+        button.accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+
+        button.accordion.active,
+        button.accordion:hover {
+            background-color: #ddd;
+        }
+
+        button.accordion:after {
+            content: '\002B';
+            color: #777;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+        button.accordion.active:after {
+            content: "\2212";
+        }
+
+        div.panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .main {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="sidebar" id="sidebar">
+        <button class="toggle-btn" id="toggle-btn">☰</button>
+        <div class="sidebar-heading">
+            <img src="ejs_logo.png" alt="Logo">
+            <div>Event Judging System</div>
         </div>
-      </div>
+        <ul >
+            <li><a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> <span>DASHBOARD</span></a></li>
+            <li><a href="home.php"><i class="fas fa-calendar-check"></i> <span>ONGOING EVENTS</span></a></li>
+            <li><a href="upcoming_events.php"><i class="fas fa-calendar-alt"></i> <span>UPCOMING EVENTS</span></a></li>
+            <li><a href="score_sheets.php"><i class="fas fa-clipboard-list"></i> <span>SCORE SHEETS</span></a></li>
+            <li><a href="rev_main_event.php"><i class="fas fa-chart-line"></i> <span>DATA REVIEWS</span></a></li>
+            <li><a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> <span>LOGOUT</span></a></li>
+        </ul>
     </div>
- 
- 
-<header class="jumbotron subhead" id="overview">
+
+
+  <div class="main">
+    <div class="container">
+      <h1>
+        <?php echo $se_name; ?> Settings
+      </h1>
+    </div>
+
+
   <div class="container">
-    <h1><?php echo $se_name; ?> Settings</h1>
-    <p class="lead">Event Judging System</p>
-  </div>
-</header>
 
-
-<div class="container">
+    <div class="span12">
 
 
 
-                
-                
+      <br />
+      <div class="col-md-12">
+        <ul class="breadcrumb">
 
-<div class="span12">
+          <li><a href="dashboard.php">Dashboard</a> / </li>
+
+          <li><a href="home.php">Ongoing Events</a> / </li>
+
+          <li>
+            <?php echo $se_name; ?> Settings
+          </li>
+
+        </ul>
+      </div>
 
 
 
-                <br />
-                <div class="col-md-12">
-                    <ul class="breadcrumb">
-                    
-                        <li><a href="dashboard.php">Dashboard</a> / </li>
-                    
-                        <li><a href="home.php">Ongoing Events</a> / </li>
-                        
-                        <li><?php echo $se_name; ?> Settings</li>
-                        
-                    </ul>
-                </div>
-                
-                
-                
 
-<form method="POST">
-<input value="<?php echo $sub_event_id; ?>" name="sub_event_id" type="hidden" />
+      <form method="POST">
+        <input value="<?php echo $sub_event_id; ?>" name="sub_event_id" type="hidden" />
 
-   
-<hr />
 
-<div id="myGroup"> 
-     
-    
-     <a class="btn btn-info" style="margin-bottom: 4px !important;" data-toggle="collapse" data-target="#contestant" data-parent="#myGroup"><i class="icon-chevron-right"></i> <strong>CONTESTANT</strong></a>
-  
-     <a class="btn btn-info" style="margin-bottom: 4px !important;" data-toggle="collapse" data-target="#judges" data-parent="#myGroup"><i class="icon-chevron-right"></i> <strong>JUDGE</strong></a>  
-  
-     <a class="btn btn-info" style="margin-bottom: 4px !important;" data-toggle="collapse" data-target="#criteria" data-parent="#myGroup"><i class="icon-chevron-right"></i> <strong>CRITERIA</strong></a>  
-     
-     <a class="btn btn-info" style="margin-bottom: 4px !important;" data-toggle="collapse" data-target="#textpoll" data-parent="#myGroup"><i class="icon-chevron-right"></i> <strong>VOTE POLL</strong></a>  
-     
-     
-     <div style="border: 0px;" class="accordion-group">
-        
-                <div class="collapse indent" id="contestant">
+        <hr />
+
+        <div id="myGroup">
+
+
+          <a class="btn btn-info" style="margin-bottom: 4px !important;" data-toggle="collapse"
+            data-target="#contestant" data-parent="#myGroup"><i class="icon-chevron-right"></i>
+            <strong>CONTESTANT</strong></a>
+
+          <a class="btn btn-info" style="margin-bottom: 4px !important;" data-toggle="collapse" data-target="#judges"
+            data-parent="#myGroup"><i class="icon-chevron-right"></i> <strong>JUDGE</strong></a>
+
+          <a class="btn btn-info" style="margin-bottom: 4px !important;" data-toggle="collapse" data-target="#criteria"
+            data-parent="#myGroup"><i class="icon-chevron-right"></i> <strong>CRITERIA</strong></a>
+          <a class="btn btn-info" style="margin-bottom: 4px !important;" data-toggle="collapse" data-target="#textpoll" data-parent="#myGroup"><i class="icon-chevron-right"></i> <strong>VOTE POLL</strong></a>  
+
+
+
+          <div style="border: 0px;" class="accordion-group">
+
+          <div class="collapse indent" id="contestant" style="width:1000px;">
                 
                 
                 <section id="download-bootstrap">
@@ -155,7 +272,7 @@ $se_row = $se_query->fetch();
                                     <th>No.</th>
                                     <th>Picture</th>
                                     <th>Name</th>
-                                    <th>Category/Department</th>
+                                    <th>Course, Year & Section</th>
                                     <th>Actions</th>
                                     </thead>
                                     <form method="POST">
@@ -176,7 +293,7 @@ $se_row = $se_query->fetch();
                                     <input name="selector[]" type="checkbox" value="<?php echo $cont_id; ?>" title="Check to select <?php echo $cont_row['fullname']; ?> "/></td>
                                     
                                     <td width="10"><?php echo $cont_row['contestant_ctr']; ?></td>
-                                    <td><img width="50" src="..//img/<?php echo $cont_row['Picture']; ?>" /></td>
+                                    <td><img width="50" src="../img/<?php echo $cont_row['Picture']; ?>" /></td>
                                     <td><?php echo $cont_row['fullname']; ?></td>
                                     <td><?php echo $cont_row['AddOn']; ?></td>
                                     <td width="10"><a title="Click to edit <?php echo $cont_row['fullname']; ?>  datas" href="edit_contestant.php?contestant_id=<?php echo $cont_row['contestant_id'];?>&sub_event_id=<?php echo $sub_event_id;?>&se_name=<?php echo $se_name;?>" class="btn btn-success"><i class="icon icon-pencil"></i></a></td>
@@ -203,186 +320,210 @@ $se_row = $se_query->fetch();
                 </section>
                 
                 </div>
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                <div class="collapse indent" id="judges">
-                    <section id="download-bootstrap">
-          <div class="page-header">
-            <h1>Judge's Settings  
-            &nbsp;<a title="Click to add new Judge for this Event" href="add_judge.php?sub_event_id=<?php echo $sub_event_id; ?>&se_name=<?php echo $se_name;?>" class="btn btn-primary"><i class="icon icon-plus"></i></a>
-            &nbsp;<a title="Click to print Judge's Code for this Event" target="_blank" title="Click to print judges code" href="print_judges.php?sub_event_id=<?php echo $sub_event_id; ?>&se_name=<?php echo $se_name;?>" class="btn btn-info"><i class="icon icon-print"></i></a></h1>
-          </div>
-           <table class="table table-bordered">
-  <thead>
-  <th>Check to Select</th>
-   <th>No.</th>
-  <th>Code</th>
-  <th>Fullname</th>
-  <th></th>
-  <th>Actions</th>
-  </thead>
-  	<form method="POST">
-  <tbody>
-  <?php    
+
+
+
+            <div class="collapse indent" id="judges" style="width:1000px;">
+              <section id="download-bootstrap">
+                <div class="page-header">
+                  <h1>Judge's Settings
+                    &nbsp;<a title="Click to add new Judge for this Event"
+                      href="add_judge.php?sub_event_id=<?php echo $sub_event_id; ?>&se_name=<?php echo $se_name;?>"
+                      class="btn btn-primary"><i class="icon icon-plus"></i></a>
+                    &nbsp;<a title="Click to print Judge's Code for this Event" target="_blank"
+                      title="Click to print judges code"
+                      href="print_judges.php?sub_event_id=<?php echo $sub_event_id; ?>&se_name=<?php echo $se_name;?>"
+                      class="btn btn-info"><i class="icon icon-print"></i></a></h1>
+                </div>
+                <table class="table table-bordered">
+                  <thead>
+                    <th>Check to Select</th>
+                    <th>No.</th>
+                    <th>Code</th>
+                    <th>Fullname</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </thead>
+                  <form method="POST">
+                    <tbody>
+                      <?php    
    	$judge_query = $conn->query("SELECT * FROM judges WHERE subevent_id='$sub_event_id' order by judge_ctr") or die(mysql_error());
     while ($judge_row = $judge_query->fetch()) 
         { 
             $jxx_id=$judge_row['judge_id'];
             ?>
-  <tr>
- <td width="115"><input name="selector[]" type="checkbox" value="<?php echo $jxx_id;  ?>" title="Check to select <?php echo $judge_row['fullname']; ?>"/></td>
-     <td width="10"><?php echo $judge_row['judge_ctr']; ?></td>
-     <td><?php echo $judge_row['code']; ?></td>
-    <td><?php echo $judge_row['fullname']; ?></td>
-    <td><?php echo $judge_row['jtype']; ?></td>
-       <td width="10"><a title="Click to edit <?php echo $judge_row['fullname']; ?> datas" href="edit_judge.php?judge_id=<?php echo $jxx_id;?>&sub_event_id=<?php echo $sub_event_id;?>&se_name=<?php echo $se_name;?>" class="btn btn-success"><i class="icon icon-pencil"></i></a>
-      
-    
-       </td>
-  </tr>
- 
- 
-   
+                      <tr>
+                        <td width="115"><input name="selector[]" type="checkbox" value="<?php echo $jxx_id;  ?>"
+                            title="Check to select <?php echo $judge_row['fullname']; ?>" /></td>
+                        <td width="10">
+                          <?php echo $judge_row['judge_ctr']; ?>
+                        </td>
+                        <td>
+                          <?php echo $judge_row['code']; ?>
+                        </td>
+                        <td>
+                          <?php echo $judge_row['fullname']; ?>
+                        </td>
+                        <td>
+                          <?php echo $judge_row['jtype']; ?>
+                        </td>
+                        <td width="10"><a title="Click to edit <?php echo $judge_row['fullname']; ?> datas"
+                            href="edit_judge.php?judge_id=<?php echo $jxx_id;?>&sub_event_id=<?php echo $sub_event_id;?>&se_name=<?php echo $se_name;?>"
+                            class="btn btn-success"><i class="icon icon-pencil"></i></a>
 
 
-   <?php } ?>
-  <tr>
- <td colspan="6">
-  <input required="true" type="password" placeholder="Organizer Password" name="org_pass" />
-  <input type="hidden" name="sub_event_id" value="<?php echo $sub_event_id; ?>" />
-   <input type="hidden" name="se_name" value="<?php echo $se_name; ?>" />
- 
-  <button title="Click to delete selected row(s)" type="submit" class="btn btn-danger" name="delete_judge" ><i class="icon icon-trash"></i></button> 
-  </td>
- </tr>
- </table>
- </td>
-  
-  </tr>
-  </tbody>
-  </form>
-  </table>
- 
- 
- 
- 
-</section>
-                </div>
-                
-                
-                
-                
-                
-                <div class="collapse indent" id="criteria">
-                <section id="download-bootstrap">
-          <div class="page-header">
-            <h1>Criteria's Settings &nbsp;<a title="Click to add new Criteria for this Event" href="add_criteria.php?sub_event_id=<?php echo $sub_event_id; ?>&se_name=<?php echo $se_name;?>" class="btn btn-primary"><i class="icon icon-plus"></i></a></h1>
-          </div>
-   <table class="table table-bordered">
-  <thead>
-  <th>Check to Select</th>
-  <th>No.</th>
-  <th>Criteria</th>
-  <th>Percentage</th>
-  <th>Actions</th>
-  </thead>
-  <form method="POST">
-  <tbody>
-  <?php    
+                        </td>
+                      </tr>
+
+
+
+
+
+                      <?php } ?>
+                      <tr>
+                        <td colspan="6">
+                          <input required="true" type="password" placeholder="Organizer Password" name="org_pass" />
+                          <input type="hidden" name="sub_event_id" value="<?php echo $sub_event_id; ?>" />
+                          <input type="hidden" name="se_name" value="<?php echo $se_name; ?>" />
+
+                          <button title="Click to delete selected row(s)" type="submit" class="btn btn-danger"
+                            name="delete_judge"><i class="icon icon-trash"></i></button>
+                        </td>
+                      </tr>
+                </table>
+                </td>
+
+                </tr>
+                </tbody>
+      </form>
+      </table>
+
+
+
+
+      </section>
+    </div>
+
+
+
+
+
+    <div class="collapse indent" id="criteria" style="width:1000px;">
+      <section id="download-bootstrap">
+        <div class="page-header">
+          <h1>Criteria's Settings &nbsp;<a title="Click to add new Criteria for this Event"
+              href="add_criteria.php?sub_event_id=<?php echo $sub_event_id; ?>&se_name=<?php echo $se_name;?>"
+              class="btn btn-primary"><i class="icon icon-plus"></i></a></h1>
+        </div>
+        <table class="table table-bordered">
+          <thead>
+            <th>Check to Select</th>
+            <th>No.</th>
+            <th>Criteria</th>
+            <th>Percentage</th>
+            <th>Actions</th>
+          </thead>
+          <form method="POST">
+            <tbody>
+              <?php    
   $percnt=0;
    	$crit_query = $conn->query("SELECT * FROM criteria WHERE subevent_id='$sub_event_id'") or die(mysql_error());
     while ($crit_row = $crit_query->fetch()) 
         { $percnt=$percnt+$crit_row['percentage'];
             $crit_id=$crit_row['criteria_id'];
             ?>
-  <tr>
- <td width="115"><input name="selector[]" type="checkbox" value="<?php echo $crit_id; ?>" title="Check to select <?php echo $crit_row['criteria']; ?>"/></td>
-   <td width="10"><?php echo $crit_row['criteria_ctr']; ?></td>
-      <td><?php echo $crit_row['criteria']; ?></td>
-       <td width="10"><?php echo $crit_row['percentage']; ?></td>
-        <td width="10"><a title="Click to edit Criteria: <?php echo $crit_row['criteria']; ?> datas" href="edit_criteria.php?crit_id=<?php echo $crit_id;?>&sub_event_id=<?php echo $sub_event_id;?>&se_name=<?php echo $se_name;?>" class="btn btn-success"><i class="icon icon-pencil"></i></a></td>
-  </tr>
-   <?php } ?>
-   
-     <tr>
-  
-    <?php
+              <tr>
+                <td width="115"><input name="selector[]" type="checkbox" value="<?php echo $crit_id; ?>"
+                    title="Check to select <?php echo $crit_row['criteria']; ?>" /></td>
+                <td width="10">
+                  <?php echo $crit_row['criteria_ctr']; ?>
+                </td>
+                <td>
+                  <?php echo $crit_row['criteria']; ?>
+                </td>
+                <td width="10">
+                  <?php echo $crit_row['percentage']; ?>
+                </td>
+                <td width="10"><a title="Click to edit Criteria: <?php echo $crit_row['criteria']; ?> datas"
+                    href="edit_criteria.php?crit_id=<?php echo $crit_id;?>&sub_event_id=<?php echo $sub_event_id;?>&se_name=<?php echo $se_name;?>"
+                    class="btn btn-success"><i class="icon icon-pencil"></i></a></td>
+              </tr>
+              <?php } ?>
+
+              <tr>
+
+                <?php
       if($percnt<100)
       { ?>
-     <td colspan="3">
-       <div class="alert alert-danger pull-right">
-  
-  <strong>The Total Percentage is under 100%.</strong> 
-</div>
-     </td>
-      <td colspan="2">
-        <div class="alert alert-danger">
-  
-  <strong><?php  echo $percnt; ?>%</strong> 
-</div> 
-    </td>
-       
-        <?php } ?>
-        
-         <?php
+                <td colspan="3">
+                  <div class="alert alert-danger pull-right">
+
+                    <strong>The Total Percentage is under 100%.</strong>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <div class="alert alert-danger">
+
+                    <strong>
+                      <?php  echo $percnt; ?>%
+                    </strong>
+                  </div>
+                </td>
+
+                <?php } ?>
+
+                <?php
       if($percnt>100)
       { ?>
-     <td colspan="3">
-     <div class="alert alert-danger pull-right">
-  
-  <strong>The Total Percentage is over 100%.</strong> 
-</div>
-      </td>
-       <td colspan="2">
-        <div class="alert alert-danger">
-  
-  <strong><?php  echo $percnt; ?>%</strong> 
-</div>
-    
-    </td>
-       
-        <?php } ?>
-        
-        
-         <?php
+                <td colspan="3">
+                  <div class="alert alert-danger pull-right">
+
+                    <strong>The Total Percentage is over 100%.</strong>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <div class="alert alert-danger">
+
+                    <strong>
+                      <?php  echo $percnt; ?>%
+                    </strong>
+                  </div>
+
+                </td>
+
+                <?php } ?>
+
+
+                <?php
       if($percnt==100)
       { ?>
-    <td colspan="3"><strong class="pull-right">TOTAL</strong></td>
-      <td colspan="2">
-     <span style="font-size: 15px !important;" class="badge badge-info"><?php  echo $percnt; ?> %</span>
-    </td>
-        
-        <?php } ?>
-  </tr>
-  
-  
-  <tr>
- <td colspan="5">
-  <input required="true" type="password" placeholder="Organizer Password" name="org_pass" />
-  <input type="hidden" name="sub_event_id" value="<?php echo $sub_event_id; ?>" />
-   <input type="hidden" name="se_name" value="<?php echo $se_name; ?>" />
- <button title="Click to delete selected row(s)" type="submit" class="btn btn-danger" name="delete_crit" ><i class="icon icon-trash"></i></button>  
- </td>
- </tr>
-  </tbody>
-  </form>
-  </table>
-  
- </section>
-                </div>
-                
-                
-                
-                
-                
-                <div class="collapse indent" id="textpoll">
+                <td colspan="3"><strong class="pull-right">TOTAL</strong></td>
+                <td colspan="2">
+                  <span style="font-size: 15px !important;" class="badge badge-info">
+                    <?php  echo $percnt; ?> %
+                  </span>
+                </td>
+
+                <?php } ?>
+              </tr>
+
+
+              <tr>
+                <td colspan="5">
+                  <input required="true" type="password" placeholder="Organizer Password" name="org_pass" />
+                  <input type="hidden" name="sub_event_id" value="<?php echo $sub_event_id; ?>" />
+                  <input type="hidden" name="se_name" value="<?php echo $se_name; ?>" />
+                  <button title="Click to delete selected row(s)" type="submit" class="btn btn-danger"
+                    name="delete_crit"><i class="icon icon-trash"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </form>
+        </table>
+
+      </section>
+    </div>
+    <div class="collapse indent" id="textpoll" style="width:1000px;">
                  <section id="download-bootstrap">
           <div class="page-header">
             <h1>Vote Poll Settings</h1>
@@ -396,7 +537,7 @@ $se_row = $se_query->fetch();
    
   <th>No.</th>
   <th>Fullname</th>
-  <th>Category/Department</th>
+  <th>Contestant TxtCode</th>
   <th>Actions</th>
   </thead>
 	
@@ -420,7 +561,7 @@ $se_row = $se_query->fetch();
  
   </tr>
  </form>
- <tr>
+ <tr></table>
  <td colspan="5"> 
  <form method="POST">
  <input value="<?php echo $sub_event_id; ?>" name="sub_event_id" type="hidden" />
@@ -432,7 +573,7 @@ $se_row = $se_query->fetch();
 </div>
   &nbsp;<a class="btn btn-primary" href="updateTxtview.php?sid=<?php echo $sub_event_id; ?>" target="_blank" title="Click to view textpoll votes">Live View Result</a>
   &nbsp;<a class="btn btn-primary" href="updateBlankTxtview.php?sid=<?php echo $sub_event_id; ?>" target="_blank" title="Click to view textpoll votes">Live View</a>
-  &nbsp;<a class="btn btn-primary" href="poll/?event=<?php echo $sub_event_id; ?>" target="_blank" title="Click to view textpoll votes">View Vote Poll</a>
+  &nbsp;<a class="btn btn-primary" href="..//poll/index.php?event=<?php echo $sub_event_id; ?>" target="_blank" title="Click to view textpoll votes">View Vote Poll</a>
  </form>
  
  </td>
@@ -441,8 +582,8 @@ $se_row = $se_query->fetch();
   </tbody>
 
 
-  </table>
     
+       
   <?php }
  else
  { ?>
@@ -462,24 +603,22 @@ $se_row = $se_query->fetch();
  <?php } ?>
  </section> 
                 </div>
-                
-                
-                
-                
-        
-     </div>
-   
-    
-       
-</div>
- 
- 
- 
-</form>
-          </div>
-           </div>
-          
-<?php
+
+
+  </div>
+
+
+
+  </div>
+
+
+
+  </form>
+  </div>
+  </div>
+  </div>
+
+  <?php
  if (isset($_POST['activate_textpoll']))
 {
 
@@ -491,9 +630,9 @@ $tp_status=$_POST['tp_status'];
  $conn->query("update sub_event set txtpoll_status='deactive', txtpollview='deactive', view='deactive' where subevent_id='$sub_event_id'");  
  
  ?>
-	<script>window.location = 'sub_event_details_edit.php?sub_event_id=<?php echo $sub_event_id;?>&se_name=<?php echo $se_name;?>';
-	alert('Votepoll Deactivated');</script>
-    <?php 
+  <script>window.location = 'sub_event_details_edit.php?sub_event_id=<?php echo $sub_event_id;?>&se_name=<?php echo $se_name;?>';
+    alert('Textpoll Deactivated');</script>
+  <?php 
  }
     
  else
@@ -502,14 +641,14 @@ $tp_status=$_POST['tp_status'];
  $conn->query("update sub_event set txtpoll_status='active', txtpollview='active', view='active' where subevent_id='$sub_event_id'");  
  
  ?>
-	<script>window.location = 'sub_event_details_edit.php?sub_event_id=<?php echo $sub_event_id;?>&se_name=<?php echo $se_name;?>';
-	alert('Votepoll Activated');</script>
-   
-    <?php  }}?>
+  <script>window.location = 'sub_event_details_edit.php?sub_event_id=<?php echo $sub_event_id;?>&se_name=<?php echo $se_name;?>';
+    alert('Textpoll Activated');</script>
+
+  <?php  }}?>
 
 
-         
-<?php 
+
+  <?php 
 
 if(isset($_POST['save_settings']))
 {
@@ -831,166 +970,184 @@ if(isset($_POST['save_settings']))
   
   
  ?>
-<script>
-			                                      
-			      								window.location = 'home.php';
-			      							   	alert('Organizer <?php echo $fname." ".$mname." ".$lname; ?> registered successfully!');						
-			      								</script>
-<?php  
+  <script>
+
+    window.location = 'home.php';
+    alert('Organizer <?php echo $fname." ".$mname." ".$lname; ?> registered successfully!');						
+  </script>
+  <?php  
  
  
 } ?>
+
+
+
+
+<?php
+if (isset($_POST['delete_cont'])) {
+
+    $org_pass = $_POST['org_pass'];
+    $sub_event_id = $_POST['sub_event_id'];
+    $se_name = $_POST['se_name'];
+
+    if ($check_pass == $org_pass) {
+        $id = $_POST['selector'];
+        $N = count($id);
+        for ($i = 0; $i < $N; $i++) {
+            $conn->query("DELETE FROM contestants WHERE contestant_id='$id[$i]'");
+            $conn->query("DELETE FROM sub_results WHERE contestant_id='$id[$i]'");
+        }
+        ?>
+        <script>
+            Swal.fire({
+                title: 'Success!',
+                text: 'Contestant(s) successfully deleted.',
+                icon: 'success',
+                onClose: () => {
+                    window.location = 'sub_event_details_edit.php?sub_event_id=<?php echo $sub_event_id; ?>&se_name=<?php echo $se_name; ?>';
+                }
+            });
+        </script>
+        <?php
+    } else {
+        ?>
+        <script>
+            Swal.fire({
+                title: 'Error!',
+                text: 'Confirmation password is invalid!',
+                icon: 'error',
+                onClose: () => {
+                    window.location = 'sub_event_details_edit.php?sub_event_id=<?php echo $sub_event_id; ?>&se_name=<?php echo $se_name; ?>';
+                }
+            });
+        </script>
+        <?php
+    }
+}
+?>
+
+<?php
+if (isset($_POST['delete_judge'])) {
+
+    $org_pass = $_POST['org_pass'];
+    $sub_event_id = $_POST['sub_event_id'];
+    $se_name = $_POST['se_name'];
+
+    if ($check_pass == $org_pass) {
+        $id = $_POST['selector'];
+        $N = count($id);
+        for ($i = 0; $i < $N; $i++) {
+            $conn->query("DELETE FROM judges WHERE judge_id='$id[$i]'");
+            $conn->query("DELETE FROM sub_results WHERE judge_id='$id[$i]'");
+        }
+        ?>
+        <script>
+            Swal.fire({
+                title: 'Deleted!',
+                text: 'Judge(s) successfully deleted.',
+                icon: 'success',
+                onClose: () => {
+                    window.location = 'sub_event_details_edit.php?sub_event_id=<?php echo $sub_event_id; ?>&se_name=<?php echo $se_name; ?>';
+                }
+            });
+        </script>
+        <?php
+    } else {
+        ?>
+        <script>
+            Swal.fire({
+                title: 'Error!',
+                text: 'Confirmation password is invalid!',
+                icon: 'error',
+                onClose: () => {
+                    window.location = 'sub_event_details_edit.php?sub_event_id=<?php echo $sub_event_id; ?>&se_name=<?php echo $se_name; ?>';
+                }
+            });
+        </script>
+        <?php
+    }
+}
+?>
+
+<?php
+if (isset($_POST['delete_crit'])) {
+
+    $org_pass = $_POST['org_pass'];
+    $sub_event_id = $_POST['sub_event_id'];
+    $se_name = $_POST['se_name'];
+
+    if ($check_pass == $org_pass) {
+        $id = $_POST['selector'];
+        $N = count($id);
+        for ($i = 0; $i < $N; $i++) {
+            $conn->query("DELETE FROM criteria WHERE criteria_id='$id[$i]'");
+        }
+        ?>
+        <script>
+            Swal.fire({
+                title: 'Success!',
+                text: 'Criteria(s) successfully deleted.',
+                icon: 'success',
+                onClose: () => {
+                    window.location = 'sub_event_details_edit.php?sub_event_id=<?php echo $sub_event_id; ?>&se_name=<?php echo $se_name; ?>';
+                }
+            });
+        </script>
+        <?php
+    } else {
+        ?>
+        <script>
+            Swal.fire({
+                title: 'Error!',
+                text: 'Confirmation password is invalid!',
+                icon: 'error',
+                onClose: () => {
+                    window.location = 'sub_event_details_edit.php?sub_event_id=<?php echo $sub_event_id; ?>&se_name=<?php echo $se_name; ?>';
+                }
+            });
+        </script>
+        <?php
+    }
+}
+?>
+<script>
   
+  document.getElementById("toggle-btn").addEventListener("click", function () {
+        var sidebar = document.getElementById("sidebar");
+        var mainContent = document.getElementById("main-content");
+
+        sidebar.classList.toggle("collapsed");
+        mainContent.classList.toggle("collapsed");
+
+        var isCollapsed = sidebar.classList.contains("collapsed");
+        this.innerHTML = isCollapsed ? "☰" : "☰";
+    });
+
+  </script>
 
 
-
-<?php
- if (isset($_POST['delete_cont']))
-{
-
-$org_pass = $_POST['org_pass'];
-
- $sub_event_id=$_POST['sub_event_id'];
-    $se_name=$_POST['se_name'];
-    
-    
- if($check_pass==$org_pass){
-    
- 
-
-    $id=$_POST['selector'];
-
-    $N = count($id);
-    for($i=0; $i < $N; $i++)
-    {
- $conn->query("delete from contestants where contestant_id='$id[$i]'"); 
- 
- $conn->query("delete from sub_results where contestant_id='$id[$i]'"); 
-    }
-
-  
-
-  ?>
-	<script>window.location = 'sub_event_details_edit.php?sub_event_id=<?php echo $sub_event_id;?>&se_name=<?php echo $se_name;?>';
-	alert('Contestant(s) successfully deleted.');</script>
-    <?php
-}
-else
-{
-      ?>
-	<script>window.location = 'sub_event_details_edit.php?sub_event_id=<?php echo $sub_event_id;?>&se_name=<?php echo $se_name;?>';
-	alert('Confirmation password is invalid!');</script>
-    <?php
-} }
-?>
-
-
-
-
-<?php
- if (isset($_POST['delete_judge']))
-{
-
-$org_pass = $_POST['org_pass'];
-
- $sub_event_id=$_POST['sub_event_id'];
-    $se_name=$_POST['se_name'];
-    
-    
- if($check_pass==$org_pass){
-    
- 
-
-    $id=$_POST['selector'];
-
-    $N = count($id);
-    for($i=0; $i < $N; $i++)
-    {
- $conn->query("delete from judges where judge_id='$id[$i]'"); 
- $conn->query("delete from sub_results where judge_id='$id[$i]'"); 
-    }
-
- 
-
-  ?>
-	<script>window.location = 'sub_event_details_edit.php?sub_event_id=<?php echo $sub_event_id;?>&se_name=<?php echo $se_name;?>';
-	alert('Contestant(s) successfully deleted.');</script>
-    <?php
-}
-else
-{
-      ?>
-	<script>window.location = 'sub_event_details_edit.php?sub_event_id=<?php echo $sub_event_id;?>&se_name=<?php echo $se_name;?>';
-	alert('Confirmation password is invalid!');</script>
-    <?php
-} }
-?>
-
-
-
-<?php
- if (isset($_POST['delete_crit']))
-{
-
-$org_pass = $_POST['org_pass'];
-
- $sub_event_id=$_POST['sub_event_id'];
-    $se_name=$_POST['se_name'];
-    
-    
- if($check_pass==$org_pass){
-    
- 
-
-    $id=$_POST['selector'];
-
-    $N = count($id);
-    for($i=0; $i < $N; $i++)
-    {
- $conn->query("delete from criteria where criteria_id='$id[$i]'"); 
- 
-    }
-
- 
-
-  ?>
-	<script>window.location = 'sub_event_details_edit.php?sub_event_id=<?php echo $sub_event_id;?>&se_name=<?php echo $se_name;?>';
-	alert('Criteria(s) successfully deleted.');</script>
-    <?php
-}
-else
-{
-      ?>
-	<script>window.location = 'sub_event_details_edit.php?sub_event_id=<?php echo $sub_event_id;?>&se_name=<?php echo $se_name;?>';
-	alert('Confirmation password is invalid!');</script>
-    <?php
-} }
-?>
-
-   <?php include('footer.php'); ?>
-
-
-    <!-- Le javascript
+  <!-- Le javascript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
- 
-    <script src="..//assets/js/jquery.js"></script>
-    <script src="..//assets/js/bootstrap-transition.js"></script>
-    <script src="..//assets/js/bootstrap-alert.js"></script>
-    <script src="..//assets/js/bootstrap-modal.js"></script>
-    <script src="..//assets/js/bootstrap-dropdown.js"></script>
-    <script src="..//assets/js/bootstrap-scrollspy.js"></script>
-    <script src="..//assets/js/bootstrap-tab.js"></script>
-    <script src="..//assets/js/bootstrap-tooltip.js"></script>
-    <script src="..//assets/js/bootstrap-popover.js"></script>
-    <script src="..//assets/js/bootstrap-button.js"></script>
-    <script src="..//assets/js/bootstrap-collapse.js"></script>
-    <script src="..//assets/js/bootstrap-carousel.js"></script>
-    <script src="..//assets/js/bootstrap-typeahead.js"></script>
-    <script src="..//assets/js/bootstrap-affix.js"></script>
-    <script src="..//assets/js/holder/holder.js"></script>
-    <script src="..//assets/js/google-code-prettify/prettify.js"></script>
-    <script src="../assets/js/application.js"></script>
-    
-  </body>
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="..//assets/js/jquery.js"></script>
+  <script src="..//assets/js/bootstrap-transition.js"></script>
+  <script src="..//assets/js/bootstrap-alert.js"></script>
+  <script src="..//assets/js/bootstrap-modal.js"></script>
+  <script src="..//assets/js/bootstrap-dropdown.js"></script>
+  <script src="..//assets/js/bootstrap-scrollspy.js"></script>
+  <script src="..//assets/js/bootstrap-tab.js"></script>
+  <script src="..//assets/js/bootstrap-tooltip.js"></script>
+  <script src="..//assets/js/bootstrap-popover.js"></script>
+  <script src="..//assets/js/bootstrap-button.js"></script>
+  <script src="..//assets/js/bootstrap-collapse.js"></script>
+  <script src="..//assets/js/bootstrap-carousel.js"></script>
+  <script src="..//assets/js/bootstrap-typeahead.js"></script>
+  <script src="..//assets/js/bootstrap-affix.js"></script>
+  <script src="..//assets/js/holder/holder.js"></script>
+  <script src="..//assets/js/google-code-prettify/prettify.js"></script>
+  <script src="..//assets/js/application.js"></script>
+
+</body>
+
 </html>

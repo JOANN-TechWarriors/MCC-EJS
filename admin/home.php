@@ -12,134 +12,129 @@
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
  <style>
     body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 0;
-    }
-
-    .sidebar-heading {
-        text-align: center;
-        padding: 10px 0;
-        background-color: #555;
-        font-size: 18px;
-        margin-bottom: 10px;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
     }
 
     .sidebar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 250px;
-        background-color: #333;
-        color: #fff;
-        padding-top: 60px;
-        overflow-y: auto;
-        transition: width 0.3s;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 250px;
+      background-color: #333;
+      color: #fff;
+      padding-top: 20px;
+      transition: all 0.3s;
+      overflow: hidden;
     }
 
-    .sidebar.minimized {
-        width: 80px;
+    .sidebar.collapsed {
+      width: 80px;
+    }
+
+    .sidebar .toggle-btn {
+      position: absolute;
+      top: 15px;
+      right: -0px;
+      background-color: transparent;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .sidebar .toggle-btn i {
+      font-size: 18px;
+    }
+
+    .sidebar-heading {
+      text-align: center;
+      padding: 10px 0;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .sidebar-heading img {
+      max-width: 100px;
+      max-height: 100px;
     }
 
     .sidebar ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
     }
 
     .sidebar ul li {
-        padding: 10px;
-        border-bottom: 1px solid #555;
+      padding: 10px;
+      border-bottom: 1px solid #555;
+      transition: all 0.3s;
     }
 
     .sidebar ul li a {
-        color: #fff;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
     }
 
     .sidebar ul li a i {
-        margin-right: 10px;
+      margin-right: 10px;
+      transition: margin 0.3s;
+    }
+
+    .sidebar.collapsed ul li a i {
+      margin-right: 0;
     }
 
     .sidebar ul li a span {
-        display: inline-block;
-        transition: opacity 0.3s;
+      display: inline-block;
+      transition: opacity 0.3s;
     }
 
-    .sidebar.minimized ul li a span {
-        opacity: 0;
+    .sidebar.collapsed ul li a span {
+      opacity: 0;
+      width: 0;
+      overflow: hidden;
     }
 
     .sidebar ul li a:hover {
-        background-color: #555;
+      background-color: #555;
     }
 
     .main {
-        margin-left: 250px;
-        padding: 20px;
-        transition: margin-left 0.3s;
+      margin-left: 250px;
+      padding: 20px;
+      transition: all 0.3s;
     }
 
-    .main.minimized {
-        margin-left: 80px;
-    }
-
-    .toggle-btn {
-        position: fixed;
-        top: 20px;
-        left: 220px;
-        background-color: #333;
-        color: #fff;
-        border: none;
-        padding: 10px;
-        cursor: pointer;
-        transition: left 0.3s;
-    }
-
-    .toggle-btn.minimized {
-        left: 50px;
-    }
-
-    .logo {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 20px;
-    }
-
-    .logo img {
-        max-width: 100px;
+    .main.collapsed {
+      margin-left: 80px;
     }
 
     @media (max-width: 768px) {
-        .sidebar {
-            width: 100%;
-            height: auto;
-            position: relative;
-        }
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
 
-        .main {
-            margin-left: 0;
-        }
-
-        .toggle-btn {
-            left: 90%;
-        }
+      .main {
+        margin-left: 0;
+      }
     }
-</style>
+  </style>
 </head>
 <body>
-<!-- Sidebar -->
-<div class="sidebar" id="sidebar">
-    <button class="toggle-btn" id="toggle-btn">☰</button>
-    <div class="logo">
-        <img src="../assets/img/mcc_logo.png" alt="Event Judging System Logo">
+  <div class="sidebar" id="sidebar">
+  <button class="toggle-btn" id="toggle-btn">☰</button>
+    <div class="sidebar-heading">
+      <img src="ejs_logo.png" alt="Logo">
+      <div>Event Judging System</div>
     </div>
-    
     <ul>
         <li><a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> <span>DASHBOARD</span></a></li>
         <li><a href="home.php"><i class="fas fa-calendar-check"></i> <span>ONGOING EVENTS</span></a></li>
@@ -148,13 +143,13 @@
         <li><a href="rev_main_event.php"><i class="fas fa-chart-line"></i> <span>DATA REVIEWS</span></a></li>
         <li><a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> <span>LOGOUT</span></a></li>
     </ul>
-</div>
+  </div>
 
 
 
 <!-- Subhead
 ================================================== -->
-<div class="main" id="main">
+<div class="main">
 <div class="container">
     <h1> Ongoing Events</h1>
       </div>
@@ -242,14 +237,11 @@ $sy=$sy_row['sy'];
 $MEctrQuery = $conn->query("select * FROM main_event where sy='$sy'") or die(mysql_error());
 $MECtr = $MEctrQuery->rowCount();  ?>
 
-    
  
 <tr>
 
 <td>
- 
-                        
-                        
+
                         <a  data-toggle="collapse" href="#MainEvents<?php echo $sy; ?>" style="text-align: left !important; text-indent: 7px !important" class="btn btn-warning btn-block"><i class="icon icon-folder-close"></i><?php echo $sy; ?> <span class="badge badge-info pull-right" style="margin-right: 7px !important;"><strong><?php if($MECtr>0 AND $MECtr<2){echo $MECtr." Event";} elseif($MECtr>1){ echo $MECtr." Events";}else{ echo "0 Event";} ; ?></strong> </span> </a>
  
        
@@ -298,15 +290,7 @@ $MECtr = $MEctrQuery->rowCount();  ?>
                         
                         <?php }?>
  
-                        </td>
-                        
-    
-                        
-                        </tr>
-                        
-           
-           
-           
+                        </td></tr>
                         <tr>
                         
                         <td colspan="3">
@@ -842,11 +826,7 @@ if (isset($_POST['deleteSubEvent'])) {
                         
                         <div class="modal-footer">
                         <button  class="btn btn-danger" name="deleteEvent" ><i class="icon-trash"></i> <strong>DELETE</strong></button> 
-                        </div>
-                              
-                               
-                       
-                                  
+                        </div>       
                         </form>
                         
                         </td>
@@ -865,22 +845,16 @@ if (isset($_POST['deleteSubEvent'])) {
         </div>
         
     </div>
-                                    </td>
-                         
-  
-                                    </tr>
+                                    </td></tr>
                             
                                     </table>
  
                                     </div>
                                           
-                                    
-                                     
+
                                     <!-- End of List of sub-events -->
-                             
-   
-                        </td>
-                        </tr>
+
+                        </td></tr>
                         
                         <?php  } ?>
       
@@ -888,20 +862,13 @@ if (isset($_POST['deleteSubEvent'])) {
                                  
                         </div>
  
- </td>
- </tr>
+ </td></tr>
  
  
   <?php  }  ?>
  
   </table>
  
- 
- 
-
-
-
-
 <?php
 if (isset($_POST['create'])) {
     $event_name = $_POST['main_event'];
@@ -1125,17 +1092,11 @@ if (isset($_POST['deleteEvent'])) {
         });
     });
 
-    // Toggle Sidebar
-    document.getElementById('toggle-btn').addEventListener('click', function() {
-        var sidebar = document.getElementById('sidebar');
-        var main = document.getElementById('main');
-        var toggleBtn = document.getElementById('toggle-btn');
-        sidebar.classList.toggle('minimized');
-        main.classList.toggle('minimized');
-        toggleBtn.classList.toggle('minimized');
+    $('#toggle-btn').on('click', function() {
+      $('#sidebar').toggleClass('collapsed');
+      $('#main-content').toggleClass('collapsed');
+      $(this).toggleClass('collapsed');
     });
     </script>
   </body>
 </html>
-
-
