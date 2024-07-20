@@ -30,7 +30,7 @@ include_once('header2.php');
 
 .motto {
   margin-top: 20px; /* Add space above the motto */
-  margin-left: 20px; /* Add space to the left */
+  margin-right: 40px; /* Add space to the left */
 }
 
 .form-container {
