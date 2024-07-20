@@ -24,15 +24,7 @@ include_once('header2.php');
 </style>
 
   <body id="login" style="background:url(../img/Community-College-Madridejos.jpeg)"> 
-   <!-- Navbar
-    ================================================== -->
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-        </div>
-      </div>
-    </div>
-    <!-- Subhead
+   
     
  ================================================== -->
 
@@ -115,7 +107,7 @@ include_once('header2.php');
   </div>
 </div>
 
-<!-- <?php include("footer.php") ?> -->
+
 
 
     <!-- Le javascript
