@@ -33,7 +33,7 @@ include_once('header2.php');
   margin: 2 auto;
 }
 
-.thead th {
+thead th {
   background-color: aquamarine;
   text-indent: 10px;
   color: black;
