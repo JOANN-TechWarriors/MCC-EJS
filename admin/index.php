@@ -73,7 +73,7 @@ include_once('header2.php');
  <br/> 
  <table cellpadding="40" cellspacing="0" border="5" align="center">
  <thead>
- <th align="left" style="background-color: gradient-blue ; text-indent: 5px; color: white; "><h4> &nbsp;ORGANIZER LOGIN</h4></th>
+ <th align="left" style="background-color: gradient-blue ; text-indent: 1px; color: ; ">black<h4> &nbsp;ORGANIZER LOGIN</h4></th>
  </thead>
  
  <tr style="background-color: #fff;">
