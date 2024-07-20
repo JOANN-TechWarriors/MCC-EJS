@@ -71,9 +71,9 @@ include_once('header2.php');
  <br /> 
  <br/>
  <br/> 
- <table cellpadding="40" cellspacing="0" border="0" align="center">
+ <table cellpadding="40" cellspacing="0" border="5" align="center">
  <thead>
- <th align="left" style="background-color: light-gray ; text-indent: 5px; color: white; "><h4> &nbsp;ORGANIZER LOGIN</h4></th>
+ <th align="left" style="background-color: gradient-blue ; text-indent: 5px; color: white; "><h4> &nbsp;ORGANIZER LOGIN</h4></th>
  </thead>
  
  <tr style="background-color: #fff;">
