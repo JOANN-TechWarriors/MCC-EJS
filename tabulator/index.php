@@ -27,12 +27,12 @@ include_once('header2.php');
 .logo-small {
   width: 300px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
-  margin-top: 100px; /* Add space below the logo */
+  margin-left: 100px; /* Add space below the logo */
 }
 
 .motto {
   margin-top: 20px; /* Add space above the motto */
-  margin-right: 100px; /* Add space to the left */
+  margin-left: 100px; /* Add space to the left */
 }
 
 .form-container {
@@ -88,9 +88,9 @@ include_once('header2.php');
              <br/>
              <br/> 
              <table cellpadding="50" cellspacing="40" border="3" align="center">
-              
+
  <br />  
- <table cellpadding="10" cellspacing="0" border="0" align="center">
+ <table cellpadding="50" cellspacing="40" border="0" align="center">
  <thead>
  <th align="left" style="background-color: #4976f5; text-indent: 7px; color: white; "><h4> &nbsp;TABULATOR LOGIN</h4></th>
  </thead>
