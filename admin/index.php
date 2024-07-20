@@ -36,8 +36,6 @@ include_once('header2.php');
  ================================================== -->
 <header class="jumbotron subhead" id="overview">
   <div class="container">
-    <h1 style="font-size: 30px;"> MCC Event Judging System</h1>
-    <p class="lead" style="font-size: 20px;">Ready to serve you...</p>
   </div>
 </header>
 
@@ -79,7 +77,7 @@ include_once('header2.php');
  <th align="left" style="background-color: black; text-indent: 7px; color: white; "><h4> &nbsp;ORGANIZER LOGIN</h4></th>
  </thead>
  
- <tr style="background-color: skyblue;">
+ <tr style="background-color: #fff;">
  
  <td>
   <h5><i class="icon-user"></i>  USERNAME:</h5>
