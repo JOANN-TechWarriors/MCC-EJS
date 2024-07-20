@@ -23,8 +23,25 @@ include_once('header2.php');
 }
 </style>
 
-  <body id="login" style="background:url(../img/Community-College-Madridejos.jpeg)"> 
-   
+  <body id="login" style="background:url(..img/Community-College-Madridejos.jpeg)"> 
+   <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+        </div>
+      </div>
+    </div>
+    <!-- Subhead
+    
+ ================================================== -->
+
+<!-- <header class="jumbotron subhead" id="overview">
+  <div class="container">
+    <h1 style="font-size: 30px;"> MCC Event Judging System</h1>
+    <p class="lead" style="font-size: 20px;">Ready to serve you...</p>
+  </div>
+</header> -->
 <div class="container">
     <div class="row-fluid">
 
@@ -41,18 +58,14 @@ include_once('header2.php');
                         <div class="motto">
                         
                         <h3><p>WELCOME&nbsp;&nbsp;TO:</p></h3>
-                        <h2><p>MCC Event Judging System</p></h2>                      
+                        <h2><p>MCC Event Judging System&nbsp;(S.E.M.S)</p></h2>                      
                         </div>                      
                       </div>              
                     </div>                    
               </div>  
-            
+            <?php //include('title_index.php'); ?>
         </div>
       </div>
-      <div class="span6">
-        <div class="pull-right">
-                <div id="home" >
-                <div class="overlay">
 
    <form method="POST" action="login.php" >
  <br />  
@@ -101,7 +114,6 @@ include_once('header2.php');
     </div>
   </div>
 </div>
-
 
 
 
