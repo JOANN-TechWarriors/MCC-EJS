@@ -75,7 +75,7 @@ include_once('header2.php');
       </div>
 
       <div class="span6">
-        <div class="pull-right">
+        <div class="pull-left">
                 <div id="home" ><!--/. tells about what would be the log-in appearance -->
         <div class="overlay">
           <div class="form-container">
