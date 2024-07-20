@@ -23,6 +23,17 @@ include_once('header2.php');
   right: 20px;
   z-index: 9999;
 }
+
+.logo-small {
+  width: 300px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-top: 100px; /* Add space below the logo */
+}
+
+.motto {
+  margin-top: 20px; /* Add space above the motto */
+  margin-right: 100px; /* Add space to the left */
+}
 </style>
 </head>
   <body>
@@ -36,12 +47,30 @@ include_once('header2.php');
     </div>
     <!-- Subhead
  ================================================== -->
-<header class="jumbotron subhead" id="overview">
-  <div class="container">
-    <h1 style="font-size: 30px;"> MCC Event Judging System</h1>
-    <p class="lead" style="font-size: 20px;">Ready to serve you...</p>
-  </div>
-</header>
+<body id="login">
+
+ <div class="span6">
+        <div class="title_index">
+
+              <div class="row-fluid">
+                <div class="span12"></div>
+                    <div class="row-fluid">
+                      <div class="span10">
+                      <img class="index_logo logo-small" src="../img/logo.png">
+                      </div>  
+                      <div class="span12">
+                        <div class="motto">
+                        
+                        <h3><p>WELCOME&nbsp;&nbsp;TO:</p></h3>
+                        <h2><p><strong>MCC Event Judging System</strong></p></h2>                      
+                        </div>                      
+                      </div>              
+                    </div>                    
+              </div>  
+            
+        </div>
+      </div>
+
 
    <form method="POST" action="login.php" >
  <br />  

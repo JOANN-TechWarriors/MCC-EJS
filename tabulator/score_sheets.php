@@ -177,7 +177,7 @@ include('..//admin/session.php');
 <div class="sidebar" id="sidebar">
         <button class="toggle-btn" id="toggle-btn">☰</button>
         <div class="sidebar-heading">
-            <img src="..//admin/ejs_logo.png" alt="Logo">
+            <img src="../img/logo.png" alt="Logo">
             <div>Event Judging System</div>
         </div>
         <ul>
