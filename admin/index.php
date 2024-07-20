@@ -25,6 +25,11 @@ include_once('header2.php');
 .logo-small {
   width: 250px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
+  margin-bottom: 20px; /* Add space below the logo */
+}
+
+.motto {
+  margin-top: 20px; /* Add space above the motto */
 }
 
 .form-container {
@@ -91,7 +96,7 @@ thead th {
              <br /> 
              <br/>
              <br/> 
-             <table cellpadding="50" cellspacing="40" border="3" align="center">
+             <table cellpadding="50" cellspacing="40" border="5" align="center">
              <thead>
              <th align="left" style="background-color: aquamarine; text-indent: 10px; color: black; "><h4>ORGANIZER LOGIN</h4></th>
              </thead>
