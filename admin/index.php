@@ -68,8 +68,10 @@ include_once('header2.php');
                 <div id="home" ><!--/. tells about what would be the log-in appearance -->
         <div class="overlay">
    <form method="POST" action="login.php" >
- <br />  
- <table cellpadding="50" cellspacing="10" border="0" align="center">
+ <br /> 
+ <br/>
+ <br/> 
+ <table cellpadding="40" cellspacing="0" border="0" align="center">
  <thead>
  <th align="left" style="background-color: black; text-indent: 7px; color: white; "><h4> &nbsp;ORGANIZER LOGIN</h4></th>
  </thead>
