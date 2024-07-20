@@ -288,7 +288,7 @@
   <section id="banner" class="banner-section" style="width: 100%;">
     <div class="container">
       <div class="div_zindex" style="text-align: center;">
-        <h1 style="color: white;"><marquee> Welcome to MCC Event Judging System</marquee></h1>
+        <h1 style="color: white;"> Welcome to MCC Event Judging System</h1>
         <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
       </div>
     </div>
