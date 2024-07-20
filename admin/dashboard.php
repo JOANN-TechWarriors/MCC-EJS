@@ -237,14 +237,15 @@
     <div class="header">
         <div>
             <!-- Add any left-aligned content here if needed -->
+        </div>
         <div class="profile-dropdown">
-    <img src="path_to_profile_image.jpg" alt="Profile Image">
-    <div class="dropdown-menu">
-        <a href="edit_organizer.php">Settings</a>
-        <a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> <span>LOGOUT</span></a>
+            <img src="path_to_profile_image.jpg" alt="Profile Image">
+            <div class="dropdown-menu">
+                <a href="edit_organizer.php">Settings</a>
+                <a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> <span>LOGOUT</span></a>
+            </div>
+        </div>
     </div>
-</div>
-
 
     <!-- Main content -->
     <div class="main" id="main">
