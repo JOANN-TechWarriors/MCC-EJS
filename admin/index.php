@@ -34,10 +34,7 @@ include_once('header2.php');
     </div>
     <!-- Subhead
  ================================================== -->
-<header class="jumbotron subhead" id="overview">
-  <div class="container">
-  </div>
-</header>
+
 
 <body id="login" style="background:url(../img/Community-College-Madridejos.jpeg)">  
 
@@ -51,7 +48,7 @@ include_once('header2.php');
                 <div class="span12"></div>
                     <div class="row-fluid">
                       <div class="span10">
-                      <img class="index_logo" style="background-color: transparent" src="../assets/img/mcc_logo.png">
+                      <img class="index_logo" src="../img/logo.png">
                       </div>  
                       <div class="span12">
                         <div class="motto">
@@ -72,7 +69,7 @@ include_once('header2.php');
         <div class="overlay">
    <form method="POST" action="login.php" >
  <br />  
- <table cellpadding="20" cellspacing="0" border="0" align="center">
+ <table cellpadding="50" cellspacing="0" border="0" align="center">
  <thead>
  <th align="left" style="background-color: black; text-indent: 7px; color: white; "><h4> &nbsp;ORGANIZER LOGIN</h4></th>
  </thead>
