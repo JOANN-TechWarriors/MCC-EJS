@@ -71,7 +71,7 @@ include_once('header2.php');
  <br /> 
  <br/>
  <br/> 
- <table cellpadding="40" cellspacing="30" border="3" align="center">
+ <table cellpadding="50" cellspacing="40" border="3" align="center">
  <thead>
  <th align="left" style="background-color: black; text-indent: 10px; color: white; "><h4> &nbsp;ORGANIZER LOGIN</h4></th>
  </thead>
