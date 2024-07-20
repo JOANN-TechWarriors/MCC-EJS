@@ -320,7 +320,7 @@ if(isset($_POST['update']))
     ?>
  <script>
 			                                      
-			      								window.location = 'selection.php';
+			      								window.location = 'dashboard.php';
 			      							   	alert('Organizer <?php echo $fname." ".$mname." ".$lname; ?> updated successfully!');						
 			      								</script>
  <?php
