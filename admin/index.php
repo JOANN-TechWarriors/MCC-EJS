@@ -183,7 +183,7 @@ thead th {
               icon: "success"
           }).then((result) => {
               if (result.isConfirmed) {
-                  window.location.href = "home.php";
+                  window.location.href = "dashboard.php";
               }
           });
           <?php 

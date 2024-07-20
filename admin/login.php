@@ -45,7 +45,7 @@
     //     $_SESSION['id']=$row['student_id'];
 	// 	// $_SESSION['email']=$row['email'];
         
-    //     ?>	<script>window.location = 'home.php';</script><?php
+    //     ?>	<script>window.location = 'dashboard.php';</script><?php
         	
      }
 		}else{ 
