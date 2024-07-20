@@ -25,7 +25,7 @@ include_once('header2.php');
 .logo-small {
   width: 250px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
-  margin-bottom: 20px; /* Add space below the logo */
+  margin-top: 50px; /* Add space below the logo */
 }
 
 .motto {
