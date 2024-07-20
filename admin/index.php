@@ -51,7 +51,6 @@ include_once('header2.php');
       </div>
       <div class="span6">
         <div class="pull-right">
-        <?php check_message(); ?>
                 <div id="home" >
 
    <form method="POST" action="login.php" >
