@@ -52,6 +52,7 @@ include_once('header2.php');
       <div class="span6">
         <div class="pull-right">
                 <div id="home" >
+                <div class="overlay">
 
    <form method="POST" action="login.php" >
  <br />  
