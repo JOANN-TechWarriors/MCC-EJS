@@ -237,7 +237,7 @@
     <div class="header">
         <div>
             <!-- Add any left-aligned content here if needed -->
-            <div class="profile-dropdown">
+        <div class="profile-dropdown">
     <img src="path_to_profile_image.jpg" alt="Profile Image">
     <div class="dropdown-menu">
         <a href="edit_organizer.php">Settings</a>
@@ -317,21 +317,6 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <!-- Chart.js JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Ensure that the image path is correct
-        const profileImage = document.querySelector('.profile-dropdown img');
-        profileImage.src = 'path_to_profile_image.jpg'; // Update with dynamic path if needed
-
-        // Add event listener for logout
-        document.getElementById('logout').addEventListener('click', function (event) {
-            event.preventDefault();
-            // Implement logout functionality here
-            console.log('Logging out...');
-        });
-    });
-</script>
 <script>
     document.getElementById('logout').addEventListener('click', function(event) {
         event.preventDefault();
