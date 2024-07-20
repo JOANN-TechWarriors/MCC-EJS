@@ -36,12 +36,12 @@ include_once('header2.php');
     
  ================================================== -->
 
-<!-- <header class="jumbotron subhead" id="overview">
+<header class="jumbotron subhead" id="overview">
   <div class="container">
     <h1 style="font-size: 30px;"> MCC Event Judging System</h1>
     <p class="lead" style="font-size: 20px;">Ready to serve you...</p>
   </div>
-</header> -->
+</header>
 <div class="container">
     <div class="row-fluid">
 
@@ -58,12 +58,11 @@ include_once('header2.php');
                         <div class="motto">
                         
                         <h3><p>WELCOME&nbsp;&nbsp;TO:</p></h3>
-                        <h2><p>MCC Event Judging System&nbsp;(S.E.M.S)</p></h2>                      
+                        <h2><p>MCC Event Judging System</p></h2>                      
                         </div>                      
                       </div>              
                     </div>                    
               </div>  
-            <?php //include('title_index.php'); ?>
         </div>
       </div>
 
@@ -114,6 +113,7 @@ include_once('header2.php');
     </div>
   </div>
 </div>
+
 
 
 
