@@ -62,7 +62,7 @@ thead th {
     </div>
     <!-- Subhead
  ================================================== -->
-<body id="login">
+ <body id="login" style="background:url(../img/Community-College-Madridejos.jpeg)">
 
  <div class="span6">
         <div class="title_index">
