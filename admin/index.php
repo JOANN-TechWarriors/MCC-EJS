@@ -26,6 +26,12 @@ include_once('header2.php');
   width: 200px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
 }
+
+.form-container {
+  width: 80%; /* Adjust the width as needed */
+  max-width: 600px;
+  margin: 0 auto;
+}
 </style>
 
   <body>
@@ -72,34 +78,40 @@ include_once('header2.php');
         <div class="pull-right">
                 <div id="home" ><!--/. tells about what would be the log-in appearance -->
         <div class="overlay">
-   <form method="POST" action="login.php" >
- <br /> 
- <br/>
- <br/> 
- <table cellpadding="50" cellspacing="40" border="3" align="center">
- <thead>
- <th align="left" style="background-color: black; text-indent: 10px; color: white; "><h4> &nbsp;ORGANIZER LOGIN</h4></th>
- </thead>
- 
- <tr style="background-color: #fff;">
- 
- <td>
-  <h5><i class="icon-user"></i>  USERNAME:</h5>
-  <input style="font-size: large; height: 35px !important; text-indent: 7px !important;" class="form-control btn-block" type="text" name="username" placeholder="Username" required="true" autofocus="true" />
- 
-  <h5><i class="icon-lock"></i>  PASSWORD:</h5>
-  <input style="font-size: large; height: 35px !important; text-indent: 7px !important;" class="form-control btn-block" type="password"  name="password" placeholder="Password" required="true" />
-<br /><strong><a data-toggle="modal" data-target="#forgot-password-modal">Forgot password?</a></strong><br />
-<h6>If you have no account, pls</h6>
-  <button style="width: 150px !important;" type="submit" class="btn btn-primary pull-right"><i class="icon-ok"></i> <strong>LOGIN</strong></button>
-  
-  <strong>Register <a href="create_account.php">here &raquo;</a></strong> &nbsp;&nbsp;&nbsp;<br><br>
-  
- </td>
- </tr>
- </table>
- </form>
-</body>
+          <div class="form-container">
+            <form method="POST" action="login.php" >
+             <br /> 
+             <br/>
+             <br/> 
+             <table cellpadding="50" cellspacing="40" border="3" align="center">
+             <thead>
+             <th align="left" style="background-color: black; text-indent: 10px; color: white; "><h4> &nbsp;ORGANIZER LOGIN</h4></th>
+             </thead>
+             
+             <tr style="background-color: #fff;">
+             
+             <td>
+              <h5><i class="icon-user"></i>  USERNAME:</h5>
+              <input style="font-size: large; height: 35px !important; text-indent: 7px !important;" class="form-control btn-block" type="text" name="username" placeholder="Username" required="true" autofocus="true" />
+             
+              <h5><i class="icon-lock"></i>  PASSWORD:</h5>
+              <input style="font-size: large; height: 35px !important; text-indent: 7px !important;" class="form-control btn-block" type="password"  name="password" placeholder="Password" required="true" />
+            <br /><strong><a data-toggle="modal" data-target="#forgot-password-modal">Forgot password?</a></strong><br />
+            <h6>If you have no account, pls</h6>
+              <button style="width: 150px !important;" type="submit" class="btn btn-primary pull-right"><i class="icon-ok"></i> <strong>LOGIN</strong></button>
+              
+              <strong>Register <a href="create_account.php">here &raquo;</a></strong> &nbsp;&nbsp;&nbsp;<br><br>
+              
+             </td>
+             </tr>
+             </table>
+             </form>
+           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
    
    <div class="modal fade" id="forgot-password-modal" tabindex="-1" role="dialog" aria-labelledby="forgot-password-modal-label" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -122,6 +134,9 @@ include_once('header2.php');
     </div>
   </div>
 </div>
+
+
+
 
     <!-- Le javascript
     ================================================== -->
