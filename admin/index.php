@@ -23,7 +23,7 @@ include_once('header2.php');
 }
 </style>
 
-  <body>
+  <body id="login" style="background:url(../img/Community-College-Madridejos.jpeg)"> 
    <!-- Navbar
     ================================================== -->
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -115,7 +115,7 @@ include_once('header2.php');
   </div>
 </div>
 
-<?php include("footer.php") ?>
+<!-- <?php include("footer.php") ?> -->
 
 
     <!-- Le javascript
