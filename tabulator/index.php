@@ -78,8 +78,17 @@ include_once('header2.php');
       </div>
 
 
-      <div class="form-container">
-   <form method="POST" action="login.php" >
+      <div class="span6">
+        <div class="pull-left">
+                <div id="home" ><!--/. tells about what would be the log-in appearance -->
+        <div class="overlay">
+          <div class="form-container">
+            <form method="POST" action="login.php" >
+             <br /> 
+             <br/>
+             <br/> 
+             <table cellpadding="50" cellspacing="40" border="3" align="center">
+              
  <br />  
  <table cellpadding="10" cellspacing="0" border="0" align="center">
  <thead>
