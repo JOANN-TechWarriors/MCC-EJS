@@ -28,6 +28,7 @@ include_once('header2.php');
   width: 300px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
   margin-left: 100px; /* Add space below the logo */
+  margin-top: 100px; /* Add space above the logo */
 }
 
 .motto {
@@ -84,11 +85,9 @@ include_once('header2.php');
         <div class="overlay">
           <div class="form-container">
             <form method="POST" action="login.php" >
-             <br /> 
-             <br/>
-             <br/> 
-             <table cellpadding="50" cellspacing="40" border="3" align="center">
-
+     <br /> 
+   <br/>
+   <br/> 
  <br />  
  <table cellpadding="50" cellspacing="40" border="0" align="center">
  <thead>
