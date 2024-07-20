@@ -23,19 +23,9 @@ include_once('header2.php');
 }
 </style>
 
-  <!-- <body id="login" style="background:url(..img/Community-College-Madridejos.jpeg)">  -->
+  <body id="login" style="background:url(..img/Community-College-Madridejos.jpeg)"> 
    <!-- Navbar
-    ================================================== -->
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-        </div>
-      </div>
-    </div>
-    <!-- Subhead
-    
- ================================================== -->
- <body id="login" style="background:url(..img/Community-College-Madridejos.jpeg)"> 
+   
 
 <div class="container">
     <div class="row-fluid">
