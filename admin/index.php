@@ -76,10 +76,10 @@ include_once('header2.php');
  <br />  
  <table cellpadding="10" cellspacing="0" border="0" align="center">
  <thead>
- <th align="left" style="background-color: #4976f5; text-indent: 7px; color: white; "><h4> &nbsp;ORGANIZER LOGIN</h4></th>
+ <th align="left" style="background-color: black; text-indent: 7px; color: white; "><h4> &nbsp;ORGANIZER LOGIN</h4></th>
  </thead>
  
- <tr style="background-color: #d7def2;">
+ <tr style="background-color: skyblue;">
  
  <td>
   <h5><i class="icon-user"></i>  USERNAME:</h5>
