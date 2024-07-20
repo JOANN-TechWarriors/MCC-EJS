@@ -28,9 +28,9 @@ include_once('header2.php');
 }
 
 .form-container {
-  width: 200%; /* Adjust the width as needed */
+  width: 400%; /* Adjust the width as needed */
   max-width: 600px;
-  margin: 0 auto;
+  margin: 2 auto;
 }
 </style>
 
