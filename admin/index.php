@@ -32,6 +32,14 @@ include_once('header2.php');
   max-width: 600px;
   margin: 2 auto;
 }
+
+.thead th {
+  background-color: aquamarine;
+  text-indent: 10px;
+  color: black;
+  font-size: 14px; /* Adjust the font size as needed */
+  padding: 5px; /* Adjust the padding as needed */
+}
 </style>
 
   <body>
