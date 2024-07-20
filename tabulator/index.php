@@ -41,6 +41,14 @@ include_once('header2.php');
   max-width: 600px;
   margin: 2 auto;
 }
+
+thead th {
+  background-color: aquamarine;
+  text-indent: 10px;
+  color: black;
+  font-size: 14px; /* Adjust the font size as needed */
+  padding: 10px; /* Adjust the padding as needed */
+}
 </style>
 </head>
   <body>
@@ -91,7 +99,7 @@ include_once('header2.php');
  <br />  
  <table cellpadding="50" cellspacing="40" border="0" align="center">
  <thead>
- <th align="left" style="background-color: #4976f5; text-indent: 7px; color: white; "><h4> &nbsp;TABULATOR LOGIN</h4></th>
+ <th align="left"  style="background-color: aquamarine; text-indent: 10px; color: black; "><h4> &nbsp;TABULATOR LOGIN</h4></th>
  </thead>
  
  <tr style="background-color: #d7def2;">
