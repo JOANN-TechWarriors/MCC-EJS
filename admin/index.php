@@ -41,7 +41,7 @@ include_once('header2.php');
                         <div class="motto">
                         
                         <h3><p>WELCOME&nbsp;&nbsp;TO:</p></h3>
-                        <h2><p>MCC Event Judging System&nbsp;(S.E.M.S)</p></h2>                      
+                        <h2><p>MCC Event Judging System</p></h2>                      
                         </div>                      
                       </div>              
                     </div>                    
