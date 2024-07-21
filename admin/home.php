@@ -187,113 +187,134 @@
 
      <!-- Modal content-->
      <div class="modal-content">
-         <div class="modal-header">
-             <h4 class="modal-title"><strong>ADD EVENT</strong><button type="button" class="close" data-dismiss="modal">&times;</button></h4>
-
-         </div>
-         <div class="modal-body">
-             <form method="POST">
-                <div class="form-group">
+    <div class="modal-header">
+        <h4 class="modal-title"><strong>ADD EVENT</strong><button type="button" class="close" data-dismiss="modal">&times;</button></h4>
+    </div>
+    <div class="modal-body">
+        <form method="POST">
+            <div class="form-group">
                 <strong>Event #:</strong><br />
-                <input name="sy" class="form-control btn-block" style="text-indent: 5px !important; height: 30px !important;" type="number" placeholder="0" required="true"/>
-                </div>
-                <div class="form-group">
-                     <label for="main_event"><strong>Event Name:</strong></label>
-                     <input type="text" name="main_event" class="form-control btn-block" style="text-indent: 5px !important; height: 30px !important;" placeholder="Event Name" required="true"/>
-                 <div class="form-group">
-                     <label for="date_start"><strong>Date Start:</strong></label>
-                     <input type="date" name="date_start" min="<?php echo date('Y-m-d');?>" class="form-control" style="text-indent: 5px !important; width: 500px !important;" required="true">
-                 </div>
-                 <div class="form-group">
-                     <label for="date_end"><strong>Date End:</strong></label>
-                     <input type="date" name="date_end" min="<?php echo date('Y-m-d');?>" class="form-control" style="text-indent: 5px !important; width: 500px !important;" required="true">
-                 </div>
-                 <div class="form-group">
-                      <label for="date_end">  <strong>Time Start</strong>:<br />   
-                      <input type="time" name="event_time" type="text" required="true" placeholder="hh:mm" class="form-control btn-block">
-                  </div>
-                 <div class="form-group">
-                     <label for="place"><strong>Venue:</strong></label>
-                     <textarea name="place" class="form-control" style="text-indent: 5px !important; width: 500px !important;" placeholder="Event Venue" required="true" rows="2"></textarea>
-                 </div>
-                 <div class="modal-footer">
-                     <button type="reset" class="btn btn-default"><i class="icon-ban-circle"></i> <strong>RESET</strong></button>
-                     <button title="Click to save" name="create" type="submit" class="btn btn-primary"><i class="icon-ok"></i> <strong>SAVE</strong></button> 
-                 </div>
-             </form>
-         </div>
-     </div>
- </div>
-</div>         
-                            
-            
+                <input name="sy" class="form-control btn-block" style="text-indent: 5px !important; height: 30px !important;" type="number" placeholder="0" required="true" />
+            </div>
+            <div class="form-group">
+                <label for="main_event"><strong>Event Name:</strong></label>
+                <input type="text" name="main_event" class="form-control btn-block" style="text-indent: 5px !important; height: 30px !important;" placeholder="Event Name" required="true" />
+            </div>
+            <div class="form-group">
+                <label for="date_start"><strong>Date Start:</strong></label>
+                <input type="date" name="date_start" min="<?php echo date('Y-m-d');?>" class="form-control" style="text-indent: 5px !important; width: 500px !important;" required="true">
+            </div>
+            <div class="form-group">
+                <label for="date_end"><strong>Date End:</strong></label>
+                <input type="date" name="date_end" min="<?php echo date('Y-m-d');?>" class="form-control" style="text-indent: 5px !important; width: 500px !important;" required="true">
+            </div>
+            <div class="form-group">
+                <label for="event_time"><strong>Time Start:</strong></label>
+                <input type="time" name="event_time" required="true" placeholder="hh:mm" class="form-control btn-block">
+            </div>
+            <div class="form-group">
+                <label for="place"><strong>Venue:</strong></label>
+                <textarea name="place" class="form-control" style="text-indent: 5px !important; width: 500px !important;" placeholder="Event Venue" required="true" rows="2"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="reset" class="btn btn-default"><i class="icon-ban-circle"></i> <strong>RESET</strong></button>
+                <button title="Click to save" name="create" type="submit" class="btn btn-primary"><i class="icon-ok"></i> <strong>SAVE</strong></button>
+            </div>
+        </form>
+    </div>
+</div>
+
 <?php   
 $sy_query = $conn->query("select DISTINCT sy FROM main_event where organizer_id='$session_id'") or die(mysql_error());
 while ($sy_row = $sy_query->fetch()) 
 {
-            
-$sy=$sy_row['sy'];
- 
-$MEctrQuery = $conn->query("select * FROM main_event where sy='$sy'") or die(mysql_error());
-$MECtr = $MEctrQuery->rowCount();  ?>
+    $sy = $sy_row['sy'];
+    $MEctrQuery = $conn->query("select * FROM main_event where sy='$sy'") or die(mysql_error());
+    $MECtr = $MEctrQuery->rowCount();
+?>
+    <tr>
+        <td>
+            <a data-toggle="collapse" href="#MainEvents<?php echo $sy; ?>" style="text-align: left !important; text-indent: 7px !important" class="btn btn-warning btn-block">
+                <i class="icon icon-folder-close"></i><?php echo $sy; ?> 
+                <span class="badge badge-info pull-right" style="margin-right: 7px !important;">
+                    <strong>
+                        <?php 
+                        if ($MECtr > 0 AND $MECtr < 2) {
+                            echo $MECtr." Event";
+                        } elseif ($MECtr > 1) {
+                            echo $MECtr." Events";
+                        } else {
+                            echo "0 Event";
+                        }
+                        ?>
+                    </strong> 
+                </span> 
+            </a>
 
- 
-<tr>
-
-<td>
-
-                        <a  data-toggle="collapse" href="#MainEvents<?php echo $sy; ?>" style="text-align: left !important; text-indent: 7px !important" class="btn btn-warning btn-block"><i class="icon icon-folder-close"></i><?php echo $sy; ?> <span class="badge badge-info pull-right" style="margin-right: 7px !important;"><strong><?php if($MECtr>0 AND $MECtr<2){echo $MECtr." Event";} elseif($MECtr>1){ echo $MECtr." Events";}else{ echo "0 Event";} ; ?></strong> </span> </a>
- 
-       
-                
-                        <div class="panel-collapse collapse" id="MainEvents<?php echo $sy; ?>"> 
-                        
-                        <br />
-                        
-                        <table align="right" style="width: 97% !important;" id="example">
- 
-       
-                        <?php
-                        
-                        $myME_ctr=0;
-                          
-                        $event_query = $conn->query("select * from main_event where organizer_id='$session_id' AND sy='$sy'") or die(mysql_error());
-                        while ($event_row = $event_query->fetch()) 
-                       
-                        {
-                        
-                        
-                        
+            <div class="panel-collapse collapse" id="MainEvents<?php echo $sy; ?>"> 
+                <br />
+                <table align="right" style="width: 97% !important;" id="example">
+                    <?php
+                    $myME_ctr = 0;
+                    $event_query = $conn->query("select * from main_event where organizer_id='$session_id' AND sy='$sy'") or die(mysql_error());
+                    while ($event_row = $event_query->fetch()) 
+                    {
                         $myME_ctr++;
-                         
-                        $main_event_id=$event_row['mainevent_id'];
-                        
-                        
+                        $main_event_id = $event_row['mainevent_id'];
                         $SEctrQuery = $conn->query("select * FROM sub_event where mainevent_id='$main_event_id'") or die(mysql_error());
                         $SECtr = $SEctrQuery->rowCount();
+                    ?>  
+                    <tr>
+                        <td colspan="3">
+                            <?php if ($event_row['status'] == "deactivated") { ?>
+                                <a style="text-align: left !important; text-indent:7px !important;" data-toggle="collapse" class="btn btn-default btn-block" title="Complete Event name: <?php echo $event_row['event_name']; ?>. This Main Event is deactivated" href="#collapse2<?php echo $main_event_id; ?>">
+                                    <?php echo $myME_ctr.". ".substr($event_row['event_name'], 0, 22); ?>
+                                    <span class="badge badge-default pull-right" style="margin-right: 7px !important;">
+                                        <?php 
+                                        if ($SECtr > 0 AND $SECtr < 2) {
+                                            echo $SECtr." Sub-Event";
+                                        } elseif ($SECtr > 1) {
+                                            echo $SECtr." Sub-Events";
+                                        } else {
+                                            echo "0 Sub-Event";
+                                        }
+                                        ?>
+                                    </span>
+                                </a>
+                            <?php } else { ?>
+                                <a title="Complete Event name: <?php echo $event_row['event_name']; ?>" style="text-align: left !important; text-indent:7px !important;" data-toggle="collapse" class="btn btn-info btn-block" href="#collapse2<?php echo $main_event_id; ?>">
+                                    <?php echo $myME_ctr.". ".substr($event_row['event_name'], 0, 22); ?>
+                                    <span class="badge badge-warning pull-right" style="margin-right: 7px !important;">
+                                        <strong>
+                                            <?php 
+                                            if ($SECtr > 0 AND $SECtr < 2) {
+                                                echo $SECtr." Sub-Event";
+                                            } elseif ($SECtr > 1) {
+                                                echo $SECtr." Sub-Events";
+                                            } else {
+                                                echo "0 Sub-Event";
+                                            }
+                                            ?>
+                                        </strong>
+                                    </span>
+                                </a>
+                            <?php } ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <div id="collapse2<?php echo $main_event_id; ?>" class="panel-collapse collapse">
+                                <!-- Sub-event content goes here -->
+                            </div>
+                        </td>
+                    </tr>
+                    <?php } ?>
+                </table>
+            </div>
+        </td>
+    </tr>
+<?php } ?>
 
-                        ?>  
-                        
-                        <tr>
-                        <td colspan="3">
-                                   
-                        <!-- view events feature -->
-                                  
-                        <?php
-                        if($event_row['status']=="deactivated") { ?>
-                                    
-                        <a style="text-align: left !important; text-indent:7px !important;" data-toggle="collapse" class="btn btn-default btn-block" title="Complete Event name: <?php echo $event_row['event_name']; ?>. This Main Event is deactivated" href="#collapse2<?php echo $main_event_id; ?>"><?php echo $myME_ctr.". ".substr($event_row['event_name'], 0, 22); ?><span class="badge badge-default pull-right" style="margin-right: 7px !important;"><?php if($SECtr>0 AND $SECtr<2){echo $SECtr." Sub-Event";} elseif($SECtr>1){ echo $SECtr." Sub-Events";}else{ echo "0 Sub-Event";} ; ?></span></a>
-                        
-                        <?php } else { ?>
-                        
-                        <a title="Complete Event name: <?php echo $event_row['event_name']; ?>" style="text-align: left !important; text-indent:7px !important;" data-toggle="collapse" class="btn btn-info btn-block" href="#collapse2<?php echo $main_event_id; ?>"><?php echo $myME_ctr.". ".substr($event_row['event_name'], 0, 22); ?><span class="badge badge-warning pull-right" style="margin-right: 7px !important;"><strong><?php if($SECtr>0 AND $SECtr<2){echo $SECtr." Sub-Event";} elseif($SECtr>1){ echo $SECtr." Sub-Events";}else{ echo "0 Sub-Event";} ; ?></strong></span></a>
-                        
-                        <?php }?>
- 
-                        </td></tr>
-                        <tr>
-                        
-                        <td colspan="3">
      
                                     <!-- start of List of sub-events -->
                                                 
