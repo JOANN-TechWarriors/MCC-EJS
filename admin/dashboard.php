@@ -224,7 +224,7 @@
         <button class="toggle-btn" id="toggle-btn">☰</button>
         <br><br>
         <div class="sidebar-heading">
-            <img src="../admin/ejs_logo.png" alt="Logo">
+            <img src="../img/logo.png" alt="Logo">
             <span>Event Judging System</span>
         </div>
         <ul>
