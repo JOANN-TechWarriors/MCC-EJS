@@ -191,23 +191,6 @@
     <script src="..//assets/js/holder/holder.js"></script>
     <script src="..//assets/js/google-code-prettify/prettify.js"></script>
     <script src="..//assets/js/application.js"></script>
-    <script>
-    window.onload = function() 
-      <?php if(isset($_SESSION['login_success']) && $_SESSION['login_success'] == true): ?>
-          Swal.fire({
-              title: "Success!",
-              text: "You are Successfully logged in!",
-              icon: "success"
-          }).then((result) => {
-              if (result.isConfirmed) {
-                  window.location.href = "dashboard.php";
-              }
-          });
-          <?php unset($_SESSION['login_success']); ?>
-      <?php endif; ?>
-  
-</scrpit>
-
     
   </body>
 </html>
