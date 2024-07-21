@@ -270,7 +270,7 @@
 ================================================== -->
 <div class="main">
 <div class="container">
-    <h1 style="font-size: 50px;"> Ongoing Events</h1>
+    <h1 style="font-size: 25px;"> Ongoing Events</h1>
       </div>
 
       <div class="span15">
@@ -301,7 +301,7 @@
 
 
 <!-- Modal -->
-<div id="addMEcollapse" class="panel-collapse collapse" class="modal fade" role="document">
+<div id="addMEcollapse" class="panel-collapse collapse" class="modal fade" role="dialog">
  <div class="modal-dialog">
 
      <!-- Modal content-->
