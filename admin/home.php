@@ -10,8 +10,6 @@
  <head>
  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
  <style>
    body {
         font-family: Arial, sans-serif;
@@ -296,63 +294,56 @@
  
  
  
+<table style="width: 100% !important;" align="center">
+ 
+<a style="margin-bottom: 10px !important;" data-toggle="modal" class="btn btn-info pull-right" href="#addMEcollapse" title="Click to add Main Event"><i class="icon icon-plus"></i> <strong>EVENT</strong></a>
 
-          <div class="container">
-        <table style="width: 100% !important;" align="center">
-            <tr>
-                <td>
-                    <a style="margin-bottom: 10px !important;" data-toggle="modal" class="btn btn-info pull-right" href="#addMEcollapse" title="Click to add Main Event">
-                        <i class="icon icon-plus"></i> <strong>EVENT</strong>
-                    </a>
-                </td>
-            </tr>
-        </table>
 
-        <!-- Modal -->
-        <div id="addMEcollapse" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title"><strong>ADD EVENT</strong></h4>
-                    </div>
-                    <div class="modal-body">
-                        <form method="POST">
-                            <div class="form-group">
-                                <strong>Event #:</strong><br />
-                                <input name="sy" class="form-control btn-block" style="text-indent: 5px !important; height: 30px !important;" type="number" placeholder="0" required="true" />
-                            </div>
-                            <div class="form-group">
-                                <label for="main_event"><strong>Event Name:</strong></label>
-                                <input type="text" name="main_event" class="form-control btn-block" style="text-indent: 5px !important; height: 30px !important;" placeholder="Event Name" required="true" />
-                            </div>
-                            <div class="form-group">
-                                <label for="date_start"><strong>Date Start:</strong></label>
-                                <input type="date" name="date_start" class="form-control" style="text-indent: 5px !important; width: 100% !important;" required="true">
-                            </div>
-                            <div class="form-group">
-                                <label for="date_end"><strong>Date End:</strong></label>
-                                <input type="date" name="date_end" class="form-control" style="text-indent: 5px !important; width: 100% !important;" required="true">
-                            </div>
-                            <div class="form-group">
-                                <label for="event_time"><strong>Time Start:</strong></label>
-                                <input type="time" name="event_time" required="true" placeholder="hh:mm" class="form-control btn-block">
-                            </div>
-                            <div class="form-group">
-                                <label for="place"><strong>Venue:</strong></label>
-                                <textarea name="place" class="form-control" style="text-indent: 5px !important; width: 100% !important;" placeholder="Event Venue" required="true" rows="2"></textarea>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="reset" class="btn btn-default"><i class="icon-ban-circle"></i> <strong>RESET</strong></button>
-                                <button title="Click to save" name="create" type="submit" class="btn btn-primary"><i class="icon-ok"></i> <strong>SAVE</strong></button>
-                            </div>
-                        </form>
-                    </div>
+
+<!-- Modal -->
+<div id="addMEcollapse" class="panel-collapse collapse" class="modal fade" role="dialog">
+ <div class="modal-dialog">
+
+     <!-- Modal content-->
+     <div class="modal-content">
+         <div class="modal-header">
+             <h4 class="modal-title"><strong>ADD EVENT</strong><button type="button" class="close" data-dismiss="modal">&times;</button></h4>
+
+         </div>
+         <div class="modal-body">
+             <form method="POST">
+                <div class="form-group">
+                <strong>Event #:</strong><br />
+                <input name="sy" class="form-control btn-block" style="text-indent: 5px !important; height: 30px !important;" type="number" placeholder="0" required="true"/>
                 </div>
-            </div>
-        </div>
-    </div>
+                <div class="form-group">
+                     <label for="main_event"><strong>Event Name:</strong></label>
+                     <input type="text" name="main_event" class="form-control btn-block" style="text-indent: 5px !important; height: 30px !important;" placeholder="Event Name" required="true"/>
+                 <div class="form-group">
+                     <label for="date_start"><strong>Date Start:</strong></label>
+                     <input type="date" name="date_start" min="<?php echo date('Y-m-d');?>" class="form-control" style="text-indent: 5px !important; width: 500px !important;" required="true">
+                 </div>
+                 <div class="form-group">
+                     <label for="date_end"><strong>Date End:</strong></label>
+                     <input type="date" name="date_end" min="<?php echo date('Y-m-d');?>" class="form-control" style="text-indent: 5px !important; width: 500px !important;" required="true">
+                 </div>
+                 <div class="form-group">
+                      <label for="date_end">  <strong>Time Start</strong>:<br />   
+                      <input type="time" name="event_time" type="text" required="true" placeholder="hh:mm" class="form-control btn-block">
+                  </div>
+                 <div class="form-group">
+                     <label for="place"><strong>Venue:</strong></label>
+                     <textarea name="place" class="form-control" style="text-indent: 5px !important; width: 500px !important;" placeholder="Event Venue" required="true" rows="2"></textarea>
+                 </div>
+                 <div class="modal-footer">
+                     <button type="reset" class="btn btn-default"><i class="icon-ban-circle"></i> <strong>RESET</strong></button>
+                     <button title="Click to save" name="create" type="submit" class="btn btn-primary"><i class="icon-ok"></i> <strong>SAVE</strong></button> 
+                 </div>
+             </form>
+         </div>
+     </div>
+ </div>
+</div>         
                             
             
 <?php   

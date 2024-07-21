@@ -56,6 +56,22 @@ include('session.php');
         margin-bottom: 10px;
     }
 
+    .logo-container {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.logo-img {
+    max-width: 100%;
+    height: auto;
+}
+
+.header-text {
+    display: block;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
     .sidebar-heading img {
         max-width: 50px;
         max-height: 50px;
@@ -216,9 +232,11 @@ include('session.php');
         <button class="toggle-btn" id="toggle-btn">☰</button>
         <br><br>
         <div class="sidebar-heading">
-            <img src="../img/logo.png" alt="Logo">
-            <span>Event Judging System</span>
-        </div>
+    <div class="logo-container">
+        <img src="../img/logo.png" alt="Logo" class="logo-img">
+    </div>
+    <span class="header-text">Event Judging System</span>
+</div>
         <ul>
             <li><a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> <span>DASHBOARD</span></a></li>
             <li><a href="home.php"><i class="fas fa-calendar-check"></i> <span>ONGOING EVENTS</span></a></li>
