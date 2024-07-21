@@ -68,7 +68,11 @@
     height: auto;
 }
 
-
+.header-text {
+    display: block;
+    font-size: 20px;
+    margin-top: 10px;
+}
 
 
     .sidebar-heading img {
@@ -297,7 +301,7 @@
 
 
 <!-- Modal -->
-<div id="addMEcollapse" class="modal fade" role="dialog">
+<div id="addMEcollapse" class="panel-collapse collapse" role="dialog">
  <div class="modal-dialog">
 
      <!-- Modal content-->
