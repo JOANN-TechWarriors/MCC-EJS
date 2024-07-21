@@ -182,49 +182,73 @@
 
 
 <!-- Modal -->
-<div id="addMEcollapse" class="modal fade" role="dialog">
- <div class="modal-dialog">
+<div id="addMEcollapse" class="panel-collapse collapse">   
+                                    
+                                 <form method="POST">
+                                 
+                                
+                                 
+                                <table align="center" class="table table-bordered cp" id="example">
+                                    
+                                <thead>
+                                    <th>
+                                    <h4><strong>ADD MAIN EVENT</strong>
+                                    <a data-toggle="collapse" class="btn btn-default pull-right" href="#addMEcollapse" title="Click to add Main Event"><i class="icon-remove"></i> CANCEL</a>
+                                    </h4>
+                                    </th>
+                                    </thead>
+                           
+                                <tr>
+                                <td>
+                              
+                                <strong>Event #:</strong><br />
+ 
+                                <input name="sy" class="form-control btn-block" style="text-indent: 5px !important; height: 30px !important;" type="number" placeholder="0" required="true"/>
+                                 <br /> 
 
-     <!-- Modal content-->
-     <div class="modal-content">
-         <div class="modal-header">
-             <h4 class="modal-title"><strong>ADD EVENT</strong><button type="button" class="close" data-dismiss="modal">&times;</button></h4>
+                                 <strong>Event Name:</strong><br />
+                                 <input type="text" name="main_event" class="form-control btn-block" style="text-indent: 5px !important; height: 30px !important;" placeholder="Event Name" required="true"/>
+                                 <br />
+                                 
+                                 
+                          
+                                  <strong>Date Start:</strong><br />
+                                  <div class="container">
+                                         
+                                         <input type="date" id="demo" min="2023-04-25" class="form-control btn-block" required="true">
 
-         </div>
-         <div class="modal-body">
-             <form method="POST">
-                <div class="form-group">
-                <strong>Event #:</strong><br />
-                <input name="sy" class="form-control btn-block" style="text-indent: 5px !important; height: 30px !important;" type="number" placeholder="0" required="true"/>
-                </div>
-                <div class="form-group">
-                     <label for="main_event"><strong>Event Name:</strong></label>
-                     <input type="text" name="main_event" class="form-control btn-block" style="text-indent: 5px !important; height: 30px !important;" placeholder="Event Name" required="true"/>
-                 <div class="form-group">
-                     <label for="date_start"><strong>Date Start:</strong></label>
-                     <input type="date" name="date_start" min="<?php echo date('Y-m-d');?>" class="form-control" style="text-indent: 5px !important; width: 500px !important;" required="true">
-                 </div>
-                 <div class="form-group">
-                     <label for="date_end"><strong>Date End:</strong></label>
-                     <input type="date" name="date_end" min="<?php echo date('Y-m-d');?>" class="form-control" style="text-indent: 5px !important; width: 500px !important;" required="true">
-                 </div>
-                 <div class="form-group">
-                      <label for="date_end">  <strong>Time Start</strong>:<br />   
-                      <input type="time" name="event_time" type="text" required="true" placeholder="hh:mm" class="form-control btn-block">
-                  </div>
-                 <div class="form-group">
-                     <label for="place"><strong>Venue:</strong></label>
-                     <textarea name="place" class="form-control" style="text-indent: 5px !important; width: 500px !important;" placeholder="Event Venue" required="true" rows="2"></textarea>
-                 </div>
-                 <div class="modal-footer">
-                     <button type="reset" class="btn btn-default"><i class="icon-ban-circle"></i> <strong>RESET</strong></button>
-                     <button title="Click to save" name="create" type="submit" class="btn btn-primary"><i class="icon-ok"></i> <strong>SAVE</strong></button> 
-                 </div>
-             </form>
-         </div>
-     </div>
- </div>
-</div>         
+                                         </div>
+                                  <strong>Date End:</strong><br />
+                                  <div class="container">
+                                         
+                                         <input type="date" id="demo" min="2023-04-25" class="form-control btn-block" required="true">
+
+                                         </div>
+                                  <strong>Time Start:</strong><br />
+                                  <div class="container">
+                                         
+                                         <input type="time" name="event_time" type="text" required="true" placeholder="hh:mm" class="form-control btn-block">
+
+                                         </div>
+
+                                   
+
+                                  <strong>Venue:</strong><br />
+                                  <textarea name="place" type="text" class="form-control btn-block" style="text-indent: 10px !important;" placeholder="Event Venue" required="true" rows="2"></textarea>
+                                  <br />
+                           
+                                 
+                                 <div class="modal-footer">
+                                 <button title="Clear form" type="reset" class="btn btn-default"><i class="icon-ban-circle"></i> <strong>RESET</strong></button>
+                                 <button title="Click to save" name="create" type="submit" class="btn btn-primary"><i class="icon-ok"></i> <strong>SAVE</strong></button> 
+                                  
+                                 </div>
+             
+                                  </td>
+                                  </tr>
+                                  </table>
+                                  </form>
+                                  </div>         
                             
             
 <?php   
