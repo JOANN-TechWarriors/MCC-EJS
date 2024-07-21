@@ -270,7 +270,7 @@
 ================================================== -->
 <div class="main">
 <div class="container">
-    <h1 style="font-size: 25px;"> Ongoing Events</h1>
+    <h1 style="font-size: 30px;"> Ongoing Events</h1>
       </div>
 
       <div class="span15">
