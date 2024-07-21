@@ -55,11 +55,7 @@
         padding: 10px 0;
         font-size: 18px;
         margin-bottom: 10px;
-    }
 
-    .sidebar-heading {
-    text-align: center;
-    padding: 20px;
 }
 
 .logo-container {
@@ -72,12 +68,7 @@
     height: auto;
 }
 
-.header-text {
-    display: block;
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 10px;
-}
+
 
 
     .sidebar-heading img {
