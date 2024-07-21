@@ -301,7 +301,7 @@
 
 
 <!-- Modal -->
-<div class="panel-collapse collapse" class="modal fade" role="dialog">
+<div id="addMEcollapse" class="panel-collapse collapse" class="modal fade" role="dialog">
  <div class="modal-dialog">
 
      <!-- Modal content-->
