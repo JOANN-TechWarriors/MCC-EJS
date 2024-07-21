@@ -71,7 +71,7 @@
 .header-text {
     display: block;
     font-size: 20px;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 
@@ -301,7 +301,7 @@
 
 
 <!-- Modal -->
-<div id="addMEcollapse" class="panel-collapse collapse" role="dialog">
+<div id="addMEcollapse" class="panel-collapse collapse" class="modal fade" role="dialog">
  <div class="modal-dialog">
 
      <!-- Modal content-->
