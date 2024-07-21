@@ -216,6 +216,7 @@
     <div class="sidebar" id="sidebar">
         <button class="toggle-btn" id="toggle-btn">☰</button>
         <br><br>
+        <img src="../img/logo.png" alt="Logo">
         <div class="sidebar-heading">
             <img src="../img/logo.png" alt="Logo">
             <span>Event Judging System</span>
@@ -280,7 +281,7 @@
 
 
 <!-- Modal -->
-<div id="addMEcollapse" class="panel-collapse collapse" class="modal fade" role="dialog">
+<div id="addMEcollapse" class="modal fade" role="dialog">
  <div class="modal-dialog">
 
      <!-- Modal content-->
