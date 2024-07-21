@@ -260,7 +260,7 @@
     
   <div class="main" id="main-content"> 
     <div class="container">
-      <h1>Data Reviews</h1>
+      <h1 style="font-size: 30px;">Data Reviews</h1>
     </div>
     
     <br />
