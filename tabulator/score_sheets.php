@@ -56,10 +56,34 @@ include('..//admin/session.php');
             font-size: 18px;
         }
 
+        .sidebar-heading {
+        text-align: center;
+        padding: 10px 0;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .logo-container {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.logo-img {
+    max-width: 100%;
+    height: auto;
+}
+
+.header-text {
+    display: block;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
         .sidebar-heading img {
             max-width: 100px;
             max-height: 100px;
         }
+
 
         .sidebar ul {
             list-style-type: none;
@@ -176,10 +200,14 @@ include('..//admin/session.php');
 
 <div class="sidebar" id="sidebar">
         <button class="toggle-btn" id="toggle-btn">☰</button>
+        <br><br>
         <div class="sidebar-heading">
-            <img src="../img/logo.png" alt="Logo">
-            <div>Event Judging System</div>
-        </div>
+    <div class="logo-container">
+        <img src="../img/logo.png" alt="Logo" class="logo-img">
+    </div>
+    <span class="header-text">Event Judging System</span>
+</div>
+
         <ul>
             <li><a href="#"><i class="fas fa-tachometer-alt"></i> <span>DASHBOARD</span></a></li>
             <li><a href="#"><i class="fas fa-calendar-check"></i> <span>ONGOING EVENTS</span></a></li>
