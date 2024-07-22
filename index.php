@@ -297,7 +297,6 @@
 <section class="fun-facts-section">
   <div class="container div_zindex">
     <div class="row">
-<section id="room" >
 <div class="p-3" id="candidates">
     <h1 class="text-center" style="color: #1153D0; font-family: impact;">MISS IT 2023 CANDIDATES</h1><br>
     <div class="row g-2" >
@@ -540,7 +539,6 @@
            </div>
            
    </div>
-   <section>
    </div>
   </div>
   <!-- Dark Overlay-->
@@ -571,27 +569,6 @@ The MCC Event Judging System . It caters all events that .
 </div>
 </section>
 <script src="./javascript/script.js"></script>
-<section id="gallery">
-			<div class="container" id="gallery">
-    <div class="row">
-    
-        <div class="col-lg-3">
-            <img src="img/mcc.jpg" class="w-100">
-        </div>
-        <div class="col-lg-3">
-            <img src="img/updates.jpg" class="w-100">
-        </div>
-        <div class="col-lg-3">
-            <img src="img/mcc.jpg" class="w-100">
-        </div>
-        <div class="col-lg-3">
-            <img src="img/updates.jpg" class="w-100">
-        </div>
-
-    </div>  
-
-</div>
-		</section>
 <section>
     <br>
 			 <iframe  style="border:0; width: 100%; height: 400px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3912.9695262114656!2d123.72098687257221!3d11.263650350022909!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a88140310a21a9%3A0xc5b9b94e9c2702db!2sMadridejos%20Community%20College!5e0!3m2!1sen!2sph!4v1720744766843!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
