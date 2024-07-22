@@ -258,7 +258,6 @@
         <ul>
             <li><a href="#" style="color: #1153D0;">Home</a></li>
             <li style="margin-right:20px"><a href="#ongoing">Ongoing</a></li>
-            <li><a href="#upcoming">Upcoming</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#live">Live</a></li>
             <li>
@@ -295,7 +294,9 @@
   </section>
 </section>
 
-<br>
+<section class="fun-facts-section">
+  <div class="container div_zindex">
+    <div class="row">
 <section id="room" >
 <div class="p-3" id="candidates">
     <h1 class="text-center" style="color: #1153D0; font-family: impact;">MISS IT 2023 CANDIDATES</h1><br>
@@ -540,20 +541,24 @@
            
    </div>
    <section>
+   </div>
+  </div>
+  <!-- Dark Overlay-->
+  <div class="dark-overlay"></div>
+</section>
 <div class="container-fluid " style="background-color:#12100e ;">
 	<div class="row">
 		 <div class="col-md-12 p-5" id="about">
             <div class="row">
                 <div class="col-md-4">
-                    <img src="img/updates.jpg" class="w-100">
+                    <img src="img/Community-College-Madridejos.jpeg" class="w-100">
                 </div>
 
                 <div class="col-md-6">
-                    <h3  style="color:  #1153D0;">Happening Now!</h3>
+                    <h3  style="color:  #1153D0;">About</h3>
          
              <p class="text-light" style="font-size: 13px;">
-The Guided Outsourcing Company and InfiNET Solutions are jointly hosting a seminar titled "VoIP Technology Basics," led by Mr. Jareth Mara, Technical Account Manager at InfiNET Solutions, and Mr. Chris Walters, VOIP Team Leader. The event is taking place at the Cisco Laboratory, Mabalacat City College, where students of BSIT 2A are being enlightened on the fundamental aspects of Voice over Internet Protocol (VoIP) technology</p>
-
+The MCC Event Judging System . It caters all events that .
                 </div>
 
               

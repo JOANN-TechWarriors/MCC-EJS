@@ -5,7 +5,7 @@
   <?php
   error_reporting(0);
    include('header2.php');
-    include('session.php');
+    include('../admin/session.php');
     $judge_ctr=$_GET['judge_ctr'];
     $subevent_id=$_GET['subevent_id'];
     $getContestant_id=$_GET['contestant_id'];
@@ -82,7 +82,7 @@
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
               <li>
-                <a href="welcome.php">Logout</a>
+                <a href="../index.php">Logout</a>
               </li>
               
       
@@ -1261,7 +1261,7 @@ if( $jstat_rowx == 1 )
 
 
 
-<form method="POST" action="edit_submit_judging.php">
+<form method="POST" action="../admin/edit_submit_judging.php">
 
                   <input type="hidden" value="<?php echo $cont_row['fullname']; ?>" name="contestant_name" />
                   <input type="hidden" value="<?php echo $getContestant_id; ?>" name="contestant_id" />
