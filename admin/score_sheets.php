@@ -55,15 +55,15 @@ include('session.php');
 
         .sidebar {
             position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 250px;
-            background-color: #333;
-            color: #fff;
-            padding-top: 60px;
-            transition: all 0.3s;
-            overflow: hidden;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 250px;
+        background-color: #27293d;
+        color: #fff;
+        padding-top: 20px;
+        transition: all 0.3s;
+        overflow: hidden;
         }
 
         .sidebar.collapsed {
