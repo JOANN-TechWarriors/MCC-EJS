@@ -10,7 +10,7 @@ include('session.php');
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
-        body {
+       body {
             font-family: Arial, sans-serif;
             background-color: #fff;
             margin: 0;
@@ -70,11 +70,6 @@ include('session.php');
             display: block;
             font-size: 20px;
             margin-top: 20px;
-        }
-
-        .sidebar-heading img {
-            max-width: 50px;
-            max-height: 50px;
         }
 
         .sidebar ul {
@@ -227,7 +222,6 @@ include('session.php');
         }
     </style>
 </head>
-
 <body>
     <div class="sidebar" id="sidebar">
         <button class="toggle-btn" id="toggle-btn">☰</button>
@@ -255,13 +249,13 @@ include('session.php');
         <div class="profile-dropdown">
             <div style="font-size:small;"> <?php echo $name; ?></div>
             <div class="dropdown-menu">
-                <a href="edit_organizer.php"> Account Settings</a>
+                <a href="edit_organizer.php">Account Settings</a>
                 <a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> <span>LOGOUT</span></a>
             </div>
         </div>
     </div>
 
-    <!-- Main Content -->
+    <!-- Subhead -->
     <div class="main" id="main-content">
         <div class="container">
             <h1 style="font-size: 30px;">Score Sheets</h1>
@@ -282,16 +276,10 @@ include('session.php');
         <?php
         $sy_query = $conn->query("SELECT * FROM main_event WHERE organizer_id='$session_id' AND status='activated'") or die(mysql_error());
         while ($sy_row = $sy_query->fetch()) { 
+            $sy = $sy_row['sy'];
             $MEidxxx = $sy_row['mainevent_id'];
         ?>
-
-        <div>
-            <?php 
-            $event_query = $conn->query("SELECT * FROM main_event WHERE mainevent_id='$MEidxxx' AND status='activated'") or die(mysql_error());
-            while ($event_row = $event_query->fetch()) { ?>
-                <button class="accordion"><strong><?php echo $event_row['event_name']; ?></strong></button> 
-            <?php } ?>
-
+            <button class="accordion"><strong><?php echo $sy_row['event_name']; ?></strong></button> 
             <div class="panel">
                 <table class="table table-striped">
                     <thead>
@@ -311,70 +299,54 @@ include('session.php');
                             <td>
                                 <div class="nav-collapse collapse">
                                     <ul class="nav">
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $s_event_row['event_name']; ?></a>
-                                            <ul class="dropdown-menu">
-                                                <?php
-                                                $judge_query = $conn->query("SELECT * FROM sub_event 
-                                                    LEFT JOIN result ON sub_event.subevent_id = result.subevent_id 
-                                                    LEFT JOIN judge_category ON result.judge_category_id = judge_category.judge_category_id 
-                                                    LEFT JOIN judge ON judge_category.judge_id = judge.judge_id 
-                                                    WHERE sub_event.subevent_id='$se_id' 
-                                                    AND sub_event.status='activated' 
-                                                    AND judge_category.status='activated'") 
-                                                or die(mysql_error());
-
-                                                while ($judge_row = $judge_query->fetch()) { 
-                                                    $jid = $judge_row['judge_id']; 
-                                                    $ridz = $judge_row['result_id']; 
-                                                ?>
-                                                <li>
-                                                    <a href="score_sheets2.php<?php echo '?id='.$MEidxxx.'&sub='.$se_id.'&rid='.$ridz.'&jid='.$jid; ?>">
-                                                        <?php echo $judge_row['fullname']; ?>
-                                                    </a>
-                                                </li>
-                                                <?php } ?>
+                                        <li>
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                                <strong><?php echo $s_event_row['event_name']; ?></strong> <span class="caret"></span>
+                                            </a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a title="Go to list of contestants" id="view_contestants" href="contestant_list.php<?php echo '?id='.$se_id; ?>"><i class="fas fa-eye"></i> <span>View Contestants</span></a></li>
                                             </ul>
                                         </li>
                                     </ul>
                                 </div>
                             </td>
                             <td>
-                                <button class="btn btn-warning" onclick="location.href='score_sheets2.php<?php echo '?id='.$MEidxxx.'&sub='.$se_id.'&rid='.$ridz.'&jid='.$jid; ?>'">
-                                    View
-                                </button>
+                                <form method="POST" action="view_all_criteria.php<?php echo '?id='.$se_id; ?>">
+                                    <select name="judge" id="judge" required>
+                                        <option value="" selected="selected" disabled="disabled">Select Judge</option>
+                                        <?php   
+                                        $judge_query = $conn->query("SELECT * FROM judge WHERE mainevent_id='$MEidxxx'") or die(mysql_error());
+                                        while ($judge_row = $judge_query->fetch()) { 
+                                            $judge_id = $judge_row['judge_id'];
+                                        ?>
+                                            <option value="<?php echo $judge_id; ?>"><?php echo $judge_row['firstname']." ".$judge_row['lastname']; ?></option>
+                                        <?php } ?>
+                                    </select>
+                                    <button name="Go" type="submit" class="btn btn-info">Go</button>
+                                </form>
                             </td>
                             <td>
-                                <button class="btn btn-danger" onclick="deleteEvent(<?php echo $se_id; ?>)">
-                                    Delete
-                                </button>
+                                <a title="Select winners for event" href="select_winner.php<?php echo '?id='.$se_id; ?>"><i class="fas fa-award"></i> <span>Select Winners</span></a>
                             </td>
                         </tr>
                         <?php } ?>
                     </tbody>
                 </table>
             </div>
-        </div>
         <?php } ?>
-
-        <script>
-            function deleteEvent(eventId) {
-                Swal.fire({
-                    title: 'Are you sure?',
-                    text: "You won't be able to revert this!",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it!'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        window.location.href = 'delete_event.php?id=' + eventId;
-                    }
-                });
-            }
-        </script>
     </div>
-</body>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const toggleBtn = document.getElementById("toggle-btn");
+            const sidebar = document.getElementById("sidebar");
+            const mainContent = document.getElementById("main-content");
+
+            toggleBtn.addEventListener("click", function() {
+                sidebar.classList.toggle("collapsed");
+                mainContent.classList.toggle("collapsed");
+            });
+        });
+    </script>
+</body>
 </html>
