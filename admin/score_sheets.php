@@ -3,7 +3,7 @@
 
 <?php
 include('header2.php');
-include('..//admin/session.php');
+include('session.php');
 ?>
 
 <head>
@@ -177,16 +177,16 @@ include('..//admin/session.php');
 <div class="sidebar" id="sidebar">
         <button class="toggle-btn" id="toggle-btn">☰</button>
         <div class="sidebar-heading">
-            <img src="../img/logo.png" alt="Logo">
+            <img src="..//admin/ejs_logo.png" alt="Logo">
             <div>Event Judging System</div>
         </div>
         <ul>
-            <li><a href="#"><i class="fas fa-tachometer-alt"></i> <span>DASHBOARD</span></a></li>
+            <li><a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> <span>DASHBOARD</span></a></li>
             <li><a href="#"><i class="fas fa-calendar-check"></i> <span>ONGOING EVENTS</span></a></li>
             <li><a href="#"><i class="fas fa-calendar-alt"></i> <span>UPCOMING EVENTS</span></a></li>
             <li><a href="score_sheets.php"><i class="fas fa-clipboard-list"></i> <span>SCORE SHEETS</span></a></li>
             <li><a href="#"><i class="fas fa-chart-line"></i> <span>DATA REVIEWS</span></a></li>
-            <li><a href="..//index.php" id="logout"><i class="fas fa-sign-out-alt"></i> <span>LOGOUT</span></a></li>
+            <li><a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> <span>LOGOUT</span></a></li>
         </ul>
     </div>
 
