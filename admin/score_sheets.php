@@ -17,6 +17,19 @@ include('session.php');
             padding: 0;
         }
 
+        .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 250px;
+        background-color: #27293d;
+        color: #fff;
+        padding-top: 20px;
+        transition: all 0.3s;
+        overflow: hidden;
+    }
+
         .sidebar-heading {
             text-align: center;
             padding: 10px 0;
@@ -58,25 +71,50 @@ include('session.php');
         }
 
         .sidebar .toggle-btn {
-            position: absolute;
-            top: 15px;
-            right: -0px;
-            background-color: transparent;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: transparent;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
 
-        .sidebar .toggle-btn i {
-            font-size: 18px;
-        }
+    .sidebar .toggle-btn i {
+        font-size: 20px;
+    }
 
+    .sidebar-heading {
+        text-align: center;
+        padding: 10px 0;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
         .sidebar-heading img {
             max-width: 100px;
             max-height: 100px;
         }
 
+        .logo-container {
+    display: block;
+    margin-bottom: 10px;
+  }
+     .logo-img {
+    max-width: 100%;
+    height: auto;
+}
+
+.header-text {
+    display: block;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+    .sidebar-heading img {
+        max-width: 50px;
+        max-height: 50px;
+    }
         .sidebar ul {
             list-style-type: none;
             padding: 0;
