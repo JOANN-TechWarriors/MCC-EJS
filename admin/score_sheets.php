@@ -24,14 +24,6 @@ include('session.php');
             margin-bottom: 10px;
         }
 
-        .sidebar-heading {
-        text-align: center;
-        padding: 10px 0;
-        font-size: 18px;
-        margin-bottom: 10px;
-
-}
-
 .logo-container {
     display: block;
     margin-bottom: 10px;
@@ -180,6 +172,53 @@ include('session.php');
             overflow: hidden;
             transition: max-height 0.2s ease-out;
         }
+
+        .header {
+        background-color: #f8f9fa;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .header .profile-dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .header .profile-dropdown img {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+    }
+
+    .header .profile-dropdown .dropdown-menu {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        overflow: hidden;
+        z-index: 1000;
+    }
+
+    .header .profile-dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+    .header .profile-dropdown .dropdown-menu a {
+        display: block;
+        padding: 10px;
+        color: #333;
+        text-decoration: none;
+    }
+
+    .header .profile-dropdown .dropdown-menu a:hover {
+        background-color: #f1f1f1;
+    }
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
