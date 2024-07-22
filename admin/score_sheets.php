@@ -220,18 +220,56 @@ include('session.php');
         background-color: #f1f1f1;
     }
 
+    @media (max-width: 768px) {
+        .sidebar {
+            width: 100%;
+            height: auto;
+            position: relative;
+            overflow: visible;
+        }
+
+        .sidebar.collapsed {
+            width: 100%;
+        }
+
+        .main {
+            margin-left: 0;
+        }
+
+        .sidebar .toggle-btn {
+            display: block;
+        }
+    }
+
         /* Responsive adjustments */
         @media (max-width: 768px) {
-            .sidebar {
-                width: 100%;
-                height: auto;
-                position: relative;
-            }
-
-            .main {
-                margin-left: 0;
-            }
+        .sidebar-heading {
+            font-size: 14px;
         }
+
+        .sidebar ul li a {
+            font-size: 14px;
+        }
+
+        .header {
+            padding: 5px 10px;
+        }
+
+        .header .profile-dropdown img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .chart-container {
+            height: 300px;
+        }
+
+    .chart-container {
+        position: relative;
+        height: 400px;
+        width: 100%;
+    }
+}
     
 </style>
 </head>
