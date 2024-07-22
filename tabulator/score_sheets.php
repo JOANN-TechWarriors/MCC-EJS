@@ -238,7 +238,7 @@ include('..//admin/session.php');
     <span class="header-text">Event Judging System</span>
 </div>
         <ul>
-            <li><a href="#"><i class="fas fa-tachometer-alt"></i> <span>DASHBOARD</span></a></li>
+            <li><a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> <span>DASHBOARD</span></a></li>
             <li><a href="#"><i class="fas fa-calendar-check"></i> <span>ONGOING EVENTS</span></a></li>
             <li><a href="#"><i class="fas fa-calendar-alt"></i> <span>UPCOMING EVENTS</span></a></li>
             <li><a href="score_sheets.php"><i class="fas fa-clipboard-list"></i> <span>SCORE SHEETS</span></a></li>
@@ -271,7 +271,7 @@ include('..//admin/session.php');
             <div class="col-md-15">
                 <ul class="breadcrumb">
                     <li>
-                        <a href="#">Dashboard</a> /
+                        <a href="dashboard.php">Dashboard</a> /
                     </li>
                     <li>
                         <a href="#">Ongoing Events</a> /
