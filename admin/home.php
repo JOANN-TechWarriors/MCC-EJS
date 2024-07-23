@@ -344,7 +344,19 @@
     </div>
   </div>
 </div>
-         
+        
+<script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            let eventCounter = localStorage.getItem('eventCounter');
+            if (!eventCounter) {
+                eventCounter = 1;
+            } else {
+                eventCounter = parseInt(eventCounter) + 1;
+            }
+            localStorage.setItem('eventCounter', eventCounter);
+            document.getElementById('eventNumber').value = eventCounter;
+        });
+    </script>
                             
             
 <?php   
