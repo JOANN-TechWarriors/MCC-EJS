@@ -105,8 +105,8 @@ if ($query) {
               <div class="col-lg-12">
                 <hr />
                 <div class="btn-group pull-right">
+                <button name="update" type="submit" class="btn btn-success">Update</button>
                   <a href="home.php" type="button" class="btn btn-default">Cancel</a>
-                  <button name="update" type="submit" class="btn btn-success">Update</button>
                 </div>
               </div>
             </form>

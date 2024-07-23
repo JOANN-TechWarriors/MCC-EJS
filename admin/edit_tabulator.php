@@ -78,8 +78,8 @@ include('session.php');
           <div class="col-lg-12">
             <hr />
             <div class="btn-group pull-right">
-              <a href="dashboard.php" type="button" class="btn btn-default">Cancel</a>
               <button name="update" type="submit" class="btn btn-success">Update</button>
+              <a href="dashboard.php" type="button" class="btn btn-default">Cancel</a>
             </div>
           </div> 
           <?php } else { ?>
@@ -128,8 +128,9 @@ include('session.php');
             </table>
             <br />
             <div class="btn-group pull-right">
+            <button name="add_tabulator" type="submit" class="btn btn-primary">ADD</button>
               <a href="edit_organizer.php" type="button" class="btn btn-default">CANCEL</a>
-              <button name="add_tabulator" type="submit" class="btn btn-primary">ADD</button>
+              
             </div>
           </form>
           <?php } ?>
