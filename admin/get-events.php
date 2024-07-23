@@ -1,34 +1,17 @@
 <?php
-// Connect to database
-$servername = "127.0.0.1";
-$username = "u510162695_judging_root";
-$password = "1judging_root";
-$dbname = "u510162695_judging";
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+include('dbcon.php');
+date_default_timezone_set('Asia/Manila');
 
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+$query = "SELECT id, title, start_event as start, end_event as end FROM events";
+$result = $conn->query($query);
+
+$events = [];
+
+while ($row = $result->fetch_assoc()) {
+    $events[] = $row;
 }
 
-// Retrieve events from database
-$sql = "SELECT * FROM upcoming_events";
-$result = mysqli_query($conn, $sql);
-
-// Format events for FullCalendar
-$events = array();
-while ($row = mysqli_fetch_assoc($result)) {
-    $event = array();
-    $event['id'] = $row['id'];
-    $event['title'] = $row['title'];
-    $event['start'] = $row['start_date'];
-    $event['end'] = $row['end_date'];
-    array_push($events, $event);
-}
-
-// Return events as JSON
 echo json_encode($events);
 
-// Close connection
-mysqli_close($conn);
+$conn->close();
 ?>

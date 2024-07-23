@@ -1,30 +1,22 @@
 <?php
-// Connect to database
-$host = '127.0.0.1';
-	$username = 'u510162695_judging_root';
-	$password = '1Judging_root';  // Replace with the actual password
-	$dbname = 'u510162695_judging';
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+include('dbcon.php');
+date_default_timezone_set('Asia/Manila');
 
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $id = $_POST['id'];
+
+    $query = "DELETE FROM events WHERE id=?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("i", $id);
+
+    if ($stmt->execute()) {
+        echo json_encode(['status' => 'success']);
+    } else {
+        echo json_encode(['status' => 'error', 'message' => $stmt->error]);
+    }
+
+    $stmt->close();
+    $conn->close();
 }
-
-
-// Get event data from form submission
-$event_id = $_POST['id'];
-$event_title = $_POST['title'];
-$event_start = $_POST['start'];
-$event_end = $_POST['end'];
-
-// Delete event in database
-$sql = "DELETE FROM upcoming_events WHERE id = $event_id";
-if ($conn->query($sql) === TRUE) {
-  echo "Event updated successfully";
-} else {
-  echo "Error updating event: " . $conn->error;
-}
-
-$conn->close();
 ?>
+
