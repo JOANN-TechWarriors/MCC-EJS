@@ -301,49 +301,50 @@
 
 
 <!-- Modal -->
-<div id="addMEcollapse" class="panel-collapse collapse" class="modal fade" role="dialog">
- <div class="modal-dialog">
-
-     <!-- Modal content-->
-     <div class="modal-content">
-         <div class="modal-header">
-             <h4 class="modal-title"><strong>ADD EVENT</strong><button type="button" class="close" data-dismiss="modal">&times;</button></h4>
-
-         </div>
-         <div class="modal-body">
-             <form method="POST">
-                <div class="form-group">
-                <strong>Event #:</strong><br />
-                <input name="sy" class="form-control btn-block" style="text-indent: 5px !important; height: 30px !important;" type="number" placeholder="0" required="true"/>
-                </div>
-                <div class="form-group">
-                     <label for="main_event"><strong>Event Name:</strong></label>
-                     <input type="text" name="main_event" class="form-control btn-block" style="text-indent: 5px !important; height: 30px !important;" placeholder="Event Name" required="true"/>
-                 <div class="form-group">
-                     <label for="date_start"><strong>Date Start:</strong></label>
-                     <input type="date" name="date_start" min="<?php echo date('Y-m-d');?>" class="form-control" style="text-indent: 5px !important; width: 500px !important;" required="true">
-                 </div>
-                 <div class="form-group">
-                     <label for="date_end"><strong>Date End:</strong></label>
-                     <input type="date" name="date_end" min="<?php echo date('Y-m-d');?>" class="form-control" style="text-indent: 5px !important; width: 500px !important;" required="true">
-                 </div>
-                 <div class="form-group">
-                      <label for="date_end">  <strong>Time Start</strong>:<br />   
-                      <input type="time" name="event_time" type="text" required="true" placeholder="hh:mm" class="form-control btn-block">
-                  </div>
-                 <div class="form-group">
-                     <label for="place"><strong>Venue:</strong></label>
-                     <textarea name="place" class="form-control" style="text-indent: 5px !important; width: 500px !important;" placeholder="Event Venue" required="true" rows="2"></textarea>
-                 </div>
-                 <div class="modal-footer">
-                     <button title="Click to save" name="create" type="submit" class="btn btn-primary"><i class="icon-ok"></i> <strong>SAVE</strong></button>
-                     <button type="reset" class="btn btn-default"><i class="icon-ban-circle"></i> <strong>RESET</strong></button> 
-                 </div>
-             </form>
-         </div>
-     </div>
- </div>
-</div>         
+<div id="addMEcollapse" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"><strong>ADD EVENT</strong></h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form method="POST">
+          <div class="form-group">
+            <strong>Event #:</strong><br />
+            <input name="sy" class="form-control btn-block" style="text-indent: 5px !important; height: 30px !important;" type="number" placeholder="0" required="true"/>
+          </div>
+          <div class="form-group">
+            <label for="main_event"><strong>Event Name:</strong></label>
+            <input type="text" name="main_event" class="form-control btn-block" style="text-indent: 5px !important; height: 30px !important;" placeholder="Event Name" required="true"/>
+          </div>
+          <div class="form-group">
+            <label for="date_start"><strong>Date Start:</strong></label>
+            <input type="date" name="date_start" min="<?php echo date('Y-m-d');?>" class="form-control" style="text-indent: 5px !important; width: 100% !important;" required="true">
+          </div>
+          <div class="form-group">
+            <label for="date_end"><strong>Date End:</strong></label>
+            <input type="date" name="date_end" min="<?php echo date('Y-m-d');?>" class="form-control" style="text-indent: 5px !important; width: 100% !important;" required="true">
+          </div>
+          <div class="form-group">
+            <label for="event_time"><strong>Time Start:</strong></label>
+            <input type="time" name="event_time" required="true" class="form-control btn-block">
+          </div>
+          <div class="form-group">
+            <label for="place"><strong>Venue:</strong></label>
+            <textarea name="place" class="form-control" style="text-indent: 5px !important; width: 100% !important;" placeholder="Event Venue" required="true" rows="2"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button title="Click to save" name="create" type="submit" class="btn btn-primary"><i class="icon-ok"></i> <strong>SAVE</strong></button>
+            <button type="reset" class="btn btn-default"><i class="icon-ban-circle"></i> <strong>RESET</strong></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+         
                             
             
 <?php   
