@@ -29,7 +29,7 @@ else
 <script>
 alert('wrong code');
  			
-window.location = 'judge_panel.php';
+window.location = 'welcome.php';
 </script>
     
 <?php }
