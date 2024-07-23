@@ -198,7 +198,7 @@ while ($cont_row = $cont_query->fetch()) {
     
     <?php if($getContestant_id=="allTally"){?>
     <li class="active" ><a href="judge_panel.php?judge_ctr=<?php echo $judge_ctr; ?>&subevent_id=<?php echo $subevent_id; ?>&contestant_id=allTally"><strong>View Tally</strong></a></li>
-      <li><a href="selection.php"><strong><font color="red">Exit</font></strong></a></li>
+      <li><a href="../index.php"><strong><font color="red">Exit</font></strong></a></li>
     <?php }else{ ?>
         
         <li class="" ><a href="judge_panel.php?judge_ctr=<?php echo $judge_ctr; ?>&subevent_id=<?php echo $subevent_id; ?>&contestant_id=allTally">View Tally</a></li>
@@ -1166,7 +1166,7 @@ if($getContestant_id=="allTally")
                                           <table border="0">
       
                                           <tr>
-                                          <td align="center"><img src="uploads/<?php echo $company_logo; ?>" width="35" height="35" /></td>
+                                          <td align="center"><img src="../img<?php echo $company_logo; ?>" width="35" height="35" /></td>
                                          </tr>
                                          <tr>
                                           <td align="center">
@@ -1236,7 +1236,7 @@ while ($score_row = $score_query->fetch())
 <table align="center" style="width: 100% !important;">
 <tr>
 <td align="center">
-<a href="img/<?php echo $picture; ?>"><img style="height: 250px;" src="img/<?php echo $picture; ?>" /></a>
+<a href="../img<?php echo $picture; ?>"><img style="height: 250px;" src="img/<?php echo $picture; ?>" /></a>
 <h3><?php echo $se_namexx; ?> - <?php echo $cont_row['fullname']; ?> <span style="color: gray;"><?php echo $addon; ?></span></h3>
  
 Total Score Earned:
@@ -1446,7 +1446,7 @@ if( $jstat_rowx == 1 )
 
 <!-- submit -->  <!-- submit -->  <!-- submit -->  <!-- submit -->  <!-- submit -->  <!-- submit -->  <!-- submit -->
  
-      <form method="POST" action="submit_judging.php">
+      <form method="POST" action="../admin/submit_judging.php">
       
                   <input type="hidden" value="<?php echo $cont_row['fullname']; ?>" name="contestant_name" />
                   <input type="hidden" value="<?php echo $getContestant_id; ?>" name="contestant_id" />
@@ -1561,67 +1561,17 @@ if( $jstat_rowx == 1 )
 
                        
                         
-<div class="footer">
 
- 
- <?php   
- 
- if($pageStat=="Change")
- {
-    $cont_query = $conn->query("select * from contestants where subevent_id='$subevent_id' AND contestant_id='$getContestant_id'") or die(mysql_error());
-    while ($cont_row = $cont_query->fetch()) { 
-    $con_idTab=$cont_row['contestant_id'];
-    ?>
-     <strong>Edit Score Mode :</strong> <?php echo $cont_row['fullname']; ?>
-     <?php }
-     
-     
-     } else {
-        
-    $cont_query = $conn->query("select * from contestants where subevent_id='$subevent_id' order by contestant_ctr") or die(mysql_error());
-    while ($cont_row = $cont_query->fetch()) { 
-    $con_idTab=$cont_row['contestant_id'];
-    
-    ?>
-    <?php if($getContestant_id==$con_idTab){?>
-       <strong><a href="judge_panel.php?judge_ctr=<?php echo $judge_ctr; ?>&subevent_id=<?php echo $subevent_id; ?>&contestant_id=<?php echo $con_idTab;?>"><?php echo $cont_row['fullname']; ?></a></strong> &middot;
-    <?php }else{?> 
-   <a href="judge_panel.php?judge_ctr=<?php echo $judge_ctr; ?>&subevent_id=<?php echo $subevent_id; ?>&contestant_id=<?php echo $con_idTab;?>"><?php echo $cont_row['fullname']; ?></a> &middot;
-    <?php } } ?>
-    <?php if($getContestant_id=="allTally"){?>
-   <strong><a href="judge_panel.php?judge_ctr=<?php echo $judge_ctr; ?>&subevent_id=<?php echo $subevent_id; ?>&contestant_id=allTally">View Tally</a></strong>  
-    <a href="selection.php"><strong><font color="red">Exit</font></strong></a>
-    <?php }else{?>
-   <a href="judge_panel.php?judge_ctr=<?php echo $judge_ctr; ?>&subevent_id=<?php echo $subevent_id; ?>&contestant_id=allTally">View Tally</a>  
-     <?php  } 
-     
-     }?>
-     
-     
-     
-      
-      
-     
-                          <div class="container">
-                          <center>
-                          
-                          <?php include('footer.php'); ?>
-                          
-                          </center>
-                          
-                          </div>
- 
-</div>
      
  
      
 <?php } } else{ ?> 
 
 <hr />
-<a class="btn btn-danger btn-block" href="selection.php">Back to Dashboard</a>
+<a class="btn btn-danger btn-block" href="../index.php">Back to Dashboard</a>
 
 
-<?php include('footer.php'); ?>
+<?php include('../admin/footer.php'); ?>
 
 
 <?php } ?> 

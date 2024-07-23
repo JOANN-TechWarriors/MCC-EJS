@@ -5,7 +5,7 @@
   <?php
   error_reporting(0);
    include('header2.php');
-    include('session.php');
+    include('../admin/session.php');
     $judge_ctr=$_GET['judge_ctr'];
     $subevent_id=$_GET['subevent_id'];
     $getContestant_id=$_GET['contestant_id'];
@@ -64,7 +64,7 @@
             <ul class="nav">
  
               <li>
-                <a href="selection.php">&laquo; Back to <i><strong>Dashboard</strong></i></a>
+                <a href=".php">&laquo; Back to <i><strong>Dashboard</strong></i></a>
               </li>
               
            
