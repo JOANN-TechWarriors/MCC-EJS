@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="shortcut icon" href="../img/logo.png"/>
+  <link rel="shortcut icon" href="ejs_logo.png"/>
   <title>Event Judging System</title>  
   <link href="..//assets/fullcalendar/main.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
@@ -17,254 +17,138 @@
   <script src="..//assets/fullcalendar/moment.js"></script>
   <style>
     body {
-        font-family: Arial, sans-serif;
-        background-color: #fff;
-        margin: 0;
-        padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
     }
 
     .sidebar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 250px;
-        background-color: #27293d;
-        color: #fff;
-        padding-top: 20px;
-        transition: all 0.3s;
-        overflow: hidden;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 250px;
+      background-color: #333;
+      color: #fff;
+      padding-top: 20px;
+      transition: all 0.3s;
+      overflow: hidden;
     }
 
     .sidebar.collapsed {
-        width: 80px;
+      width: 80px;
     }
 
     .sidebar .toggle-btn {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        background-color: transparent;
-        color: #fff;
-        border: none;
-        cursor: pointer;
-        transition: all 0.3s;
+      position: absolute;
+      top: 15px;
+      right: -0px;
+      background-color: transparent;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
     }
 
     .sidebar .toggle-btn i {
-        font-size: 20px;
+      font-size: 18px;
     }
 
     .sidebar-heading {
-        text-align: center;
-        padding: 10px 0;
-        font-size: 18px;
-        margin-bottom: 10px;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 18px;
+      margin-bottom: 10px;
     }
 
-    .logo-container {
-    display: block;
-    margin-bottom: 10px;
-}
-
-.logo-img {
-    max-width: 100%;
-    height: auto;
-}
-
-.header-text {
-    display: block;
-    font-size: 20px;
-    margin-top: 20px;
-}
-
     .sidebar-heading img {
-        max-width: 50px;
-        max-height: 50px;
+      max-width: 100px;
+      max-height: 100px;
     }
 
     .sidebar ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
     }
 
     .sidebar ul li {
-        padding: 15px 20px;
-        transition: all 0.3s;
+      padding: 10px;
+      border-bottom: 1px solid #555;
+      transition: all 0.3s;
     }
 
     .sidebar ul li a {
-        color: #fff;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
     }
 
     .sidebar ul li a i {
-        margin-right: 10px;
-        transition: margin 0.3s;
+      margin-right: 10px;
+      transition: margin 0.3s;
     }
 
     .sidebar.collapsed ul li a i {
-        margin-right: 0;
+      margin-right: 0;
     }
 
     .sidebar ul li a span {
-        display: inline-block;
-        transition: opacity 0.3s;
+      display: inline-block;
+      transition: opacity 0.3s;
     }
 
     .sidebar.collapsed ul li a span {
-        opacity: 0;
-        width: 0;
-        overflow: hidden;
+      opacity: 0;
+      width: 0;
+      overflow: hidden;
     }
 
     .sidebar ul li a:hover {
-        background-color: #1a1a2e;
+      background-color: #555;
     }
 
     .main {
-        margin-left: 250px;
-        padding: 20px;
-        transition: all 0.3s;
+      margin-left: 250px;
+      padding: 20px;
+      transition: all 0.3s;
     }
 
     .main.collapsed {
-        margin-left: 80px;
-    }
-
-    .header {
-        background-color: #f8f9fa;
-        padding: 10px 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid #ddd;
-    }
-
-    .header .profile-dropdown {
-        position: relative;
-        display: inline-block;
-    }
-
-    .header .profile-dropdown img {
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-    }
-
-    .header .profile-dropdown .dropdown-menu {
-        display: none;
-        position: absolute;
-        right: 0;
-        background-color: #fff;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
-        overflow: hidden;
-        z-index: 1000;
-    }
-
-    .header .profile-dropdown:hover .dropdown-menu {
-        display: block;
-    }
-
-    .header .profile-dropdown .dropdown-menu a {
-        display: block;
-        padding: 10px;
-        color: #333;
-        text-decoration: none;
-    }
-
-    .header .profile-dropdown .dropdown-menu a:hover {
-        background-color: #f1f1f1;
+      margin-left: 80px;
     }
 
     @media (max-width: 768px) {
-        .sidebar {
-            width: 100%;
-            height: auto;
-            position: relative;
-            overflow: visible;
-        }
-
-        .sidebar.collapsed {
-            width: 100%;
-        }
-
-        .main {
-            margin-left: 0;
-        }
-
-        .sidebar .toggle-btn {
-            display: block;
-        }
-    }
-
-    @media (max-width: 576px) {
-        .sidebar-heading {
-            font-size: 14px;
-        }
-
-        .sidebar ul li a {
-            font-size: 14px;
-        }
-
-        .header {
-            padding: 5px 10px;
-        }
-
-        .header .profile-dropdown img {
-            width: 30px;
-            height: 30px;
-        }
-
-        .chart-container {
-            height: 300px;
-        }
-    }
-
-    .chart-container {
-        position: relative;
-        height: 400px;
+      .sidebar {
         width: 100%;
+        height: auto;
+        position: relative;
+      }
+
+      .main {
+        margin-left: 0;
+      }
     }
-</style>
+  </style>
 </head>
 <body>
-    <div class="sidebar" id="sidebar">
-        <button class="toggle-btn" id="toggle-btn">☰</button>
-        <br><br>
-        <div class="sidebar-heading">
-    <div class="logo-container">
-        <img src="../img/logo.png" alt="Logo" class="logo-img">
+  <div class="sidebar" id="sidebar">
+  <button class="toggle-btn" id="toggle-btn">☰</button>
+    <div class="sidebar-heading">
+      <img src="ejs_logo.png" alt="Logo">
+      <div>Event Judging System</div>
     </div>
-    <span class="header-text">Event Judging System</span>
-</div>
-        <ul>
-            <li><a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> <span>DASHBOARD</span></a></li>
-            <li><a href="home.php"><i class="fas fa-calendar-check"></i> <span>ONGOING EVENTS</span></a></li>
-            <li><a href="upcoming_events.php"><i class="fas fa-calendar-alt"></i> <span>UPCOMING EVENTS</span></a></li>
-            <li><a href="score_sheets.php"><i class="fas fa-clipboard-list"></i> <span>SCORE SHEETS</span></a></li>
-            <li><a href="rev_main_event.php"><i class="fas fa-chart-line"></i> <span>DATA REVIEWS</span></a></li>
-        </ul>
-    </div>
-
-    <!-- Header -->
-    <div class="header">
-        <div>
-            <!-- Add any left-aligned content here if needed -->
-        </div>
-        <div class="profile-dropdown">
-           <div style="font-size:small;"> <?php echo $name; ?></div>
-            <div class="dropdown-menu">
-                <a href="edit_organizer.php"> Account Settings</a>
-                <a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> <span>LOGOUT</span></a>
-            </div>
-        </div>
-    </div>
+    <ul>
+        <li><a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> <span>DASHBOARD</span></a></li>
+        <li><a href="home.php"><i class="fas fa-calendar-check"></i> <span>ONGOING EVENTS</span></a></li>
+        <li><a href="upcoming_events.php"><i class="fas fa-calendar-alt"></i> <span>UPCOMING EVENTS</span></a></li>
+        <li><a href="score_sheets.php"><i class="fas fa-clipboard-list"></i> <span>SCORE SHEETS</span></a></li>
+        <li><a href="rev_main_event.php"><i class="fas fa-chart-line"></i> <span>DATA REVIEWS</span></a></li>
+        <li><a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> <span>LOGOUT</span></a></li>
+    </ul>
+  </div>
 
   <div class="main" id="main-content">
     <div class="container">
@@ -463,7 +347,7 @@
       $('#eventEnd').attr('min', currentDateTime);
       $('#updateeventStart').attr('min', currentDateTime);
       $('#updateeventEnd').attr('min', currentDateTime);
-    );
+    });
 
     $('#addEventButton').on('click', function() {
       var title = $('#eventTitle').val();
