@@ -188,8 +188,8 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelEventButton">Cancel</button>
             <button type="button" class="btn btn-success" id="addEventButton">Save</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelEventButton">Cancel</button>
           </div>
         </div>
       </div>
