@@ -1,11 +1,11 @@
 <?php
 // Connect to database
-$host = '127.0.0.1';
+  $host = '127.0.0.1';
 	$username = 'u510162695_judging_root';
 	$password = '1Judging_root';  // Replace with the actual password
 	$dbname = 'u510162695_judging';
 	
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = mysqli_connect($host, $username, $password, $dbname);
 
 // Check connection
 if (!$conn) {
