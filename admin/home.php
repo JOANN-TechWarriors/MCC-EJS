@@ -311,10 +311,10 @@
       </div>
       <div class="modal-body">
         <form method="POST">
-          <div class="form-group">
-            <strong>Event #:</strong><br />
-            <input name="sy" class="form-control btn-block" style="text-indent: 5px !important; height: 30px !important;" type="number" placeholder="0" required="true"/>
-          </div>
+        <div class="form-group">
+        <strong>Event #:</strong><br />
+        <input id="eventNumber" name="sy" class="form-control btn-block" style="text-indent: 5px !important; height: 30px !important;" type="number" placeholder="0" required="true" readonly/>
+    </div>
           <div class="form-group">
             <label for="main_event"><strong>Event Name:</strong></label>
             <input type="text" name="main_event" class="form-control btn-block" style="text-indent: 5px !important; height: 30px !important;" placeholder="Event Name" required="true"/>
