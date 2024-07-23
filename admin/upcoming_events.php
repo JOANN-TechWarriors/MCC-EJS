@@ -463,7 +463,7 @@
       $('#eventEnd').attr('min', currentDateTime);
       $('#updateeventStart').attr('min', currentDateTime);
       $('#updateeventEnd').attr('min', currentDateTime);
-    });
+    );
 
     $('#addEventButton').on('click', function() {
       var title = $('#eventTitle').val();
