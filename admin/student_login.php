@@ -65,43 +65,7 @@ include_once('header2.php');
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             <h4 class="modal-title" id="Login">About MCC Event Judging System</h4>
           </div>
-          <div class="modal-body">
-            <table align="center">
-              <tr>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-              </tr>
-              <tr>
-                <td align="right">Developer:</td>
-                <td><strong> Christian Paul L. Salvado</strong> - Software and Web Developer</td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-              </tr>
-              <tr>
-                <td align="right">Email:</td>
-                <td><strong> salvadochristianpaul5@gmail.com</strong></td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-              </tr>
-              <tr>
-                <td align="right">Mobile Number:</td>
-                <td><strong> +639385974999</strong></td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-              </tr>
-              <tr>
-                <td align="right">Website:</td>
-                <td><a href="www.bee4ten.ml" target="_blank"><strong> www.bee4ten.ml</strong></a></td>
-              </tr>
-            </table>
-            <br />
-            <p>Check my website or get in touch with me for more informations and system supports. All rights reserved 2023 &COPY;</p>
-            <hr />
-            <p class="text-center text-muted"><button class="btn btn-default" data-dismiss="modal" aria-hidden="true"><strong>Close</strong></button></p>
+           <p class="text-center text-muted"><button class="btn btn-default" data-dismiss="modal" aria-hidden="true"><strong>Close</strong></button></p>
           </div>
         </div>
       </div>
@@ -170,7 +134,7 @@ include_once('header2.php');
     ================================================== -->
     <footer class="footer">
       <div class="container">
-        <font size="2" class="" align="center"><strong>Event Judging System &middot; 2023 &COPY; </strong></font> <br />
+        <font size="2" class="" align="center"><strong>MCC Event Judging System &middot; 2024 &COPY; </strong></font> <br />
       </div>
     </footer>
 

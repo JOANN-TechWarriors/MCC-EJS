@@ -336,8 +336,8 @@
                      <textarea name="place" class="form-control" style="text-indent: 5px !important; width: 500px !important;" placeholder="Event Venue" required="true" rows="2"></textarea>
                  </div>
                  <div class="modal-footer">
-                     <button type="reset" class="btn btn-default"><i class="icon-ban-circle"></i> <strong>RESET</strong></button>
-                     <button title="Click to save" name="create" type="submit" class="btn btn-primary"><i class="icon-ok"></i> <strong>SAVE</strong></button> 
+                     <button title="Click to save" name="create" type="submit" class="btn btn-primary"><i class="icon-ok"></i> <strong>SAVE</strong></button>
+                     <button type="reset" class="btn btn-default"><i class="icon-ban-circle"></i> <strong>RESET</strong></button> 
                  </div>
              </form>
          </div>
@@ -840,8 +840,9 @@ if (isset($_POST['deleteSubEvent'])) {
                                       
                                       
                                       <div class="modal-footer">
-                                        <button type="reset" class="btn btn-default"><i class="icon-ban-circle"></i> <strong>RESET</strong></button>
                                         <button name="add_event" class="btn btn-primary"><i class="icon-ok"></i> <strong>SAVE</strong></button>
+                                        <button type="reset" class="btn btn-default"><i class="icon-ban-circle"></i> <strong>RESET</strong></button>
+                                        
                                       </div>
                                       </form>
                                       

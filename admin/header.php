@@ -6,7 +6,7 @@
     <meta name="description" content=""/>
     <meta name="author" content=""/>
     <link rel="shortcut icon" href="../img/logo.png"/>
-    <title>Event Judging System</title>
+    <title>MCC Event Judging System</title>
 
     <!-- Bootstrap core CSS -->
     <link href="..//includes/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>

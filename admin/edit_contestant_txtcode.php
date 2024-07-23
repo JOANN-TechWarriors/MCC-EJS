@@ -133,7 +133,7 @@
   <div class="sidebar" id="sidebar">
   <button class="toggle-btn" id="toggle-btn">☰</button>
     <div class="sidebar-heading">
-      <img src="ejs_logo.png" alt="Logo">
+      <img src="../img/logo.php" alt="Logo">
       <div>Event Judging System</div>
     </div>
     <ul>
@@ -155,7 +155,7 @@
       <br />
       <div class="col-md-15">
         <ul class="breadcrumb">
-          <li><a href="selection.php">User Selection</a></li>
+          <li><a href="home.php">User Selection</a></li>
           <li><a href="home.php">List of Events</a></li>
           <li><a href="sub_event_details_edit.php?sub_event_id=<?php echo $sub_event_id; ?>&se_name=<?php echo $se_name; ?>"><?php echo $se_name; ?> Settings</a></li>
           <li>Edit Contestant TxtCode</li>
@@ -193,8 +193,9 @@
                   </tr>
                   <tr>
                     <td align="right">
-                      <a href="sub_event_details_edit.php?sub_event_id=<?php echo $sub_event_id;?>&se_name=<?php echo $se_name;?>" class="btn btn-default">Back</a>&nbsp;
                       <button name="edit_contestant" class="btn btn-success">Update</button>
+                      <a href="sub_event_details_edit.php?sub_event_id=<?php echo $sub_event_id;?>&se_name=<?php echo $se_name;?>" class="btn btn-default">Back</a>&nbsp;
+
                     </td>
                   </tr>
                 </table>

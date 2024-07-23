@@ -11,7 +11,7 @@
   <div class="container text-center mt-5">
     <h1>404</h1>
     <p>Oops! The page you are looking for does not exist.</p>
-    <a href="index.php" class="btn btn-primary">Go back to Login</a>
+    <a href="../index.php" class="btn btn-primary">Go back to Login</a>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

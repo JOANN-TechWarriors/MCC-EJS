@@ -68,7 +68,7 @@ div.panel {
  
               <li class="active">
             
-                <a href="judgeview.php">Score Sheets</a>
+                <a href="score_sheets.php">Score Sheets</a>
               </li>
               
             
