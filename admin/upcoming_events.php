@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="shortcut icon" href="ejs_logo.png"/>
+  <link rel="shortcut icon" href="../img/logo.png"/>
   <title>Event Judging System</title>  
   <link href="..//assets/fullcalendar/main.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
@@ -259,31 +259,17 @@
         }
       },
       select: function(info) {
-  var start = info.startStr;
-  var end = info.endStr;
+        var start = info.startStr;
+        var end = info.endStr;
 
-  // Check if there's already an event scheduled on the same date and time
-  var existingEvents = calendar.getEvents();
-  var existingEventFound = false;
-  for (var i = 0; i < existingEvents.length; i++) {
-    if (existingEvents[i].start === start && existingEvents[i].end === end) {
-      existingEventFound = true;
-      break;
-    }
-  }
+        var startTime = moment(start).add(8, 'hours').format('YYYY-MM-DDTHH:mm');
+        $('#eventStart').val(startTime);
 
-  if (!existingEventFound) {
-    var startTime = moment(start).add(8, 'hours').format('YYYY-MM-DDTHH:mm');
-    $('#eventStart').val(startTime);
-
-    var endTime = moment(start).add(17, 'hours').format('YYYY-MM-DDTHH:mm');
-    $('#eventEnd').val(endTime);
-    $('#addEventModal').modal('show');
-    calendar.unselect();
-  } else {
-    alert('There is already an event scheduled on this date and time.');
-  }
-},
+        var endTime = moment(start).add(17, 'hours').format('YYYY-MM-DDTHH:mm');
+        $('#eventEnd').val(endTime);
+        $('#addEventModal').modal('show');
+        calendar.unselect();
+      },
       eventClick: function(info) {
         $('#updateEventModal').modal('show');
         $('#updateeventID').val(info.event.id);
