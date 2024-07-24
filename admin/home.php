@@ -351,12 +351,7 @@
         });
     </script>
                             
-     <script>
-        document.getElementById('toggle-btn').addEventListener('click', function() {
-            document.getElementById('sidebar').classList.toggle('collapsed');
-            document.getElementById('main-content').classList.toggle('collapsed');
-        });
-    </script>
+     
 
 <?php   
 $sy_query = $conn->query("select DISTINCT sy FROM main_event where organizer_id='$session_id'") or die(mysql_error());
