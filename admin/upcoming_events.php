@@ -230,55 +230,122 @@
   </div>
 
   <script>
-var calendarEl = document.getElementById('calendar');
-var calendar;
+  var calendarEl = document.getElementById('calendar');
+  var calendar;
 
-document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function() {
     calendar = new FullCalendar.Calendar(calendarEl, {
-        headerToolbar: {
-            left: 'prev,next today',
-            center: 'title',
-            right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
-        },
-        initialDate: '<?php echo date('Y-m-d') ?>',
-        weekNumbers: true,
-        navLinks: true,
-        editable: true,
-        selectable: true,
-        selectConstraint: {
-            start: new Date().toISOString().slice(0, 10),
-            end: null
-        },
-        nowIndicator: true,
-        dayMaxEvents: true,
-        events: {
-            url: 'get-events.php',
-            method: 'GET',
-            failure: function() {
-                alert('There was an error while fetching events!');
-            }
-        },
-        select: function(info) {
-            var start = info.startStr;
-            var end = info.endStr;
-
-            var startTime = moment(start).add(8, 'hours').format('YYYY-MM-DDTHH:mm');
-            $('#eventStart').val(startTime);
-
-            var endTime = moment(start).add(17, 'hours').format('YYYY-MM-DDTHH:mm');
-            $('#eventEnd').val(endTime);
-            $('#addEventModal').modal('show');
-            calendar.unselect();
-        },
-        eventClick: function(info) {
-            $('#updateEventModal').modal('show');
-            $('#updateeventID').val(info.event.id);
-            $('#updateeventTitle').val(info.event.title);
-            $('#updateeventStart').val(datetimeLocal(info.event.start));
-            $('#updateeventEnd').val(datetimeLocal(info.event.end));
-
-            $('#updateEventModalLabel').text('Edit Event');
+      headerToolbar: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+      },
+      initialDate: '<?php echo date('Y-m-d') ?>',
+      weekNumbers: true,
+      navLinks: true,
+      editable: true,
+      selectable: true,
+      selectConstraint: {
+        start: new Date().toISOString().slice(0, 10),
+        end: null
+      },
+      nowIndicator: true,
+      dayMaxEvents: true,
+      events: {
+        url: 'get-events.php',
+        method: 'GET',
+        failure: function() {
+          alert('There was an error while fetching events!');
         }
+      },
+      select: function(info) {
+        var start = info.startStr;
+        var end = info.endStr;
+
+        var startTime = moment(start).add(8, 'hours').format('YYYY-MM-DDTHH:mm');
+        $('#eventStart').val(startTime);
+
+        var endTime = moment(start).add(17, 'hours').format('YYYY-MM-DDTHH:mm');
+        $('#eventEnd').val(endTime);
+        $('#addEventModal').modal('show');
+        calendar.unselect();
+      },
+      eventClick: function(info) {
+        $('#updateEventModal').modal('show');
+        $('#updateeventID').val(info.event.id);
+        $('#updateeventTitle').val(info.event.title);
+        $('#updateeventStart').val(datetimeLocal(info.event.start));
+        $('#updateeventEnd').val(datetimeLocal(info.event.end));
+
+        $('#updateEventModalLabel').text('Edit Event');
+
+        $('#updateEventButton').off('click').on('click', function() {
+          var id = $('#updateeventID').val();
+          var title = $('#updateeventTitle').val();
+          var start = $('#updateeventStart').val();
+          var end = $('#updateeventEnd').val();
+          if (title && start && end) {
+            var eventData = {
+              id: id,
+              title: title,
+              start: start,
+              end: end
+            };
+            $.ajax({
+              url: 'update-event.php',
+              type: 'POST',
+              data: eventData,
+              success: function(data) {
+                calendar.refetchEvents();
+                $('#updateEventModal').modal('hide');
+                $('#updateeventID').val('');
+                $('#updateeventTitle').val('');
+                $('#updateeventStart').val('');
+                $('#updateeventEnd').val('');
+              }
+            });
+          } else {
+            alert('Please fill all required fields');
+          }
+        });
+
+        $('#deleteEventButton').off('click').on('click', function() {
+          var id = $('#updateeventID').val();
+          var title = $('#updateeventTitle').val();
+          var start = $('#updateeventStart').val();
+          var end = $('#updateeventEnd').val();
+          if (title && start && end) {
+            var eventData = {
+              id: id,
+              title: title,
+              start: start,
+              end: end
+            };
+            $.ajax({
+              url: 'delete-event.php',
+              type: 'POST',
+              data: eventData,
+              success: function(data) {
+                calendar.refetchEvents();
+                $('#updateEventModal').modal('hide');
+                $('#updateeventID').val('');
+                $('#updateeventTitle').val('');
+                $('#updateeventStart').val('');
+                $('#updateeventEnd').val('');
+              }
+            });
+          } else {
+            alert('Please fill all required fields');
+          }
+        });
+
+        $('#cancelEventButton').off('click').on('click', function() {
+          $('#updateeventID').val('');
+          $('#updateeventTitle').val('');
+          $('#updateeventStart').val('');
+          $('#updateeventEnd').val('');
+        });
+      }
     });
     calendar.render();
 
@@ -287,130 +354,54 @@ document.addEventListener('DOMContentLoaded', function() {
     $('#eventEnd').attr('min', currentDateTime);
     $('#updateeventStart').attr('min', currentDateTime);
     $('#updateeventEnd').attr('min', currentDateTime);
+  });
 
-    // Add Event Button Click Handler
-    $('#addEventButton').on('click', function() {
-        var title = $('#eventTitle').val();
-        var start = $('#eventStart').val();
-        var end = $('#eventEnd').val();
-        if (title && start && end) {
-            var eventData = {
-                title: title,
-                start: start,
-                end: end
-            };
-            $.ajax({
-                url: 'add-event.php',
-                type: 'POST',
-                data: eventData,
-                success: function(response) {
-                    var data = JSON.parse(response);
-                    if (data.status === 'success') {
-                        calendar.refetchEvents();
-                        $('#addEventModal').modal('hide');
-                        $('#eventTitle').val('');
-                        $('#eventStart').val('');
-                        $('#eventEnd').val('');
-                    } else {
-                        alert(data.message);
-                    }
-                }
-            });
-        } else {
-            alert('Please fill all required fields');
+  $('#addEventButton').on('click', function() {
+    var title = $('#eventTitle').val();
+    var start = $('#eventStart').val();
+    var end = $('#eventEnd').val();
+    if (title && start && end) {
+      var eventData = {
+        title: title,
+        start: start,
+        end: end
+      };
+      $.ajax({
+        url: 'add-event.php',
+        type: 'POST',
+        data: eventData,
+        success: function(data) {
+          calendar.refetchEvents();
+          $('#addEventModal').modal('hide');
+          $('#eventTitle').val('');
+          $('#eventStart').val('');
+          $('#eventEnd').val('');
         }
-    });
-
-    // Update Event Button Click Handler
-    $('#updateEventButton').on('click', function() {
-        var id = $('#updateeventID').val();
-        var title = $('#updateeventTitle').val();
-        var start = $('#updateeventStart').val();
-        var end = $('#updateeventEnd').val();
-        if (title && start && end) {
-            var eventData = {
-                id: id,
-                title: title,
-                start: start,
-                end: end
-            };
-            $.ajax({
-                url: 'update-event.php',
-                type: 'POST',
-                data: eventData,
-                success: function(response) {
-                    var data = JSON.parse(response);
-                    if (data.status === 'success') {
-                        calendar.refetchEvents();
-                        $('#updateEventModal').modal('hide');
-                        $('#updateeventID').val('');
-                        $('#updateeventTitle').val('');
-                        $('#updateeventStart').val('');
-                        $('#updateeventEnd').val('');
-                    } else {
-                        alert(data.message);
-                    }
-                }
-            });
-        } else {
-            alert('Please fill all required fields');
-        }
-    });
-
-    // Delete Event Button Click Handler
-    $('#deleteEventButton').on('click', function() {
-        var id = $('#updateeventID').val();
-        $.ajax({
-            url: 'delete-event.php',
-            type: 'POST',
-            data: { id: id },
-            success: function(response) {
-                var data = JSON.parse(response);
-                if (data.status === 'success') {
-                    calendar.refetchEvents();
-                    $('#updateEventModal').modal('hide');
-                    $('#updateeventID').val('');
-                    $('#updateeventTitle').val('');
-                    $('#updateeventStart').val('');
-                    $('#updateeventEnd').val('');
-                } else {
-                    alert(data.message);
-                }
-            }
-        });
-    });
-
-    // Cancel Event Button Click Handler
-    $('#cancelEventButton').on('click', function() {
-        $('#updateeventID').val('');
-        $('#updateeventTitle').val('');
-        $('#updateeventStart').val('');
-        $('#updateeventEnd').val('');
-    });
-
-    // Logout Button Click Handler
-    $('#logout').on('click', function() {
-        $.ajax({
-            url: 'logout.php',
-            success: function(response) {
-                window.location.href = 'index.php';
-            }
-        });
-    });
-
-    // Sidebar Toggle Button Click Handler
-    $('#toggle-btn').on('click', function() {
-        $('#sidebar').toggleClass('collapsed');
-        $('#main-content').toggleClass('collapsed');
-        $(this).toggleClass('collapsed');
-    });
-
-    function datetimeLocal(datetimeStr) {
-        return moment(datetimeStr).format('YYYY-MM-DDTHH:mm');
+      });
+    } else {
+      alert('Please fill all required fields');
     }
-});
-</script>
+  });
 
+  function datetimeLocal(datetimeStr) {
+    return moment(datetimeStr).format('YYYY-MM-DDTHH:mm');
+  };
+
+  $('#logout').on('click', function() {
+    $.ajax({
+      url: 'logout.php',
+      success: function(response) {
+        window.location.href = 'index.php';
+      }
+    });
+  });
+
+  $('#toggle-btn').on('click', function() {
+    $('#sidebar').toggleClass('collapsed');
+    $('#main-content').toggleClass('collapsed');
+    $(this).toggleClass('collapsed');
+  });
+</script>
 
 </body>
 </html>
