@@ -315,6 +315,10 @@
         <strong>Event #:</strong><br />
         <input id="eventNumber" name="sy" class="form-control btn-block" style="text-indent: 5px !important; height: 30px !important;" type="number" placeholder="0" required="true" readonly/>
     </div>
+         <div class="form-group">
+            <label for="eventBanner"><strong>Banner Image:</strong></label>
+            <input type="file" name="eventBanner" class="form-control" style="text-indent: 5px !important; width: 100% !important;" required="true">
+          </div>
           <div class="form-group">
             <label for="main_event"><strong>Event Name:</strong></label>
             <input type="text" name="main_event" class="form-control btn-block" style="text-indent: 5px !important; height: 30px !important;" placeholder="Event Name" required="true"/>

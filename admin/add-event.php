@@ -13,9 +13,11 @@ if (!$conn) {
 }
 
 // Get event details from POST request
-$title = $_POST['title'];
-$start = $_POST['start'];
-$end = $_POST['end'];
+$title = $_POST['main_event'];
+$start = $_POST['date_start'];
+$end = $_POST['date_end'];
+$event_time = $_POST['event_time'];
+$place = $_POST['place'];
 $bannerImage = '';
 
 // Handle file upload
@@ -55,7 +57,7 @@ if ($row['count'] > 0) {
     echo json_encode(['status' => 'error', 'message' => 'An event is already scheduled during this time.']);
 } else {
     // Insert the new event if no conflict
-    $sql = "INSERT INTO upcoming_events (id, title, start_date, end_date, banner_image) VALUES (null, '$title', '$start', '$end', '$bannerImage')";
+    $sql = "INSERT INTO upcoming_events (id, title, start_date, end_date, event_time, place, banner_image) VALUES (null, '$title', '$start', '$end', '$event_time', '$place', '$bannerImage')";
     if (mysqli_query($conn, $sql)) {
         echo json_encode(['status' => 'success']);
     } else {
