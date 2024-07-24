@@ -45,7 +45,7 @@ thead th {
 }
 </style>
 
-  <body>
+  <body  id="login" style="background:url(../img/Community-College-Madridejos.jpeg)">
    
   
 <div class="container">
@@ -83,18 +83,23 @@ thead th {
              <br/>
              <br/> 
              <table cellpadding="50" cellspacing="40"  align="center">
-
-        <thead>
-       <th align="left" style="background-color: aquamarine; text-indent: 10px; color: black; "><h4> &nbsp;WELCOME</h4></th>
-       </thead>
-
-         <tr style="background-color: #fff;">
- 
-             <td>
-              <h5><i class="icon-user"></i>  JUDGE'S CODE:</h5>
-              <input style="font-size: large; height: 35px !important; text-indent: 7px !important;" class="form-control btn-block" type="text" name="username" placeholder="Username" required="true" autofocus="true" />
-              <button id="login-button" style="width: 100px !important;" type="button" class="btn btn-primary pull-right"><i class="icon-ok"></i> <strong>ENTER</strong></button>
+             <thead>
+             <th align="left" style="background-color: aquamarine; text-indent: 10px; color: black; "><h4>ORGANIZER LOGIN</h4></th>
+             </thead>
              
+             <tr style="background-color: #fff;">
+             
+             <td>
+              <h5><i class="icon-user"></i>  USERNAME:</h5>
+              <input style="font-size: large; height: 35px !important; text-indent: 7px !important;" class="form-control btn-block" type="text" name="username" placeholder="Username" required="true" autofocus="true" />
+             
+              <h5><i class="icon-lock"></i>  PASSWORD:</h5>
+              <input style="font-size: large; height: 35px !important; text-indent: 7px !important;" class="form-control btn-block" type="password"  name="password" placeholder="Password" required="true" />
+            
+              <button id="login-button" style="width: 100px !important;" type="button" class="btn btn-primary pull-right"><i class="icon-ok"></i> <strong>LOGIN</strong></button>
+              
+              
+              
              </td>
              </tr>
              </table>
@@ -107,15 +112,16 @@ thead th {
 </div>
    
    
+   
     <!--end About judge button -->
-    ================================================== -->
-    <footer class="footer">
+    <!-- ================================================== -->
+    <!-- <footer class="footer">
       <div class="container">
       
         <font size="2" class="" align="center"><strong>MCC Event Judging System &middot; 2024 &COPY; </strong></font> <br />
         
       </div>
-    </footer>
+    </footer> --> 
 
 
     <!-- Le javascript
