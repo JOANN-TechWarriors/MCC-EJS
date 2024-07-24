@@ -7,7 +7,8 @@
   include('header2.php');
 
   ?>
-  <style>
+
+<style>
   .alert {
   font-size: 14px;
   padding: 8px 12px;
@@ -45,13 +46,9 @@ thead th {
 }
 </style>
 
-  <body  id="login" style="background:url(../img/Community-College-Madridejos.jpeg)">
-   
-  
-<div class="container">
-    <div class="row-fluid">
+  <body id="login" style="background:url(../img/Community-College-Madridejos.jpeg)">
 
-      <div class="span6">
+  <div class="span6">
         <div class="title_index">
 
               <div class="row-fluid">
@@ -72,31 +69,34 @@ thead th {
             
         </div>
       </div>
-      
-      <div class="span6">
-        <div class="pull-left">
-                <div id="home" >
-        <div class="overlay">
-          <div class="form-container">
-            <form id="login-form" method="POST" action="login.php" >
-             <br /> 
-             <br/>
-             <br/> 
-             <table cellpadding="50" cellspacing="40"  align="center">
-             <thead>
-             <th align="left" style="background-color: aquamarine; text-indent: 10px; color: black; "><h4>WELCOME</h4></th>
-             </thead>
-             
-             <tr style="background-color: #fff;">
-             
-             <td>
-              <h5><i class="icon-user"></i>  JUDGE"S CODE:</h5>
-              <input style="font-size: large; height: 35px !important; text-indent: 7px !important;" class="form-control btn-block" type="text" name="username" placeholder="Username" required="true" autofocus="true" />
-          <br/>
-              <button id="login-button" style="width: 100px !important;" type="button" class="btn btn-primary pull-right"><i class="icon-ok"></i> <strong>ENTER</strong></button>
-              <p><input style="padding-top: 0px !important; margin-top: 0px !important;" type="checkbox" onclick="myFunctionJC()"/> <strong>Show Code</strong></p>
-              
-              <script>
+   
+        
+        <table cellpadding="10" cellspacing="0" border="0" align="center">
+        <thead>
+ <th align="left" style="background-color: aquamarine; text-indent: 10px; color: black; "><h4> &nbsp;WELCOME</h4></th>
+ </thead>
+
+ <tr style="background-color: #fff;">
+ 
+ <td>
+ 
+ 
+  <h5><i class="icon-user"></i>  JUDGE:</h5>
+
+ 
+<div id="myGroup" >
+
+<div class="input-group">
+       <div class="alert alert-success">
+      <form method="POST" action="judge_panel.php" >
+            <h4>Judge's Code</h4>
+            <br />
+          <input id="myInputJC" style="font-size: large; height: 45px !important;" class="form-control btn-block" name="judge_code" type="password" placeholder="Enter Judge's Code" />
+          <button style="width: 160px !important;" type="submit" class="btn btn-primary pull-right"><i class="icon-ok"></i> <strong>ENTER</strong></button>
+  
+            <p><input style="padding-top: 0px !important; margin-top: 0px !important;" type="checkbox" onclick="myFunctionJC()"/> <strong>Show Code</strong></p>
+                                     
+                                    <script>
                                     function myFunctionJC() {
                                         var x = document.getElementById("myInputJC");
                                         if (x.type === "password") {
@@ -106,29 +106,28 @@ thead th {
                                         }
                                     }
                                     </script>
-
-             </td>
-             </tr>
-             </table>
-             </form>
-           </div>
+ </table>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-   
-   
-   
+    </div><br><br>
     <!--end About judge button -->
-    <!-- ================================================== -->
-    <!-- <footer class="footer">
+
+
+<!--<h5><i class="icon-user"></i>  USER:</h5>
+  <button style="width: 160px !important;" type="submit" class="btn btn-primary pull-right"><i class="icon-ok"></i> <strong>START</strong></button>
+
+        </table>
+              
+
+    <!-- Footer
+    ================================================== -->
+    <footer class="footer">
       <div class="container">
       
-        <font size="2" class="" align="center"><strong>MCC Event Judging System &middot; 2024 &COPY; </strong></font> <br />
+        <font size="2" class="" align="center"><strong>Event Judging System &middot; 2022 &COPY; </strong></font> <br />
         
       </div>
-    </footer> --> 
+    </footer>
 
 
     <!-- Le javascript
@@ -152,77 +151,6 @@ thead th {
     <script src="..//assets/js/holder/holder.js"></script>
     <script src="..//assets/js/google-code-prettify/prettify.js"></script>
     <script src="..//assets/js/application.js"></script>
-
-    <script>
-window.onload = function() {
-    <?php if(isset($_SESSION['login_success']) && $_SESSION['login_success'] == true): ?>
-        Swal.fire({
-            title: "Success!",
-            text: "You are Successfully enter!",
-            icon: "success"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                window.location.href = "judge_panel.php";
-            }
-        });
-        <?php unset($_SESSION['enter_success']); ?>
-    <?php endif; ?>
-};
-
-window.uni_modal = function($title = '' , $url='',$size=""){
-    start_load()
-    $.ajax({
-        url:$url,
-        error:err=>{
-            console.log()
-            alert("An error occurred")
-        },
-        success:function(resp){
-            if(resp){
-                $('#uni_modal .modal-title').html($title)
-                $('#uni_modal .modal-body').html(resp)
-                if($size != ''){
-                    $('#uni_modal .modal-dialog').addClass($size)
-                }else{
-                    $('#uni_modal .modal-dialog').removeAttr("class").addClass("modal-dialog modal-md")
-                }
-                $('#uni_modal').modal({
-                  show:true,
-                  backdrop:'static',
-                  keyboard:false,
-                  focus:true
-                })
-                end_load()
-            }
-        }
-    })
-}
-
-function clearEmail() {
-    document.getElementById("forgot-password-form").reset();
-}
-
-// Hide the alert after 3 seconds
-setTimeout(function(){
-    var alert = document.querySelector('.alert');
-    if (alert) {
-        alert.style.display = 'none';
-    }
-}, 3000);
-
-document.getElementById("login-button").addEventListener("click", function() {
-    Swal.fire({
-        title: "Success!",
-        text: "You are successfully enter!",
-        icon: "success",
-        confirmButtonText: "Ok",
-    }).then((result) => {
-        if (result.isConfirmed) {
-            document.getElementById("login-form").submit();
-        }
-    });
-});
-</script>
     
   </body>
 </html>
