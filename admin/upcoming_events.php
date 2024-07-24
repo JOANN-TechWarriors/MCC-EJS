@@ -62,9 +62,26 @@
       margin-bottom: 10px;
     }
 
+    .logo-container {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.logo-img {
+    max-width: 100%;
+    height: auto;
+}
+
+.header-text {
+    display: block;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+
     .sidebar-heading img {
-      max-width: 100px;
-      max-height: 100px;
+        max-width: 50px;
+        max-height: 50px;
     }
 
     .sidebar ul {
