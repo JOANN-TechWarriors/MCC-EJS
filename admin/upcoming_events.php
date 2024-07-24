@@ -381,10 +381,9 @@
 function adjustToNearestHalfHour(dateTimeStr) {
         var dateTime = moment(dateTimeStr);
         var minutes = dateTime.minutes();
-        if (minutes < 30) {
-          dateTime.minutes(0);
-        } else {
-          dateTime.minutes(30);
+        if (minutes % 30 !== 0) {
+          minutes = (Math.round(minutes / 30) * 30) % 60;
+          dateTime.minutes(minutes);
         }
         return dateTime.format('YYYY-MM-DDTHH:mm');
       }
