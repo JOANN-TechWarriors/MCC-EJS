@@ -1143,6 +1143,13 @@ ALTER TABLE `textpoll`
 ALTER TABLE `upcoming_events`
   ADD PRIMARY KEY (`id`);
 
+  -- Adding columns to table `upcoming_events`
+--
+ALTER TABLE `upcoming_events`
+  ADD COLUMN event_time TIME,
+  ADD COLUMN place TEXT,
+  ADD COLUMN banner_image VARCHAR(255);
+
 --
 -- AUTO_INCREMENT for dumped tables
 --
