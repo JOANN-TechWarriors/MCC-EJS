@@ -243,7 +243,7 @@
     <div class="logo-container">
         <img src="../img/logo.png" alt="Logo" class="logo-img">
     </div>
-    <span class="header-text">MCC Event Judging System</span>
+    <span class="header-text">Event Judging System</span>
 </div>
         <ul>
             <li><a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> <span>DASHBOARD</span></a></li>
