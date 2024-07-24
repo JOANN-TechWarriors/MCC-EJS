@@ -8,13 +8,13 @@
 <head>
   <link rel="shortcut icon" href="ejs_logo.png"/>
   <title>Event Judging System</title>  
-  <link href="../assets/fullcalendar/main.css" rel="stylesheet">
+  <link href="..//assets/fullcalendar/main.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script type="text/javascript" src="../assets/fullcalendar/main.js"></script>
+  <script type="text/javascript" src="..//assets/fullcalendar/main.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
-  <script src="../assets/fullcalendar/moment.js"></script>
+  <script src="..//assets/fullcalendar/moment.js"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -188,6 +188,7 @@
             </form>
           </div>
           <div class="modal-footer">
+
             <button type="button" class="btn btn-success" id="addEventButton">Save</button>
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelEventButton">Cancel</button>
           </div>
@@ -219,37 +220,9 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" id="updateEventButton">Update</button>
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelUpdateEventButton">Cancel</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="deleteEventModal" tabindex="-1" aria-labelledby="deleteEventModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="deleteEventModalLabel">Delete Event</h5>
-          </div>
-          <div class="modal-body">
-            <p>Are you sure you want to delete this event?</p>
-            <form>
-              <div class="mb-3">
-                <input type="hidden" class="form-control" id="deleteeventID">
-                <input type="hidden" class="form-control" id="deleteeventTitle" required>
-              </div>
-              <div class="mb-3">
-                <input type="hidden" class="form-control" id="deleteeventStart" required>
-              </div>
-              <div class="mb-3">
-                <input type="hidden" class="form-control" id="deleteeventEnd" required>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelEventButton">Cancel</button>
             <button type="button" class="btn btn-danger" id="deleteEventButton">Delete</button>
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelDeleteEventButton">Cancel</button>
+            <button type="button" class="btn btn-success" id="updateEventButton">Update</button>
           </div>
         </div>
       </div>
@@ -257,117 +230,181 @@
   </div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var calendarEl = document.getElementById('calendar');
-      var calendar = new FullCalendar.Calendar(calendarEl, {
-        headerToolbar: {
-          left: 'prev,next today',
-          center: 'title',
-          right: 'dayGridMonth,timeGridWeek,timeGridDay'
-        },
-        events: 'fetch-event.php',
-        eventClick: function(info) {
-          info.jsEvent.preventDefault();
-          $('#updateeventID').val(info.event.id);
-          $('#updateeventTitle').val(info.event.title);
-          $('#updateeventStart').val(moment(info.event.start).format("YYYY-MM-DDTHH:mm"));
-          $('#updateeventEnd').val(moment(info.event.end).format("YYYY-MM-DDTHH:mm"));
-          $('#updateEventModal').modal('show');
+  var calendarEl = document.getElementById('calendar');
+  var calendar;
+
+  document.addEventListener('DOMContentLoaded', function() {
+    calendar = new FullCalendar.Calendar(calendarEl, {
+      headerToolbar: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+      },
+      initialDate: '<?php echo date('Y-m-d') ?>',
+      weekNumbers: true,
+      navLinks: true,
+      editable: true,
+      selectable: true,
+      selectConstraint: {
+        start: new Date().toISOString().slice(0, 10),
+        end: null
+      },
+      nowIndicator: true,
+      dayMaxEvents: true,
+      events: {
+        url: 'get-events.php',
+        method: 'GET',
+        failure: function() {
+          alert('There was an error while fetching events!');
         }
-      });
+      },
+      select: function(info) {
+        var start = info.startStr;
+        var end = info.endStr;
 
-      calendar.render();
+        var startTime = moment(start).add(8, 'hours').format('YYYY-MM-DDTHH:mm');
+        $('#eventStart').val(startTime);
 
-      $('#addEventButton').on('click', function() {
-        var title = $('#eventTitle').val();
-        var start = $('#eventStart').val();
-        var end = $('#eventEnd').val();
-        if (title && start && end) {
-          var eventData = {
+        var endTime = moment(start).add(17, 'hours').format('YYYY-MM-DDTHH:mm');
+        $('#eventEnd').val(endTime);
+        $('#addEventModal').modal('show');
+        calendar.unselect();
+      },
+      eventClick: function(info) {
+        $('#updateEventModal').modal('show');
+        $('#updateeventID').val(info.event.id);
+        $('#updateeventTitle').val(info.event.title);
+        $('#updateeventStart').val(datetimeLocal(info.event.start));
+        $('#updateeventEnd').val(datetimeLocal(info.event.end));
+
+        $('#updateEventModalLabel').text('Edit Event');
+
+        $('#addEventButton').on('click', function() {
+    var title = $('#eventTitle').val();
+    var start = $('#eventStart').val();
+    var end = $('#eventEnd').val();
+    if (title && start && end) {
+        var eventData = {
             title: title,
             start: start,
             end: end
-          };
-          $.ajax({
+        };
+        $.ajax({
             url: 'add-event.php',
             type: 'POST',
             data: eventData,
             success: function(response) {
-              var data = JSON.parse(response);
-              if (data.status === 'success') {
+                var data = JSON.parse(response);
+                if (data.status === 'success') {
+                    calendar.refetchEvents();
+                    $('#addEventModal').modal('hide');
+                    $('#eventTitle').val('');
+                    $('#eventStart').val('');
+                    $('#eventEnd').val('');
+                } else {
+                    alert(data.message);
+                }
+            }
+        });
+    } else {
+        alert('Please fill all required fields');
+    }
+});
+
+
+        $('#deleteEventButton').off('click').on('click', function() {
+          var id = $('#updateeventID').val();
+          var title = $('#updateeventTitle').val();
+          var start = $('#updateeventStart').val();
+          var end = $('#updateeventEnd').val();
+          if (title && start && end) {
+            var eventData = {
+              id: id,
+              title: title,
+              start: start,
+              end: end
+            };
+            $.ajax({
+              url: 'delete-event.php',
+              type: 'POST',
+              data: eventData,
+              success: function(data) {
                 calendar.refetchEvents();
-                $('#addEventModal').modal('hide');
-                $('#eventTitle').val('');
-                $('#eventStart').val('');
-                $('#eventEnd').val('');
-              } else {
-                alert(data.message);
+                $('#updateEventModal').modal('hide');
+                $('#updateeventID').val('');
+                $('#updateeventTitle').val('');
+                $('#updateeventStart').val('');
+                $('#updateeventEnd').val('');
               }
-            }
-          });
-        } else {
-          alert('Please fill all required fields');
-        }
-      });
-
-      $('#updateEventButton').on('click', function() {
-        var id = $('#updateeventID').val();
-        var title = $('#updateeventTitle').val();
-        var start = $('#updateeventStart').val();
-        var end = $('#updateeventEnd').val();
-        if (title && start && end) {
-          var eventData = {
-            id: id,
-            title: title,
-            start: start,
-            end: end
-          };
-          $.ajax({
-            url: 'update-event.php',
-            type: 'POST',
-            data: eventData,
-            success: function(response) {
-              calendar.refetchEvents();
-              $('#updateEventModal').modal('hide');
-              $('#updateeventID').val('');
-              $('#updateeventTitle').val('');
-              $('#updateeventStart').val('');
-              $('#updateeventEnd').val('');
-            }
-          });
-        } else {
-          alert('Please fill all required fields');
-        }
-      });
-
-      $('#deleteEventButton').on('click', function() {
-        var id = $('#deleteeventID').val();
-        var eventData = { id: id };
-        $.ajax({
-          url: 'delete-event.php',
-          type: 'POST',
-          data: eventData,
-          success: function(response) {
-            calendar.refetchEvents();
-            $('#deleteEventModal').modal('hide');
+            });
+          } else {
+            alert('Please fill all required fields');
           }
         });
-      });
 
-      $('#logout').on('click', function() {
-        $.ajax({
-          url: 'logout.php',
-          success: function(response) {
-            window.location.href = 'index.php';
-          }
+        $('#cancelEventButton').off('click').on('click', function() {
+          $('#updateeventID').val('');
+          $('#updateeventTitle').val('');
+          $('#updateeventStart').val('');
+          $('#updateeventEnd').val('');
         });
-      });
-
-      $('#toggle-btn').on('click', function() {
-        $('#sidebar').toggleClass('collapsed');
-        $('#main-content').toggleClass('collapsed');
-      });
+      }
     });
-  </script>
+    calendar.render();
+
+    var currentDateTime = new Date().toISOString().slice(0, 16);
+    $('#eventStart').attr('min', currentDateTime);
+    $('#eventEnd').attr('min', currentDateTime);
+    $('#updateeventStart').attr('min', currentDateTime);
+    $('#updateeventEnd').attr('min', currentDateTime);
+  });
+
+  $('#addEventButton').on('click', function() {
+    var title = $('#eventTitle').val();
+    var start = $('#eventStart').val();
+    var end = $('#eventEnd').val();
+    if (title && start && end) {
+      var eventData = {
+        title: title,
+        start: start,
+        end: end
+      };
+      $.ajax({
+        url: 'add-event.php',
+        type: 'POST',
+        data: eventData,
+        success: function(data) {
+          calendar.refetchEvents();
+          $('#addEventModal').modal('hide');
+          $('#eventTitle').val('');
+          $('#eventStart').val('');
+          $('#eventEnd').val('');
+        }
+      });
+    } else {
+      alert('Please fill all required fields');
+    }
+  });
+
+  function datetimeLocal(datetimeStr) {
+    return moment(datetimeStr).format('YYYY-MM-DDTHH:mm');
+  };
+
+  $('#logout').on('click', function() {
+    $.ajax({
+      url: 'logout.php',
+      success: function(response) {
+        window.location.href = 'index.php';
+      }
+    });
+  });
+
+  $('#toggle-btn').on('click', function() {
+    $('#sidebar').toggleClass('collapsed');
+    $('#main-content').toggleClass('collapsed');
+    $(this).toggleClass('collapsed');
+  });
+</script>
+
 </body>
 </html>
