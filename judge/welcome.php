@@ -90,13 +90,10 @@ thead th {
              <tr style="background-color: #fff;">
              
              <td>
-              <h5><i class="icon-user"></i>  USERNAME:</h5>
+              <h5><i class="icon-user"></i>  JUDGE"S CODE:</h5>
               <input style="font-size: large; height: 35px !important; text-indent: 7px !important;" class="form-control btn-block" type="text" name="username" placeholder="Username" required="true" autofocus="true" />
-             
-              <h5><i class="icon-lock"></i>  PASSWORD:</h5>
-              <input style="font-size: large; height: 35px !important; text-indent: 7px !important;" class="form-control btn-block" type="password"  name="password" placeholder="Password" required="true" />
-            
-              <button id="login-button" style="width: 100px !important;" type="button" class="btn btn-primary pull-right"><i class="icon-ok"></i> <strong>LOGIN</strong></button>
+          <br/>
+              <button id="login-button" style="width: 100px !important;" type="button" class="btn btn-primary pull-right"><i class="icon-ok"></i> <strong>ENTER</strong></button>
               
               
               
