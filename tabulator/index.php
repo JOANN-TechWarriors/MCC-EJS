@@ -112,27 +112,7 @@ thead th {
   </div>
 </div>
    
-   <!-- <div class="modal fade" id="forgot-password-modal" tabindex="-1" role="dialog" aria-labelledby="forgot-password-modal-label" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="forgot-password-modal-label">Forgot Password?</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearEmail()">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form id="forgot-password-form" action="forgot_password.php" method="post" autocomplete="off">
-          <div class="form-group">
-            <label for="email">Email address:</label>
-            <input type="email" class="form-control" id="email" name="email" required>
-          </div>
-          <button type="submit" class="btn btn-primary mt-3" name="send" onclick="clearEmail()">Reset Password</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div> -->
+   
 
 <!-- Le javascript
 ================================================== -->
