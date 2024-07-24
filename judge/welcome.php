@@ -134,7 +134,7 @@ include('header2.php');
     document.getElementById("login-button").addEventListener("click", function() {
       Swal.fire({
         title: "Success!",
-        text: "You are successfully logged in!",
+        text: "Entered succeccfully!",
         icon: "success",
         confirmButtonText: "Ok",
       }).then((result) => {
