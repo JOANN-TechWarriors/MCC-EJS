@@ -205,6 +205,7 @@
             </form>
           </div>
           <div class="modal-footer">
+
             <button type="button" class="btn btn-success" id="addEventButton">Save</button>
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelEventButton">Cancel</button>
           </div>
@@ -250,85 +251,72 @@
   var calendar;
 
   document.addEventListener('DOMContentLoaded', function() {
-    calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: 'dayGridMonth',
-      selectable: true,
-      editable: true,
-      events: 'load.php',
-      select: function(info) {
-        var start = info.startStr;
-        var end = info.endStr;
+  calendar = new FullCalendar.Calendar(calendarEl, {
+    headerToolbar: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+    },
+    initialDate: '<?php echo date('Y-m-d') ?>',
+    weekNumbers: true,
+    navLinks: true,
+    editable: true,
+    selectable: true,
+    selectConstraint: {
+      start: new Date().toISOString().slice(0, 10),
+      end: null
+    },
+    nowIndicator: true,
+    dayMaxEvents: true,
+    events: {
+      url: 'get-events.php',
+      method: 'GET',
+      failure: function() {
+        alert('There was an error while fetching events!');
+      }
+    },
+    select: function(info) {
+      var start = info.startStr;
+      var end = info.endStr;
 
-        var startTime = roundToNearestHalfHour(start);
-        $('#eventStart').val(startTime);
+      var startTime = roundToNearestHalfHour(start);
+      $('#eventStart').val(startTime);
 
-        var endTime = roundToNearestHalfHour(end);
-        $('#eventEnd').val(endTime);
+      var endTime = roundToNearestHalfHour(end);
+      $('#eventEnd').val(endTime);
+      $('#addEventModal').modal('show');
+      calendar.unselect();
+    },
+    eventClick: function(info) {
+      $('#updateEventModal').modal('show');
+      $('#updateeventID').val(info.event.id);
+      $('#updateeventTitle').val(info.event.title);
+      $('#updateeventStart').val(roundToNearestHalfHour(datetimeLocal(info.event.start)));
+      $('#updateeventEnd').val(roundToNearestHalfHour(datetimeLocal(info.event.end)));
 
-        $('#addEventModal').modal('show');
-        calendar.unselect();
-      },
-      eventClick: function(info) {
-        $('#updateEventModal').modal('show');
-        $('#updateeventID').val(info.event.id);
-        $('#updateeventTitle').val(info.event.title);
-        $('#updateeventStart').val(roundToNearestHalfHour(datetimeLocal(info.event.start)));
-        $('#updateeventEnd').val(roundToNearestHalfHour(datetimeLocal(info.event.end)));
+      $('#updateEventModalLabel').text('Edit Event');
 
-        $('#updateEventModalLabel').text('Edit Event');
-
-        $('#updateEventButton').on('click', function() {
-          var id = $('#updateeventID').val();
-          var title = $('#updateeventTitle').val();
-          var start = $('#updateeventStart').val();
-          var end = $('#updateeventEnd').val();
-          if (title && start && end) {
-            var eventData = {
-              id: id,
-              title: title,
-              start: start,
-              end: end
-            };
-            $.ajax({
-              url: 'update-event.php',
-              type: 'POST',
-              data: eventData,
-              success: function(data) {
-                var response = JSON.parse(data);
-                if (response.status === 'error') {
-                  alert(response.message);
-                } else {
-                  calendar.refetchEvents();
-                  $('#updateEventModal').modal('hide');
-                  $('#updateeventID').val('');
-                  $('#updateeventTitle').val('');
-                  $('#updateeventStart').val('');
-                  $('#updateeventEnd').val('');
-                }
-              }
-            });
-          } else {
-            alert('Please fill all required fields');
-          }
-        });
-
-        $('#deleteEventButton').off('click').on('click', function() {
-          var id = $('#updateeventID').val();
-          var title = $('#updateeventTitle').val();
-          var start = $('#updateeventStart').val();
-          var end = $('#updateeventEnd').val();
-          if (title && start && end) {
-            var eventData = {
-              id: id,
-              title: title,
-              start: start,
-              end: end
-            };
-            $.ajax({
-              url: 'delete-event.php',
-              type: 'POST',
-              data: eventData,
-              success: function(data) {
+      $('#updateEventButton').on('click', function() {
+        var id = $('#updateeventID').val();
+        var title = $('#updateeventTitle').val();
+        var start = $('#updateeventStart').val();
+        var end = $('#updateeventEnd').val();
+        if (title && start && end) {
+          var eventData = {
+            id: id,
+            title: title,
+            start: start,
+            end: end
+          };
+          $.ajax({
+            url: 'update-event.php',
+            type: 'POST',
+            data: eventData,
+            success: function(data) {
+              var response = JSON.parse(data);
+              if (response.status === 'error') {
+                alert(response.message);
+              } else {
                 calendar.refetchEvents();
                 $('#updateEventModal').modal('hide');
                 $('#updateeventID').val('');
@@ -336,105 +324,122 @@
                 $('#updateeventStart').val('');
                 $('#updateeventEnd').val('');
               }
-            });
-          } else {
-            alert('Please fill all required fields');
-          }
-        });
-
-        $('#cancelEventButton').off('click').on('click', function() {
-          $('#updateeventID').val('');
-          $('#updateeventTitle').val('');
-          $('#updateeventStart').val('');
-          $('#updateeventEnd').val('');
-        });
-      }
-    });
-
-    calendar.render();
-    
-    $('#addEventButton').on('click', function() {
-      var title = $('#eventTitle').val();
-      var start = $('#eventStart').val();
-      var end = $('#eventEnd').val();
-      if (title && start && end) {
-        var eventData = {
-          title: title,
-          start: start,
-          end: end
-        };
-        $.ajax({
-          url: 'add-event.php',
-          type: 'POST',
-          data: eventData,
-          success: function(data) {
-            var response = JSON.parse(data);
-            if (response.status === 'error') {
-              alert(response.message);
-            } else {
-              calendar.refetchEvents();
-              $('#addEventModal').modal('hide');
-              $('#eventTitle').val('');
-              $('#eventStart').val('');
-              $('#eventEnd').val('');
             }
-          }
-        });
-      } else {
-        alert('Please fill all required fields');
-      }
-    });
-
-    $('#logout').on('click', function() {
-      $.ajax({
-        url: '../logout.php',
-        type: 'POST',
-        success: function(response) {
-          if (response === 'success') {
-            window.location.href = '../index.php';
-          } else {
-            alert('Logout failed. Please try again.');
-          }
+          });
+        } else {
+          alert('Please fill all required fields');
         }
       });
-    });
 
-    var currentDateTime = new Date();
-    currentDateTime.setMinutes(Math.ceil(currentDateTime.getMinutes() / 30) * 30);
-    currentDateTime.setSeconds(0);
-    currentDateTime.setMilliseconds(0);
-    currentDateTime = currentDateTime.toISOString().slice(0, 16);
+      $('#deleteEventButton').off('click').on('click', function() {
+        var id = $('#updateeventID').val();
+        var title = $('#updateeventTitle').val();
+        var start = $('#updateeventStart').val();
+        var end = $('#updateeventEnd').val();
+        if (title && start && end) {
+          var eventData = {
+            id: id,
+            title: title,
+            start: start,
+            end: end
+          };
+          $.ajax({
+            url: 'delete-event.php',
+            type: 'POST',
+            data: eventData,
+            success: function(data) {
+              calendar.refetchEvents();
+              $('#updateEventModal').modal('hide');
+              $('#updateeventID').val('');
+              $('#updateeventTitle').val('');
+              $('#updateeventStart').val('');
+              $('#updateeventEnd').val('');
+            }
+          });
+        } else {
+          alert('Please fill all required fields');
+        }
+      });
 
-    $('#eventStart').attr('min', currentDateTime);
-    $('#eventEnd').attr('min', currentDateTime);
-    $('#updateeventStart').attr('min', currentDateTime);
-    $('#updateeventEnd').attr('min', currentDateTime);
-  });
-
-  function roundToNearestHalfHour(datetimeStr) {
-    var momentObj = moment(datetimeStr);
-    var minutes = momentObj.minutes();
-    
-    var roundedMinutes = Math.round(minutes / 30) * 30;
-    
-    if (roundedMinutes === 60) {
-      momentObj.add(1, 'hour');
-      roundedMinutes = 0;
+      $('#cancelEventButton').off('click').on('click', function() {
+        $('#updateeventID').val('');
+        $('#updateeventTitle').val('');
+        $('#updateeventStart').val('');
+        $('#updateeventEnd').val('');
+      });
     }
-    
-    return momentObj.minutes(roundedMinutes).seconds(0).format('YYYY-MM-DDTHH:mm');
-  }
-
-  function datetimeLocal(datetime) {
-    return moment(datetime).format('YYYY-MM-DDTHH:mm');
-  }
-
-  $(document).ready(function() {
-    $('#toggle-btn').click(function() {
-      $('#sidebar').toggleClass('collapsed');
-      $('#main-content').toggleClass('collapsed');
-    });
   });
+  calendar.render();
+
+  var currentDateTime = new Date().toISOString().slice(0, 16);
+  $('#eventStart').attr('min', currentDateTime);
+  $('#eventEnd').attr('min', currentDateTime);
+  $('#updateeventStart').attr('min', currentDateTime);
+  $('#updateeventEnd').attr('min', currentDateTime);
+});
+
+function roundToNearestHalfHour(datetimeStr) {
+  var momentObj = moment(datetimeStr);
+  var minutes = momentObj.minutes();
+  var roundedMinutes = Math.round(minutes / 30) * 30;
+  if (roundedMinutes === 60) {
+    momentObj.add(1, 'hour');
+    roundedMinutes = 0;
+  }
+  return momentObj.minutes(roundedMinutes).seconds(0).format('YYYY-MM-DDTHH:mm');
+}
+
+function datetimeLocal(datetimeStr) {
+  return moment(datetimeStr).format('YYYY-MM-DDTHH:mm');
+}
+
+$('#addEventButton').on('click', function() {
+  var title = $('#eventTitle').val();
+  var start = $('#eventStart').val();
+  var end = $('#eventEnd').val();
+  if (title && start && end) {
+    var eventData = {
+      title: title,
+      start: start,
+      end: end
+    };
+    $.ajax({
+      url: 'add-event.php',
+      type: 'POST',
+      data: eventData,
+      success: function(data) {
+        var response = JSON.parse(data);
+        if (response.status === 'error') {
+          alert(response.message);
+        } else {
+          calendar.refetchEvents();
+          $('#addEventModal').modal('hide');
+          $('#eventTitle').val('');
+          $('#eventStart').val('');
+          $('#eventEnd').val('');
+        }
+      }
+    });
+  } else {
+    alert('Please fill all required fields');
+  }
+});
+
+$('#logout').on('click', function() {
+  $.ajax({
+    url: 'logout.php',
+    success: function(response) {
+      window.location.href = 'index.php';
+    }
+  });
+});
+
+$('#toggle-btn').on('click', function() {
+  $('#sidebar').toggleClass('collapsed');
+  $('#main-content').toggleClass('collapsed');
+  $(this).toggleClass('collapsed');
+});
 </script>
+
 </body>
 </html>
