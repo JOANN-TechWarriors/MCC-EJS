@@ -291,8 +291,8 @@
       $('#updateEventModal').modal('show');
       $('#updateeventID').val(info.event.id);
       $('#updateeventTitle').val(info.event.title);
-      $('#updateeventStart').val(datetimeLocal(info.event.start));
-      $('#updateeventEnd').val(datetimeLocal(info.event.end));
+      $('#updateeventStart').val(roundToNearestHalfHour(datetimeLocal(info.event.start)));
+      $('#updateeventEnd').val(roundToNearestHalfHour(datetimeLocal(info.event.end)));
 
       $('#updateEventModalLabel').text('Edit Event');
 
@@ -386,7 +386,7 @@ function roundToNearestHalfHour(datetimeStr) {
     momentObj.add(1, 'hour');
     roundedMinutes = 0;
   }
-  return momentObj.minutes(roundedMinutes).format('YYYY-MM-DDTHH:mm');
+  return momentObj.minutes(roundedMinutes).seconds(0).format('YYYY-MM-DDTHH:mm');
 }
 
 function datetimeLocal(datetimeStr) {
