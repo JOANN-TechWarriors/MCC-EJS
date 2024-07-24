@@ -2,14 +2,16 @@
 <html lang="en">
    
    <?php
+      
     include('header2.php');
     include('session.php');
+
     ?>
  <head>
  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
  <style>
-    body {
+   body {
         font-family: Arial, sans-serif;
         background-color: #fff;
         margin: 0;
@@ -53,23 +55,25 @@
         padding: 10px 0;
         font-size: 18px;
         margin-bottom: 10px;
-    }
 
-    .logo-container {
-        display: block;
-        margin-bottom: 10px;
-    }
+}
 
-    .logo-img {
-        max-width: 100%;
-        height: auto;
-    }
+.logo-container {
+    display: block;
+    margin-bottom: 10px;
+}
 
-    .header-text {
-        display: block;
-        font-size: 20px;
-        margin-top: 20px;
-    }
+.logo-img {
+    max-width: 100%;
+    height: auto;
+}
+
+.header-text {
+    display: block;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
 
     .sidebar-heading img {
         max-width: 50px;
@@ -224,18 +228,19 @@
         height: 400px;
         width: 100%;
     }
- </style>
- </head>
- <body>
+</style>
+</head>
+<body>
     <div class="sidebar" id="sidebar">
         <button class="toggle-btn" id="toggle-btn">☰</button>
         <br><br>
         <div class="sidebar-heading">
-            <div class="logo-container">
-                <img src="../img/logo.png" alt="Logo" class="logo-img">
-            </div>
-            <span class="header-text">Event Judging System</span>
-        </div>
+    <div class="logo-container">
+        <img src="../img/logo.png" alt="Logo" class="logo-img">
+    </div>
+    <span class="header-text">Event Judging System</span>
+</div>
+
         <ul>
             <li><a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> <span>DASHBOARD</span></a></li>
             <li><a href="home.php"><i class="fas fa-calendar-check"></i> <span>ONGOING EVENTS</span></a></li>
@@ -253,30 +258,32 @@
         <div class="profile-dropdown">
            <div style="font-size:small;"> <?php echo $name; ?></div>
             <div class="dropdown-menu">
-                <a href="edit_organizer.php">Account Settings</a>
+                <a href="edit_organizer.php"> Account Settings</a>
                 <a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> <span>LOGOUT</span></a>
             </div>
         </div>
     </div>
 
-    <!-- Main Content -->
-    <div class="main" id="main-content">
-        <div class="container">
-            <h1 style="font-size: 30px;">Ongoing Events</h1>
-        </div>
 
-        <div class="span15">
-            <br />
-            <div class="col-md-15">
-                <ul class="breadcrumb">
-                    <li>
-                        <a href="dashboard.php">Dashboard</a> /
-                    </li>
-                    <li>Ongoing Events</li>
-                </ul>
+
+<!-- Subhead
+================================================== -->
+<div class="main">
+<div class="container">
+    <h1 style="font-size: 30px;"> Ongoing Events</h1>
+      </div>
+
+      <div class="span15">
+                <br />
+                <div class="col-md-15">
+                    <ul class="breadcrumb">
+                        <li>
+                            <a href="dashboard.php">Dashboard</a> /
+                        </li>
+                        <li>Ongoing Events</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </div>
                 
 
 
@@ -338,14 +345,20 @@
   </div>
 </div>
         
-                            
-     <script>
-        document.getElementById('toggle-btn').addEventListener('click', function() {
-            document.getElementById('sidebar').classList.toggle('collapsed');
-            document.getElementById('main-content').classList.toggle('collapsed');
+<script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            let eventCounter = localStorage.getItem('eventCounter');
+            if (!eventCounter) {
+                eventCounter = 1;
+            } else {
+                eventCounter = parseInt(eventCounter) + 1;
+            }
+            localStorage.setItem('eventCounter', eventCounter);
+            document.getElementById('eventNumber').value = eventCounter;
         });
     </script>
-
+                            
+            
 <?php   
 $sy_query = $conn->query("select DISTINCT sy FROM main_event where organizer_id='$session_id'") or die(mysql_error());
 while ($sy_row = $sy_query->fetch()) 
