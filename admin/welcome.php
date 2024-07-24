@@ -88,39 +88,25 @@ thead th {
        <th align="left" style="background-color: aquamarine; text-indent: 10px; color: black; "><h4> &nbsp;WELCOME</h4></th>
        </thead>
 
-       <tr style="background-color: #fff;">
+         <tr style="background-color: #fff;">
  
-    <td>
-
-    <h5><i class="icon-user"></i>  JUDGE:</h5>
-
- 
-<div id="myGroup" >
-
-<div class="input-group">
-       <div class="alert alert-success">
-      <form method="POST" action="judge_profile.php" >
-            <h4>Judge's Code</h4>
-            <br />
-          <input id="myInputJC" style="font-size: large; height: 45px !important;" class="form-control btn-block" name="judge_code" type="password" placeholder="Enter Judge's Code" />
-          <button style="width: 160px !important;" type="submit" class="btn btn-primary pull-right"><i class="icon-ok"></i> <strong>Enter</strong></button>
-  
-            <p><input style="padding-top: 0px !important; margin-top: 0px !important;" type="checkbox" onclick="myFunctionJC()"/> <strong>Show Code</strong></p>
-                                     
-                                    <script>
-                                    function myFunctionJC() {
-                                        var x = document.getElementById("myInputJC");
-                                        if (x.type === "password") {
-                                            x.type = "text";
-                                        } else {
-                                            x.type = "password";
-                                        }
-                                    }
-                                    </script>
- </table>
+             <td>
+              <h5><i class="icon-user"></i>  JUDGE'S CODE:</h5>
+              <input style="font-size: large; height: 35px !important; text-indent: 7px !important;" class="form-control btn-block" type="text" name="username" placeholder="Username" required="true" autofocus="true" />
+              <button id="login-button" style="width: 100px !important;" type="button" class="btn btn-primary pull-right"><i class="icon-ok"></i> <strong>ENTER</strong></button>
+             
+             </td>
+             </tr>
+             </table>
+             </form>
+           </div>
         </div>
       </div>
-    </div><br><br>
+    </div>
+  </div>
+</div>
+   
+   
     <!--end About judge button -->
     ================================================== -->
     <footer class="footer">
