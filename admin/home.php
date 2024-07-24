@@ -338,20 +338,13 @@
   </div>
 </div>
         
-<script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            let eventCounter = localStorage.getItem('eventCounter');
-            if (!eventCounter) {
-                eventCounter = 1;
-            } else {
-                eventCounter = parseInt(eventCounter) + 1;
-            }
-            localStorage.setItem('eventCounter', eventCounter);
-            document.getElementById('eventNumber').value = eventCounter;
+                            
+     <script>
+        document.getElementById('toggle-btn').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('collapsed');
+            document.getElementById('main-content').classList.toggle('collapsed');
         });
     </script>
-                            
-     
 
 <?php   
 $sy_query = $conn->query("select DISTINCT sy FROM main_event where organizer_id='$session_id'") or die(mysql_error());
