@@ -24,7 +24,7 @@
         left: 0;
         height: 100%;
         width: 250px;
-        background-color: transparent;
+        background-color: #27293d;
         color: #fff;
         padding-top: 20px;
         transition: all 0.3s;
