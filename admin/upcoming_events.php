@@ -279,36 +279,40 @@
 
         $('#updateEventModalLabel').text('Edit Event');
 
-        $('#updateEventButton').off('click').on('click', function() {
-          var id = $('#updateeventID').val();
-          var title = $('#updateeventTitle').val();
-          var start = $('#updateeventStart').val();
-          var end = $('#updateeventEnd').val();
-          if (title && start && end) {
-            var eventData = {
-              id: id,
-              title: title,
-              start: start,
-              end: end
-            };
-            $.ajax({
-              url: 'update-event.php',
-              type: 'POST',
-              data: eventData,
-              success: function(data) {
-                calendar.refetchEvents();
-                $('#updateEventModal').modal('hide');
-                $('#updateeventID').val('');
-                $('#updateeventTitle').val('');
-                $('#updateeventStart').val('');
-                $('#updateeventEnd').val('');
-              }
-            });
-          } else {
-            alert('Please fill all required fields');
-          }
+        $('#updateEventButton').on('click', function() {
+    var id = $('#updateeventID').val();
+    var title = $('#updateeventTitle').val();
+    var start = $('#updateeventStart').val();
+    var end = $('#updateeventEnd').val();
+    if (title && start && end) {
+        var eventData = {
+            id: id,
+            title: title,
+            start: start,
+            end: end
+        };
+        $.ajax({
+            url: 'update-event.php',
+            type: 'POST',
+            data: eventData,
+            success: function(data) {
+                var response = JSON.parse(data);
+                if (response.status === 'error') {
+                    alert(response.message);
+                } else {
+                    calendar.refetchEvents();
+                    $('#updateEventModal').modal('hide');
+                    $('#updateeventID').val('');
+                    $('#updateeventTitle').val('');
+                    $('#updateeventStart').val('');
+                    $('#updateeventEnd').val('');
+                }
+            }
         });
-
+    } else {
+        alert('Please fill all required fields');
+    }
+});
         $('#deleteEventButton').off('click').on('click', function() {
           var id = $('#updateeventID').val();
           var title = $('#updateeventTitle').val();
@@ -361,27 +365,33 @@
     var start = $('#eventStart').val();
     var end = $('#eventEnd').val();
     if (title && start && end) {
-      var eventData = {
-        title: title,
-        start: start,
-        end: end
-      };
-      $.ajax({
-        url: 'add-event.php',
-        type: 'POST',
-        data: eventData,
-        success: function(data) {
-          calendar.refetchEvents();
-          $('#addEventModal').modal('hide');
-          $('#eventTitle').val('');
-          $('#eventStart').val('');
-          $('#eventEnd').val('');
-        }
-      });
+        var eventData = {
+            title: title,
+            start: start,
+            end: end
+        };
+        $.ajax({
+            url: 'add-event.php',
+            type: 'POST',
+            data: eventData,
+            success: function(data) {
+                var response = JSON.parse(data);
+                if (response.status === 'error') {
+                    alert(response.message);
+                } else {
+                    calendar.refetchEvents();
+                    $('#addEventModal').modal('hide');
+                    $('#eventTitle').val('');
+                    $('#eventStart').val('');
+                    $('#eventEnd').val('');
+                }
+            }
+        });
     } else {
-      alert('Please fill all required fields');
+        alert('Please fill all required fields');
     }
-  });
+});
+
 
   function datetimeLocal(datetimeStr) {
     return moment(datetimeStr).format('YYYY-MM-DDTHH:mm');
