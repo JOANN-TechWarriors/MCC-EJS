@@ -259,17 +259,31 @@
         }
       },
       select: function(info) {
-        var start = info.startStr;
-        var end = info.endStr;
+  var start = info.startStr;
+  var end = info.endStr;
 
-        var startTime = moment(start).add(8, 'hours').format('YYYY-MM-DDTHH:mm');
-        $('#eventStart').val(startTime);
+  // Check if there's already an event scheduled on the same date and time
+  var existingEvents = calendar.getEvents();
+  var existingEventFound = false;
+  for (var i = 0; i < existingEvents.length; i++) {
+    if (existingEvents[i].start === start && existingEvents[i].end === end) {
+      existingEventFound = true;
+      break;
+    }
+  }
 
-        var endTime = moment(start).add(17, 'hours').format('YYYY-MM-DDTHH:mm');
-        $('#eventEnd').val(endTime);
-        $('#addEventModal').modal('show');
-        calendar.unselect();
-      },
+  if (!existingEventFound) {
+    var startTime = moment(start).add(8, 'hours').format('YYYY-MM-DDTHH:mm');
+    $('#eventStart').val(startTime);
+
+    var endTime = moment(start).add(17, 'hours').format('YYYY-MM-DDTHH:mm');
+    $('#eventEnd').val(endTime);
+    $('#addEventModal').modal('show');
+    calendar.unselect();
+  } else {
+    alert('There is already an event scheduled on this date and time.');
+  }
+},
       eventClick: function(info) {
         $('#updateEventModal').modal('show');
         $('#updateeventID').val(info.event.id);
