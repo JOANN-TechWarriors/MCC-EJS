@@ -540,7 +540,7 @@ CREATE TABLE `organizer` (
 --
 
 INSERT INTO `organizer` (`organizer_id`, `fname`, `mname`, `lname`, `username`, `password`, `email`, `pnum`, `txt_poll_num`, `access`, `org_id`, `status`, `company_name`, `company_address`, `company_logo`, `company_telephone`, `company_email`, `company_website`, `reset_token`, `reset_expires`) VALUES
-(19, 'CHRISTIAN PAUL', 'LANORIAS', 'SALVADO', 'blue', 'blue', 'salvadochristianpaul5@gmail.com', '09385974999', '09385974999', 'Organizer', '', 'online', '', 'BANTAYAN ISLAND CEBU', '52985-ejs_logo.png', '000-0000', '', '', '12345abcde', '2023-05-07 14:21:21'),
+(19, 'CHRISTIAN PAUL', 'LANORIAS', 'SALVADO', 'blue', 'blue', 'salvadochristianpaul5@gmail.com', '09385974999', '09385974999', 'Organizer', '', 'online', '', 'BANTAYAN ISLAND CEBU', 'logo.png', '000-0000', '', '', '12345abcde', '2023-05-07 14:21:21'),
 (20, 'JOHN PAUL', '', 'UNGON', 'red', 'red', 'evas.jygona@gmail.com', '', '', 'Tabulator', '19', 'offline', '', '', '', '', '', '', '', NULL),
 (27, 'user', 'user', 'user', 'user', 'user', '', '', '09078262015', 'Organizer', '', 'offline', '', '', '', '', '', '', '', NULL),
 (28, 'black', 'black', 'black', '123', '123', '', '', '', 'Organizer', '', 'offline', '', '', '', '', '', '', '', NULL),
@@ -695,7 +695,7 @@ INSERT INTO `sub_event` (`subevent_id`, `mainevent_id`, `organizer_id`, `event_n
 (43, 41, 19, 'BEST IN EVENING GOWN (MS IT DAY)', 'activated', '', '22:00', 'MCC', 'active', 'active', 'deactivated', 'img20220825_08482222.jpg'),
 (46, 42, 19, 'ORIGINALITY(SINGING CONTEST)', 'activated', '', '', '', '', 'deactivated', 'deactivated', '1680009246633.jpg'),
 (47, 41, 19, ' (MS IT 2023)', 'activated', '', '', '', 'active', 'deactivated', 'deactivated', '1679835719620.jpg'),
-(48, 43, 19, 'MS IT 2023', 'activated', '', '', '', 'active', 'active', 'deactivated', 'logo.jpg'),
+(48, 43, 19, 'MS IT 2023', 'activated', '', '', '', 'active', 'active', 'deactivated', 'logo.png'),
 (49, 44, 29, 'Dancing', 'activated', '', '20:00', 'MCC', '', '', 'deactivated', '1680008991102.jpg');
 
 -- --------------------------------------------------------

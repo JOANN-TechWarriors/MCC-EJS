@@ -18,7 +18,7 @@
     ?>
 <head>
 <link rel="shortcut icon" href="../img/logo.png"/>
-    <title>Event Judging System</title>
+    <title>MCC Event Judging System</title>
 </head>
   <body data-spy="scroll" data-target=".bs-docs-sidebar">
  

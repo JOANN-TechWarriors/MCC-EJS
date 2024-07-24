@@ -134,7 +134,8 @@
   <button class="toggle-btn" id="toggle-btn">☰</button>
     <div class="sidebar-heading">
       <img src="../img/logo.php" alt="Logo">
-      <div>Event Judging System</div>
+      <div>
+        MCC Event Judging System</div>
     </div>
     <ul>
         <li><a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> <span>DASHBOARD</span></a></li>

@@ -43,9 +43,9 @@ include('..//admin/session.php');
 
         .sidebar .toggle-btn {
             position: absolute;
-            top: 15px;
-            right: -0px;
-            background-color: transparent;
+            top: 20px;
+            right: 20px;
+            background-color: #27293d;
             color: #fff;
             border: none;
             cursor: pointer;
@@ -205,7 +205,7 @@ include('..//admin/session.php');
     <div class="logo-container">
         <img src="../img/logo.png" alt="Logo" class="logo-img">
     </div>
-    <span class="header-text">Event Judging System</span>
+    <span class="header-text">MCC Event Judging System</span>
 </div>
 
         <ul>

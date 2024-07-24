@@ -44,16 +44,13 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title" id="Login">About Event Judging System</h4>
+                        <h4 class="modal-title" id="Login">About MCC Event Judging System</h4>
                     </div>
                     <div class="modal-body">
                     
                     <table align="center">
                     
-                    <tr>
-                    <td colspan="2" align="center"> <img src="ejs_logo.png" width="50" height="50" class="thumbnail" /></td>                    
-                    </tr>
-                    
+                  
                     <tr>
                     <td>&nbsp;</td>
                     </tr>

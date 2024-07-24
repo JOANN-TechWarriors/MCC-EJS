@@ -10,8 +10,8 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <meta name="theme-color" content="#3e454c">
-<link rel="shortcut icon" href="../admin/ejs_logo.png"/>
-<title>Event Judging System</title> 
+<link rel="shortcut icon" href="../img/logo.png"/>
+<title>MCC Event Judging System</title> 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <!-- SweetAlert CSS -->
@@ -243,7 +243,7 @@
     <div class="logo-container">
         <img src="../img/logo.png" alt="Logo" class="logo-img">
     </div>
-    <span class="header-text">Event Judging System</span>
+    <span class="header-text">MCC Event Judging System</span>
 </div>
         <ul>
             <li><a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> <span>DASHBOARD</span></a></li>

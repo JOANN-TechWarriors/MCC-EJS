@@ -1,4 +1,4 @@
-<link rel="shortcut icon" href="bcc_logo.png"/>
+<link rel="shortcut icon" href="../img/logo.png"/>
     
 <script type="text/javascript">
 var auto_refresh = setInterval(

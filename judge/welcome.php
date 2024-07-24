@@ -44,14 +44,14 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title" id="Login">About Event Judging System</h4>
+                        <h4 class="modal-title" id="Login">About MCC Event Judging System</h4>
                     </div>
                     <div class="modal-body">
                     
                     <table align="center">
                     
                     <tr>
-                    <td colspan="2" align="center"> <img src="ejs_logo.png" width="50" height="50" class="thumbnail" /></td>                    
+                    <td colspan="2" align="center"> <img src="../img/logo.png" width="50" height="50" class="thumbnail" /></td>                    
                     </tr>
                     
                     <tr>
@@ -164,7 +164,7 @@
     <footer class="footer">
       <div class="container">
       
-        <font size="2" class="" align="center"><strong>Event Judging System &middot; 2022 &COPY; </strong></font> <br />
+        <font size="2" class="" align="center"><strong>MCC Event Judging System &middot; 2024 &COPY; </strong></font> <br />
         
       </div>
     </footer>
