@@ -378,20 +378,16 @@
   $('#updateeventEnd').attr('min', currentDateTime);
 });
 
-function roundToNearestHalfHour(datetimeStr) {
-  var momentObj = moment(datetimeStr);
-  var minutes = momentObj.minutes();
-  var roundedMinutes = Math.round(minutes / 30) * 30;
-  if (roundedMinutes === 60) {
-    momentObj.add(1, 'hour');
-    roundedMinutes = 0;
-  }
-  return momentObj.minutes(roundedMinutes).seconds(0).format('YYYY-MM-DDTHH:mm');
-}
-
-function datetimeLocal(datetimeStr) {
-  return moment(datetimeStr).format('YYYY-MM-DDTHH:mm');
-}
+function adjustToNearestHalfHour(dateTimeStr) {
+        var dateTime = moment(dateTimeStr);
+        var minutes = dateTime.minutes();
+        if (minutes < 30) {
+          dateTime.minutes(0);
+        } else {
+          dateTime.minutes(30);
+        }
+        return dateTime.format('YYYY-MM-DDTHH:mm');
+      }
 
 $('#addEventButton').on('click', function() {
   var title = $('#eventTitle').val();
