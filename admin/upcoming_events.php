@@ -195,6 +195,10 @@
                 <input type="text" class="form-control" id="eventTitle" required>
               </div>
               <div class="mb-3">
+                <label for="eventBanner" class="form-label">Banner Image</label>
+                <input type="file" class="form-control" id="eventBanner" name="eventBanner" accept="image/*">
+              </div>
+              <div class="mb-3">
                 <label for="eventStart" class="form-label">Start</label>
                 <input type="datetime-local"  class="form-control" id="eventStart" required>
               </div>
@@ -227,6 +231,10 @@
                 <input type="text" class="form-control" id="updateeventTitle" required>
               </div>
               <div class="mb-3">
+                <label for="updateeventBanner" class="form-label">Banner Image</label>
+                <input type="file" class="form-control" id="updateeventBanner" name="eventBanner" accept="image/*">
+              </div>
+              <div class="mb-3">
                 <label for="updateeventStart" class="form-label">Start</label>
                 <input type="datetime-local" class="form-control" id="updateeventStart" required>
               </div>
@@ -237,9 +245,9 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelEventButton">Cancel</button>
-            <button type="button" class="btn btn-danger" id="deleteEventButton">Delete</button>
             <button type="button" class="btn btn-success" id="updateEventButton">Update</button>
+            <button type="button" class="btn btn-danger" id="deleteEventButton">Delete</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelEventButton">Cancel</button>
           </div>
         </div>
       </div>
