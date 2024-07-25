@@ -136,7 +136,7 @@
   <div class="sidebar" id="sidebar">
     <button class="toggle-btn" id="toggle-btn"><i class="fas fa-bars"></i></button>
     <div class="sidebar-heading">
-      <img src="ejs_logo.png" alt="Logo">
+      <img src="../img/logo.png" alt="Logo">
       <div>Event Judging System</div>
     </div>
     <ul>

@@ -137,7 +137,7 @@
 <div class="sidebar" id="sidebar">
     <button class="toggle-btn" id="toggle-btn">☰</button>
     <div class="logo">
-        <img src="../assets/img/mcc_logo.png" alt="Event Judging System Logo">
+        <img src="../img/logo.png" alt="Event Judging System Logo">
     </div>
     
     <ul>

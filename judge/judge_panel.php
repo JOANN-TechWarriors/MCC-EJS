@@ -1159,14 +1159,14 @@ if($getContestant_id=="allTally")
                                         <div class="container">
                                           <center>
                                           
-                                          <font size="4">Event Judging System &middot; 2022 &COPY;</font>
+                                          <font size="4">Event Judging System &middot; 2024 &COPY;</font>
                                           <hr />
                                           
                                           
                                           <table border="0">
       
                                           <tr>
-                                          <td align="center"><img src="../img<?php echo $company_logo; ?>" width="35" height="35" /></td>
+                                          <td align="center"><img src="../img/<?php echo $company_logo; ?>" width="35" height="35" /></td>
                                          </tr>
                                          <tr>
                                           <td align="center">

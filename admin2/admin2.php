@@ -53,7 +53,7 @@
                     <table align="center">
                     
                     <tr>
-                    <td colspan="2" align="center"> <img src="ejs_logo.png" width="50" height="50" class="thumbnail" /></td>                    
+                    <td colspan="2" align="center"> <img src="../img/logo.png" width="50" height="50" class="thumbnail" /></td>                    
                     </tr>
                     
                     <tr>
