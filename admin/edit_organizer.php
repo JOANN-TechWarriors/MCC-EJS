@@ -79,9 +79,16 @@ if ($query) {
                 <table align="center">
                   <tr><td colspan="5">&nbsp; <hr /></td></tr>
                   <tr>
-                    <td colspan="2"><br /></td>
-                    <td colspan="3">Upload Company Logo:<br /><br /><input type="file" name="file" id="img" /></td>
-                  </tr>
+            <td colspan="2">
+            <br /> 
+            <img class="thumbnail" src="../img/<?php echo $row['company_logo']; ?>" width="120" height="100" />
+    
+             </td>
+            <td colspan="3">
+            Upload Company Logo:<br /><br />
+           <input type="file" name="file" id="img" /></td>
+           </tr>
+   
                   <tr><td colspan="5">&nbsp;</td></tr>
                   <tr><td colspan="5"><strong>Account Security</strong><hr /></td></tr>
                   <tr>
