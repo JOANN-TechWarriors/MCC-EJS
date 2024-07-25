@@ -57,7 +57,7 @@ div.panel {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-             <a class="brand" href="#"><img src="../img/logo.png<?php echo $company_logo; ?>" width="23" height="23" />&nbsp; <font size="3">Event Judging System</font></a> 
+             <a class="brand" href="#"><img src="img/<?php echo $company_logo; ?>" width="23" height="23" />&nbsp; <font size="3">Event Judging System</font></a> 
  
           <div class="nav-collapse collapse">
             <ul class="nav">

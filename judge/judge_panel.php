@@ -1166,7 +1166,7 @@ if($getContestant_id=="allTally")
                                           <table border="0">
       
                                           <tr>
-                                          <td align="center"><img src="../img/logo.png<?php echo $company_logo; ?>" width="35" height="35" /></td>
+                                          <td align="center"><img src="img/<?php echo $company_logo; ?>" width="35" height="35" /></td>
                                          </tr>
                                          <tr>
                                           <td align="center">
