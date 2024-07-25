@@ -3,7 +3,11 @@
    include('header2.php');
     include('session.php');
     
- $active_main_event=$_GET['main_event_id'];
+    if (isset($_GET['main_event_id'])) {
+      $active_main_event = $_GET['main_event_id'];
+  } else {
+      die("Error: 'main_event_id' is not set.");
+  }
     ?> 
  
      
