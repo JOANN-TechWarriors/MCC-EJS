@@ -81,7 +81,7 @@ if ($query) {
                   <tr>
                <td colspan="2">
                <br /> 
-               <img class="thumbnail" src="../img/<?php echo $row['company_logo']; ?>" width="120" height="100" />
+               <img class="thumbnail" src="../img/logo.png<?php echo $row['company_logo']; ?>" width="120" height="100" />
     
                </td>
                <td colspan="3">

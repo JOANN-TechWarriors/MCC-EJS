@@ -445,9 +445,9 @@ jQuery(document).ready(function($){
  <div id="footer">
  
   <table><tr>
-  <td><a href="home.php"  class="btn btn-default">Cancel</a></td>
-  <td>&nbsp;</td>
   <td><button name="save_settings" id="submit" type="submit"  class="btn btn-primary">Save Settings</button></td>
+  <td>&nbsp;</td>
+  <td><a href="home.php"  class="btn btn-default">Cancel</a></td>
   </tr></table>
    
  
