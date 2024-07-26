@@ -562,76 +562,92 @@ $MECtr = $MEctrQuery->rowCount();  ?>
                                     
                                     <br />
                                     
-                                    
                                     <div id="deleteMEcollapse<?php echo $sub_event_row['subevent_id']; ?>" class="panel-collapse collapse">
-    <div class="pull-right">
-        <table class="table table-bordered">
-            <tr>
-                <td><h4>Delete Sub-Event</h4></td>
-            </tr>
-            <tr>
-                <td>
-                    <?php 
-                    $place_query = $conn->query("SELECT * FROM sub_results WHERE subevent_id='$sub_event_id'") or die(mysql_error());
-                    if ($place_query->rowCount() == 0) { 
-                    ?>
-                    <form method="POST" action="" id="deleteSubEventForm">
-                        <input type="hidden" name="sub_event_id" value="<?php echo $sub_event_row['subevent_id']; ?>" />
-                        <input type="hidden" name="se_name" value="<?php echo $sub_event_row['event_name']; ?>" />
-                        <input id="myInput" name="entered_pass" type="password" placeholder="Enter Organizer's Password" />
-                        <input type="hidden" name="deleteSubEvent" value="1" />
-                        <br />
-                        <p>
-                            <input id="showPasswordCheckbox" type="checkbox" onclick="togglePasswordVisibility()"> 
-                            <label for="showPasswordCheckbox"><strong>Show Password</strong></label>
-                        </p>
-                        <br />
-                        <button type="button" style="margin-right: 5px !important;" class="btn btn-danger pull-right" onclick="confirmDelete()">
-                            <i class="icon-ok"></i> <strong>DELETE</strong>
-                        </button>
-                    </form>
-                    <script>
-                        function togglePasswordVisibility() {
-                            var passwordInput = document.getElementById("myInput");
-                            var checkbox = document.getElementById("showPasswordCheckbox");
+                                    
+                                    <div class="pull-right">
+                                    
+                                    <table class="table table-bordered">
+                                    
+                                    <tr>
+                                    <td><h4>Delete Sub-Event</h4></td>
+                                    </tr>
+                                    <tr>
+                                    <td>
+                                    
+                                    <?php 
+$place_query = $conn->query("SELECT * FROM sub_results WHERE subevent_id='$sub_event_id'") or die(mysql_error());
+if ($place_query->rowCount() == 0) { 
+?>
+    <form method="POST" id="deleteSubEventForm">
+        <input type="hidden" name="sub_event_id" value="<?php echo $sub_event_row['subevent_id']; ?>" />
+        <input type="hidden" name="se_name" value="<?php echo $sub_event_row['event_name']; ?>" />
+        <input id="myInput" name="entered_pass" type="password" placeholder="Enter Organizer's Password" />
+        <br />
+        <p>
+    <input id="showPasswordCheckbox" type="checkbox" onclick="togglePasswordVisibility()"> <label for="showPasswordCheckbox"><strong>Show Password</strong></label></input>
+</p>
 
-                            if (checkbox.checked) {
-                                passwordInput.type = "text";
-                            } else {
-                                passwordInput.type = "password";
-                            }
-                        }
+<script>
+function togglePasswordVisibility() {
+    var passwordInput = document.getElementById("myInput");
+    var checkbox = document.getElementById("showPasswordCheckbox");
 
-                        function confirmDelete() {
-                            Swal.fire({
-                                title: 'Are you sure?',
-                                text: "You won't be able to revert this!",
-                                icon: 'warning',
-                                showCancelButton: true,
-                                confirmButtonColor: '#3085d6',
-                                cancelButtonColor: '#d33',
-                                confirmButtonText: 'Yes, delete it!'
-                            }).then((result) => {
-                                if (result.isConfirmed) {
-                                    document.getElementById('deleteSubEventForm').submit();
-                                }
-                            });
-                        }
-                    </script>
-                    <?php 
-                    } else { 
-                    ?>
-                    <div class="alert alert-warning">
-                        <h3>Cannot delete Sub-Event. There are saved data for this Sub-Event.</h3>
-                    </div>
-                    <?php 
-                    }
-                    ?>
-                </td>
-            </tr>
-        </table>
+    if (checkbox.checked) {
+        passwordInput.type = "text";
+    } else {
+        passwordInput.type = "password";
+    }
+}
+</script>
+
+        <br />
+        <button type="button" style="margin-right: 5px !important;" class="btn btn-danger pull-right" onclick="confirmDelete()"><i class="icon-ok"></i> <strong>DELETE</strong></button>
+    </form>
+    <script>
+        function myFunctionDSE() {
+            var x = document.getElementById("myInput");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+
+        function confirmDelete() {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById('deleteSubEventForm').submit();
+                }
+            });
+        }
+    </script>
+<?php 
+} else { 
+?>
+    <div class="alert alert-warning">
+        <h3>Cannot delete Sub-Event. There are saved data for this Sub-Event.</h3>
     </div>
-</div
+<?php 
+}
+?>
+
+                                    
+                                    
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    
+                                    </div>
+                                    
+                                    </div>
                                     
                                     
                                     <?php
@@ -670,90 +686,9 @@ if (isset($_POST['deleteSubEvent'])) {
         </script>";
     }
 }
-?><?php
-// Establish database connection (make sure to replace with your actual connection code)
-try {
-    $conn = new PDO("mysql:host=localhost;dbname=your_db_name", "username", "password");
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Database connection failed: " . $e->getMessage());
-}
-
-// Handle the deletion request
-if (isset($_POST['deleteSubEvent'])) {
-    $sub_event_id = $_POST['sub_event_id'];
-    $entered_pass = $_POST['entered_pass'];
-    $se_name = $_POST['se_name'];
-
-    // Retrieve stored password (replace this with your actual password retrieval logic)
-    // For example: 
-    // $check_pass = 'password_from_database';
-    
-    // Example: Retrieving the password from the database
-    // $stmt = $conn->prepare("SELECT password FROM organizers WHERE id = :id");
-    // $stmt->execute(['id' => $organizer_id]);
-    // $check_pass = $stmt->fetchColumn();
-    
-    // Simulate the correct password for demonstration purposes
-    $check_pass = 'correct_password'; // Update this as needed
-
-    if ($check_pass == $entered_pass) {
-        try {
-            $conn->beginTransaction();
-
-            $stmt = $conn->prepare("DELETE FROM sub_event WHERE subevent_id = ?");
-            $stmt->execute([$sub_event_id]);
-
-            $stmt = $conn->prepare("DELETE FROM contestants WHERE subevent_id = ?");
-            $stmt->execute([$sub_event_id]);
-
-            $stmt = $conn->prepare("DELETE FROM criteria WHERE subevent_id = ?");
-            $stmt->execute([$sub_event_id]);
-
-            $stmt = $conn->prepare("DELETE FROM judges WHERE subevent_id = ?");
-            $stmt->execute([$sub_event_id]);
-
-            $conn->commit();
-
-            // SweetAlert for success
-            echo "<script>
-                Swal.fire({
-                    title: 'Deleted!',
-                    text: 'Sub-Event: $se_name and its related data deleted successfully.',
-                    icon: 'success'
-                }).then(() => {
-                    window.location = 'home.php';
-                });
-            </script>";
-        } catch (PDOException $e) {
-            $conn->rollBack();
-            // SweetAlert for error
-            echo "<script>
-                Swal.fire({
-                    title: 'Error!',
-                    text: 'An error occurred: " . $e->getMessage() . "',
-                    icon: 'error'
-                }).then(() => {
-                    window.location = 'home.php';
-                });
-            </script>";
-        }
-    } else {
-        // SweetAlert for bad password
-        echo "<script>
-            Swal.fire({
-                title: 'Error!',
-                text: 'Bad Password! Try Again.',
-                icon: 'error'
-            }).then(() => {
-                window.location = 'home.php';
-            });
-        </script>";
-    }
-}
 ?>
 
-
+   </td>
                                      
                                     <?php
                                     if($sub_event_row['status']=="activated")
