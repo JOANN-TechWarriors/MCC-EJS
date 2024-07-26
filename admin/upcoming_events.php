@@ -202,10 +202,6 @@
               <input type="datetime-local" class="form-control" id="eventEnd" name="date_end" required>
             </div>
             <div class="mb-3">
-              <label for="eventTime" class="form-label">Event Time</label>
-              <input type="time" class="form-control" id="eventTime" name="event_time" required>
-            </div>
-            <div class="mb-3">
               <label for="eventPlace" class="form-label">Place</label>
               <input type="text" class="form-control" id="eventPlace" name="place" required>
             </div>
