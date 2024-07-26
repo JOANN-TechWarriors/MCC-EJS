@@ -63,20 +63,21 @@
     }
 
     .logo-container {
-      display: block;
-      margin-bottom: 10px;
-    }
+    display: block;
+    margin-bottom: 10px;
+}
 
-    .logo-img {
-      max-width: 100%;
-      height: auto;
-    }
+.logo-img {
+    max-width: 100%;
+    height: auto;
+}
 
-    .header-text {
-      display: block;
-      font-size: 20px;
-      margin-top: 20px;
-    }
+.header-text {
+    display: block;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
 
     .sidebar-heading img {
         max-width: 50px;
@@ -181,47 +182,40 @@
     </div>
 
     <div class="modal fade" id="addEventModal" tabindex="-1" aria-labelledby="addEventModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="addEventModalLabel">Add Event</h5>
-        </div>
-        <div class="modal-body">
-          <form id="addEventForm">
-            <div class="mb-3">
-              <input type="hidden" class="form-control" id="eventID">
-              <label for="eventTitle" class="form-label">Title</label>
-              <input type="text" class="form-control" id="eventTitle" name="main_event" required>
-            </div>
-            <div class="mb-3">
-              <label for="eventBanner" class="form-label">Banner Image</label>
-              <input type="file" class="form-control" id="eventBanner" name="eventBanner" accept="image/*">
-            </div>
-            <div class="mb-3">
-              <label for="eventStart" class="form-label">Start</label>
-              <input type="datetime-local" class="form-control" id="eventStart" name="date_start" required>
-            </div>
-            <div class="mb-3">
-              <label for="eventEnd" class="form-label">End</label>
-              <input type="datetime-local" class="form-control" id="eventEnd" name="date_end" required>
-            </div>
-            <div class="mb-3">
-              <label for="eventTime" class="form-label">Event Time</label>
-              <input type="time" class="form-control" id="eventTime" name="event_time" required>
-            </div>
-            <div class="mb-3">
-              <label for="eventPlace" class="form-label">Place</label>
-              <input type="text" class="form-control" id="eventPlace" name="place" required>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-success" id="addEventButton">Save</button>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelEventButton">Cancel</button>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addEventModalLabel">Add Event</h5>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <input type="hidden" class="form-control" id="eventID">
+                <label for="eventTitle" class="form-label">Title</label>
+                <input type="text" class="form-control" id="eventTitle" required>
+              </div>
+              <div class="mb-3">
+                <label for="eventBanner" class="form-label">Banner Image</label>
+                <input type="file" class="form-control" id="eventBanner" name="eventBanner" accept="image/*">
+              </div>
+              <div class="mb-3">
+                <label for="eventStart" class="form-label">Start</label>
+                <input type="datetime-local"  class="form-control" id="eventStart" required>
+              </div>
+              <div class="mb-3">
+                <label for="eventEnd" class="form-label">End</label>
+                <input type="datetime-local"  class="form-control" id="eventEnd" required>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+
+            <button type="button" class="btn btn-success" id="addEventButton">Save</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelEventButton">Cancel</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
     <div class="modal fade" id="updateEventModal" tabindex="-1" aria-labelledby="updateEventModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -408,30 +402,35 @@ function datetimeLocal(datetimeStr) {
 }
 
 $('#addEventButton').on('click', function() {
-  var form = document.getElementById('addEventForm');
-  var formData = new FormData(form);
-  
-  $.ajax({
-    url: 'add-event.php',
-    type: 'POST',
-    data: formData,
-    contentType: false,
-    processData: false,
-    success: function(response) {
-      var data = JSON.parse(response);
-      if (data.status === 'success') {
-        alert('Event added successfully!');
-        $('#addEventModal').modal('hide');
-        form.reset();
-        calendar.refetchEvents();
-      } else {
-        alert('Failed to add event: ' + data.message);
+  var title = $('#eventTitle').val();
+  var start = $('#eventStart').val();
+  var end = $('#eventEnd').val();
+  if (title && start && end) {
+    var eventData = {
+      title: title,
+      start: start,
+      end: end
+    };
+    $.ajax({
+      url: 'add-event.php',
+      type: 'POST',
+      data: eventData,
+      success: function(data) {
+        var response = JSON.parse(data);
+        if (response.status === 'error') {
+          alert(response.message);
+        } else {
+          calendar.refetchEvents();
+          $('#addEventModal').modal('hide');
+          $('#eventTitle').val('');
+          $('#eventStart').val('');
+          $('#eventEnd').val('');
+        }
       }
-    },
-    error: function() {
-      alert('An error occurred while adding the event.');
-    }
-  });
+    });
+  } else {
+    alert('Please fill all required fields');
+  }
 });
 
 $('#logout').on('click', function() {
