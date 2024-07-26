@@ -194,10 +194,6 @@
               <input type="text" class="form-control" id="eventTitle" name="main_event" required>
             </div>
             <div class="mb-3">
-              <label for="eventBanner" class="form-label">Banner Image</label>
-              <input type="file" class="form-control" id="eventBanner" name="eventBanner" accept="image/*">
-            </div>
-            <div class="mb-3">
               <label for="eventStart" class="form-label">Start</label>
               <input type="datetime-local" class="form-control" id="eventStart" name="date_start" required>
             </div>
