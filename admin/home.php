@@ -350,16 +350,21 @@
 </div>
         
 <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            let eventCounter = localStorage.getItem('eventCounter');
-            if (!eventCounter) {
-                eventCounter = 1;
-            } else {
-                eventCounter = parseInt(eventCounter) + 1;
+         document.addEventListener("DOMContentLoaded", function() {
+        // Generate a random number for the Event #
+        const eventNumberField = document.getElementById('event-number');
+        eventNumberField.value = Math.floor(Math.random() * 1000) + 1; // Generates a random number between 1 and 1000
+
+        // Restrict time input to 30-minute intervals
+        const eventTimeField = document.getElementById('event-time');
+        eventTimeField.addEventListener('input', function() {
+            const value = eventTimeField.value;
+            const [hours, minutes] = value.split(':').map(Number);
+            if (minutes % 30 !== 0) {
+                eventTimeField.value = `${hours.toString().padStart(2, '0')}:00`;
             }
-            localStorage.setItem('eventCounter', eventCounter);
-            document.getElementById('eventNumber').value = eventCounter;
         });
+    });
     </script>
                             
             
