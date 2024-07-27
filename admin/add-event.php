@@ -22,7 +22,7 @@ $bannerImage = '';
 
 // Handle file upload
 if (isset($_FILES['eventBanner']) && $_FILES['eventBanner']['error'] == 0) {
-    $targetDir = "uploads/"; // Directory to save uploaded images
+    $targetDir = "../img/"; // Directory to save uploaded images
     $targetFile = $targetDir . basename($_FILES["eventBanner"]["name"]);
     $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
 
