@@ -24,7 +24,7 @@ if ($conn->query($sql) === TRUE) {
             showConfirmButton: false,
             timer: 1500
         }).then(function() {
-            window.location = 'home.php'; // Redirect to another page if needed
+            window.location = 'home.php.php'; // Redirect to another page if needed
         });
     </script>";
 } else {

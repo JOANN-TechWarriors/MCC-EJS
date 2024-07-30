@@ -837,40 +837,49 @@ if(isset($_POST['deleteSubEvent']))
 </div>
 
         
-                <div class="collapse" id="deleteEvent<?php echo htmlspecialchars($main_event_id); ?>">
-    <h4>Delete Event <i><?php echo htmlspecialchars($event_row['event_name']); ?></i>?</h4>
-
-    <?php
-    $place_query = $conn->prepare("SELECT * FROM sub_results WHERE mainevent_id = ?");
-    $place_query->execute([$main_event_id]);
-
-    if ($place_query->rowCount() == 0) { ?>
-        <table align="center" class="table table-bordered" id="example">
-            <tr>
-                <td>
-                    <form method="POST" action="delete_event.php">
-                        <input name="main_event_id" type="hidden" value="<?php echo htmlspecialchars($main_event_id); ?>" />
-                        <input name="ma_name" type="hidden" value="<?php echo htmlspecialchars($event_row['event_name']); ?>" />
-
+                <div class="collapse" id="deleteEvent<?php echo $main_event_id; ?>">
+                    
+                    
+                    <h4>Delete Event <i><?php echo $event_row['event_name']; ?></i>?</h4>
+                    
+                    
+                    <?php 
+                    $place_query = $conn->query("select * from sub_results where mainevent_id='$main_event_id'") or die(mysql_error());
+                    if($place_query->rowCount()==0)
+                    { ?>
+                                    
+                     <table align="center" class="table table-bordered" id="example">
+                    <tr>
+                    <td>
+                    
+                      <form method="POST">
+      
+                 
+                      <input name="main_event_id" type="hidden" value="<?php echo $main_event_id; ?>" />
+                      <input name="ma_name" type="hidden" value="<?php echo $event_row['event_name']; ?>" />
+ 
                         <div class="modal-body">
-                            <strong>Confirmation Password</strong>:<br />
-                            <input placeholder="Enter Organizer's Password" name="entered_pass" class="form-control btn-block" style="text-indent: 7px !important; height: 30px !important;" type="password" required="true" />
+                        <strong>Confirmation Password</strong>:<br />
+                        <input placeholder="Enter Organizer's Password" name="entered_pass" class="form-control btn-block" style="text-indent: 7px !important; height: 30px !important;" type="password" required="true"/> 
                         </div>
-
+                        
                         <div class="modal-footer">
-                            <button class="btn btn-danger" name="deleteEvent" type="submit"><i class="icon-trash"></i> <strong>DELETE</strong></button>
-                        </div>
-                    </form>
-                </td>
-            </tr>
-        </table>
-    <?php } else { ?>
-        <div class="alert alert-warning">
-            <h3>Cannot delete event. There are saved data for this event.</h3>
-        </div>
-    <?php } ?>
-</div>
-
+                        <button  class="btn btn-danger" name="deleteEvent" ><i class="icon-trash"></i> <strong>DELETE</strong></button> 
+                        </div>       
+                        </form>
+                        
+                        </td>
+                        </tr>
+                        </table>
+                                    
+                                    <?php } else { ?>
+                                    <div class="alert alert-warning">
+                                    <h3>Cannot delete event. There are saved data for this event.</h3>
+                                    </div>
+                                    
+                                    <?php } ?>
+                 
+                </div>
                 
         </div>
         
