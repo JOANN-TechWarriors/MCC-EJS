@@ -837,7 +837,7 @@ if(isset($_POST['deleteSubEvent']))
 </div>
 
         
-<div class="collapse" id="deleteEvent<?php echo htmlspecialchars($main_event_id); ?>">
+                <div class="collapse" id="deleteEvent<?php echo htmlspecialchars($main_event_id); ?>">
     <h4>Delete Event <i><?php echo htmlspecialchars($event_row['event_name']); ?></i>?</h4>
 
     <?php
