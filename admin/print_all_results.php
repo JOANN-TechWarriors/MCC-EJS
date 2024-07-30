@@ -54,7 +54,6 @@
              
              
              
-             
  
              <table >
         <tr>
@@ -195,9 +194,11 @@ $jname_row = $jname_query->fetch();
 </tr>
    </table> 
  
- <footer></footer>
 <?php } ?>
+<<<<<<< HEAD
+=======
 <h1 style="font-size:15.5px;">Organizing Committee</h1>
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
 
      <table align="center">  
               <tr>
@@ -239,7 +240,8 @@ while ($jjn_result_row = $jjn_result_query->fetch()) {
             </td>
     
            
-  
+            <button type="submit" onclick="window.print()" class="btn btn-default pull-right"><i class="icon-print"></i></button>
+
 <?php } ?>
 
 </tr>

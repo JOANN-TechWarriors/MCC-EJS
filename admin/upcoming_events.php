@@ -6,7 +6,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
+  <link rel="shortcut icon" href="ejs_logo.png"/>
+=======
   <link rel="shortcut icon" href="../img/logo.png"/>
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
   <title>Event Judging System</title>  
   <link href="..//assets/fullcalendar/main.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
@@ -15,10 +19,15 @@
   <script type="text/javascript" src="..//assets/fullcalendar/main.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
   <script src="..//assets/fullcalendar/moment.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
+<<<<<<< HEAD
+      background-color: #fff;
+=======
       background-color: #f4f4f4;
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
       margin: 0;
       padding: 0;
     }
@@ -29,7 +38,11 @@
       left: 0;
       height: 100%;
       width: 250px;
+<<<<<<< HEAD
+      background-color: #333;
+=======
       background-color: #27293d;
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
       color: #fff;
       padding-top: 20px;
       transition: all 0.3s;
@@ -62,6 +75,11 @@
       margin-bottom: 10px;
     }
 
+<<<<<<< HEAD
+    .sidebar-heading img {
+      max-width: 100px;
+      max-height: 100px;
+=======
     .logo-container {
     display: block;
     margin-bottom: 10px;
@@ -82,6 +100,7 @@
     .sidebar-heading img {
         max-width: 50px;
         max-height: 50px;
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
     }
 
     .sidebar ul {
@@ -150,7 +169,11 @@
     }
   </style>
 </head>
+<<<<<<< HEAD
+<body >
+=======
 <body>
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
   <div class="sidebar" id="sidebar">
   <button class="toggle-btn" id="toggle-btn">☰</button>
     <div class="sidebar-heading">
@@ -163,7 +186,10 @@
         <li><a href="upcoming_events.php"><i class="fas fa-calendar-alt"></i> <span>UPCOMING EVENTS</span></a></li>
         <li><a href="score_sheets.php"><i class="fas fa-clipboard-list"></i> <span>SCORE SHEETS</span></a></li>
         <li><a href="rev_main_event.php"><i class="fas fa-chart-line"></i> <span>DATA REVIEWS</span></a></li>
+<<<<<<< HEAD
+=======
         <li><a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> <span>LOGOUT</span></a></li>
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
     </ul>
   </div>
 
@@ -188,11 +214,15 @@
             <h5 class="modal-title" id="addEventModalLabel">Add Event</h5>
           </div>
           <div class="modal-body">
-            <form>
+            <form action="add_upcoming_event.php" method="POST" enctype="multipart/form-data">
               <div class="mb-3">
                 <input type="hidden" class="form-control" id="eventID">
                 <label for="eventTitle" class="form-label">Title</label>
-                <input type="text" class="form-control" id="eventTitle" required>
+                <input type="text" class="form-control" name="eventtitle" id="eventTitle" required>
+              </div>
+              <div class="mb-3">
+                <div>Upload Banner:</div> <br>
+                <input type="file" name="banner" id="banner" required>
               </div>
               <div class="mb-3">
                 <label for="eventBanner" class="form-label">Banner Image</label>
@@ -200,19 +230,31 @@
               </div>
               <div class="mb-3">
                 <label for="eventStart" class="form-label">Start</label>
+<<<<<<< HEAD
+                <input type="datetime-local" name="eventstart" class="form-control" id="eventStart" required>
+              </div>
+              <div class="mb-3">
+                <label for="eventEnd" class="form-label">End</label>
+                <input type="datetime-local" name="event_end" class="form-control" id="eventEnd" required>
+=======
                 <input type="datetime-local"  class="form-control" id="eventStart" required>
               </div>
               <div class="mb-3">
                 <label for="eventEnd" class="form-label">End</label>
                 <input type="datetime-local"  class="form-control" id="eventEnd" required>
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
               </div>
+              <button type="submit" class="btn btn-primary">Add Event</button>
             </form>
           </div>
+<<<<<<< HEAD
+=======
           <div class="modal-footer">
 
             <button type="button" class="btn btn-success" id="addEventButton">Save</button>
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelEventButton">Cancel</button>
           </div>
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
         </div>
       </div>
     </div>
@@ -224,6 +266,32 @@
             <h5 class="modal-title" id="updateEventModalLabel">Edit Event</h5>
           </div>
           <div class="modal-body">
+<<<<<<< HEAD
+          <form action="update-event.php" method="POST" enctype="multipart/form-data">
+  <div class="mb-3">
+    <input type="hidden" class="form-control" id="updateeventID" name="eventID">
+    <label for="updateeventTitle" class="form-label">Title</label>
+    <input type="text" class="form-control" id="updateeventTitle" name="eventTitle" required>
+  </div>
+  <div class="mb-3">
+    <strong>Upload Banner:</strong> <br />
+    <input type="file" name="eventBanner" accept="image/*">
+  </div>
+  <div class="mb-3">
+    <label for="updateeventStart" class="form-label">Start</label>
+    <input type="datetime-local" class="form-control" id="updateeventStart" name="eventStart" required>
+  </div>
+  <div class="mb-3">
+    <label for="updateeventEnd" class="form-label">End</label>
+    <input type="datetime-local" class="form-control" id="updateeventEnd" name="eventEnd" required>
+  </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" id="deleteEventButton">Delete</button>
+            <button type="submit" class="btn btn-success" id="updateEventButton">Update</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelEventButton">Cancel</button>
+          </div>
+          </form>
+=======
             <form>
               <div class="mb-3">
                 <input type="hidden" class="form-control" id="updateeventID">
@@ -248,17 +316,113 @@
             <button type="button" class="btn btn-success" id="updateEventButton">Update</button>
             <button type="button" class="btn btn-danger" id="deleteEventButton">Delete</button>
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelEventButton">Cancel</button>
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
           </div>
         </div>
       </div>
     </div>
   </div>
-
   <script>
   var calendarEl = document.getElementById('calendar');
   var calendar;
 
   document.addEventListener('DOMContentLoaded', function() {
+<<<<<<< HEAD
+    var calendarEl = document.getElementById('calendar');
+
+    calendar = new FullCalendar.Calendar(calendarEl, {
+        headerToolbar: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+        },
+        initialDate: '<?php echo date('Y-m-d') ?>',
+        weekNumbers: true,
+        navLinks: true,
+        editable: true,
+        selectable: true,
+        selectConstraint: {
+            start: new Date().toISOString().slice(0, 10),
+            end: null
+        },
+        nowIndicator: true,
+        dayMaxEvents: true,
+        events: 'get-events.php',
+        select: function(info) {
+            var start = roundToNearestHalfHour(info.start);
+            var end = moment(start).add(30, 'minutes');
+
+            var startTime = start.format('YYYY-MM-DDTHH:mm');
+            $('#eventStart').val(startTime);
+
+            var endTime = end.format('YYYY-MM-DDTHH:mm');
+            $('#eventEnd').val(endTime);
+            $('#addEventModal').modal('show');
+            calendar.unselect();
+        },
+        eventClick: function(info) {
+            $('#updateEventModal').modal('show');
+            $('#updateeventID').val(info.event.id);
+            $('#updateeventTitle').val(info.event.title);
+
+            var startRounded = roundToNearestHalfHour(info.event.start);
+            var endRounded = roundToNearestHalfHour(info.event.end);
+
+            $('#updateeventStart').val(startRounded.format('YYYY-MM-DDTHH:mm'));
+            $('#updateeventEnd').val(endRounded.format('YYYY-MM-DDTHH:mm'));
+        }
+    });
+
+    calendar.render();
+
+    $('#deleteEventButton').off('click').on('click', function() {
+      var id = $('#updateeventID').val();
+      if (id) {
+        Swal.fire({
+          title: 'Are you sure?',
+          text: "You won't be able to revert this!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            $.ajax({
+              url: 'delete-event.php',
+              type: 'POST',
+              data: { id: id },
+              success: function(data) {
+                calendar.refetchEvents();
+                $('#updateEventModal').modal('hide');
+                $('#updateeventID').val('');
+                $('#updateeventTitle').val('');
+                $('#updateeventStart').val('');
+                $('#updateeventEnd').val('');
+                Swal.fire({
+                  icon: 'success',
+                  title: 'Event Deleted Successfully',
+                  showConfirmButton: false,
+                  timer: 1500
+                });
+              },
+              error: function(xhr, status, error) {
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Error',
+                  text: 'An error occurred while deleting the event: ' + error
+                });
+              }
+            });
+          }
+        });
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'Event ID is required for deletion.'
+        });
+=======
   calendar = new FullCalendar.Calendar(calendarEl, {
     headerToolbar: {
       left: 'prev,next today',
@@ -426,6 +590,7 @@ $('#addEventButton').on('click', function() {
           $('#eventStart').val('');
           $('#eventEnd').val('');
         }
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
       }
     });
   } else {
@@ -433,6 +598,102 @@ $('#addEventButton').on('click', function() {
   }
 });
 
+<<<<<<< HEAD
+    $('#cancelEventButton').off('click').on('click', function() {
+      $('#updateeventID').val('');
+      $('#updateeventTitle').val('');
+      $('#updateeventStart').val('');
+      $('#updateeventEnd').val('');
+    });
+
+    $('#updateEventButton').off('click').on('click', function() {
+      var id = $('#updateeventID').val();
+      var title = $('#updateeventTitle').val();
+      var start = $('#updateeventStart').val();
+      var end = $('#updateeventEnd').val();
+      var formData = new FormData();
+
+      formData.append('eventID', id);
+      formData.append('eventTitle', title);
+      formData.append('eventStart', start);
+      formData.append('eventEnd', end);
+
+      var bannerInput = $('#eventBanner')[0];
+      if (bannerInput.files.length > 0) {
+        formData.append('eventBanner', bannerInput.files[0]);
+      }
+
+      $.ajax({
+        url: 'update-event.php',
+        type: 'POST',
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function(response) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Success',
+            text: response.message,
+            confirmButtonText: 'OK'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              $('#updateEventModal').modal('hide');
+              calendar.refetchEvents();  // Refresh the events in FullCalendar
+            }
+          });
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Error updating event: ' + errorThrown,
+            confirmButtonText: 'OK'
+          });
+        }
+      });
+    });
+
+    var currentDateTime = roundToNearestHalfHour(new Date()).format('YYYY-MM-DDTHH:mm');
+    $('#eventStart, #eventEnd, #updateeventStart, #updateeventEnd').attr('min', currentDateTime).attr('step', '1800');
+  });
+
+  function roundToNearestHalfHour(date) {
+    var m = moment(date);
+    var roundedMinutes = Math.round(m.minute() / 30) * 30;
+    return m.minute(roundedMinutes).second(0).millisecond(0);
+  }
+
+  function validateTimeInput(input) {
+    var time = moment(input.value, 'YYYY-MM-DDTHH:mm');
+    var roundedTime = roundToNearestHalfHour(time);
+    input.value = roundedTime.format('YYYY-MM-DDTHH:mm');
+  }
+
+  function checkEventConflict(eventData, callback) {
+    $.ajax({
+      url: 'check_event_conflict.php',
+      type: 'POST',
+      data: eventData,
+      success: function(response) {
+        var result = JSON.parse(response);
+        callback(result.conflict);
+      },
+      error: function() {
+        callback(true); // Assume conflict on error
+      }
+    });
+  }
+
+  $('#eventStart, #eventEnd, #updateeventStart, #updateeventEnd').on('change', function() {
+    validateTimeInput(this);
+  });
+
+  $('#toggle-btn').on('click', function() {
+    $('#sidebar').toggleClass('collapsed');
+    $('#main-content').toggleClass('collapsed');
+    $(this).toggleClass('collapsed');
+  });
+=======
 $('#logout').on('click', function() {
   $.ajax({
     url: 'logout.php',
@@ -447,6 +708,7 @@ $('#toggle-btn').on('click', function() {
   $('#main-content').toggleClass('collapsed');
   $(this).toggleClass('collapsed');
 });
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
 </script>
 
 </body>

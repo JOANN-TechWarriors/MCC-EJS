@@ -11,6 +11,112 @@
  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
  <style>
+<<<<<<< HEAD
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 250px;
+      background-color: #27293d;
+      color: #fff;
+      padding-top: 20px;
+      transition: all 0.3s;
+      overflow: hidden;
+    }
+
+    .sidebar.collapsed {
+      width: 80px;
+    }
+
+    .sidebar .toggle-btn {
+      position: absolute;
+      top: 10px;
+      right: -2px;
+      background-color: transparent;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-size: 20px;
+    }
+
+    .sidebar .toggle-btn i {
+      font-size: 18px;
+    }
+
+    .sidebar-heading {
+      text-align: center;
+      padding: 10px 0;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .sidebar-heading img {
+      max-width: 100px;
+      max-height: 100px;
+    }
+
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar ul li {
+      padding: 10px;
+      border-bottom: 1px solid #555;
+      transition: all 0.3s;
+    }
+
+    .sidebar ul li a {
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .sidebar ul li a i {
+      margin-right: 10px;
+      transition: margin 0.3s;
+    }
+
+    .sidebar.collapsed ul li a i {
+      margin-right: 0;
+    }
+
+    .sidebar ul li a span {
+      display: inline-block;
+      transition: opacity 0.3s;
+    }
+
+    .sidebar.collapsed ul li a span {
+      opacity: 0;
+      width: 0;
+      overflow: hidden;
+    }
+
+    .sidebar ul li a:hover {
+      background-color: #555;
+    }
+
+    .main {
+      margin-left: 250px;
+      padding: 20px;
+      transition: all 0.3s;
+    }
+
+    .main.collapsed {
+      margin-left: 80px;
+    }
+=======
    body {
         font-family: Arial, sans-serif;
         background-color: #fff;
@@ -132,6 +238,7 @@
         margin-left: 80px;
     }
 
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
     .header {
         background-color: #f8f9fa;
         padding: 10px 20px;
@@ -179,6 +286,42 @@
         background-color: #f1f1f1;
     }
 
+<<<<<<< HEAD
+
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+      .sidebar.collapsed {
+            width: 100%;
+        }
+
+      .main {
+        margin-left: 0;
+      }
+    }
+    @media (max-width: 576px) {
+        .sidebar-heading {
+            font-size: 20px;
+        }
+
+        .sidebar ul li a {
+            font-size: 20%;
+        }
+
+        .header {
+            padding: 5px 10px;
+        }
+
+        .header .profile-dropdown img {
+            width: 30px;
+            height: 30px;
+        }
+    }
+  </style>
+=======
     @media (max-width: 768px) {
         .sidebar {
             width: 100%;
@@ -229,8 +372,18 @@
         width: 100%;
     }
 </style>
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
 </head>
+
 <body>
+<<<<<<< HEAD
+    
+  <div class="sidebar" id="sidebar">
+    <button class="toggle-btn" id="toggle-btn">☰</button>
+    <div class="sidebar-heading">
+      <img src="../img/logo.png" alt="Logo">
+      <div>Event Judging System</div>
+=======
     <div class="sidebar" id="sidebar">
         <button class="toggle-btn" id="toggle-btn">☰</button>
         <br><br>
@@ -248,8 +401,25 @@
             <li><a href="score_sheets.php"><i class="fas fa-clipboard-list"></i> <span>SCORE SHEETS</span></a></li>
             <li><a href="rev_main_event.php"><i class="fas fa-chart-line"></i> <span>DATA REVIEWS</span></a></li>
         </ul>
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
     </div>
+    <ul>
+      <li><a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> <span>DASHBOARD</span></a></li>
+      <li><a href="home.php"><i class="fas fa-calendar-check"></i> <span>ONGOING EVENTS</span></a></li>
+      <li><a href="upcoming_events.php"><i class="fas fa-calendar-alt"></i> <span>UPCOMING EVENTS</span></a></li>
+      <li><a href="score_sheets.php"><i class="fas fa-clipboard-list"></i> <span>SCORE SHEETS</span></a></li>
+      <li><a href="rev_main_event.php"><i class="fas fa-chart-line"></i> <span>DATA REVIEWS</span></a></li>
+    </ul>
+  </div>
 
+<<<<<<< HEAD
+     
+<div class="main" id="main-content">
+<div class="container">
+    <h1> Ongoing Events</h1>
+      </div>
+
+=======
     <!-- Header -->
     <div class="header">
         <div>
@@ -273,6 +443,7 @@
     <h1 style="font-size: 30px;"> Ongoing Events</h1>
       </div>
 
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
       <div class="span15">
                 <br />
                 <div class="col-md-15">
@@ -301,6 +472,75 @@
 
 
 <!-- Modal -->
+<<<<<<< HEAD
+<div id="addMEcollapse" class="modal fade" role="dialog" >
+ <div class="modal-dialog">
+
+     <!-- Modal content-->
+     <div class="modal-content">
+         <div class="modal-header">
+             <h4 class="modal-title"><strong>ADD EVENT</strong><button type="button" class="close" data-dismiss="modal">&times;</button></h4>
+         </div>
+         <div class="modal-body">
+    <form method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <strong>Event #:</strong><br />
+            <input id="event-number" name="sy" class="form-control btn-block" style="text-indent: 5px !important; height: 30px !important;" type="text" readonly required="true"/>
+        </div>
+        <div class="form-group">
+        <strong>Upload Banner:</strong> <br />
+           <input type="file" name="banner" accept="image/*">
+        </div>
+        <div class="form-group">
+            <label for="main_event"><strong>Event Name:</strong></label>
+            <input type="text" name="main_event" class="form-control btn-block" style="text-indent: 5px !important; height: 30px !important;" placeholder="Event Name" required="true"/>
+        </div>
+        <div class="form-group">
+            <label for="date_start"><strong>Date Start:</strong></label>
+            <input type="date" name="date_start" min="<?php echo date('Y-m-d');?>" class="form-control" style="text-indent: 5px !important; width: 500px !important;" required="true">
+        </div>
+        <div class="form-group">
+            <label for="date_end"><strong>Date End:</strong></label>
+            <input type="date" name="date_end" min="<?php echo date('Y-m-d');?>" class="form-control" style="text-indent: 5px !important; width: 500px !important;" required="true">
+        </div>
+        <div class="form-group">
+            <label for="event_time"><strong>Time Start:</strong></label>
+            <input id="event-time" type="time" name="event_time" required="true" class="form-control btn-block">
+        </div>
+        <div class="form-group">
+            <label for="place"><strong>Venue:</strong></label>
+            <textarea name="place" class="form-control" style="text-indent: 5px !important; width: 500px !important;" placeholder="Event Venue" required="true" rows="2"></textarea>
+        </div>
+        <div class="modal-footer">
+            <button title="Click to save" name="create" type="submit" class="btn btn-primary"><i class="icon-ok"></i> <strong>SAVE</strong></button> 
+            <button type="reset" class="btn btn-default"><i class="icon-ban-circle"></i> <strong>RESET</strong></button>
+        </div>
+    </form>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Generate a random number for the Event #
+        const eventNumberField = document.getElementById('event-number');
+        eventNumberField.value = Math.floor(Math.random() * 1000) + 1; // Generates a random number between 1 and 1000
+
+        // Restrict time input to 30-minute intervals
+        const eventTimeField = document.getElementById('event-time');
+        eventTimeField.addEventListener('input', function() {
+            const value = eventTimeField.value;
+            const [hours, minutes] = value.split(':').map(Number);
+            if (minutes % 30 !== 0) {
+                eventTimeField.value = `${hours.toString().padStart(2, '0')}:00`;
+            }
+        });
+    });
+</script>
+
+
+
+ </div>
+</div>         
+=======
 <div id="addMEcollapse" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
@@ -361,6 +601,7 @@
             document.getElementById('eventNumber').value = eventCounter;
         });
     </script>
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
                             
             
 <?php   
@@ -651,6 +892,52 @@ function togglePasswordVisibility() {
                                     
                                     
                                     <?php
+<<<<<<< HEAD
+if(isset($_POST['deleteSubEvent']))
+{
+    $sub_event_id=$_POST['sub_event_id'];
+    $entered_pass=$_POST['entered_pass'];
+    $se_name=$_POST['se_name'];
+
+    if($check_pass==$entered_pass)
+    {
+        $conn->query("delete from sub_event where subevent_id='$sub_event_id'"); 
+        $conn->query("delete from contestants where subevent_id='$sub_event_id'"); 
+        $conn->query("delete from criteria where subevent_id='$sub_event_id'"); 
+        $conn->query("delete from judges where subevent_id='$sub_event_id'"); 
+        ?>
+        <script>
+        Swal.fire({
+            title: 'Success!',
+            text: 'Sub-Event: <?php echo $se_name; ?> and its related data deleted successfully.',
+            icon: 'success',
+            confirmButtonText: 'OK'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location = 'home.php';
+            }
+        });
+        </script>
+    <?php } else { ?>
+        <script>
+        Swal.fire({
+            title: 'Error!',
+            text: 'Bad Password! Try Again',
+            icon: 'error',
+            confirmButtonText: 'OK'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location = 'home.php';
+            }
+        });
+        </script>
+    <?php } 
+}
+?>
+   
+   
+                                    </td>
+=======
 if (isset($_POST['deleteSubEvent'])) {
     $sub_event_id = $_POST['sub_event_id'];
     $entered_pass = $_POST['entered_pass'];
@@ -689,6 +976,7 @@ if (isset($_POST['deleteSubEvent'])) {
 ?>
 
    </td>
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
                                      
                                     <?php
                                     if($sub_event_row['status']=="activated")
@@ -735,8 +1023,9 @@ if (isset($_POST['deleteSubEvent'])) {
                           
                                      
                                     <?php } else{ ?>
-                                    
-                                    <tr>
+
+   </td>
+                                <tr>
                                     <td colspan="3">
                                     <div class="alert alert-warning">
                                     <h3>
@@ -817,6 +1106,93 @@ if (isset($_POST['deleteSubEvent'])) {
                 </div>
                 
                 <div class="collapse indent" id="addSubEvents<?php echo $main_event_id; ?>">
+<<<<<<< HEAD
+    <h4>Add Sub-Events</h4>
+    <table align="center" class="table table-bordered" id="example">
+        <tr>
+            <td>
+                <form method="POST" enctype="multipart/form-data">
+                    <input name="main_event_id" type="hidden" value="<?php echo $main_event_id; ?>" />
+                    <strong>Banner</strong>:<br />
+                    <input name="banner" class="form-control btn-block" style="text-indent: 7px !important; height: 30px !important;" type="file" required="true"/> 
+                    <br />
+                    <strong>Sub-Event Title</strong>:<br />
+                    <input placeholder="Enter Sub-Event title" name="event_name" class="form-control btn-block" style="text-indent: 7px !important; height: 30px !important;" type="text" required="true"/> 
+                    <br />
+                    <strong>Date Start</strong>:<br />
+                    <input name="event_date" class="form-control btn-block" min="<?php echo date('Y-m-d');?>" style="height: 30px !important;" type="date" required="true"/> 
+                    <br />
+                    <strong>Date End</strong>:<br />   
+                    <input type="date" id="demo" min="<?php echo date('Y-m-d');?>" class="form-control btn-block" required="true">
+                    <br/>
+                    <strong>Time Start</strong>:<br />   
+                    <input type="time" name="event_time_start" required="true" placeholder="hh:mm" class="form-control btn-block">
+                    <br/>
+                    <strong>Time End</strong>:<br />
+                    <input type="time" name="event_time_end" required="true" placeholder="hh:mm" class="form-control btn-block">
+                    <br/>
+                    <strong>Venue</strong>:<br />
+                    <textarea placeholder="Enter Sub-Event Venue" rows="2" name="event_place" class="form-control btn-block" style="text-indent: 7px !important;" required="true"></textarea>
+                    <br />
+                    <div class="modal-footer">
+                        <button type="reset" class="btn btn-default"><i class="icon-ban-circle"></i> <strong>RESET</strong></button>
+                        <button name="add_event" class="btn btn-primary"><i class="icon-ok"></i> <strong>SAVE</strong></button>
+                    </div>
+                </form>
+            </td>
+        </tr>
+    </table>
+</div>
+        
+<div class="collapse indent" id="editEvent<?php echo $main_event_id; ?>">
+    <!-- Edit Event start -->
+    <h4>Edit Event Details</h4>
+    <table align="center" class="table table-bordered" id="example">
+        <tr>
+            <td>
+                <form method="POST">
+                    <?php   
+                    $edit_event_query = $conn->query("SELECT * FROM main_event WHERE organizer_id='$session_id' AND mainevent_id='$main_event_id'") or die(mysql_error());
+                    while ($edit_event_row = $edit_event_query->fetch()) {
+                        $edit_mainevent_id = $edit_event_row['mainevent_id'];
+                    ?>  
+                        <input name="main_event_id" type="hidden" value="<?php echo $edit_mainevent_id; ?>" />
+                        
+                        <strong>Event Name:</strong><br /> 
+                        <input type="text" name="main_event" class="form-control btn-block" style="text-indent: 7px !important; height: 30px !important;" placeholder="Event Name" required="true" value="<?php echo $edit_event_row['event_name']; ?>" />
+                        <br /> 
+                        
+                        <strong>Date Start:</strong><br /> 
+                        <input type="date" name="date_start" min="<?php echo date('Y-m-d');?>" class="form-control btn-block" style="height: 30px !important;" required="true" value="<?php echo $edit_event_row['date_start']; ?>"/>
+                        <br /> 
+                        
+                        <strong>Date End:</strong><br /> 
+                        <input type="date" name="date_end" min="<?php echo date('Y-m-d');?>" class="form-control btn-block" style="height: 30px !important;" required="true" value="<?php echo $edit_event_row['date_end']; ?>"/>
+                        <br /> 
+
+                        <strong>Time Start</strong>:<br />   
+                        <input type="time" name="event_time_start" required="true" placeholder="hh:mm" class="form-control btn-block">
+                        <br/>
+
+                        <strong>Time End</strong>:<br />
+                        <input type="time" name="event_time_end" required="true" placeholder="hh:mm" class="form-control btn-block">
+                        <br/>
+                        
+                        <strong>Venue:</strong><br /> 
+                        <textarea placeholder="Enter Venue" rows="2" name="place" class="form-control btn-block" style="text-indent: 7px !important;" required="true"><?php echo $edit_event_row['place']; ?></textarea>
+                        
+                    <?php } ?>
+                    <div class="modal-footer">
+                        <button name="edit_event" class="btn btn-success"><i class="icon-ok"></i> <strong>UPDATE</strong></button>
+                    </div>
+                </form>
+            </td>
+        </tr>
+    </table>
+    <!-- Edit Event end -->
+</div>
+
+=======
                 
                                       <!-- ADD Sub-Events -->
                                       
@@ -935,8 +1311,10 @@ if (isset($_POST['deleteSubEvent'])) {
                   
                                     <!-- end of edit of main events -->
                 </div>
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
         
                 <div class="collapse" id="deleteEvent<?php echo $main_event_id; ?>">
+                    
                     
                     <h4>Delete Event <i><?php echo $event_row['event_name']; ?></i>?</h4>
                     
@@ -1005,7 +1383,184 @@ if (isset($_POST['deleteSubEvent'])) {
   <?php  }  ?>
  
   </table>
+<<<<<<< HEAD
+  <?php
+if (isset($_POST['create'])) {
+    $event_name = $_POST['main_event'];
+    $date_start = $_POST['date_start'];
+    $date_end = $_POST['date_end'];
+    $event_place = $_POST['place'];
+    $event_sy = $_POST['sy'];
+
+    // Handle file upload
+    $banner_name = '';
+    if (isset($_FILES['banner']) && $_FILES['banner']['error'] == 0) {
+        $allowed_types = ['image/jpeg', 'image/png', 'image/gif'];
+        $max_size = 5 * 1024 * 1024; // 5MB
+
+        if (in_array($_FILES['banner']['type'], $allowed_types) && $_FILES['banner']['size'] <= $max_size) {
+            $upload_dir = '../img/';
+            $banner_name = uniqid() . '_' . $_FILES['banner']['name'];
+            $banner_path = $upload_dir . $banner_name;
+
+            if (move_uploaded_file($_FILES['banner']['tmp_name'], $banner_path)) {
+                // File uploaded successfully
+            } else {
+                echo "Error uploading file.";
+                exit;
+            }
+        } else {
+            echo "Invalid file type or size.";
+            exit;
+        }
+    }
+
+    $org_query = $conn->query("SELECT * FROM main_event WHERE organizer_id='$session_id'") or die(mysql_error());
+    $num_row = $org_query->rowCount();
+
+    if ($num_row > 0) {
+        $conn->query("INSERT INTO main_event(event_name, status, organizer_id, date_start, date_end, place, sy, banner)
+                      VALUES('$event_name', 'deactivated', '$session_id', '$date_start', '$date_end', '$event_place', '$event_sy', '$banner_name')");
+    } else {
+        $conn->query("INSERT INTO main_event(event_name, status, organizer_id, date_start, date_end, place, sy, banner)
+                      VALUES('$event_name', 'activated', '$session_id', '$date_start', '$date_end', '$event_place', '$event_sy', '$banner_name')");
+    }
+    ?>
+    <script>
+        Swal.fire({
+            title: 'Success!',
+            text: 'Event <?php echo $event_name; ?> successfully added...',
+            icon: 'success'
+        }).then(() => {
+            window.location = 'home.php';
+        });
+    </script>
+    <?php
+}
+?>
+
+
+<?php 
+
+if(isset($_POST['add_event']))
+{
+   $main_event_id = $_POST['main_event_id']; 
+   $banner = $_FILES['banner']['name'];
+   $target = "img/".basename($banner);
+   $sub_event_name = $_POST['event_name'];  
+   $event_date = $_POST['event_date']; 
+   $event_time = $_POST['event_time']; 
+   $event_place = $_POST['event_place']; 
+  
+  $conn->query("INSERT INTO sub_event(mainevent_id, event_name, status, eventdate, eventtime, place, organizer_id, banner)
+  VALUES('$main_event_id', '$sub_event_name', 'activated', '$event_date', '$event_time', '$event_place', '$session_id', '$banner')");
+
+  move_uploaded_file($_FILES['banner']['tmp_name'], $target);
+  
+  echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
+  echo '<script type="text/javascript">
+        Swal.fire({
+            icon: "success",
+            title: "Success",
+            text: "Sub-Event ' . $sub_event_name . ' created successfully!",
+            confirmButtonText: "OK"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location = "home.php";
+            }
+        });
+        </script>';
+}
+?>
+
+
+ <?php
+if (isset($_POST['activation'])) {
+    $status = $_POST['status'];
+    $main_event_id = $_POST['main_event_id'];
+    $check_pass2 = $_POST['check_pass'];
+    $ma_name = $_POST['ma_name'];
+
+    if ($check_pass == $check_pass2) {
+        if ($status == "activated") {
+            $conn->query("UPDATE main_event SET status='deactivated' WHERE mainevent_id='$main_event_id'");
+            $conn->query("UPDATE sub_event SET status='deactivated' WHERE mainevent_id='$main_event_id'");
+            $new_status = "deactivated";
+        } else {
+            $conn->query("UPDATE main_event SET status='activated' WHERE mainevent_id='$main_event_id'");
+            $conn->query("UPDATE sub_event SET status='activated' WHERE mainevent_id='$main_event_id'"); // Add this line to update sub_events
+            $new_status = "activated";
+        }
+        ?>
+        <script>
+            Swal.fire({
+                title: 'Success!',
+                text: 'Event <?php echo htmlspecialchars($ma_name); ?> <?php echo $new_status; ?> successfully!',
+                icon: 'success'
+            }).then(() => {
+                window.location = 'home.php';
+            });
+        </script>
+        <?php
+    } else {
+        ?>
+        <script>
+            Swal.fire({
+                title: 'Error!',
+                text: 'Confirmation did not match. Try again.',
+                icon: 'error'
+            }).then(() => {
+                window.location = 'home.php';
+            });
+        </script>
+        <?php
+    }
+}
+?>
+
+<?php 
+if (isset($_POST['edit_event'])) {
+    $main_event_id = $_POST['main_event_id'];
+    $main_event_name = $_POST['main_event'];
+    $date_start = $_POST['date_start'];
+    $date_end = $_POST['date_end'];
+    $event_time_start = $_POST['event_time_start'];
+    $event_time_end = $_POST['event_time_end'];
+    $place = $_POST['place'];
+
+    // Validate time interval
+    $start_time = new DateTime($event_time_start);
+    $end_time = new DateTime($event_time_end);
+    $interval = $start_time->diff($end_time);
+    
+    // Check if the interval is less than 30 minutes
+    if ($interval->h < 0 || ($interval->h == 0 && $interval->i < 30)) {
+        echo "<script>alert('The end time must be at least 30 minutes after the start time.');</script>";
+    } else {
+        // Update the event in the database
+        $sql = "UPDATE main_event SET event_name='$main_event_name', date_start='$date_start', date_end='$date_end', event_time_start='$event_time_start', event_time_end='$event_time_end', place='$place' WHERE mainevent_id='$main_event_id'";
+        
+        if ($conn->query($sql) === TRUE) {
+            echo "<script>
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Event details updated successfully!',
+                    icon: 'success'
+                }).then(() => {
+                    window.location = 'home.php';
+                });
+            </script>";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+    }
+}
+?>
+
+
+=======
  
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
 <?php
 if (isset($_POST['create'])) {
     $event_name = $_POST['main_event'];
@@ -1014,6 +1569,8 @@ if (isset($_POST['create'])) {
     $event_place = $_POST['place'];
     $event_sy = $_POST['sy'];
 
+<<<<<<< HEAD
+=======
     $org_query = $conn->query("SELECT * FROM main_event WHERE organizer_id='$session_id'") or die(mysql_error());
     $num_row = $org_query->rowCount();
 
@@ -1181,6 +1738,7 @@ if (isset($_POST['deleteEvent'])) {
         <?php
     }
 }
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
 ?>
 </div>
 </section>

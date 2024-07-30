@@ -6,7 +6,11 @@
     <meta name="description" content=""/>
     <meta name="author" content=""/>
     <link rel="shortcut icon" href="../img/logo.png"/>
+<<<<<<< HEAD
+    <title>Event Judging System</title>
+=======
     <title>MCC Event Judging System</title>
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
 
     <!-- Bootstrap core CSS -->
     <link href="..//includes/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
@@ -25,5 +29,7 @@
     <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet"/>
     
-  
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js"></script>
+    
   </head>

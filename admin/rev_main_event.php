@@ -9,6 +9,143 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     body {
+<<<<<<< HEAD
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 250px;
+      background-color: #333;
+      color: #fff;
+      padding-top: 20px;
+      transition: all 0.3s;
+      overflow: hidden;
+    }
+
+    .sidebar.collapsed {
+      width: 80px;
+    }
+
+    .sidebar .toggle-btn {
+      position: absolute;
+      top: 15px;
+      right: -0px;
+      background-color: transparent;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .sidebar .toggle-btn i {
+      font-size: 18px;
+    }
+
+    .sidebar-heading {
+      text-align: center;
+      padding: 10px 0;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .sidebar-heading img {
+      max-width: 100px;
+      max-height: 100px;
+    }
+
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar ul li {
+      padding: 10px;
+      border-bottom: 1px solid #555;
+      transition: all 0.3s;
+    }
+
+    .sidebar ul li a {
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .sidebar ul li a i {
+      margin-right: 10px;
+      transition: margin 0.3s;
+    }
+
+    .sidebar.collapsed ul li a i {
+      margin-right: 0;
+    }
+
+    .sidebar ul li a span {
+      display: inline-block;
+      transition: opacity 0.3s;
+    }
+
+    .sidebar.collapsed ul li a span {
+      opacity: 0;
+      width: 0;
+      overflow: hidden;
+    }
+
+    .sidebar ul li a:hover {
+      background-color: #555;
+    }
+
+    .main {
+      margin-left: 250px;
+      padding: 20px;
+      transition: all 0.3s;
+    }
+
+    .main.collapsed {
+      margin-left: 80px;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+
+      .main {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar" id="sidebar">
+    <button class="toggle-btn" id="toggle-btn"><i class="fas fa-bars"></i></button>
+    <div class="sidebar-heading">
+      <img src="../img/logo.png" alt="Logo">
+      <div>Event Judging System</div>
+    </div>
+    <ul>
+        <li><a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> <span>DASHBOARD</span></a></li>
+        <li><a href="home.php"><i class="fas fa-calendar-check"></i> <span>ONGOING EVENTS</span></a></li>
+        <li><a href="upcoming_events.php"><i class="fas fa-calendar-alt"></i> <span>UPCOMING EVENTS</span></a></li>
+        <li><a href="score_sheets.php"><i class="fas fa-clipboard-list"></i> <span>SCORE SHEETS</span></a></li>
+        <li><a href="rev_main_event.php"><i class="fas fa-chart-line"></i> <span>DATA REVIEWS</span></a></li>
+    </ul>
+  </div>
+    
+  <div class="main" id="main-content"> 
+    <div class="container">
+      <h1>Data Reviews</h1>
+=======
         font-family: Arial, sans-serif;
         background-color: #fff;
         margin: 0;
@@ -261,6 +398,7 @@
   <div class="main" id="main-content"> 
     <div class="container">
       <h1 style="font-size: 30px;">Data Reviews</h1>
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
     </div>
     
     <br />
@@ -355,6 +493,9 @@
   <script src="..//assets/js/application.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
+<<<<<<< HEAD
+    
+=======
     document.getElementById('logout').addEventListener('click', function(event) {
       event.preventDefault();
       Swal.fire({
@@ -370,6 +511,7 @@
       });
     });
 
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
     document.getElementById("toggle-btn").addEventListener("click", function () {
       var sidebar = document.getElementById("sidebar");
       var mainContent = document.getElementById("main-content");

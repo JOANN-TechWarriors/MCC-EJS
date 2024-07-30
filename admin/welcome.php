@@ -8,14 +8,10 @@
 
   ?>
 
-  <body>
-   <!-- Navbar
-    ================================================== -->
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-        <ul class="nav">
+  <body style="background:url(../img/Community-College-Madridejos.jpeg)">    
 
+<<<<<<< HEAD
+=======
 
         </div>
       </div>
@@ -106,12 +102,13 @@
         </div>
         <!-- END About EJS Modal -->
         
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
         <table cellpadding="10" cellspacing="0" border="0" align="center">
         <thead>
- <th align="left" style="background-color: #4976f5; text-indent: 7px; color: white; "><h4> &nbsp;WELCOME</h4></th>
- </thead>
+        <th align="left" style="background-color: aquamarine; text-indent: 10px; color: black;"><h4> &nbsp;WELCOME</h4></th>
+        </thead>
 
- <tr style="background-color: #d7def2;">
+ <tr style="background-color: #fff;">
  
  <td>
  
@@ -120,12 +117,6 @@
 
  
 <div id="myGroup" >
-
-
-<!-- <button class="btn btn-success pull-right" data-toggle="collapse" data-target="#judge" data-parent="#myGroup"><i class="icon-chevron-right"></i> <strong>JUDGE</strong></button>  
-                               
-<div class="collapse indent" id="judge">
-              -->
 <div class="input-group">
        <div class="alert alert-success">
       <form method="POST" action="judge_profile.php" >
@@ -146,28 +137,13 @@
                                         }
                                     }
                                     </script>
- </table>
         </div>
       </div>
     </div><br><br>
+    </table>
     <!--end About judge button -->
 
 
-<!--<h5><i class="icon-user"></i>  USER:</h5>
-  <button style="width: 160px !important;" type="submit" class="btn btn-primary pull-right"><i class="icon-ok"></i> <strong>START</strong></button>
-
-        </table>
-              
-
-    <!-- Footer
-    ================================================== -->
-    <footer class="footer">
-      <div class="container">
-      
-        <font size="2" class="" align="center"><strong>Event Judging System &middot; 2022 &COPY; </strong></font> <br />
-        
-      </div>
-    </footer>
 
 
     <!-- Le javascript

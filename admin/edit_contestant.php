@@ -205,9 +205,14 @@ $contestant_id = $_GET['contestant_id'];
                 </tr>
                 <tr>
                   <td colspan="3" align="right">
+<<<<<<< HEAD
+                    <a href="sub_event_details_edit.php?sub_event_id=<?php echo $sub_event_id;?>&se_name=<?php echo $se_name;?>" class="btn btn-default">Back</a>
+                    <button name="edit_contestant" class="btn btn-success">Update</button>
+=======
                   <button name="edit_contestant" class="btn btn-success">Update</button>
                     <a href="sub_event_details_edit.php?sub_event_id=<?php echo $sub_event_id;?>&se_name=<?php echo $se_name;?>" class="btn btn-default">Back</a>
                     
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
                   </td>
                 </tr>
               </table>

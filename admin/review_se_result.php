@@ -224,7 +224,8 @@ while ($jjn_result_row = $jjn_result_query->fetch()) {
             </table>
             </td>
     
-           
+            <button type="submit" onclick="window.print()" class="btn btn-default pull-right"><i class="icon-print"></i></button>
+
   
 <?php }?>
 </tr>

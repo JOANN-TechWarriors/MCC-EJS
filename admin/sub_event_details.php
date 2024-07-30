@@ -168,6 +168,9 @@ padding:10px;
         </div>
       </div>
     </div>
+<<<<<<< HEAD
+   <br><br><br>
+=======
    
  
     
@@ -177,6 +180,7 @@ padding:10px;
     <p class="lead">Event Judging System</p>
   </div>
 </header>
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
     <div class="container">
 
    <form method="POST" enctype="multipart/form-data">
