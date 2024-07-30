@@ -163,9 +163,9 @@
             opacity: 0.5;
         }
         .home{
-            background-size: cover;
+            background-size: auto;
             background-position: center;
-            height: 100vh;
+          
         }
         @media screen and (min-width: 768px) and (max-width: 1024px) {
             .container{
