@@ -12,9 +12,6 @@ if ($conn->connect_error) {
 }
 
 echo "Connected successfully";
-?>
-
-}
 
 // Handle file upload
 $banner = "";
