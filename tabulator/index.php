@@ -96,18 +96,10 @@ thead th {
              
               <h5><i class="icon-lock"></i>  PASSWORD:</h5>
               <input style="font-size: large; height: 35px !important; text-indent: 7px !important;" class="form-control btn-block" type="password"  name="password" placeholder="Password" required="true" />
-<<<<<<< HEAD
             <br /><br />
               <button id="login-button" style="width: 150px !important;" type="button" class="btn btn-primary pull-right"><i class="icon-ok"></i> <strong>LOGIN</strong></button>
               
               
-=======
-            
-              <button id="login-button" style="width: 100px !important;" type="button" class="btn btn-primary pull-right"><i class="icon-ok"></i> <strong>LOGIN</strong></button>
-              
-              
-              
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
              </td>
              </tr>
              </table>
@@ -119,10 +111,6 @@ thead th {
   </div>
 </div>
    
-<<<<<<< HEAD
-=======
-   
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
 
 <!-- Le javascript
 ================================================== -->
@@ -154,11 +142,7 @@ window.onload = function() {
             icon: "success"
         }).then((result) => {
             if (result.isConfirmed) {
-<<<<<<< HEAD
                 window.location.href = "dashboard.php";
-=======
-                window.location.href = "score_sheets.php";
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
             }
         });
         <?php unset($_SESSION['login_success']); ?>

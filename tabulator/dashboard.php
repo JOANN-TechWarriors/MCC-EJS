@@ -7,13 +7,8 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <meta name="theme-color" content="#3e454c">
-<<<<<<< HEAD
 <link rel="shortcut icon" href="../admin/ejs_logo.png"/>
 <title>Event Judging System</title> 
-=======
-<link rel="shortcut icon" href="../img/logo.png"/>
-<title> MCC Event Judging System</title> 
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <!-- SweetAlert CSS -->
@@ -48,11 +43,7 @@
         position: absolute;
         top: 20px;
         right: 20px;
-<<<<<<< HEAD
         background-color: transparent;
-=======
-        background-color: #27293d;
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
         color: #fff;
         border: none;
         cursor: pointer;
@@ -70,25 +61,6 @@
         margin-bottom: 10px;
     }
 
-<<<<<<< HEAD
-=======
-    .logo-container {
-    display: block;
-    margin-bottom: 10px;
-}
-
-.logo-img {
-    max-width: 100%;
-    height: auto;
-}
-
-.header-text {
-    display: block;
-    font-size: 20px;
-    margin-top: 20px;
-}
-
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
     .sidebar-heading img {
         max-width: 50px;
         max-height: 50px;
@@ -249,7 +221,6 @@
         <button class="toggle-btn" id="toggle-btn">☰</button>
         <br><br>
         <div class="sidebar-heading">
-<<<<<<< HEAD
             <img src="../admin/ejs_logo.png" alt="Logo">
             <span>Event Judging System</span>
         </div>
@@ -259,19 +230,6 @@
             <li><a href="upcoming_events.php"><i class="fas fa-calendar-alt"></i> <span>UPCOMING EVENTS</span></a></li>
             <li><a href="score_sheets.php"><i class="fas fa-clipboard-list"></i> <span>SCORE SHEETS</span></a></li>
             <li><a href="rev_main_event.php"><i class="fas fa-chart-line"></i> <span>DATA REVIEWS</span></a></li>
-=======
-    <div class="logo-container">
-        <img src="../img/logo.png" alt="Logo" class="logo-img">
-    </div>
-    <span class="header-text">Event Judging System</span>
-</div>
-        <ul>
-            <li><a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> <span>DASHBOARD</span></a></li>
-            <li><a href="#"><i class="fas fa-calendar-check"></i> <span>ONGOING EVENTS</span></a></li>
-            <li><a href="#"><i class="fas fa-calendar-alt"></i> <span>UPCOMING EVENTS</span></a></li>
-            <li><a href="score_sheets.php"><i class="fas fa-clipboard-list"></i> <span>SCORE SHEETS</span></a></li>
-            <li><a href="#"><i class="fas fa-chart-line"></i> <span>DATA REVIEWS</span></a></li>
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
         </ul>
     </div>
 
