@@ -48,7 +48,11 @@
 </div>
 
 <?php 
+<<<<<<< HEAD
+include ("../admin/dbcon.php");
+=======
 include "dbcon.php";
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
 if(isset($_POST['create'])) {
   $event_name = $_POST['main_event']; 
   $date_start = $_POST['date_start']; 
