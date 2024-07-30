@@ -7,23 +7,8 @@
      include('session.php');
      ?>
 
-  <body>
-    <!-- Navbar
-    ================================================== -->
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-       
-            
-        </div>
-      </div>
-    </div>
-<header class="jumbotron subhead" id="overview">
-  <div class="container">
-    <h1>Settings - Tabulator</h1>
-    <p class="lead">Event Judging System</p>
-  </div>
-</header>
+  <body style="background-color: lightgray;">
+
 
 
     <div class="container">
@@ -144,8 +129,8 @@
    <div class="col-lg-12">
 <hr />
        <div class="btn-group pull-right">
-  <a href="home.php" type="button" class="btn btn-default">Cancel</a>
-  <button name="update" type="submit" class="btn btn-success">Update</button>
+      <button name="update" type="submit" class="btn btn-success">Update</button>
+      <a href="dashboard.php" type="button" class="btn btn-default">Cancel</a>
    </div>
  </div> 
    
@@ -237,8 +222,8 @@
  
  
        <div class="btn-group pull-right">
-  <a href="edit_organizer.php" type="button" class="btn btn-default">CANCEL</a>
   <button name="add_tabulator" type="submit" class="btn btn-primary">ADD</button>
+  <a href="edit_organizer.php" type="button" class="btn btn-default">CANCEL</a>
   </div>
   
   
@@ -263,7 +248,7 @@
 
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="..//javascript/jquery1102.min.js"></script>
+    <script src="javascript/jquery1102.min.js"></script>
     <script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
     
     

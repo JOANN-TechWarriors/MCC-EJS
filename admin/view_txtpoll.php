@@ -136,7 +136,7 @@ while ($tp_row = $tp_query->fetch())
                 
       $MessageText="You have voted previously. Your vote is not counted.";
                                 
-                                $conn->query("insert into messageout(MessageTo,MessageFrom,MessageText)values('$sendTo','09385974999','$MessageText')");
+                                $conn->query("insert into messageout(MessageTo,MessageFrom,MessageText)values('$sendTo','09382451653','$MessageText')");
                                 
                                  $updateSS_query = $conn->query("UPDATE messagein SET sendStatus='readX' where Id='$IdXz'") or die(mysql_error());
         
@@ -151,7 +151,7 @@ while ($tp_row = $tp_query->fetch())
              
       $MessageText="Thank you. Your vote has been counted.";
                       
-                      $conn->query("insert into messageout(MessageTo,MessageFrom,MessageText)values('$sendTo','09385974999','$MessageText')");  
+                      $conn->query("insert into messageout(MessageTo,MessageFrom,MessageText)values('$sendTo','09382451653','$MessageText')");  
         
                     $updateScore_query = $conn->query("UPDATE contestants SET txtPollScore='$txtPollScore' where txt_code='$txtMessage'") or die(mysql_error());
                     

@@ -145,7 +145,7 @@ $jname_row = $jname_query->fetch();
 
  </table>
           </td>
-          <td><strong><?php echo $place_title ?></strong></td>
+          <td><strong style="font-size:25px;"><?php echo $place_title ?></strong></td>
          </tr>
          
          
@@ -163,7 +163,7 @@ $jname_row = $jname_query->fetch();
       
             <h3>Judges</h3>
         
-                 <table class="table table-bordered">
+                 <table class="table table-bordered" style="width:500px;">
   <thead>
  
    <th>No.</th>
@@ -188,21 +188,14 @@ $jname_row = $jname_query->fetch();
   </tr>
  
 
-   
-
-
    <?php } ?>
   </tbody>
  </table>    
           
           
-          
-          
-          
-           
             <h3>Criteria</h3>
          
-             <table class="table table-bordered">
+             <table class="table table-bordered" style="width:500px;">
   <thead>
   
   <th>No.</th>
@@ -293,7 +286,7 @@ $jname_row = $jname_query->fetch();
            { ?>
             
            
-            <h3>Text Poll</h3>
+            <h3>Vote Poll</h3>
        
           
            <table class="table table-bordered">
@@ -302,7 +295,6 @@ $jname_row = $jname_query->fetch();
    
   <th>No.</th>
   <th>Fullname</th>
-  <th>Text Code</th>
  <th>Total Votes</th>
   </thead>
 	
@@ -318,8 +310,7 @@ $jname_row = $jname_query->fetch();
  
    <td><?php echo $cont_row['contestant_ctr']; ?></td>
       <td><?php echo $cont_row['fullname']; ?></td>
-        <td><?php echo $cont_row['txt_code']; ?></td>
-         <td>total votes</td>
+         <td><?php echo $cont_row['txtPollScore']; ?></td>
   </tr>
    <?php } ?>
  

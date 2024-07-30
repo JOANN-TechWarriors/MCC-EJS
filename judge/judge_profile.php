@@ -1,5 +1,5 @@
 <?php 
-include('session.php');
+include('..//admin/session.php');
 
 $judge_code=$_POST['judge_code'];
 
@@ -27,9 +27,9 @@ else
 { ?>
 
 <script>
-alert('wrong code');
+alert('Please enter code');
  			
-window.location = 'selection.php';
+window.location = 'index.php';
 </script>
     
 <?php }

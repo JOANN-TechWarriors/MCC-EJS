@@ -1,0 +1,185 @@
+<?php 
+session_start();
+include('../admin/dbcon.php');
+date_default_timezone_set('Asia/Manila'); 
+
+// Check if form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $student_id = $_POST['student_id'];
+
+    try {
+        // Prepare and execute the query
+        $stmt = $conn->prepare("SELECT * FROM student WHERE student_id = :student_id");
+        $stmt->bindParam(':student_id', $student_id, PDO::PARAM_STR);
+        $stmt->execute();
+
+        if ($stmt->rowCount() > 0) {
+            // Student exists, start session
+            $_SESSION['student_id'] = $student_id;
+
+            // Check if there's a redirect URL stored in the session
+            if (isset($_SESSION['redirect_after_login'])) {
+                $redirect_url = $_SESSION['redirect_after_login'];
+                unset($_SESSION['redirect_after_login']); // Clear the stored URL
+                $_SESSION['login_success'] = true;
+                header("Location: ../" . $redirect_url);
+            } else {
+                $_SESSION['login_success'] = true;
+                header("Location: ../poll/index.php"); // Default redirect if no stored URL
+            }
+            exit();
+        } else {
+            $_SESSION['login_error'] = "Invalid Student ID";
+        }
+    } catch(PDOException $e) {
+        $_SESSION['login_error'] = "Database error: " . $e->getMessage();
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<?php
+include_once('../admin/header2.php');
+?>
+<style>
+  .alert {
+    font-size: 14px;
+    padding: 8px 12px;
+    text-align: center;
+    margin: 10px;
+    max-width: 600px;
+    position: fixed;
+    top: 40px;
+    right: 20px;
+    z-index: 9999;
+  }
+
+  .logo-small {
+    width: 300px; 
+    height: auto; 
+    margin-top: 100px; 
+  }
+
+  .motto {
+    margin-top: 20px; 
+    margin-right: 100px; 
+  }
+
+  .form-container {
+    width: 400%; 
+    max-width: 600px;
+    margin: 2 auto;
+  }
+
+  thead th {
+    background-color: aquamarine;
+    text-indent: 10px;
+    font-size: 14px; 
+    padding: 10px;
+  }
+</style>
+
+
+<body id="login" style="background:url(../img/Community-College-Madridejos.jpeg)">
+<?php
+if (isset($_SESSION['login_error'])) {
+    echo '<div class="alert alert-danger">' . $_SESSION['login_error'] . '</div>';
+    unset($_SESSION['login_error']);
+}
+?>
+
+<div class="container">
+  <div class="row-fluid">
+    <div class="span6">
+      <div class="title_index">
+        <div class="row-fluid">
+          <div class="span12"></div>
+          <div class="row-fluid">
+            <div class="span10">
+              <img class="index_logo logo-small" src="../img/logo.png">
+            </div>
+            <div class="span12">
+              <div class="motto">
+                <h3><p>WELCOME&nbsp;&nbsp;TO:</p></h3>
+                <h2><p><strong>MCC Event Judging System</strong></p></h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br><br><br><br>
+    <div class="span6">
+      <div class="pull-left">
+        <div id="home">
+          <div class="overlay">
+            <div class="form-container">
+            <form method="POST" action="">
+                <br />
+                <table cellpadding="10" cellspacing="0" border="0" align="center">
+                  <thead>
+                    <th align="left" style="background-color: aquamarine; text-indent: 10px; color: black;">
+                      <h4> &nbsp;STUDENT LOGIN</h4>
+                    </th>
+                  </thead>
+                  <tr style="background-color: #fff;">
+                    <td>
+                      <h5><i class="icon-user"></i> STUDENT ID:</h5>
+                      &nbsp;
+                      <input style="font-size: large; height: 35px !important; text-indent: 7px !important;" class="form-control btn-block" type="text" name="student_id" placeholder="Student ID #" required="true" autofocus="true" />
+                      <br />
+                      &nbsp;
+                      <button style="width: 160px !important;" type="submit" class="btn btn-primary pull-right"><i class="icon-ok"></i> <strong>LOGIN</strong></button>
+                      &nbsp;
+                      <strong><a href="student_register.php">Register</a></strong> &nbsp;&nbsp;&nbsp;<br><br>
+                    </td>
+                  </tr>
+                </table>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="..//assets/js/jquery.js"></script>
+<script src="..//assets/js/bootstrap-transition.js"></script>
+<script src="..//assets/js/bootstrap-alert.js"></script>
+<script src="..//assets/js/bootstrap-modal.js"></script>
+<script src="..//assets/js/bootstrap-dropdown.js"></script>
+<script src="..//assets/js/bootstrap-scrollspy.js"></script>
+<script src="..//assets/js/bootstrap-tab.js"></script>
+<script src="..//assets/js/bootstrap-tooltip.js"></script>
+<script src="..//assets/js/bootstrap-popover.js"></script>
+<script src="..//assets/js/bootstrap-button.js"></script>
+<script src="..//assets/js/bootstrap-collapse.js"></script>
+<script src="..//assets/js/bootstrap-carousel.js"></script>
+<script src="..//assets/js/bootstrap-typeahead.js"></script>
+<script src="..//assets/js/bootstrap-affix.js"></script>
+<script src="..//assets/js/holder/holder.js"></script>
+<script src="..//assets/js/google-code-prettify/prettify.js"></script>
+<script src="..//assets/js/application.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+window.onload = function() {
+    <?php if(isset($_SESSION['login_success']) && $_SESSION['login_success'] == true): ?>
+        Swal.fire({
+            title: "Success!",
+            text: "You are Successfully logged in!",
+            icon: "success"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "../poll/index.php?event=<?php echo $_SESSION['sub_event_id']; ?>";
+            }
+        });
+        <?php unset($_SESSION['login_success']); ?>
+    <?php endif; ?>
+};
+</script>
+</body>
+</html>

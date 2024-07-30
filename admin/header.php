@@ -5,7 +5,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content=""/>
     <meta name="author" content=""/>
-    <link rel="shortcut icon" href="ejs_logo.png"/>
+    <link rel="shortcut icon" href="../img/logo.png"/>
     <title>Event Judging System</title>
 
     <!-- Bootstrap core CSS -->
@@ -25,5 +25,7 @@
     <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet"/>
     
-  
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js"></script>
+    
   </head>

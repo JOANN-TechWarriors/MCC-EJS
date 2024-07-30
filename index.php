@@ -1,14 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Judging System</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <style type="text/css">
+<html>
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <link rel="shortcut icon" href="uploads/87713-ejs_logo.png"/>
+      <title>Event Judging System</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="css1/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="css1/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css1/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <!-- font css -->
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css1/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+   </head>
+   <style type="text/css">
         *{
             margin: 0;
             padding: 0;
@@ -27,6 +51,7 @@
             line-height: 65px;
             text-align: center;
             background-color: rgba(6, 6, 7, 0.8);
+            z-index: 1000;
         }
         .nav div.logo{
             width: 180px;
@@ -137,22 +162,6 @@
         .fa:hover {
             opacity: 0.5;
         }
-        .fa-facebook {
-            background: #3B5998;
-            color: white;
-        }
-        .fa-twitter {
-            background: #55ACEE;
-            color: white;
-        }
-        .fa-youtube {
-            background: #bb0000;
-            color: white;
-        }
-        .fa-instagram {
-            background: orange;
-            color: white;
-        }
         .home{
             background-size: cover;
             background-position: center;
@@ -244,356 +253,342 @@
             color:red;
         }
     </style>
-</head>
-<body>
-<nav class="nav">
-    <div class="container">
-        <div class="logo">
-            <a href="#" style="font-family: impact; color: #1153D0;">
-                <img src="assets/img/mcc_logo.png" style="height: 40px;  vertical-align: middle;"> MCC Event
-            </a>
-             <span class="text-light"MCC>
-        </div>
-        <div class="main_list" id="mainListDiv">
-        <ul>
-            <li><a href="#" style="color: #1153D0;">Home</a></li>
-            <li style="margin-right:20px"><a href="#ongoing">Ongoing</a></li>
-            <li><a href="#upcoming">Upcoming</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#live">Live</a></li>
-            <li>
-                <a href="#login">Login</a>
-                <div class="dropdown">
-                    <a href="admin/index.php">Organizer Login</a>
-                    <a href="tabulator/index.php">Tabulator Login</a>
-                    <a href="judge/welcome.php">Judge Login</a>
-                    <a href="student/student_login.php">Student Login</a>
-                </div>
-            </li>
-        </ul>
-    </div>
-        <div class="media_button">
-            <button class="main_media_button" id="mediaButton">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </div>
-</nav>
-
-
-
-<section class="home" style="background-image: linear-gradient(45deg, rgba(0,0,0,0.3), rgba(0, 0, 0 ,0.3)), url(img/Community-College-Madridejos.jpeg); height: 100vh; display: flex; justify-content: center; align-items: center;">
-  <section id="banner" class="banner-section" style="width: 100%;">
-    <div class="container">
-      <div class="div_zindex" style="text-align: center;">
-        <h1 style="color: white;"> Welcome to MCC Event Judging System</h1>
-        <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
+   <body style="background-color: lightgray;">
+                    <div class="header_section">
+                        <div class="container">
+                        <nav class="nav">
+                    <div class="container">
+                        <div class="logo">
+                            <a href="#" style="font-family: impact; color: #1153D0;">
+                                <img src="img/logo.png" style="height: 40px;  vertical-align: middle;"> MCC Event
+                            </a>
+                            <span class="text-light"MCC>
+                        </div>
+                        <div class="main_list" id="mainListDiv">
+                        <ul>
+                            <li><a href="index.php">Home</a></li>
+                            <li><a href="ongoing.php">Ongoing</a></li>
+                            <li><a href="upcoming.php">Upcoming</a></li>
+                            <li><a href="about.php">About</a></li>
+                            <li><a href="blog.php">Live</a></li>
+                            <li>
+                                <a href="#login">Login</a>
+                                <div class="dropdown">
+                                    <a href="admin/index.php">Organizer Login</a>
+                                    <a href="tabulator/index.php">Tabulator Login</a>
+                                    <a href="admin/welcome.php">Judge Login</a>
+                                    <a href="student/index.php">Student Login</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                        <div class="media_button">
+                            <button class="main_media_button" id="mediaButton">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
+                    </div>
+                </nav>
+                        </div>
+        <!-- banner section start --> 
+<div class="banner_section layout_padding">
+   <div class="container">
+      <div id="banner_slider" class="carousel slide" data-ride="carousel">
+         <div class="carousel-inner">
+            <div class="carousel-item active">
+               <div class="row">
+                  <div class="col-md-12" style="z-index:-1000;">
+                     <div class="banner_taital_main">
+                        <h1 class="banner_taital">MCC <br>EVENTS</h1>
+                        <div class="btn_main">
+                           <div class="about_bt active"><a href="#"></a></div>
+                           <div class="callnow_bt"><a href="#"></a></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="carousel-item">
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="banner_taital_main" style="z-index:-1000;">
+                        <h1 class="banner_taital">MCC <br>EVENTS</h1>
+                        <div class="btn_main">
+                           <div class="about_bt active"><a href="#"></a></div>
+                           <div class="callnow_bt"><a href="#"></a></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <br><br>
+         <a class="carousel-control-prev" href="#banner_slider" role="button" data-slide="prev">
+            <i class="fa fa-arrow-left"></i>
+         </a>
+         <a class="carousel-control-next" href="#banner_slider" role="button" data-slide="next">
+            <i class="fa fa-arrow-right"></i>
+         </a>
       </div>
+   </div>
+</div>
+
+         <!-- banner section end -->
+         </div>
+<!-- header section end -->
+<!-- ongoing section start -->
+<?php
+// Database connection
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "judging";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Fetch data
+$sql = "SELECT `subevent_id`, `event_name`, `eventdate`, `eventtime`, `place`, `banner`, `view` FROM `sub_event` WHERE 1";
+$result = $conn->query($sql);
+
+$subEvents = []; // Initialize as an empty array
+if ($result && $result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $subEvents[] = $row;
+    }
+}
+$conn->close();
+?>
+
+
+<div class="coffee_section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style="z-index:-1000;">
+                <h1 class="coffee_taital">ONGOING EVENTS</h1>
+            </div>
+        </div>
     </div>
-  </section>
-</section>
-
-<br>
-<section id="room" >
-<div class="p-3" id="candidates">
-    <h1 class="text-center" style="color: #1153D0; font-family: impact;">MISS IT 2023 CANDIDATES</h1><br>
-    <div class="row g-2" >
-        <div class="col-lg-3 col-12 mb-3" style="z-index:-1000;">
-            <div class="card shadow bg-dark text-light p-2">
-                <img src="img/mcc1.jpg">
-                <center>
-                    <h1 class="card-title room-type" style="color:#eca62d; font-size: 150%;">
-                        <a href="#" style="color:#eca62d; text-decoration: none;">Rona Liza Fernandez</a>
-                    </h1>
-                    <h4>3-East</h4>
-                    <p style="font-size:10px">
-                        <i class="bi bi-check-circle-fill" style="color: #cda45e;"></i> Ratings<br>
-                    </p>
-                </center>
-            </div>
-        </div>
-        <div class="col-lg-3 col-12 mb-3" style="z-index:-1000;">
-            <div class="card shadow bg-dark text-light p-2">
-                <img src="img/mcc2.jpg">
-                <center>
-                    <h1 class="card-title room-type" style="color:#eca62d; font-size: 150%;">
-                        <a href="#" style="color:#eca62d; text-decoration: none;">Jasmine Carascal</a>
-                    </h1>
-                    <h4>3-North</h4>
-                    <p style="font-size:10px">
-                        <i class="bi bi-check-circle-fill" style="color: #cda45e;"></i> Ratings<br>
-                    </p>
-                </center>
-            </div>
-        </div>
-        <div class="col-lg-3 col-12 mb-3" style="z-index:-1000;">
-            <div class="card shadow bg-dark text-light p-2">
-                <img src="img/mcc3.jpg">
-                <center>
-                    <h1 class="card-title room-type" style="color:#eca62d; font-size: 150%;">
-                        <a href="#" style="color:#eca62d; text-decoration: none;">Khrisna Mae Sacnahon</a>
-                    </h1>
-                    <h4>1-West</h4>
-                    <p style="font-size:10px">
-                        <i class="bi bi-check-circle-fill" style="color: #cda45e;"></i> Ratings<br>
-                    </p>
-                </center>
-            </div>
-        </div>
-   <div class="col-lg-3 col-12  mb-3" style="z-index:-1000;">
-       <div class="card shadow bg-dark text-light p-2">
-           <img src="img/mcc4.jpg">
-           <center>   <h1 class="card-title room-type" style="color:#eca62d; font-size: 150%;">
-            <a href="#" style="color:#eca62d; text-decoration: none;">Jhanna Joy Durias</a>
-            </h1>
-         
-           <h4>1-Southwest</h4>
-       
-           <p style="font-size:10px"><i class="bi bi-check-circle-fill" style="color:  #cda45e;"></i> Ratings<br>
-         
-               </p></center> 
-
-           </div>
-           
-   </div>
-    <div class="col-lg-3 col-12  mb-3" style="z-index:-1000;">
-       <div class="card shadow bg-dark text-light p-2">
-           <img src="img/mcc5.jpg">
-           <center>   <h1 class="card-title room-type" style="color:#eca62d; font-size: 150%;">
-            <a href="#" style="color:#eca62d; text-decoration: none;">Jimelyn Capuras</a>
-            </h1>
-                     
-           <h4>2-East</h4>
-       
-           <p style="font-size:10px"><i class="bi bi-check-circle-fill" style="color:  #cda45e;"></i> Ratings<br>
-         
-               </p></center>
- 
-           </div>
-           
-   </div>
-   <div class="col-lg-3 col-12  mb-3" style="z-index:-1000;">
-       <div class="card shadow bg-dark text-light p-2">
-           <img src="img/mcc6.jpg">
-            <center>  <h1 class="card-title room-type" style="color:#eca62d; font-size: 150%;">
-            <a href="#" style="color:#eca62d; text-decoration: none;">Marjanny Alob</a>
-            </h1>
-           <h4>2-North</h4>
-       
-           <p style="font-size:10px"><i class="bi bi-check-circle-fill" style="color:  #cda45e;"></i> Ratings<br>
-         
-               </p></center>
-        
-
-           </div>
-           
-   </div>
-   <div class="col-lg-3 col-12  mb-3" style="z-index:-1000;">
-       <div class="card shadow bg-dark text-light p-2">
-           <img src="img/mcc7.jpg">
-            <center>  <h1 class="card-title room-type" style="color:#eca62d; font-size: 150%;">
-            <a href="#" style="color:#eca62d; text-decoration: none;">Renalyn Caracena</a>
-            </h1> 
-         
-           <h4>1-Northeast</h4>
-       
-           <p style="font-size:10px"><i class="bi bi-check-circle-fill" style="color:  #cda45e;"></i> Ratings<br>
-         
-               </p></center>    
-
-           </div>
-           
-   </div>
-   <div class="col-lg-3 col-12  mb-3" style="z-index:-1000;">
-       <div class="card shadow bg-dark text-light p-2">
-           <img src="img/mcc8.jpg">
-           <center>  <h1 class="card-title room-type" style="color:#eca62d; font-size: 150%;">
-            <a href="#" style="color:#eca62d; text-decoration: none;">Mercy Marie Diongson</a>
-            </h1> 
-         
-           <h4>1-Northwest</h4>
-       
-           <p style="font-size:10px"><i class="bi bi-check-circle-fill" style="color:  #cda45e;"></i> Ratings<br>
-         
-               </p></center>
+    <div class="coffee_section_2">
+        <div id="main_slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+            <?php
+        $isActive = true;
+        $totalEvents = count($subEvents);
+        for ($i = 0; $i < $totalEvents; $i += 3) {
+            $activeClass = $isActive ? 'active' : '';
+            $isActive = false;
+            echo '<div class="carousel-item ' . $activeClass . '">';
+            echo '    <div class="container-fluid">';
+            echo '        <div class="row">';
             
-
-           </div>
-           
-   </div>
-                                      
-   <div class="col-lg-3 col-12  mb-3" style="z-index:-1000;">
-       <div class="card shadow bg-dark text-light p-2">
-           <img src="img/mcc9.jpg">
-           <center>  <h1 class="card-title room-type" style="color:#eca62d; font-size: 150%;">
-            <a href="#" style="color:#eca62d; text-decoration: none;">Jessamen Ilustrisimo</a>
-            </h1> 
-         
-           <h4>2-West</h4>
-       
-           <p style="font-size:10px"><i class="bi bi-check-circle-fill" style="color:  #cda45e;"></i> Ratings<br>
-         
-               </p></center>
- 
-           </div>
-           
-   </div>
-   <div class="col-lg-3 col-12  mb-3" style="z-index:-1000;">
-       <div class="card shadow bg-dark text-light p-2">
-           <img src="img/mcc10.jpg">
-            <center>  <h1 class="card-title room-type" style="color:#eca62d; font-size: 150%;">
-            <a href="#" style="color:#eca62d; text-decoration: none;">Kristine Mae Manggiran</a>
-            </h1> 
-         
-           <h4>1-North</h4>
-       
-           <p style="font-size:10px"><i class="bi bi-check-circle-fill" style="color:  #cda45e;"></i> Ratings<br>
-         
-               </p></center>
-        
-
-           </div>
-           
-   </div>
-   <div class="col-lg-3 col-12  mb-3" style="z-index:-1000;">
-       <div class="card shadow bg-dark text-light p-2">
-           <img src="img/mcc11.jpg">
-            <center>    <h1 class="card-title room-type" style="color:#eca62d; font-size: 150%;">
-            <a href="#" style="color:#eca62d; text-decoration: none;">Yvonne Crystal Vismanos</a>
-            </h1> 
-         
-           <h4>3-West</h4>
-       
-           <p style="font-size:10px"><i class="bi bi-check-circle-fill" style="color:  #cda45e;"></i> Ratings<br>
-         
-               </p></center>    
-
-           </div>
-           
-   </div>
-   <div class="col-lg-3 col-12  mb-3" style="z-index:-1000;">
-       <div class="card shadow bg-dark text-light p-2">
-           <img src="img/mcc12.jpg">
-           <center>  
-           <h1 class="card-title room-type" style="color:#eca62d; font-size: 150%;">
-            <a href="#" style="color:#eca62d; text-decoration: none;">Lyca Chavez</a>
-            </h1> 
-         
-           <h4>1-Southeast</h4>
-       
-           <p style="font-size:10px"><i class="bi bi-check-circle-fill" style="color:  #cda45e;"></i> Ratings<br>
-         
-               </p></center>
-           </div>
-           
-   </div>
-   <div class="col-lg-3 col-12  mb-3" style="z-index:-1000;">
-       <div class="card shadow bg-dark text-light p-2">
-           <img src="img/mcc13.jpg">
-            <center>   <h1 class="card-title room-type" style="color:#eca62d; font-size: 150%;">
-            <a href="#" style="color:#eca62d; text-decoration: none;">Shanine Zaspa</a>
-            </h1> 
-         
-           <h4>3-South</h4>
-       
-           <p style="font-size:10px"><i class="bi bi-check-circle-fill" style="color:  #cda45e;"></i> Ratings<br>
-         
-               </p></center>
-        
-
-           </div>
-           
-   </div>
-   <div class="col-lg-3 col-12  mb-3" style="z-index:-1000;">
-       <div class="card shadow bg-dark text-light p-2">
-           <img src="img/mcc14.jpg">
-            <center>  <h1 class="card-title room-type" style="color:#eca62d; font-size: 150%;">
-            <a href="#" style="color:#eca62d; text-decoration: none;">Riza Ybanez Salinas</a>
-            </h1> 
-         
-           <h4>1-South</h4>
-       
-           <p style="font-size:10px"><i class="bi bi-check-circle-fill" style="color:  #cda45e;"></i> Ratings<br>
-         
-               </p></center>    
-
-           </div>
-           
-   </div>
-   <div class="col-lg-3 col-12  mb-3" style="z-index:-1000;">
-       <div class="card shadow bg-dark text-light p-2">
-           <img src="img/mcc15.jpg">
-           <center>  <h1 class="card-title room-type" style="color:#eca62d; font-size: 150%;">
-            <a href="#" style="color:#eca62d; text-decoration: none;">Rose Ann Forosuelo</a>
-            </h1> 
-         
-           <h4>1-East</h4>
-       
-           <p style="font-size:10px"><i class="bi bi-check-circle-fill" style="color:  #cda45e;"></i> Ratings<br>
-         
-               </p></center>
+            for ($j = $i; $j < $i + 3 && $j < $totalEvents; $j++) {
+                $event = $subEvents[$j];
+                $isPollActive = $event['view'] == 'active'; // Assuming 'activated' is the value for active status
+                echo '            <div class="col-lg-4 col-md-6 mb-4">';
+                echo '                <div class="coffee_img"><img src="img/' . htmlspecialchars($event['banner']) . '" alt="Event Image"></div>';
+                echo '                <div class="coffee_box">';
+                echo '                    <h3 class="types_text">' . htmlspecialchars($event['event_name']) . '</h3>';
+                echo '                    <p class="looking_text">';
+                echo '                        Start Date: ' . htmlspecialchars(date("F j, Y", strtotime($event['eventdate']))) . '<br>';
+                echo '                        End Date: ' . htmlspecialchars(date("F j, Y", strtotime($event['eventtime']))) . '<br>';
+                echo '                        Location: ' . htmlspecialchars($event['place']) . '</p>';
+                echo '<form action="check_student_login.php" method="GET" style="display: inline;">';
+                echo '    <input type="hidden" name="event" value="' . htmlspecialchars($event['subevent_id']) . '">';
+                echo '    <button type="submit" class="btn btn-primary"' . ($isPollActive ? '' : ' disabled') . '>View</button>';
+                echo '</form>';
+                echo '                </div>';
+                echo '            </div>';
+            }
             
+            echo '        </div>';
+            echo '    </div>';
+            echo '</div>';
+        }
+        ?>
 
-           </div>
-           
-   </div>
-   <section>
-<div class="container-fluid " style="background-color:#12100e ;">
-	<div class="row">
-		 <div class="col-md-12 p-5" id="about">
+
+<style>
+    button.btn.btn-primary {
+    z-index: 1000; /* Adjust if necessary */
+    position: relative;
+}
+
+</style>
+            </div>
+            <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+                <i class="fa fa-arrow-left"></i>
+            </a>
+            <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+                <i class="fa fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- ongoing section end -->
+<!-- upcoming section start -->
+     <?php
+// Database connection setup
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "judging";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Query to fetch upcoming events
+$sql = "SELECT `id`, `title`, `start_date`, `end_date`, `banner` FROM `upcoming_events` WHERE 1";
+$result = $conn->query($sql);
+
+// Generate HTML for carousel items
+$carouselItems = '';
+$isActive = true;
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $activeClass = $isActive ? 'active' : '';
+        $isActive = false;
+
+        $carouselItems .= '
+        <div class="carousel-item ' . $activeClass . '">
             <div class="row">
-                <div class="col-md-4">
-                    <img src="img/updates.jpg" class="w-100">
+                <div class="col-md-12" >
+                    <h1 class="about_taital">Upcoming Events</h1>
                 </div>
-
-                <div class="col-md-6">
-                    <h3  style="color:  #1153D0;">Happening Now!</h3>
-         
-             <p class="text-light" style="font-size: 13px;">
-The Guided Outsourcing Company and InfiNET Solutions are jointly hosting a seminar titled "VoIP Technology Basics," led by Mr. Jareth Mara, Technical Account Manager at InfiNET Solutions, and Mr. Chris Walters, VOIP Team Leader. The event is taking place at the Cisco Laboratory, Mabalacat City College, where students of BSIT 2A are being enlightened on the fundamental aspects of Voice over Internet Protocol (VoIP) technology</p>
-
+            </div>
+            <div class="client_section_2">
+                <div class="client_taital_main">
+                    <div class="client_left">
+                        <img class="d-block w-80" src="img/' . htmlspecialchars($row['banner']) . '" alt="' . htmlspecialchars($row['title']) . '">
+                    </div>
+                    <div class="client_right">
+                        <h3 class="moark_text">' . htmlspecialchars($row["title"]) . '</h3>
+                        <p class="client_text">Start Date: ' . htmlspecialchars(date("F j, Y", strtotime($row["start_date"]))) . '<br>End Date: ' . htmlspecialchars(date("F j, Y", strtotime($row["end_date"]))) . '</p>
+                    </div>
                 </div>
-
-              
-                       
+            </div>
+        </div>';
+    }
+} else {
+    $carouselItems = '
+    <div class="carousel-item active">
+        <div class="row">
+            <div class="col-md-12" >
+                <h1 class="about_taital">No Upcoming Events</h1>
             </div>
         </div>
-</section>
+    </div>';
+}
 
+$conn->close();
+?>
 
+<!-- client section start -->
+<div class="client_section layout_padding">
+    <div class="container">
+        <div id="custom_slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <?php echo $carouselItems; ?>
+            </div>
+            <a style="z-index:-1000;" class="carousel-control-prev" href="#custom_slider" role="button" data-slide="prev">
+                <i class="fa fa-arrow-left"></i>
+            </a>
+            <a style="z-index:-1000;" class="carousel-control-next" href="#custom_slider" role="button" data-slide="next">
+                <i class="fa fa-arrow-right"></i>
+            </a>
+            <br><br><br>
+        </div>
+    </div>
 </div>
-</section>
-<script src="./javascript/script.js"></script>
-<section id="gallery">
-			<div class="container" id="gallery">
-    <div class="row">
-    
-        <div class="col-lg-3">
-            <img src="img/mcc.jpg" class="w-100">
-        </div>
-        <div class="col-lg-3">
-            <img src="img/updates.jpg" class="w-100">
-        </div>
-        <div class="col-lg-3">
-            <img src="img/mcc.jpg" class="w-100">
-        </div>
-        <div class="col-lg-3">
-            <img src="img/updates.jpg" class="w-100">
-        </div>
+<!-- client section end -->
+<!-- upcoming section end -->
+ 
+<!-- about section start -->
+      </div>
+      <div class="about_section layout_padding">
+         <div class="container">
+            <div class="about_section_2">
+               <div class="row">
+                  <div class="col-md-6" style="z-index:-1000;"> 
+                     <div class="about_taital_box">
+                        <h1 class="about_taital">ABOUT</h1>
+                        <p class=" about_text">Madridejos Community College (MCC) is an educational institution that serves the local community in Madridejos, a municipality in the province of Cebu, Philippines. It is dedicated to providing quality education and fostering a supportive learning environment for its students.</p>
+                        <div class="readmore_btn"><a href="#">Read More</a></div>
+                     </div>
+                  </div>
+                  <div class="col-md-6" style="z-index:-1000;"> 
+                     <div class="image_iman"><img src="img/Community-College-Madridejos.jpeg" class="about_img"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- about section end -->
 
-    </div>  
-
-</div>
-		</section>
-<section>
-    <br>
-			 <iframe  style="border:0; width: 100%; height: 400px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3912.9695262114656!2d123.72098687257221!3d11.263650350022909!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a88140310a21a9%3A0xc5b9b94e9c2702db!2sMadridejos%20Community%20College!5e0!3m2!1sen!2sph!4v1720744766843!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-		</section>
-<section>
-				 <footer class="border border-top-1 border-light p-3 bg-dark" id="contact">
+      <!-- blog section start -->
+      <!-- <div class="blog_section layout_padding"> 
+         <div class="container">
             <div class="row">
+               <div class="col-md-12">
+                  <h1 class="about_taital">Our Blog</h1>
+               </div>
+            </div>
+            <div class="blog_section_2">
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="blog_box">
+                        <div class="blog_img"><img src="images/blog-img1.png"></div>
+                        <h4 class="date_text">05 April</h4>
+                        <h4 class="prep_text">PREP TECHNIQUES Coffee</h4>
+                        <p class="lorem_text">distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a moredistracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more</p>
+                     </div>
+                     <div class="read_btn"><a href="#">Read More</a></div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="blog_box">
+                        <div class="blog_img"><img src="images/blog-img2.png"></div>
+                        <h4 class="date_text">05 April</h4>
+                        <h4 class="prep_text">Enjoy Best Coffee</h4>
+                        <p class="lorem_text">distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a moredistracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more</p>
+                     </div>
+                     <div class="read_btn"><a href="#">Read More</a></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+     </div> -->
+      <!-- blog section end -->
+      <!-- contact section start -->
+      <div class="contact_section layout_padding">
+         
+         <div class="container-fluid">
+            <div class="contact_section_2">
+               <div class="row">
+                  <div class="map_main">
+                     <div class="map-responsive">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3912.9695262114656!2d123.72098687257221!3d11.263650350022909!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a88140310a21a9%3A0xc5b9b94e9c2702db!2sMadridejos%20Community%20College!5e0!3m2!1sen!2sph!4v1720744766843!5m2!1sen!2sph" width="250" height="500" frameborder="0" style="border:0; width: 100%;" allowfullscreen=""></iframe>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- contact section end -->
+      <!-- footer section start -->
+      <div class="footer_section layout_padding">
+         <div class="container">
+         <div class="row">
                     <div class="col-md-6 ">
                          <p class="ms-5 text-light"><i class="fa fa-pin" style="color:#eca62d;"></i> <span style="color:#eca62d;">Location:</span> @Crossing Bunakan, Madridejos, Cebu, Philiphines</p>
                     </div>
@@ -607,11 +602,28 @@ The Guided Outsourcing Company and InfiNET Solutions are jointly hosting a semin
                          <p class="ms-5 text-light"><i class="fa fa-phone" style="color:#eca62d;"></i> <span style="color:#eca62d;">Contact Number: </span>   09662314910</p>
                     </div>
             </div>
-
-
-
-
-    </footer>
-			</section>		
-</body>
+         </div>
+      </div>
+      <!-- footer section end -->
+      <!-- copyright section start -->
+      <div class="copyright_section">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-12">
+                  <p class="copyright_text"><strong> Event Judging  System &COPY; <?= date("Y") ?>  </strong></p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- copyright section end -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/plugin.js"></script>
+      <!-- sidebar -->
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+   </body>
 </html>

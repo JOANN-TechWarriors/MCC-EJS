@@ -54,7 +54,7 @@
              
              <?php include('doc_header.php'); ?>
              
-             
+             <br>
              <table>
              <tr>
              <td align="center">
@@ -100,7 +100,7 @@ while ($o_result_row = $o_result_query->fetch()) {
     
          ?>
          <tr>
-         <td><h3><?php
+         <td><h3 style="font-size: medium;"><?php
           $cname_query = $conn->query("select * from contestants where contestant_id='$contestant_id'") or die(mysql_error());
 while ($cname_row = $cname_query->fetch()) 
 {
@@ -112,7 +112,7 @@ while ($cname_row = $cname_query->fetch())
            </h3></td>
            
            
-     <td><center><h3>
+     <td><center><h3 style="font-size: large;">
 <?php $placingzz_query = $conn->query("select * from sub_results where contestant_id='$contestant_id'") or die(mysql_error());
 while ($placingzz_row = $placingzz_query->fetch()) 
 {
@@ -203,7 +203,7 @@ $jname_row = $jname_query->fetch();
     ?>
             <td>
             <table>
-            <tr><td align="center">&nbsp;&nbsp;&nbsp;<u><strong><?php echo $jname_row['fullname'];?></strong></u>&nbsp;&nbsp;&nbsp;</td></tr>
+            <tr><td align="center">&nbsp;&nbsp;&nbsp;<u><strong style="font-size: small;"><?php echo $jname_row['fullname'];?></strong></u>&nbsp;&nbsp;&nbsp;</td></tr>
              
               <?php if($jname_row['jtype']=="Chairman"){ ?>
                 <tr>
@@ -289,7 +289,6 @@ while ($jjn_result_row = $jjn_result_query->fetch()) {
 </div>
 
 
-   <?php include('footer.php'); ?>
 
     <!-- Le javascript
     ================================================== -->

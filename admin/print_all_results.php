@@ -51,17 +51,16 @@
              
              <?php include('doc_header.php'); ?>
              
-             
  
-             <table>
+             <table >
         <tr>
-             <td align="center">
-            <h2><?php echo $event_row['event_name']; ?> - Over All Result</h2> 
+             <td align="center" >
+            <h2 style="font-size:20.5px;"><?php echo $event_row['event_name']; ?> - Over All Result</h2> 
              </td>
               </tr>
                <tr>
              <td align="center">
-            <h3><?php echo $s_event_row['event_name']; ?></h3> 
+            <h3 style="font-size:15.5px;"><?php echo $s_event_row['event_name']; ?></h3> 
              </td>
               </tr>
                
@@ -70,9 +69,9 @@
              </center>
           
           <table class="table table-bordered">
-        <thead>
+        <thead style="font-size:15.5px;">
         
-     <th>Participants</th>
+     <th >Participants</th>
        
         
         <th>Result Summary</th>
@@ -101,7 +100,7 @@ while ($cname_row = $cname_query->fetch())
            ?></td>
           <td>
           
- <table class="table table-bordered">
+ <table class="table table-bordered" style="font-size:small;">
            <tr>
          
            <th>Average Score</th>
@@ -151,7 +150,7 @@ while ($tot_score_row = $tot_score_query->fetch())
  </table>
 
           </td>
-          <td><center><h3><?php echo $place_title; ?></h3></center></td>
+          <td ><center><h3 style="font-size:small;"><?php echo $place_title; ?></h3></center></td>
          </tr>
          
          
@@ -179,8 +178,8 @@ $jname_row = $jname_query->fetch();
 
     ?>
             <td>&nbsp;&nbsp;
-            <table>
-            <tr><td align="center">&nbsp;&nbsp;&nbsp;<u><strong><?php echo $jname_row['fullname'];?></strong></u>&nbsp;&nbsp;&nbsp;</td></tr>
+            <table style="font-size:70%;">
+            <tr><td align="center">&nbsp;&nbsp;&nbsp;<u><strong ><?php echo $jname_row['fullname'];?></strong></u>&nbsp;&nbsp;&nbsp;</td></tr>
              <tr><td align="center">&nbsp;&nbsp;<?php echo $jname_row['jtype'];?> Judge&nbsp;&nbsp;</td></tr>
             </table>
             &nbsp;&nbsp;</td>
@@ -192,12 +191,8 @@ $jname_row = $jname_query->fetch();
 </tr>
    </table> 
  
- <footer></footer>
 <?php } ?>
-<h1>Organizing Committee</h1>
-<hr />
-<br /><br />
-<hr />
+
      <table align="center">  
               <tr>
            
@@ -210,7 +205,7 @@ while ($jjn_result_row = $jjn_result_query->fetch()) {
     ?>
             <td>
             <table>
-            <tr><td align="center">&nbsp;&nbsp;&nbsp;<u><strong><?php echo $jjn_result_row['fname']." ".$jjn_result_row['mname']." ".$jjn_result_row['lname'];?></strong></u>&nbsp;&nbsp;&nbsp;</td></tr>
+            <tr><td align="center">&nbsp;&nbsp;&nbsp;<u><strong style="font-size:10.5px;"><?php echo $jjn_result_row['fname']." ".$jjn_result_row['mname']." ".$jjn_result_row['lname'];?></strong></u>&nbsp;&nbsp;&nbsp;</td></tr>
              <tr><td align="center">Tabulator</td></tr>
             </table>
             </td>
@@ -232,13 +227,14 @@ while ($jjn_result_row = $jjn_result_query->fetch()) {
     ?>
             <td>
             <table>
-            <tr><td align="center">&nbsp;&nbsp;&nbsp;<u><strong><?php echo $jjn_result_row['fname']." ".$jjn_result_row['mname']." ".$jjn_result_row['lname'];?></strong></u>&nbsp;&nbsp;&nbsp;</td></tr>
+            <tr><td align="center">&nbsp;&nbsp;&nbsp;<u><strong style="font-size:10.5px;"><?php echo $jjn_result_row['fname']." ".$jjn_result_row['mname']." ".$jjn_result_row['lname'];?></strong></u>&nbsp;&nbsp;&nbsp;</td></tr>
              <tr><td align="center">Organizer</td></tr>
             </table>
             </td>
     
            
-  
+            <button type="submit" onclick="window.print()" class="btn btn-default pull-right"><i class="icon-print"></i></button>
+
 <?php } ?>
 
 </tr>
@@ -252,7 +248,6 @@ while ($jjn_result_row = $jjn_result_query->fetch()) {
 </div>
 
 
-<?php include('footer.php'); ?>
 
     <!-- Le javascript
     ================================================== -->

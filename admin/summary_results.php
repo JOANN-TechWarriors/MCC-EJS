@@ -31,7 +31,7 @@ $active_main_event=$_GET['main_event_id'];
              <center>
              
              <?php include('doc_header.php'); ?>
-             
+
              
              <table>
         <tr>
@@ -41,7 +41,7 @@ $active_main_event=$_GET['main_event_id'];
               </tr>
                <tr>
                 <td align="center">
-                <h3>Tally Sheet</h3>
+                <h3 style="font-size:20.5px;">Tally Sheet</h3>
                 </td>
               </tr>
                
@@ -92,7 +92,7 @@ $MECtr = $MEctrQuery->rowCount();  ?>
                          ?>
                                     
                                     
-                                    <h4>EVENT: <strong><?php echo $SECtr['event_name']; ?></strong></h4>
+                                    <h4 style="font-size:15.5px;">EVENT: <strong><?php echo $SECtr['event_name']; ?></strong></h4>
                                     <hr />
                                     
                                     <table align="center" class="table table-bordered" id="example">

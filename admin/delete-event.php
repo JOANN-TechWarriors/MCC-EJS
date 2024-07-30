@@ -11,19 +11,30 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-
 // Get event data from form submission
 $event_id = $_POST['id'];
-$event_title = $_POST['title'];
-$event_start = $_POST['start'];
-$event_end = $_POST['end'];
 
 // Delete event in database
 $sql = "DELETE FROM upcoming_events WHERE id = $event_id";
 if ($conn->query($sql) === TRUE) {
-  echo "Event updated successfully";
+    echo "<script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Event deleted successfully',
+            showConfirmButton: false,
+            timer: 1500
+        }).then(function() {
+            window.location = 'your_redirect_page.php'; // Redirect to another page if needed
+        });
+    </script>";
 } else {
-  echo "Error updating event: " . $conn->error;
+    echo "<script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Error deleting event',
+            text: '" . $conn->error . "',
+        });
+    </script>";
 }
 
 $conn->close();

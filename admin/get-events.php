@@ -15,6 +15,10 @@ if (!$conn) {
 $sql = "SELECT * FROM upcoming_events";
 $result = mysqli_query($conn, $sql);
 
+if (!$result) {
+    die("Error retrieving events: " . mysqli_error($conn));
+}
+
 // Format events for FullCalendar
 $events = array();
 while ($row = mysqli_fetch_assoc($result)) {

@@ -1,11 +1,8 @@
- 
-
- <?php 
-    
-    include('dbcon.php');
-    date_default_timezone_set('Asia/Manila'); 
-    
-    ?>
+<?php 
+session_start();
+include('dbcon.php');
+date_default_timezone_set('Asia/Manila'); 
+?>
 <!DOCTYPE html>
 <html lang="en">
   
@@ -24,152 +21,96 @@ include_once('header2.php');
   right: 20px;
   z-index: 9999;
 }
+
+.logo-small {
+  width: 300px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-top: 100px; /* Add space below the logo */
+}
+
+.motto {
+  margin-top: 20px; /* Add space above the motto */
+  margin-right: 100px; /* Add space to the left */
+}
+
+.form-container {
+  width: 400%; /* Adjust the width as needed */
+  max-width: 600px;
+  margin: 2 auto;
+}
+
+thead th {
+  background-color: aquamarine;
+  text-indent: 10px;
+  font-size: 14px; /* Adjust the font size as needed */
+  padding: 10px; /* Adjust the padding as needed */
+}
 </style>
 
-  <body>
-   <!-- Navbar
-    ================================================== -->
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
+<body id="login" style="background:url(../img/Community-College-Madridejos.jpeg)">  
 
+<div class="container">
+    <div class="row-fluid">
 
+      <div class="span6">
+        <div class="title_index">
 
+              <div class="row-fluid">
+                <div class="span12"></div>
+                    <div class="row-fluid">
+                      <div class="span10">
+                      <img class="index_logo logo-small" src="../img/logo.png">
+                      </div>  
+                      <div class="span12">
+                        <div class="motto">
+                        
+                        <h3><p>WELCOME&nbsp;&nbsp;TO:</p></h3>
+                        <h2><p><strong>MCC Event Judging System</strong></p></h2>                      
+                        </div>                      
+                      </div>              
+                    </div>                    
+              </div>  
+            
         </div>
       </div>
-    </div>
-    <!-- Subhead
- ================================================== -->
-<header class="jumbotron subhead" id="overview">
-  <div class="container">
-    <h1> MCC Event Judging System</h1>
-    <p class="lead">Ready to serve you...</p>
-  </div>
-</header>
 
-
-<div class="modal fade" id="uni_modal" role='dialog'>
-    <div class="modal-dialog modal-md" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-        <h5 class="modal-title"></h5>
-      </div>
-      <div class="modal-body">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" id='submit' onclick="$('#uni_modal form').submit()">Save</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-      </div>
-      </div>
-    </div>
-  </div>
-
-
-    <div class="container">
-    
-      
-      
-    <!-- About EJS Modal -->
-    <div class="modal fade" id="about-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
-            <div class="modal-dialog modal-sm">
-
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title" id="Login">About MCC Event Judging System</h4>
-                    </div>
-                    <div class="modal-body">
-                    
-                    <table align="center">
-                    
-                    <tr>
-                                  
-                    </tr>
-                    
-                    <tr>
-                    <td>&nbsp;</td>
-                    </tr>
-                    
-                    <tr>
-                    <td align="right">Developer:</td>
-                    <td><strong> Christian Paul L. Salvado</strong> - Software and Web Developer</td>
-                    </tr>
-      
-                    
-                    <tr>
-                    <td>&nbsp;</td>
-                    </tr>
-                    
-                    <tr>
-                    <td align="right">Email:</td>
-                    <td><strong> salvadochristianpaul5@gmail.com</strong></td>
-                    </tr>
-                    
-                    <tr>
-                    <td>&nbsp;</td>
-                    </tr>
-                    
-                    <tr>
-                    <td align="right">Mobile Number:</td>
-                    <td><strong> +639385974999</strong></td>
-                    </tr>
-                    
-                    <tr>
-                    <td>&nbsp;</td>
-                    </tr>
-                    
-                    <tr>
-                    <td align="right">Website:</td>
-                    <td><a href="www.bee4ten.ml" target="_blank"><strong> www.bee4ten.ml</strong></a></td>
-                    </tr>
-        
-                    </table>
-                    
-           
-                    <br />
-                    <p>Check my website or get in touch with me for more informations and system supports. All rights reserved 2023 &COPY;</p>
-
-                        <hr />
-                        <p class="text-center text-muted"><button class="btn btn-default" data-dismiss="modal" aria-hidden="true"><strong>Close</strong></button></p>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- END About EJS Modal -->
-        
-        
+      <div class="span6">
+        <div class="pull-left">
+                <div id="home" >
+        <div class="overlay">
+          <div class="form-container">
+            <form id="login-form" method="POST" action="login.php" >
+             <br /> 
+             <br/>
+             <br/> 
+             <table cellpadding="50" cellspacing="40"  align="center">
+             <thead>
+             <th align="left" style="background-color: aquamarine; text-indent: 10px; color: black; "><h4>ORGANIZER LOGIN</h4></th>
+             </thead>
+             
+             <tr style="background-color: #fff;">
+             
+             <td>
+              <h5><i class="icon-user"></i>  USERNAME:</h5>
+              <input style="font-size: large; height: 35px !important; text-indent: 7px !important;" class="form-control btn-block" type="text" name="username" placeholder="Username" required="true" autofocus="true" />
+             
+              <h5><i class="icon-lock"></i>  PASSWORD:</h5>
+              <input style="font-size: large; height: 35px !important; text-indent: 7px !important;" class="form-control btn-block" type="password"  name="password" placeholder="Password" required="true" />
+            <br /><br />
+              <button id="login-button" style="width: 150px !important;" type="button" class="btn btn-primary pull-right"><i class="icon-ok"></i> <strong>LOGIN</strong></button>
               
-   <form method="POST" action="login.php" >
- <br />  
- <table cellpadding="10" cellspacing="0" border="0" align="center">
- <thead>
- <th align="left" style="background-color: #4976f5; text-indent: 7px; color: white; "><h4> &nbsp;ORGANIZER LOGIN</h4></th>
- </thead>
- 
- <tr style="background-color: #d7def2;">
- 
- <td>
- 
- 
-  <h5><i class="icon-user"></i>  USERNAME:</h5>
-  <input style="font-size: large; height: 35px !important; text-indent: 7px !important;" class="form-control btn-block" type="text" name="username" placeholder="Username" required="true" autofocus="true" />
- 
- <h5><i class="icon-lock"></i>  PASSWORD:</h5>
-  <input style="font-size: large; height: 35px !important; text-indent: 7px !important;" class="form-control btn-block" type="password"  name="password" placeholder="Password" required="true" autofocus="true" />
-<br /><strong><a data-toggle="modal" data-target="#forgot-password-modal">Forgot password?</a></strong><br />
-<h6>if you have no account, pls</h6>
-  <button style="width: 160px !important;" type="submit" class="btn btn-primary pull-right"><i class="icon-ok"></i> <strong>LOGIN</strong></button>
-  
-  <strong>Register <a href="create_account.php">here &raquo;</a></strong> &nbsp;&nbsp;&nbsp;<br><br>
-  
- </td>
- </tr>
- 
- 
- </table>
- 
-   </form>
+              <strong><a href="create_account.php">Register &raquo;</a></strong> &nbsp;&nbsp;&nbsp;<br><br>
+              
+             </td>
+             </tr>
+             </table>
+             </form>
+           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
    
    <div class="modal fade" id="forgot-password-modal" tabindex="-1" role="dialog" aria-labelledby="forgot-password-modal-label" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -181,7 +122,7 @@ include_once('header2.php');
         </button>
       </div>
       <div class="modal-body">
-        <form action="forgot_password.php" method="post" autocomplete="off">
+        <form id="forgot-password-form" action="forgot_password.php" method="post" autocomplete="off">
           <div class="form-group">
             <label for="email">Email address:</label>
             <input type="email" class="form-control" id="email" name="email" required>
@@ -193,61 +134,50 @@ include_once('header2.php');
   </div>
 </div>
 
-<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" style="display: none;">
-    <div class="toast-header">
-        <strong class="toast-title">Title</strong>
-        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="toast-body">
-        Body
-    </div>
-</div>
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="..//assets/js/jquery.js"></script>
+<script src="..//assets/js/bootstrap-transition.js"></script>
+<script src="..//assets/js/bootstrap-alert.js"></script>
+<script src="..//assets/js/bootstrap-modal.js"></script>
+<script src="..//assets/js/bootstrap-dropdown.js"></script>
+<script src="..//assets/js/bootstrap-scrollspy.js"></script>
+<script src="..//assets/js/bootstrap-tab.js"></script>
+<script src="..//assets/js/bootstrap-tooltip.js"></script>
+<script src="..//assets/js/bootstrap-popover.js"></script>
+<script src="..//assets/js/bootstrap-button.js"></script>
+<script src="..//assets/js/bootstrap-collapse.js"></script>
+<script src="..//assets/js/bootstrap-carousel.js"></script>
+<script src="..//assets/js/bootstrap-typeahead.js"></script>
+<script src="..//assets/js/bootstrap-affix.js"></script>
+<script src="..//assets/js/holder/holder.js"></script>
+<script src="..//assets/js/google-code-prettify/prettify.js"></script>
+<script src="..//assets/js/application.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+window.onload = function() {
+    <?php if(isset($_SESSION['login_success']) && $_SESSION['login_success'] == true): ?>
+        Swal.fire({
+            title: "Success!",
+            text: "You are Successfully logged in!",
+            icon: "success"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "dashboard.php";
+            }
+        });
+        <?php unset($_SESSION['login_success']); ?>
+    <?php endif; ?>
+};
 
-
-
-
-    <!-- Footer
-    ================================================== -->
-    <footer class="footer">
-      <div class="container">
-      
-        <font size="2" class="" align="center"><strong>Event Judging System &middot; 2023 &COPY; </strong></font> <br />
-        
-      </div>
-    </footer>
-
-
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
- 
-    <script src="..//assets/js/jquery.js"></script>
-    <script src="..//assets/js/bootstrap-transition.js"></script>
-    <script src="..//assets/js/bootstrap-alert.js"></script>
-    <script src="..//assets/js/bootstrap-modal.js"></script>
-    <script src="..//assets/js/bootstrap-dropdown.js"></script>
-    <script src="..//assets/js/bootstrap-scrollspy.js"></script>
-    <script src="..//assets/js/bootstrap-tab.js"></script>
-    <script src="..//assets/js/bootstrap-tooltip.js"></script>
-    <script src="..//assets/js/bootstrap-popover.js"></script>
-    <script src="..//assets/js/bootstrap-button.js"></script>
-    <script src="..//assets/js/bootstrap-collapse.js"></script>
-    <script src="..//assets/js/bootstrap-carousel.js"></script>
-    <script src="..//assets/js/bootstrap-typeahead.js"></script>
-    <script src="..//assets/js/bootstrap-affix.js"></script>
-    <script src="..//assets/js/holder/holder.js"></script>
-    <script src="..//assets/js/google-code-prettify/prettify.js"></script>
-    <script src="..//assets/js/application.js"></script>
-    <script>
-       window.uni_modal = function($title = '' , $url='',$size=""){
+window.uni_modal = function($title = '' , $url='',$size=""){
     start_load()
     $.ajax({
         url:$url,
         error:err=>{
             console.log()
-            alert("An error occured")
+            alert("An error occurred")
         },
         success:function(resp){
             if(resp){
@@ -271,18 +201,29 @@ include_once('header2.php');
 }
 
 function clearEmail() {
-  document.getElementById("forgot-password-form").reset();
+    document.getElementById("forgot-password-form").reset();
 }
 
-    // Hide the alert after 3 seconds
-    setTimeout(function(){
-      var alert = document.querySelector('.alert');
-      if (alert) {
+// Hide the alert after 3 seconds
+setTimeout(function(){
+    var alert = document.querySelector('.alert');
+    if (alert) {
         alert.style.display = 'none';
-      }
-    }, 3000);
+    }
+}, 3000);
 
-    </script>
-    
-  </body>
+document.getElementById("login-button").addEventListener("click", function() {
+    Swal.fire({
+        title: "Success!",
+        text: "You are successfully logged in!",
+        icon: "success",
+        confirmButtonText: "Ok",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            document.getElementById("login-form").submit();
+        }
+    });
+});
+</script>
+</body>
 </html>
