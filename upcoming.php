@@ -308,18 +308,17 @@
      <!-- upcoming section start -->
      <?php
 // Database connection setup
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "judging";
+$host = '127.0.0.1';
+	$username = 'u510162695_judging_root';
+	$password = '1Judging_root';  // Replace with the actual password
+	$dbname = 'u510162695_judging';
+	
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+	$conn = new mysqli($host, $username, $password, $dbname);
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+	if ($conn->connect_error) {
+	    die("Connection failed: " . $conn->connect_error);
+	}
 
 // Query to fetch upcoming events
 $sql = "SELECT `id`, `title`, `start_date`, `end_date`, `banner` FROM `upcoming_events` WHERE 1";

@@ -307,7 +307,7 @@
       <!-- Mainevent section start  -->
       <?php
 // Database connection using PDO
-$conn = new PDO('mysql:host=localhost;dbname=judging', 'root', '');
+$conn = new PDO('mysql:host=127.0.0.1;port=3306;dbname=u510162695_judging', 'u510162695_judging_root', '1Judging_root');
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 // Get current date
@@ -362,16 +362,17 @@ $conn = null; // Close the database connection
      <!-- ongoing section start -->
 <?php
 // Database connection
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "judging";
+$host = '127.0.0.1';
+	$username = 'u510162695_judging_root';
+	$password = '1Judging_root';  // Replace with the actual password
+	$dbname = 'u510162695_judging';
+	
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+	$conn = new mysqli($host, $username, $password, $dbname);
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+	if ($conn->connect_error) {
+	    die("Connection failed: " . $conn->connect_error);
+	}
 
 // Fetch data
 $sql = "SELECT `subevent_id`, `event_name`, `eventdate`, `eventtime`, `place`, `banner`, `view` FROM `sub_event` WHERE 1";
