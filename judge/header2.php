@@ -21,11 +21,25 @@
     <![endif]-->
 
     <!-- Le fav and touch icons -->
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="..//assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="..//assets/ico/apple-touch-icon-114-precomposed.png">
       <link rel="apple-touch-icon-precomposed" sizes="72x72" href="..//assets/ico/apple-touch-icon-72-precomposed.png">
                     <link rel="apple-touch-icon-precomposed" href="..//assets/ico/apple-touch-icon-57-precomposed.png">
                                    <!-- <link rel="shortcut icon" href="ejs_logo.png"> -->
+<<<<<<< HEAD
+=======
+=======
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <!-- <link rel="shortcut icon" href="../img/logo.png"> -->
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
                                 
  
   </head>

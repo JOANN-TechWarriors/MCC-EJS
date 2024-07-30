@@ -96,10 +96,24 @@ thead th {
              
               <h5><i class="icon-lock"></i>  PASSWORD:</h5>
               <input style="font-size: large; height: 35px !important; text-indent: 7px !important;" class="form-control btn-block" type="password"  name="password" placeholder="Password" required="true" />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
             <br /><br />
               <button id="login-button" style="width: 150px !important;" type="button" class="btn btn-primary pull-right"><i class="icon-ok"></i> <strong>LOGIN</strong></button>
               
               
+<<<<<<< HEAD
+=======
+=======
+            
+              <button id="login-button" style="width: 100px !important;" type="button" class="btn btn-primary pull-right"><i class="icon-ok"></i> <strong>LOGIN</strong></button>
+              
+              
+              
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
              </td>
              </tr>
              </table>
@@ -111,6 +125,13 @@ thead th {
   </div>
 </div>
    
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+   
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
 
 <!-- Le javascript
 ================================================== -->
@@ -142,7 +163,15 @@ window.onload = function() {
             icon: "success"
         }).then((result) => {
             if (result.isConfirmed) {
+<<<<<<< HEAD
                 window.location.href = "dashboard.php";
+=======
+<<<<<<< HEAD
+                window.location.href = "dashboard.php";
+=======
+                window.location.href = "score_sheets.php";
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
             }
         });
         <?php unset($_SESSION['login_success']); ?>

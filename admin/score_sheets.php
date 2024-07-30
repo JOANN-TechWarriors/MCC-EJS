@@ -17,6 +17,19 @@ include('session.php');
             padding: 0;
         }
 
+        .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 250px;
+        background-color: #27293d;
+        color: #fff;
+        padding-top: 20px;
+        transition: all 0.3s;
+        overflow: hidden;
+    }
+
         .sidebar-heading {
             text-align: center;
             padding: 10px 0;
@@ -24,6 +37,10 @@ include('session.php');
             margin-bottom: 10px;
         }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
         .sidebar {
             position: fixed;
             top: 0;
@@ -35,6 +52,7 @@ include('session.php');
             padding-top: 60px;
             transition: all 0.3s;
             overflow: hidden;
+<<<<<<< HEAD
         }
 
         .sidebar.collapsed {
@@ -59,8 +77,112 @@ include('session.php');
         .sidebar-heading img {
             max-width: 100px;
             max-height: 100px;
+=======
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
         }
 
+        .sidebar.collapsed {
+            width: 80px;
+        }
+
+        .sidebar .toggle-btn {
+            position: absolute;
+            top: 15px;
+            right: -0px;
+            background-color: transparent;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .sidebar .toggle-btn i {
+            font-size: 18px;
+        }
+
+        .sidebar-heading img {
+            max-width: 100px;
+            max-height: 100px;
+=======
+.logo-container {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.logo-img {
+    max-width: 100%;
+    height: auto;
+}
+
+.header-text {
+    display: block;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+        .sidebar {
+            position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 250px;
+        background-color: #27293d;
+        color: #fff;
+        padding-top: 20px;
+        transition: all 0.3s;
+        overflow: hidden;
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
+        }
+
+        .sidebar.collapsed {
+            width: 80px;
+        }
+
+        .sidebar .toggle-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: transparent;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .sidebar .toggle-btn i {
+        font-size: 20px;
+    }
+
+    .sidebar-heading {
+        text-align: center;
+        padding: 10px 0;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+        .sidebar-heading img {
+            max-width: 100px;
+            max-height: 100px;
+        }
+
+        .logo-container {
+    display: block;
+    margin-bottom: 10px;
+  }
+     .logo-img {
+    max-width: 100%;
+    height: auto;
+}
+
+.header-text {
+    display: block;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+    .sidebar-heading img {
+        max-width: 50px;
+        max-height: 50px;
+    }
         .sidebar ul {
             list-style-type: none;
             padding: 0;
@@ -118,6 +240,10 @@ include('session.php');
             margin-left: 260px;
             padding: 20px;
         }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
 
         button.accordion {
             background-color: #eee;
@@ -164,11 +290,21 @@ include('session.php');
                 height: auto;
                 position: relative;
             }
+=======
 
-            .main {
-                margin-left: 0;
-            }
+        button.accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
         }
+<<<<<<< HEAD
     </style>
 </head>
 
@@ -180,6 +316,160 @@ include('session.php');
             <img src="../img/logo.png" alt="Logo">
             <div>Event Judging System</div>
         </div>
+=======
+
+        button.accordion.active,
+        button.accordion:hover {
+            background-color: #ddd;
+        }
+
+        button.accordion:after {
+            content: '\002B';
+            color: #777;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+        button.accordion.active:after {
+            content: "\2212";
+        }
+
+        div.panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+
+        .header {
+        background-color: #f8f9fa;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .header .profile-dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .header .profile-dropdown img {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+    }
+
+    .header .profile-dropdown .dropdown-menu {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        overflow: hidden;
+        z-index: 1000;
+    }
+
+    .header .profile-dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+    .header .profile-dropdown .dropdown-menu a {
+        display: block;
+        padding: 10px;
+        color: #333;
+        text-decoration: none;
+    }
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
+
+    .header .profile-dropdown .dropdown-menu a:hover {
+        background-color: #f1f1f1;
+    }
+
+    @media (max-width: 768px) {
+        .sidebar {
+            width: 100%;
+            height: auto;
+            position: relative;
+            overflow: visible;
+        }
+<<<<<<< HEAD
+    </style>
+</head>
+
+<body>
+
+<div class="sidebar" id="sidebar">
+        <button class="toggle-btn" id="toggle-btn">☰</button>
+        <div class="sidebar-heading">
+            <img src="../img/logo.png" alt="Logo">
+            <div>Event Judging System</div>
+        </div>
+=======
+
+        .sidebar.collapsed {
+            width: 100%;
+        }
+
+        .main {
+            margin-left: 0;
+        }
+
+        .sidebar .toggle-btn {
+            display: block;
+        }
+    }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+        .sidebar-heading {
+            font-size: 14px;
+        }
+
+        .sidebar ul li a {
+            font-size: 14px;
+        }
+
+        .header {
+            padding: 5px 10px;
+        }
+
+        .header .profile-dropdown img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .chart-container {
+            height: 300px;
+        }
+
+    .chart-container {
+        position: relative;
+        height: 400px;
+        width: 100%;
+    }
+}
+    
+</style>
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <button class="toggle-btn" id="toggle-btn">☰</button>
+        <br><br>
+        <div class="sidebar-heading">
+    <div class="logo-container">
+        <img src="../img/logo.png" alt="Logo" class="logo-img">
+    </div>
+    <span class="header-text">Event Judging System</span>
+</div>
+
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
         <ul>
             <li><a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> <span>DASHBOARD</span></a></li>
             <li><a href="home.php"><i class="fas fa-calendar-check"></i> <span>ONGOING EVENTS</span></a></li>
@@ -189,6 +479,10 @@ include('session.php');
         </ul>
     </div>
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
     <!-- Subhead ================================================== -->
     <div class="main" id="main-content">
         <div class="container">
@@ -213,6 +507,50 @@ include('session.php');
             </div>
         </div>
 
+<<<<<<< HEAD
+=======
+=======
+    <!-- Header -->
+    <div class="header">
+        <div>
+            <!-- Add any left-aligned content here if needed -->
+        </div>
+        <div class="profile-dropdown">
+           <div style="font-size:small;"> <?php echo $name; ?></div>
+            <div class="dropdown-menu">
+                <a href="edit_organizer.php"> Account Settings</a>
+                <a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> <span>LOGOUT</span></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Subhead ================================================== -->
+    <div class="main" id="main-content">
+        <div class="container">
+            <h1>Score Sheets</h1>
+        </div>
+
+        <div class="span15">
+            <br />
+            <div class="col-md-15">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="dashboard.php">Dashboard</a> /
+                    </li>
+                    <li>
+                        <a href="#">Ongoing Events</a> /
+                    </li>
+                    <li>
+                        <a href="#">Upcoming Events</a> /
+                    </li>
+                    <li>Score Sheets</li>
+                </ul>
+            </div>
+        </div>
+
+        
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
 <?php
     
     $sy_query = $conn->query("select * FROM main_event where organizer_id='$session_id' AND status='activated'") or die(mysql_error());
@@ -356,7 +694,29 @@ include('session.php');
     <script src="..//assets/js/application.js"></script>
 
     <script>
+<<<<<<< HEAD
        
+=======
+<<<<<<< HEAD
+       
+=======
+        document.getElementById('logout').addEventListener('click', function(event) {
+            event.preventDefault();
+            Swal.fire({
+                title: 'Are you sure you want to log out?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes',
+                cancelButtonText: 'No'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = '..//index.php';
+                }
+            });
+        });
+
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
         document.getElementById("toggle-btn").addEventListener("click", function () {
             var sidebar = document.getElementById("sidebar");
             var mainContent = document.getElementById("main-content");

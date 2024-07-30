@@ -45,7 +45,7 @@
 </head>
 <body>
     <div class="navbar">
-        <img src="ejs_logo.png" alt="MCC Event JUdging System">
+        <img src="../img/logo.png" alt="MCC Event JUdging System">
         <div class="links">
             <a href="#about">About</a>
             <a href="#upcoming">Upcoming Events</a>

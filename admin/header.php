@@ -6,7 +6,14 @@
     <meta name="description" content=""/>
     <meta name="author" content=""/>
     <link rel="shortcut icon" href="../img/logo.png"/>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
     <title>Event Judging System</title>
+=======
+    <title>MCC Event Judging System</title>
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
 
     <!-- Bootstrap core CSS -->
     <link href="..//includes/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>

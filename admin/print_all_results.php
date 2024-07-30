@@ -3,7 +3,11 @@
    include('header2.php');
     include('session.php');
     
- $active_main_event=$_GET['main_event_id'];
+    if (isset($_GET['main_event_id'])) {
+      $active_main_event = $_GET['main_event_id'];
+  } else {
+      die("Error: 'main_event_id' is not set.");
+  }
     ?> 
  
      
@@ -49,7 +53,10 @@
              <center>
              
              
+<<<<<<< HEAD
              <?php include('doc_header.php'); ?>
+=======
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
              
  
              <table >
@@ -192,6 +199,13 @@ $jname_row = $jname_query->fetch();
    </table> 
  
 <?php } ?>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<h1 style="font-size:15.5px;">Organizing Committee</h1>
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
 
      <table align="center">  
               <tr>

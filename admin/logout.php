@@ -9,6 +9,6 @@ $conn->query("update user set time_logout='$date_logout' where user_id='$session
 	session_destroy();
     
  
-	header('location:index.php');
+	header('location:../index.php');
     
 ?>

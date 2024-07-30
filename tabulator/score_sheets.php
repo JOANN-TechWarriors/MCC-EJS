@@ -7,7 +7,15 @@ include('..//admin/session.php');
 ?>
 
 <head>
+<<<<<<< HEAD
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+=======
+<<<<<<< HEAD
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+=======
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         body {
@@ -26,6 +34,10 @@ include('..//admin/session.php');
 
         .sidebar {
             position: fixed;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
             top: 0;
             left: 0;
             height: 100%;
@@ -35,6 +47,20 @@ include('..//admin/session.php');
             padding-top: 60px;
             transition: all 0.3s;
             overflow: hidden;
+<<<<<<< HEAD
+=======
+=======
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 250px;
+        background-color: #27293d;
+        color: #fff;
+        padding-top: 20px;
+        transition: all 0.3s;
+        overflow: hidden;
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
         }
 
         .sidebar.collapsed {
@@ -43,9 +69,21 @@ include('..//admin/session.php');
 
         .sidebar .toggle-btn {
             position: absolute;
+<<<<<<< HEAD
             top: 15px;
             right: -0px;
             background-color: transparent;
+=======
+<<<<<<< HEAD
+            top: 15px;
+            right: -0px;
+            background-color: transparent;
+=======
+            top: 20px;
+            right: 20px;
+            background-color: #27293d;
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
             color: #fff;
             border: none;
             cursor: pointer;
@@ -53,6 +91,10 @@ include('..//admin/session.php');
         }
 
         .sidebar .toggle-btn i {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
             font-size: 18px;
         }
 
@@ -61,6 +103,43 @@ include('..//admin/session.php');
             max-height: 100px;
         }
 
+<<<<<<< HEAD
+=======
+=======
+            font-size: 20px;
+        }
+
+        .sidebar-heading {
+        text-align: center;
+        padding: 10px 0;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .logo-container {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.logo-img {
+    max-width: 100%;
+    height: auto;
+}
+
+.header-text {
+    display: block;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+        .sidebar-heading img {
+            max-width: 50px;
+            max-height: 50px;
+        }
+
+
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
         .sidebar ul {
             list-style-type: none;
             padding: 0;
@@ -156,6 +235,10 @@ include('..//admin/session.php');
             overflow: hidden;
             transition: max-height 0.2s ease-out;
         }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
         .header {
         background-color: #f8f9fa;
         padding: 10px 20px;
@@ -203,6 +286,11 @@ include('..//admin/session.php');
         background-color: #f1f1f1;
     }
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
@@ -216,6 +304,10 @@ include('..//admin/session.php');
                 margin-left: 0;
             }
         }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
         @media (max-width: 576px) {
         
         .header {
@@ -228,6 +320,11 @@ include('..//admin/session.php');
         }
 
     }
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
     </style>
 </head>
 
@@ -235,16 +332,39 @@ include('..//admin/session.php');
 
 <div class="sidebar" id="sidebar">
         <button class="toggle-btn" id="toggle-btn">☰</button>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
         <div class="sidebar-heading">
             <img src="../img/logo.png" alt="Logo">
             <div>Event Judging System</div>
         </div>
         <ul>
             <li><a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> <span>DASHBOARD</span></a></li>
+<<<<<<< HEAD
+=======
+=======
+        <br><br>
+        <div class="sidebar-heading">
+    <div class="logo-container">
+        <img src="../img/logo.png" alt="Logo" class="logo-img">
+    </div>
+    <span class="header-text">MCC Event Judging System</span>
+</div>
+
+        <ul>
+            <li><a href="#"><i class="fas fa-tachometer-alt"></i> <span>DASHBOARD</span></a></li>
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
             <li><a href="#"><i class="fas fa-calendar-check"></i> <span>ONGOING EVENTS</span></a></li>
             <li><a href="#"><i class="fas fa-calendar-alt"></i> <span>UPCOMING EVENTS</span></a></li>
             <li><a href="score_sheets.php"><i class="fas fa-clipboard-list"></i> <span>SCORE SHEETS</span></a></li>
             <li><a href="#"><i class="fas fa-chart-line"></i> <span>DATA REVIEWS</span></a></li>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
         </ul>
     </div>
 
@@ -261,6 +381,15 @@ include('..//admin/session.php');
         </div>
     </div>
 
+<<<<<<< HEAD
+=======
+=======
+            <li><a href="..//index.php" id="logout"><i class="fas fa-sign-out-alt"></i> <span>LOGOUT</span></a></li>
+        </ul>
+    </div>
+
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
     <!-- Subhead ================================================== -->
     <div class="main" id="main-content">
         <div class="container">

@@ -10,6 +10,7 @@
   <body>
     
     <div class="container">
+<<<<<<< HEAD
       <div class="col-lg-3"></div>
       <div class="col-lg-6">
         <div class="panel panel-primary">
@@ -81,6 +82,96 @@
       </div>
       <div class="col-lg-3"></div>
     </div>
+=======
+
+  <div class="col-lg-3">
+ 
+  </div>
+  <div class="col-lg-6">
+ <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Event Organizer Registration Form</h3>
+            </div>
+            <div class="panel-body">
+            
+   <form method="POST">
+   
+   
+        
+       
+        
+    <table align="center">
+    <tr><td colspan="5"><strong>Basic Information</strong><hr /></td></tr>
+    <tr>
+    <td>
+    Firstname:
+    <input type="text" name="fname" class="form-control" placeholder="Firstname" aria-describedby="basic-addon1" required autofocus>
+ </td>
+    <td>&nbsp;</td>
+    <td>
+    Middlename:
+    <input type="text" name="mname" class="form-control" placeholder="Middlename" aria-describedby="basic-addon1" required autofocus>
+ </td>
+    <td>&nbsp;</td>
+    <td>
+    Lastname:
+    <input type="text" name="lname" class="form-control" placeholder="Lastname" aria-describedby="basic-addon1" required autofocus>
+ </td>
+    </tr>
+    
+    <tr><td colspan="5">&nbsp;</td></tr>
+    <tr><td colspan="5"><strong>Notification Information</strong><hr /></td></tr>
+    <tr>
+    <td>
+    Email:
+    <input type="text" name="email" class="form-control" placeholder="Email" aria-describedby="basic-addon1" required autofocus>
+ </td>
+    </tr>
+    
+    
+     <tr><td colspan="5">&nbsp;</td></tr>
+     <tr><td colspan="5"><strong>Account Security</strong><hr /></td></tr>
+     <tr>
+    <td>
+    Username:
+    <input type="text" name="username" class="form-control" placeholder="Username" aria-describedby="basic-addon1" required autofocus>
+ </td>
+    <td>&nbsp;</td>
+    <td>
+    Password:
+    <input id="password" type="password" name="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1" required="true" autofocus="true" />
+ </td>
+    <td>&nbsp;</td>
+    <td>
+    Re-type Password:
+    <input id="confirm_password" type="password" name="password2" class="form-control" placeholder="Re-type Password" aria-describedby="basic-addon1" required="true" autofocus="true" />
+ </td>
+    </tr>
+    
+    <tr>
+    <td colspan="4">&nbsp;</td>
+    <td><span id='message'></span></td>
+    </tr>
+    
+    
+    </table>
+ <br />
+       <div class="btn-group pull-right">
+  <a href="index.php" type="button" class="btn btn-default">Cancel</a>
+  <button name="register" type="submit" class="btn btn-primary">Register</button>
+   </form>
+</div>
+ 
+    
+            </div>
+          </div>
+  </div>
+  <div class="col-lg-3">
+ 
+  </div>
+ 
+          </div>
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
           
     <!-- Footer -->
     <footer class="footer">

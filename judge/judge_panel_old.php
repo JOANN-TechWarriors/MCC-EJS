@@ -5,7 +5,7 @@
   <?php
   error_reporting(0);
    include('header2.php');
-    include('session.php');
+    include('../admin/session.php');
     $judge_ctr=$_GET['judge_ctr'];
     $subevent_id=$_GET['subevent_id'];
     $getContestant_id=$_GET['contestant_id'];
@@ -59,12 +59,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-               <a class="brand" href="#"><img src="uploads/<?php echo $company_logo; ?>" width="23" height="23" />&nbsp; <font size="3">EventJudging System</font></a>
+               <a class="brand" href="#"><img src="../img/logo.png<?php echo $company_logo; ?>" width="23" height="23" />&nbsp; <font size="3">EventJudging System</font></a>
           <div class="nav-collapse collapse">
             <ul class="nav">
  
               <li>
-                <a href="selection.php">&laquo; Back to <i><strong>Dashboard</strong></i></a>
+                <a href=".php">&laquo; Back to <i><strong>Dashboard</strong></i></a>
               </li>
               
            
@@ -495,7 +495,7 @@ if($getContestant_id=="allTally")
                                           <table border="0">
                                           
                                           <tr>
-                                          <td rowspan="3" width="10"><img src="uploads/<?php echo $company_logo; ?>" width="35" height="35" /> <br /><br /><br /> <br /> <br /> <br /></td>
+                                          <td rowspan="3" width="10"><img src="../img/logo.png<?php echo $company_logo; ?>" width="35" height="35" /> <br /><br /><br /> <br /> <br /> <br /></td>
                                          </tr>
                                          <tr>
                                           <td align="center">

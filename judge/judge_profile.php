@@ -29,7 +29,15 @@ else
 <script>
 alert('Please enter code');
  			
+<<<<<<< HEAD
 window.location = 'index.php';
+=======
+<<<<<<< HEAD
+window.location = 'index.php';
+=======
+window.location = 'welcome.php';
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
 </script>
     
 <?php }

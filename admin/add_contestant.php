@@ -250,6 +250,13 @@
     
    <input name="fullname" placeholder="Enter Name" type="text" class="form-control" required="true" /></td>
    </tr>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+   <input name="addon" placeholder="Enter Name" type="text" class="form-control" required="true" /></td>
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
 
    
    <td>
@@ -318,6 +325,41 @@ if(isset($_POST['add_contestant'])) {
 }
 ?>
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+if(isset($_POST['add_contestant']))
+{
+    
+    $se_name=$_POST['se_name'];
+    $sub_event_id=$_POST['sub_event_id'];
+    $contestant_ctr=$_POST['contestant_ctr'];
+    $picture=$_POST['picture'];
+    $fullname=$_POST['fullname'];
+    $course=$_POST['addon'];
+    $picture=$_FILES['picture']['name'];
+    $target = 'img/'.basename($picture);
+    
+  
+   /* contestants */
+   
+    $conn->query("insert into contestants(fullname,subevent_id,contestant_ctr,picture, AddOn)VALUES('$fullname','$sub_event_id','$contestant_ctr','$picture', '$course' )");
+   move_uploaded_file($_FILES['picture']['tmp_name'],$target);
+  
+ ?>
+<script>
+			                                      
+			      								window.location = 'sub_event_details_edit.php?sub_event_id=<?php echo $sub_event_id;?>&se_name=<?php echo $se_name;?>';
+			      							   	alert('Contestant <?php echo $fullname; ?>  added successfully!');						
+			      								</script>
+<?php  
+ 
+ 
+} ?>
+  
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
 <?php include('footer.php'); ?>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->

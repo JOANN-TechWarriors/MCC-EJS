@@ -3,7 +3,7 @@
    
    <?php
    include('header2.php');
-    include('session.php');
+    include('../admin/session.php');
     ?>
 <head>
 <style>
@@ -57,7 +57,7 @@ div.panel {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-             <a class="brand" href="#"><img src="uploads/<?php echo $company_logo; ?>" width="23" height="23" />&nbsp; <font size="3">Event Judging System</font></a> 
+             <a class="brand" href="#"><img src="img/<?php echo $company_logo; ?>" width="23" height="23" />&nbsp; <font size="3">Event Judging System</font></a> 
  
           <div class="nav-collapse collapse">
             <ul class="nav">
@@ -73,7 +73,7 @@ div.panel {
               
             
                <li>
-                  <a href="dataview.php"><strong>DATA REVIEWS</strong></a>
+                  <a href="../admin/dataview.php"><strong>DATA REVIEWS</strong></a>
               </li>
  
               
@@ -85,11 +85,11 @@ div.panel {
  
               
               <li>
-                  <a target="_blank" href="edit_organizer.php">Settings</a>
+                  <a target="_blank" href="../admin/edit_organizer.php">Settings</a>
               </li>
  
               <li>
-                <a href="logout.php">Logout <?php echo $name; ?></a>
+                <a href="../admin/logout.php">Logout <?php echo $name; ?></a>
               </li>
 
       
@@ -108,7 +108,7 @@ div.panel {
               
             
                <li>
-                  <a href="dataview.php">Data Reviews</a>
+                  <a href="../admin/dataview.php">Data Reviews</a>
               </li>
  
               
@@ -120,11 +120,11 @@ div.panel {
  
               
               <li>
-                  <a target="_blank" href="edit_organizer.php"></a>
+                  <a target="_blank" href="../admin/edit_organizer.php"></a>
               </li>
  
               <li>
-                <a href="logout.php">Logout <?php echo $name; ?></a>
+                <a href="../admin/logout.php">Logout <?php echo $name; ?></a>
               </li>
               
               
@@ -136,7 +136,7 @@ div.panel {
                 
                 
               
-                 <li> <a href="logout.php">Tabulator: <b><?php echo $tabname ;?></b> - <i>logout</i></a></li>
+                 <li> <a href="../admin/logout.php">Tabulator: <b><?php echo $tabname ;?></b> - <i>logout</i></a></li>
  
                <?php  } ?>
  
@@ -293,7 +293,7 @@ $MEidxxx=$sy_row['mainevent_id'];
             </tbody>
      
           </table>
-          <br / >
+          <br/ >
         <hr />  
         
         </div>
@@ -318,7 +318,7 @@ $MEidxxx=$sy_row['mainevent_id'];
   </div>
  
 
-    <?php include('footer.php'); ?>
+    <?php include('../admin/footer.php'); ?>
 
 
     <!-- Le javascript

@@ -540,7 +540,7 @@ CREATE TABLE `organizer` (
 --
 
 INSERT INTO `organizer` (`organizer_id`, `fname`, `mname`, `lname`, `username`, `password`, `email`, `pnum`, `txt_poll_num`, `access`, `org_id`, `status`, `company_name`, `company_address`, `company_logo`, `company_telephone`, `company_email`, `company_website`, `reset_token`, `reset_expires`) VALUES
-(19, 'CHRISTIAN PAUL', 'LANORIAS', 'SALVADO', 'blue', 'blue', 'salvadochristianpaul5@gmail.com', '09385974999', '09385974999', 'Organizer', '', 'online', '', 'BANTAYAN ISLAND CEBU', '52985-ejs_logo.png', '000-0000', '', '', '12345abcde', '2023-05-07 14:21:21'),
+(19, 'CHRISTIAN PAUL', 'LANORIAS', 'SALVADO', 'blue', 'blue', 'salvadochristianpaul5@gmail.com', '09385974999', '09385974999', 'Organizer', '', 'online', '', 'BANTAYAN ISLAND CEBU', '', '000-0000', '', '', '12345abcde', '2023-05-07 14:21:21'),
 (20, 'JOHN PAUL', '', 'UNGON', 'red', 'red', 'evas.jygona@gmail.com', '', '', 'Tabulator', '19', 'offline', '', '', '', '', '', '', '', NULL),
 (27, 'user', 'user', 'user', 'user', 'user', '', '', '09078262015', 'Organizer', '', 'offline', '', '', '', '', '', '', '', NULL),
 (28, 'black', 'black', 'black', '123', '123', '', '', '', 'Organizer', '', 'offline', '', '', '', '', '', '', '', NULL),
@@ -1142,6 +1142,13 @@ ALTER TABLE `textpoll`
 --
 ALTER TABLE `upcoming_events`
   ADD PRIMARY KEY (`id`);
+
+  -- Adding columns to table `upcoming_events`
+--
+ALTER TABLE `upcoming_events`
+  ADD COLUMN event_time TIME,
+  ADD COLUMN place TEXT,
+  ADD COLUMN banner_image VARCHAR(255);
 
 --
 -- AUTO_INCREMENT for dumped tables

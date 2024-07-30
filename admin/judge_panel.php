@@ -1096,14 +1096,30 @@ if($getContestant_id=="allTally")
                                         <div class="container">
                                           <center>
                                           
+<<<<<<< HEAD
                                           <font size="3" class="pull-center"><strong> Event Judging  System &COPY; <?= date("Y") ?>  </strong></font> <br />
+=======
+<<<<<<< HEAD
+                                          <font size="3" class="pull-center"><strong> Event Judging  System &COPY; <?= date("Y") ?>  </strong></font> <br />
+=======
+                                          <font size="4">Event Judging System &middot; 20224 &COPY;</font>
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
                                           <hr />
                                           
                                           
                                           <table border="0">
       
                                           <tr>
+<<<<<<< HEAD
                                           <td align="center"><img src="../uploads/<?php echo $company_logo; ?>" width="35" height="35" /></td>
+=======
+<<<<<<< HEAD
+                                          <td align="center"><img src="../uploads/<?php echo $company_logo; ?>" width="35" height="35" /></td>
+=======
+                                          <td align="center"><img src="img/<?php echo $company_logo; ?>" width="35" height="35" /></td>
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
+>>>>>>> a5ec8fbde936fd4071677a935f3a0a5f26f98f6f
                                          </tr>
                                          <tr>
                                           <td align="center">
