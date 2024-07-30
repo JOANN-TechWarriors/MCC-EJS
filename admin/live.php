@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <link rel="shortcut icon" href="img/logo.png"/>
+      <link rel="shortcut icon" href="../img/logo.png"/>
       <title>Event Judging System</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
@@ -379,38 +379,7 @@
 
 
       <!-- blog section start -->
-      <div class="blog_section layout_padding">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12" style="z-index:-1000;">
-                  <h1 class="about_taital">Our Blog</h1>
-               </div>
-            </div>
-            <div class="blog_section_2">
-               <div class="row">
-                  <div class="col-md-6" style="z-index:-1000;">
-                     <div class="blog_box" >
-                        <div class="blog_img" ><img src="#"></div>
-                        <h4 class="date_text" >05 April</h4>
-                        <h4 class="prep_text"><Em>Event</Em></h4>
-                        <p class="lorem_text">distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a moredistracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more</p>
-                     </div>
-                     <div class="read_btn"><a href="#">Read More</a></div>
-                  </div>
-                  <div class="col-md-6" style="z-index:-1000;">
-                     <div class="blog_box">
-                        <div class="blog_img"><img src="#"></div>
-                        <h4 class="date_text">05 April</h4>
-                        <h4 class="prep_text">Event</h4>
-                        <p class="lorem_text">distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a moredistracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more</p>
-                     </div>
-                     <div class="read_btn"><a href="#">Read More</a></div>
-                     <br><br><br>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
+      
       <!-- blog section end -->
       <!-- footer section start -->
       <div class="footer_section layout_padding">
