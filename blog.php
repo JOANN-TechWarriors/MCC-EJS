@@ -13,7 +13,8 @@
     </div>
 
     <script>
-        const streamUrl = 'http://localhost/jj/mccevent/live.php'; // URL to fetch the video stream
+        // Use the URL where the video stream or recording is accessible
+        const streamUrl = 'https://mcceventsjudging.com/admin/live.php'; // Replace with the correct URL
         const videoElement = document.getElementById('liveStream');
         videoElement.src = streamUrl;
 
