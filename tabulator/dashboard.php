@@ -7,7 +7,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <meta name="theme-color" content="#3e454c">
-<link rel="shortcut icon" href="../admin/ejs_logo.png"/>
+<link rel="shortcut icon" href="../img/logo.png"/>
 <title>Event Judging System</title> 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -221,7 +221,7 @@
         <button class="toggle-btn" id="toggle-btn">☰</button>
         <br><br>
         <div class="sidebar-heading">
-            <img src="../admin/ejs_logo.png" alt="Logo">
+            <img src="../img/logo.png" alt="Logo">
             <span>Event Judging System</span>
         </div>
         <ul>

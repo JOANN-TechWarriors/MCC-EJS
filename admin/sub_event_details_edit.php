@@ -184,7 +184,7 @@ $se_row = $se_query->fetch();
   <div class="sidebar" id="sidebar">
     <button class="toggle-btn" id="toggle-btn">☰</button>
     <div class="sidebar-heading">
-      <img src="ejs_logo.png" alt="Logo">
+      <img src="../img/logo.png" alt="Logo">
       <div>Event Judging System</div>
     </div>
     <ul>

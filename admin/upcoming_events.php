@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="shortcut icon" href="ejs_logo.png"/>
+  <link rel="shortcut icon" href="../img/logo.png"/>
   <title>Event Judging System</title>  
   <link href="..//assets/fullcalendar/main.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
