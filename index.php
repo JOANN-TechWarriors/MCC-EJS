@@ -163,8 +163,9 @@
             opacity: 0.5;
         }
         .home{
-            background-size: auto;
-            background-position: center;
+            background-size: 100% 100%; /* Adjust width and height as needed */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Prevent image from repeating */
           
         }
         @media screen and (min-width: 768px) and (max-width: 1024px) {
