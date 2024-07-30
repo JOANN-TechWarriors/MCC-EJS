@@ -7,7 +7,11 @@ include('..//admin/session.php');
 ?>
 
 <head>
+<<<<<<< HEAD
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+=======
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         body {
@@ -26,6 +30,17 @@ include('..//admin/session.php');
 
         .sidebar {
             position: fixed;
+<<<<<<< HEAD
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 250px;
+            background-color: #333;
+            color: #fff;
+            padding-top: 60px;
+            transition: all 0.3s;
+            overflow: hidden;
+=======
         top: 0;
         left: 0;
         height: 100%;
@@ -35,6 +50,7 @@ include('..//admin/session.php');
         padding-top: 20px;
         transition: all 0.3s;
         overflow: hidden;
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
         }
 
         .sidebar.collapsed {
@@ -43,9 +59,15 @@ include('..//admin/session.php');
 
         .sidebar .toggle-btn {
             position: absolute;
+<<<<<<< HEAD
+            top: 15px;
+            right: -0px;
+            background-color: transparent;
+=======
             top: 20px;
             right: 20px;
             background-color: #27293d;
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
             color: #fff;
             border: none;
             cursor: pointer;
@@ -53,6 +75,16 @@ include('..//admin/session.php');
         }
 
         .sidebar .toggle-btn i {
+<<<<<<< HEAD
+            font-size: 18px;
+        }
+
+        .sidebar-heading img {
+            max-width: 100px;
+            max-height: 100px;
+        }
+
+=======
             font-size: 20px;
         }
 
@@ -85,6 +117,7 @@ include('..//admin/session.php');
         }
 
 
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
         .sidebar ul {
             list-style-type: none;
             padding: 0;
@@ -180,6 +213,56 @@ include('..//admin/session.php');
             overflow: hidden;
             transition: max-height 0.2s ease-out;
         }
+<<<<<<< HEAD
+        .header {
+        background-color: #f8f9fa;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .header .profile-dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .header .profile-dropdown img {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+    }
+
+    .header .profile-dropdown .dropdown-menu {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        overflow: hidden;
+        z-index: 1000;
+    }
+
+    .header .profile-dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+    .header .profile-dropdown .dropdown-menu a {
+        display: block;
+        padding: 10px;
+        color: #333;
+        text-decoration: none;
+    }
+
+    .header .profile-dropdown .dropdown-menu a:hover {
+        background-color: #f1f1f1;
+    }
+
+=======
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
@@ -193,6 +276,21 @@ include('..//admin/session.php');
                 margin-left: 0;
             }
         }
+<<<<<<< HEAD
+        @media (max-width: 576px) {
+        
+        .header {
+            padding: 5px 10px;
+        }
+
+        .header .profile-dropdown img {
+            width: 30px;
+            height: 30px;
+        }
+
+    }
+=======
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
     </style>
 </head>
 
@@ -200,6 +298,14 @@ include('..//admin/session.php');
 
 <div class="sidebar" id="sidebar">
         <button class="toggle-btn" id="toggle-btn">☰</button>
+<<<<<<< HEAD
+        <div class="sidebar-heading">
+            <img src="../img/logo.png" alt="Logo">
+            <div>Event Judging System</div>
+        </div>
+        <ul>
+            <li><a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> <span>DASHBOARD</span></a></li>
+=======
         <br><br>
         <div class="sidebar-heading">
     <div class="logo-container">
@@ -210,14 +316,34 @@ include('..//admin/session.php');
 
         <ul>
             <li><a href="#"><i class="fas fa-tachometer-alt"></i> <span>DASHBOARD</span></a></li>
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
             <li><a href="#"><i class="fas fa-calendar-check"></i> <span>ONGOING EVENTS</span></a></li>
             <li><a href="#"><i class="fas fa-calendar-alt"></i> <span>UPCOMING EVENTS</span></a></li>
             <li><a href="score_sheets.php"><i class="fas fa-clipboard-list"></i> <span>SCORE SHEETS</span></a></li>
             <li><a href="#"><i class="fas fa-chart-line"></i> <span>DATA REVIEWS</span></a></li>
+<<<<<<< HEAD
+        </ul>
+    </div>
+
+    <!-- Header -->
+    <div class="header">
+        <div>
+            <!-- Add any left-aligned content here if needed -->
+        </div>
+        <div class="profile-dropdown">
+           <div style="font-size:small;"> <?php echo $tabname ;?></div>
+            <div class="dropdown-menu">
+                <a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> <span>LOGOUT</span></a>
+            </div>
+        </div>
+    </div>
+
+=======
             <li><a href="..//index.php" id="logout"><i class="fas fa-sign-out-alt"></i> <span>LOGOUT</span></a></li>
         </ul>
     </div>
 
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
     <!-- Subhead ================================================== -->
     <div class="main" id="main-content">
         <div class="container">

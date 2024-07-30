@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+<<<<<<< HEAD
+    <link rel="shortcut icon" href="..//admin/ejs_logo.png"/>
+=======
     <link rel="shortcut icon" href="../img/logo.png"/>
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
     <title>Event Judging System</title>
     <!-- Le styles -->
     <link href="..//assets/css/bootstrap.css" rel="stylesheet">
