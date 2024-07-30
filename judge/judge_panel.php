@@ -1,10 +1,10 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
  
   <?php
   error_reporting(0);
    include('header2.php');
-    include('../admin/session.php');
+    include('session.php');
     $judge_ctr=$_GET['judge_ctr'];
     $subevent_id=$_GET['subevent_id'];
     $getContestant_id=$_GET['contestant_id'];
@@ -81,11 +81,7 @@
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
               <li>
-<<<<<<< HEAD
                 <a href="..//index.php">Logout</a>
-=======
-                <a href="../index.php">Logout</a>
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
               </li>
               
       
@@ -179,11 +175,7 @@ while ($cont_row = $cont_query->fetch()) {
     
     <?php if($getContestant_id=="allTally"){?>
     <li class="active" ><a href="judge_panel.php?judge_ctr=<?php echo $judge_ctr; ?>&subevent_id=<?php echo $subevent_id; ?>&contestant_id=allTally"><strong>View Tally</strong></a></li>
-<<<<<<< HEAD
       <li><a href="..//index.php"><strong><font color="red">Exit</font></strong></a></li>
-=======
-      <li><a href="../index.php"><strong><font color="red">Exit</font></strong></a></li>
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
     <?php }else{ ?>
         
         <li class="" ><a href="judge_panel.php?judge_ctr=<?php echo $judge_ctr; ?>&subevent_id=<?php echo $subevent_id; ?>&contestant_id=allTally">View Tally</a></li>
@@ -1103,22 +1095,14 @@ if($getContestant_id=="allTally")
                                         <div class="container">
                                           <center>
                                           
-<<<<<<< HEAD
                                           <font size="3" class="pull-center"><strong> Event Judging  System &COPY; <?= date("Y") ?>  </strong></font> <br />
-=======
-                                          <font size="4">Event Judging System &middot; 2024 &COPY;</font>
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
                                           <hr />
                                           
                                           
                                           <table border="0">
       
                                           <tr>
-<<<<<<< HEAD
                                           <td align="center"><img src="../uploads/<?php echo $company_logo; ?>" width="35" height="35" /></td>
-=======
-                                          <td align="center"><img src="img/<?php echo $company_logo; ?>" width="35" height="35" /></td>
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
                                          </tr>
                                          <tr>
                                           <td align="center">
@@ -1188,11 +1172,7 @@ while ($score_row = $score_query->fetch())
 <table align="center" style="width: 100% !important;">
 <tr>
 <td align="center">
-<<<<<<< HEAD
 <a href="../img/<?php echo $picture; ?>"><img style="height: 250px;" src="../img/<?php echo $picture; ?>" /></a>
-=======
-<a href="../img<?php echo $picture; ?>"><img style="height: 250px;" src="img/<?php echo $picture; ?>" /></a>
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
 <h3><?php echo $se_namexx; ?> - <?php echo $cont_row['fullname']; ?> <span style="color: gray;"><?php echo $addon; ?></span></h3>
  
 Total Score Earned:
@@ -1217,7 +1197,7 @@ if( $jstat_rowx == 1 )
 
 
 
-<form method="POST" action="../admin/edit_submit_judging.php">
+<form method="POST" action="edit_submit_judging.php">
 
                   <input type="hidden" value="<?php echo $cont_row['fullname']; ?>" name="contestant_name" />
                   <input type="hidden" value="<?php echo $getContestant_id; ?>" name="contestant_id" />
@@ -1402,7 +1382,7 @@ if( $jstat_rowx == 1 )
 
 <!-- submit -->  <!-- submit -->  <!-- submit -->  <!-- submit -->  <!-- submit -->  <!-- submit -->  <!-- submit -->
  
-      <form method="POST" action="../admin/submit_judging.php">
+      <form method="POST" action="submit_judging.php">
       
                   <input type="hidden" value="<?php echo $cont_row['fullname']; ?>" name="contestant_name" />
                   <input type="hidden" value="<?php echo $getContestant_id; ?>" name="contestant_id" />
@@ -1511,23 +1491,14 @@ if( $jstat_rowx == 1 )
  
 </div> </div> </div>
 
-<<<<<<< HEAD
 
-=======
-                       
-                        
-
-     
- 
-     
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
 <?php } } else{ ?> 
 
 <hr />
-<a class="btn btn-danger btn-block" href="../index.php">Back to Dashboard</a>
+<a class="btn btn-danger btn-block" href="selection.php">Back to Dashboard</a>
 
 
-<?php include('../admin/footer.php'); ?>
+<?php include('footer.php'); ?>
 
 
 <?php } ?> 

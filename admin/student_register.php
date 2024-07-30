@@ -70,7 +70,7 @@
     ================================================== -->
     <footer class="footer">
       <div class="container">
-        <font size="2" class="pull-left"><strong>MCC Event Judging System &middot; 2023 &COPY;</strong> </font> <br />
+        <font size="2" class="pull-left"><strong>MCC Event Judging System &middot; 2024 &COPY;</strong> </font> <br />
       </div>
     </footer>      
 
