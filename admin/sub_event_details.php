@@ -168,19 +168,7 @@ padding:10px;
         </div>
       </div>
     </div>
-<<<<<<< HEAD
    <br><br><br>
-=======
-   
- 
-    
-<header class="jumbotron subhead" id="overview">
-  <div class="container">
-    <h1><?php echo $se_name; ?> Settings</h1>
-    <p class="lead">Event Judging System</p>
-  </div>
-</header>
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
     <div class="container">
 
    <form method="POST" enctype="multipart/form-data">

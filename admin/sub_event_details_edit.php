@@ -18,7 +18,6 @@ $se_row = $se_query->fetch();
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
-<<<<<<< HEAD
     body {
       font-family: Arial, sans-serif;
       background-color: #fff;
@@ -113,111 +112,6 @@ $se_row = $se_query->fetch();
     .sidebar ul li a:hover {
       background-color: #555;
     }
-=======
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #fff;
-            margin: 0;
-            padding: 0;
-        }
-
-        .sidebar-heading {
-            text-align: center;
-            padding: 10px 0;
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        .sidebar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 250px;
-            background-color: #333;
-            color: #fff;
-            padding-top: 60px;
-            transition: all 0.3s;
-            overflow: hidden;
-        }
-
-        .sidebar.collapsed {
-            width: 80px;
-        }
-
-        .sidebar .toggle-btn {
-            position: absolute;
-            top: 15px;
-            right: -0px;
-            background-color: transparent;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .sidebar .toggle-btn i {
-            font-size: 18px;
-        }
-
-        .sidebar-heading img {
-            max-width: 100px;
-            max-height: 100px;
-        }
-
-        .sidebar ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .sidebar ul li {
-            padding: 10px;
-            transition: all 0.3s;
-            font-size: 15px;
-        }
-
-        .sidebar ul li a {
-            color: #fff;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-
-        .sidebar ul li a i {
-            margin-right: 10px;
-            transition: margin 0.3s;
-        }
-
-        .sidebar.collapsed ul li a i {
-            margin-right: 0;
-        }
-
-        .sidebar ul li a span {
-            display: inline-block;
-            transition: opacity 0.3s;
-        }
-
-        .sidebar.collapsed ul li a span {
-            opacity: 0;
-            width: 0;
-            overflow: hidden;
-        }
-
-        .sidebar ul li a:hover {
-            background-color: #555;
-        }
-
-        .main {
-            margin-left: 250px;
-            padding: 20px;
-            transition: all 0.3s;
-        }
-
-        .main.collapsed {
-            margin-left: 80px;
-        }
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
 
         .content {
             margin-left: 260px;
@@ -262,7 +156,6 @@ $se_row = $se_query->fetch();
             transition: max-height 0.2s ease-out;
         }
 
-<<<<<<< HEAD
         .main {
       margin-left: 250px;
       padding: 20px;
@@ -304,59 +197,15 @@ $se_row = $se_query->fetch();
   </div>
 
 <div class="main" id="main-content">
-=======
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .sidebar {
-                width: 100%;
-                height: auto;
-                position: relative;
-            }
-
-            .main {
-                margin-left: 0;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-    <div class="sidebar" id="sidebar">
-        <button class="toggle-btn" id="toggle-btn">☰</button>
-        <div class="sidebar-heading">
-            <img src="../img/logo.png" alt="Logo">
-            <div>Event Judging System</div>
-        </div>
-        <ul >
-            <li><a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> <span>DASHBOARD</span></a></li>
-            <li><a href="home.php"><i class="fas fa-calendar-check"></i> <span>ONGOING EVENTS</span></a></li>
-            <li><a href="upcoming_events.php"><i class="fas fa-calendar-alt"></i> <span>UPCOMING EVENTS</span></a></li>
-            <li><a href="score_sheets.php"><i class="fas fa-clipboard-list"></i> <span>SCORE SHEETS</span></a></li>
-            <li><a href="rev_main_event.php"><i class="fas fa-chart-line"></i> <span>DATA REVIEWS</span></a></li>
-            <li><a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> <span>LOGOUT</span></a></li>
-        </ul>
-    </div>
-
-
-  <div class="main">
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
     <div class="container">
       <h1>
         <?php echo $se_name; ?> Settings
       </h1>
     </div>
-<<<<<<< HEAD
 
 
   <div class="container">
 
-=======
-
-
-  <div class="container">
-
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
     <div class="span12">
 
 
@@ -406,11 +255,7 @@ $se_row = $se_query->fetch();
           <div class="collapse indent" id="contestant" style="width:1000px;">
                 
                 
-<<<<<<< HEAD
                 <section id="download-bootstrap" style="width:90%;">
-=======
-                <section id="download-bootstrap">
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
                     <div class="page-header">
                     <h1>Contestant's Settings 
                     &nbsp;<a title="Click to add new Contestant for this Event" href="add_contestant.php?sub_event_id=<?php echo $sub_event_id; ?>&se_name=<?php echo $se_name;?>" class="btn btn-primary"><i class="icon icon-plus"></i></a> 
@@ -475,13 +320,8 @@ $se_row = $se_query->fetch();
 
 
 
-<<<<<<< HEAD
             <div class="collapse indent" id="judges" style="width:900px;">
               <section id="download-bootstrap" >
-=======
-            <div class="collapse indent" id="judges" style="width:1000px;">
-              <section id="download-bootstrap">
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
                 <div class="page-header">
                   <h1>Judge's Settings
                     &nbsp;<a title="Click to add new Judge for this Event"
@@ -565,11 +405,7 @@ $se_row = $se_query->fetch();
 
 
 
-<<<<<<< HEAD
     <div class="collapse indent" id="criteria" style="width:900px;">
-=======
-    <div class="collapse indent" id="criteria" style="width:1000px;">
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
       <section id="download-bootstrap">
         <div class="page-header">
           <h1>Criteria's Settings &nbsp;<a title="Click to add new Criteria for this Event"
@@ -684,54 +520,15 @@ $se_row = $se_query->fetch();
 
       </section>
     </div>
-<<<<<<< HEAD
     <div class="collapse indent" id="textpoll" style="width:900px;">
                  <section id="download-bootstrap" >
-=======
-    <div class="collapse indent" id="textpoll" style="width:1000px;">
-                 <section id="download-bootstrap">
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
           <div class="page-header">
             <h1>Vote Poll Settings</h1>
           </div>
   <?php
  
   if($se_row['txtpoll_status']=="active"){ ?> 
-<<<<<<< HEAD
            
-=======
-           <table class="table table-bordered">
- 
-  <thead>
-   
-  <th>No.</th>
-  <th>Fullname</th>
-  <th>Contestant TxtCode</th>
-  <th>Actions</th>
-  </thead>
-	
-  <tbody>
-  <form method="POST">
-   <?php    
-   	$cont_query = $conn->query("SELECT * FROM contestants WHERE subevent_id='$sub_event_id' order by contestant_ctr") or die(mysql_error());
-    while ($cont_row = $cont_query->fetch()) 
-        { 
-            $cont_id=$cont_row['contestant_id'];
-            ?>  
-  <tr>
- 
-   <td width="10"><?php echo $cont_row['contestant_ctr']; ?></td>
-      <td><?php echo $cont_row['fullname']; ?></td>
-        <td><?php echo $cont_row['txt_code']; ?></td>
-       <td width="10"><a href="edit_contestant_txtcode.php?contestant_id=<?php echo $cont_row['contestant_id'];?>&sub_event_id=<?php echo $sub_event_id;?>&se_name=<?php echo $se_name;?>" class="btn btn-success"><i class="icon icon-pencil"></i></a></td>
-  </tr>
-   <?php } ?>
-  <tr>
- 
-  </tr>
- </form>
- <tr></table>
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
  <td colspan="5"> 
  <form method="POST">
  <input value="<?php echo $sub_event_id; ?>" name="sub_event_id" type="hidden" />
@@ -795,7 +592,6 @@ $se_row = $se_query->fetch();
 $sub_event_id=$_POST['sub_event_id'];
 $tp_status=$_POST['tp_status'];
  
-<<<<<<< HEAD
 if ($tp_status == "active") {
   $conn->query("UPDATE sub_event SET txtpoll_status='deactive', txtpollview='deactive', view='deactive' WHERE subevent_id='$sub_event_id'");
   ?>
@@ -834,31 +630,6 @@ if ($tp_status == "active") {
 
 
 
-=======
- if($tp_status=="active")
- {
- $conn->query("update sub_event set txtpoll_status='deactive', txtpollview='deactive', view='deactive' where subevent_id='$sub_event_id'");  
- 
- ?>
-  <script>window.location = 'sub_event_details_edit.php?sub_event_id=<?php echo $sub_event_id;?>&se_name=<?php echo $se_name;?>';
-    alert('Textpoll Deactivated');</script>
-  <?php 
- }
-    
- else
- 
- {
- $conn->query("update sub_event set txtpoll_status='active', txtpollview='active', view='active' where subevent_id='$sub_event_id'");  
- 
- ?>
-  <script>window.location = 'sub_event_details_edit.php?sub_event_id=<?php echo $sub_event_id;?>&se_name=<?php echo $se_name;?>';
-    alert('Textpoll Activated');</script>
-
-  <?php  }}?>
-
-
-
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
   <?php 
 
 if(isset($_POST['save_settings']))
@@ -1237,11 +1008,8 @@ if (isset($_POST['delete_cont'])) {
 }
 ?>
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
 <?php
 if (isset($_POST['delete_judge'])) {
 
@@ -1249,11 +1017,8 @@ if (isset($_POST['delete_judge'])) {
     $sub_event_id = $_POST['sub_event_id'];
     $se_name = $_POST['se_name'];
 
-<<<<<<< HEAD
     // Assume $check_pass contains the correct organizer password
     // Perform your password check here
-=======
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
     if ($check_pass == $org_pass) {
         $id = $_POST['selector'];
         $N = count($id);
@@ -1261,7 +1026,6 @@ if (isset($_POST['delete_judge'])) {
             $conn->query("DELETE FROM judges WHERE judge_id='$id[$i]'");
             $conn->query("DELETE FROM sub_results WHERE judge_id='$id[$i]'");
         }
-<<<<<<< HEAD
         echo '<script>
             Swal.fire({
                 title: "Deleted!",
@@ -1281,41 +1045,11 @@ if (isset($_POST['delete_judge'])) {
                 window.location = "sub_event_details_edit.php?sub_event_id=' . $sub_event_id . '&se_name=' . $se_name . '";
             });
         </script>';
-=======
-        ?>
-        <script>
-            Swal.fire({
-                title: 'Deleted!',
-                text: 'Judge(s) successfully deleted.',
-                icon: 'success',
-                onClose: () => {
-                    window.location = 'sub_event_details_edit.php?sub_event_id=<?php echo $sub_event_id; ?>&se_name=<?php echo $se_name; ?>';
-                }
-            });
-        </script>
-        <?php
-    } else {
-        ?>
-        <script>
-            Swal.fire({
-                title: 'Error!',
-                text: 'Confirmation password is invalid!',
-                icon: 'error',
-                onClose: () => {
-                    window.location = 'sub_event_details_edit.php?sub_event_id=<?php echo $sub_event_id; ?>&se_name=<?php echo $se_name; ?>';
-                }
-            });
-        </script>
-        <?php
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
     }
 }
 ?>
 
-<<<<<<< HEAD
 
-=======
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
 <?php
 if (isset($_POST['delete_crit'])) {
 

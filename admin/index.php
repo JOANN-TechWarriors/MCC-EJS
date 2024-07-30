@@ -96,18 +96,10 @@ thead th {
              
               <h5><i class="icon-lock"></i>  PASSWORD:</h5>
               <input style="font-size: large; height: 35px !important; text-indent: 7px !important;" class="form-control btn-block" type="password"  name="password" placeholder="Password" required="true" />
-<<<<<<< HEAD
             <br /><br />
               <button id="login-button" style="width: 150px !important;" type="button" class="btn btn-primary pull-right"><i class="icon-ok"></i> <strong>LOGIN</strong></button>
               
               <strong><a href="create_account.php">Register &raquo;</a></strong> &nbsp;&nbsp;&nbsp;<br><br>
-=======
-            <!-- <br /><strong><a data-toggle="modal" data-target="#forgot-password-modal">Forgot password?</a></strong><br /> -->
-            <h6>If you have no account, pls</h6>
-              <button id="login-button" style="width: 150px !important;" type="button" class="btn btn-primary pull-right"><i class="icon-ok"></i> <strong>LOGIN</strong></button>
-              
-              <strong>Register <a href="create_account.php">here &raquo;</a></strong> &nbsp;&nbsp;&nbsp;<br><br>
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
               
              </td>
              </tr>
@@ -120,7 +112,7 @@ thead th {
   </div>
 </div>
    
-   <div  class="modal fade" id="forgot-password-modal" tabindex="-1" role="dialog" aria-labelledby="forgot-password-modal-label" aria-hidden="true">
+   <div class="modal fade" id="forgot-password-modal" tabindex="-1" role="dialog" aria-labelledby="forgot-password-modal-label" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">

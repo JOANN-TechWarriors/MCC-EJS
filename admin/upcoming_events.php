@@ -6,11 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<<<<<<< HEAD
   <link rel="shortcut icon" href="ejs_logo.png"/>
-=======
-  <link rel="shortcut icon" href="../img/logo.png"/>
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
   <title>Event Judging System</title>  
   <link href="..//assets/fullcalendar/main.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
@@ -23,11 +19,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-<<<<<<< HEAD
       background-color: #fff;
-=======
-      background-color: #f4f4f4;
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
       margin: 0;
       padding: 0;
     }
@@ -38,11 +30,7 @@
       left: 0;
       height: 100%;
       width: 250px;
-<<<<<<< HEAD
       background-color: #333;
-=======
-      background-color: #27293d;
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
       color: #fff;
       padding-top: 20px;
       transition: all 0.3s;
@@ -75,32 +63,9 @@
       margin-bottom: 10px;
     }
 
-<<<<<<< HEAD
     .sidebar-heading img {
       max-width: 100px;
       max-height: 100px;
-=======
-    .logo-container {
-    display: block;
-    margin-bottom: 10px;
-}
-
-.logo-img {
-    max-width: 100%;
-    height: auto;
-}
-
-.header-text {
-    display: block;
-    font-size: 20px;
-    margin-top: 20px;
-}
-
-
-    .sidebar-heading img {
-        max-width: 50px;
-        max-height: 50px;
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
     }
 
     .sidebar ul {
@@ -169,11 +134,7 @@
     }
   </style>
 </head>
-<<<<<<< HEAD
 <body >
-=======
-<body>
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
   <div class="sidebar" id="sidebar">
   <button class="toggle-btn" id="toggle-btn">☰</button>
     <div class="sidebar-heading">
@@ -186,10 +147,6 @@
         <li><a href="upcoming_events.php"><i class="fas fa-calendar-alt"></i> <span>UPCOMING EVENTS</span></a></li>
         <li><a href="score_sheets.php"><i class="fas fa-clipboard-list"></i> <span>SCORE SHEETS</span></a></li>
         <li><a href="rev_main_event.php"><i class="fas fa-chart-line"></i> <span>DATA REVIEWS</span></a></li>
-<<<<<<< HEAD
-=======
-        <li><a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> <span>LOGOUT</span></a></li>
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
     </ul>
   </div>
 
@@ -225,36 +182,16 @@
                 <input type="file" name="banner" id="banner" required>
               </div>
               <div class="mb-3">
-                <label for="eventBanner" class="form-label">Banner Image</label>
-                <input type="file" class="form-control" id="eventBanner" name="eventBanner" accept="image/*">
-              </div>
-              <div class="mb-3">
                 <label for="eventStart" class="form-label">Start</label>
-<<<<<<< HEAD
                 <input type="datetime-local" name="eventstart" class="form-control" id="eventStart" required>
               </div>
               <div class="mb-3">
                 <label for="eventEnd" class="form-label">End</label>
                 <input type="datetime-local" name="event_end" class="form-control" id="eventEnd" required>
-=======
-                <input type="datetime-local"  class="form-control" id="eventStart" required>
-              </div>
-              <div class="mb-3">
-                <label for="eventEnd" class="form-label">End</label>
-                <input type="datetime-local"  class="form-control" id="eventEnd" required>
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
               </div>
               <button type="submit" class="btn btn-primary">Add Event</button>
             </form>
           </div>
-<<<<<<< HEAD
-=======
-          <div class="modal-footer">
-
-            <button type="button" class="btn btn-success" id="addEventButton">Save</button>
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelEventButton">Cancel</button>
-          </div>
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
         </div>
       </div>
     </div>
@@ -266,7 +203,6 @@
             <h5 class="modal-title" id="updateEventModalLabel">Edit Event</h5>
           </div>
           <div class="modal-body">
-<<<<<<< HEAD
           <form action="update-event.php" method="POST" enctype="multipart/form-data">
   <div class="mb-3">
     <input type="hidden" class="form-control" id="updateeventID" name="eventID">
@@ -291,32 +227,6 @@
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelEventButton">Cancel</button>
           </div>
           </form>
-=======
-            <form>
-              <div class="mb-3">
-                <input type="hidden" class="form-control" id="updateeventID">
-                <label for="updateeventTitle" class="form-label">Title</label>
-                <input type="text" class="form-control" id="updateeventTitle" required>
-              </div>
-              <div class="mb-3">
-                <label for="updateeventBanner" class="form-label">Banner Image</label>
-                <input type="file" class="form-control" id="updateeventBanner" name="eventBanner" accept="image/*">
-              </div>
-              <div class="mb-3">
-                <label for="updateeventStart" class="form-label">Start</label>
-                <input type="datetime-local" class="form-control" id="updateeventStart" required>
-              </div>
-              <div class="mb-3">
-                <label for="updateeventEnd" class="form-label">End</label>
-                <input type="datetime-local" class="form-control" id="updateeventEnd" required>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-success" id="updateEventButton">Update</button>
-            <button type="button" class="btn btn-danger" id="deleteEventButton">Delete</button>
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelEventButton">Cancel</button>
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
           </div>
         </div>
       </div>
@@ -327,7 +237,6 @@
   var calendar;
 
   document.addEventListener('DOMContentLoaded', function() {
-<<<<<<< HEAD
     var calendarEl = document.getElementById('calendar');
 
     calendar = new FullCalendar.Calendar(calendarEl, {
@@ -422,183 +331,9 @@
           title: 'Error',
           text: 'Event ID is required for deletion.'
         });
-=======
-  calendar = new FullCalendar.Calendar(calendarEl, {
-    headerToolbar: {
-      left: 'prev,next today',
-      center: 'title',
-      right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
-    },
-    initialDate: '<?php echo date('Y-m-d') ?>',
-    weekNumbers: true,
-    navLinks: true,
-    editable: true,
-    selectable: true,
-    selectConstraint: {
-      start: new Date().toISOString().slice(0, 10),
-      end: null
-    },
-    nowIndicator: true,
-    dayMaxEvents: true,
-    events: {
-      url: 'get-events.php',
-      method: 'GET',
-      failure: function() {
-        alert('There was an error while fetching events!');
-      }
-    },
-    select: function(info) {
-      var start = info.startStr;
-      var end = info.endStr;
-
-      var startTime = roundToNearestHalfHour(start);
-      $('#eventStart').val(startTime);
-
-      var endTime = roundToNearestHalfHour(end);
-      $('#eventEnd').val(endTime);
-      $('#addEventModal').modal('show');
-      calendar.unselect();
-    },
-    eventClick: function(info) {
-      $('#updateEventModal').modal('show');
-      $('#updateeventID').val(info.event.id);
-      $('#updateeventTitle').val(info.event.title);
-      $('#updateeventStart').val(roundToNearestHalfHour(datetimeLocal(info.event.start)));
-      $('#updateeventEnd').val(roundToNearestHalfHour(datetimeLocal(info.event.end)));
-
-      $('#updateEventModalLabel').text('Edit Event');
-
-      $('#updateEventButton').on('click', function() {
-        var id = $('#updateeventID').val();
-        var title = $('#updateeventTitle').val();
-        var start = $('#updateeventStart').val();
-        var end = $('#updateeventEnd').val();
-        if (title && start && end) {
-          var eventData = {
-            id: id,
-            title: title,
-            start: start,
-            end: end
-          };
-          $.ajax({
-            url: 'update-event.php',
-            type: 'POST',
-            data: eventData,
-            success: function(data) {
-              var response = JSON.parse(data);
-              if (response.status === 'error') {
-                alert(response.message);
-              } else {
-                calendar.refetchEvents();
-                $('#updateEventModal').modal('hide');
-                $('#updateeventID').val('');
-                $('#updateeventTitle').val('');
-                $('#updateeventStart').val('');
-                $('#updateeventEnd').val('');
-              }
-            }
-          });
-        } else {
-          alert('Please fill all required fields');
-        }
-      });
-
-      $('#deleteEventButton').off('click').on('click', function() {
-        var id = $('#updateeventID').val();
-        var title = $('#updateeventTitle').val();
-        var start = $('#updateeventStart').val();
-        var end = $('#updateeventEnd').val();
-        if (title && start && end) {
-          var eventData = {
-            id: id,
-            title: title,
-            start: start,
-            end: end
-          };
-          $.ajax({
-            url: 'delete-event.php',
-            type: 'POST',
-            data: eventData,
-            success: function(data) {
-              calendar.refetchEvents();
-              $('#updateEventModal').modal('hide');
-              $('#updateeventID').val('');
-              $('#updateeventTitle').val('');
-              $('#updateeventStart').val('');
-              $('#updateeventEnd').val('');
-            }
-          });
-        } else {
-          alert('Please fill all required fields');
-        }
-      });
-
-      $('#cancelEventButton').off('click').on('click', function() {
-        $('#updateeventID').val('');
-        $('#updateeventTitle').val('');
-        $('#updateeventStart').val('');
-        $('#updateeventEnd').val('');
-      });
-    }
-  });
-  calendar.render();
-
-  var currentDateTime = new Date().toISOString().slice(0, 16);
-  $('#eventStart').attr('min', currentDateTime);
-  $('#eventEnd').attr('min', currentDateTime);
-  $('#updateeventStart').attr('min', currentDateTime);
-  $('#updateeventEnd').attr('min', currentDateTime);
-});
-
-function roundToNearestHalfHour(datetimeStr) {
-  var momentObj = moment(datetimeStr);
-  var minutes = momentObj.minutes();
-  var roundedMinutes = Math.round(minutes / 30) * 30;
-  if (roundedMinutes === 60) {
-    momentObj.add(1, 'hour');
-    roundedMinutes = 0;
-  }
-  return momentObj.minutes(roundedMinutes).seconds(0).format('YYYY-MM-DDTHH:mm');
-}
-
-function datetimeLocal(datetimeStr) {
-  return moment(datetimeStr).format('YYYY-MM-DDTHH:mm');
-}
-
-$('#addEventButton').on('click', function() {
-  var title = $('#eventTitle').val();
-  var start = $('#eventStart').val();
-  var end = $('#eventEnd').val();
-  if (title && start && end) {
-    var eventData = {
-      title: title,
-      start: start,
-      end: end
-    };
-    $.ajax({
-      url: 'add-event.php',
-      type: 'POST',
-      data: eventData,
-      success: function(data) {
-        var response = JSON.parse(data);
-        if (response.status === 'error') {
-          alert(response.message);
-        } else {
-          calendar.refetchEvents();
-          $('#addEventModal').modal('hide');
-          $('#eventTitle').val('');
-          $('#eventStart').val('');
-          $('#eventEnd').val('');
-        }
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
       }
     });
-  } else {
-    alert('Please fill all required fields');
-  }
-});
 
-<<<<<<< HEAD
     $('#cancelEventButton').off('click').on('click', function() {
       $('#updateeventID').val('');
       $('#updateeventTitle').val('');
@@ -693,22 +428,6 @@ $('#addEventButton').on('click', function() {
     $('#main-content').toggleClass('collapsed');
     $(this).toggleClass('collapsed');
   });
-=======
-$('#logout').on('click', function() {
-  $.ajax({
-    url: 'logout.php',
-    success: function(response) {
-      window.location.href = 'index.php';
-    }
-  });
-});
-
-$('#toggle-btn').on('click', function() {
-  $('#sidebar').toggleClass('collapsed');
-  $('#main-content').toggleClass('collapsed');
-  $(this).toggleClass('collapsed');
-});
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
 </script>
 
 </body>

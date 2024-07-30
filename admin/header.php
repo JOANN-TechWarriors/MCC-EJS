@@ -5,12 +5,8 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content=""/>
     <meta name="author" content=""/>
-    <link rel="shortcut icon" href="../img/logo.png"/>
-<<<<<<< HEAD
+    <link rel="shortcut icon" href="ejs_logo.png"/>
     <title>Event Judging System</title>
-=======
-    <title>MCC Event Judging System</title>
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
 
     <!-- Bootstrap core CSS -->
     <link href="..//includes/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>

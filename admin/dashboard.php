@@ -10,8 +10,8 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <meta name="theme-color" content="#3e454c">
-<link rel="shortcut icon" href="../img/logo.png"/>
-<title>MCC Event Judging System</title> 
+<link rel="shortcut icon" href="../admin/ejs_logo.png"/>
+<title>Event Judging System</title> 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <!-- SweetAlert CSS -->
@@ -44,8 +44,8 @@
 
     .sidebar .toggle-btn {
         position: absolute;
-        top: 20px;
-        right: 20px;
+        top: 10px;
+        right: 18px;
         background-color: transparent;
         color: #fff;
         border: none;
@@ -64,25 +64,9 @@
         margin-bottom: 10px;
     }
 
-    .logo-container {
-    display: block;
-    margin-bottom: 10px;
-}
-
-.logo-img {
-    max-width: 100%;
-    height: auto;
-}
-
-.header-text {
-    display: block;
-    font-size: 20px;
-    margin-top: 20px;
-}
-
     .sidebar-heading img {
-        max-width: 50px;
-        max-height: 50px;
+        max-width: 100px;
+        max-height: 100px;
     }
 
     .sidebar ul {
@@ -236,23 +220,20 @@
 </style>
 </head>
 <body>
-    <div class="sidebar" id="sidebar">
-        <button class="toggle-btn" id="toggle-btn">☰</button>
-        <br><br>
-        <div class="sidebar-heading">
-    <div class="logo-container">
-        <img src="../img/logo.png" alt="Logo" class="logo-img">
+<div class="sidebar" id="sidebar">
+  <button class="toggle-btn" id="toggle-btn">☰</button>
+    <div class="sidebar-heading">
+      <img src="../img/logo.png" alt="Logo">
+      <div>Event Judging System</div>
     </div>
-    <span class="header-text">Event Judging System</span>
-</div>
-        <ul>
-            <li><a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> <span>DASHBOARD</span></a></li>
-            <li><a href="home.php"><i class="fas fa-calendar-check"></i> <span>ONGOING EVENTS</span></a></li>
-            <li><a href="upcoming_events.php"><i class="fas fa-calendar-alt"></i> <span>UPCOMING EVENTS</span></a></li>
-            <li><a href="score_sheets.php"><i class="fas fa-clipboard-list"></i> <span>SCORE SHEETS</span></a></li>
-            <li><a href="rev_main_event.php"><i class="fas fa-chart-line"></i> <span>DATA REVIEWS</span></a></li>
-        </ul>
-    </div>
+    <ul>
+        <li><a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> <span>DASHBOARD</span></a></li>
+        <li><a href="home.php"><i class="fas fa-calendar-check"></i> <span>ONGOING EVENTS</span></a></li>
+        <li><a href="upcoming_events.php"><i class="fas fa-calendar-alt"></i> <span>UPCOMING EVENTS</span></a></li>
+        <li><a href="score_sheets.php"><i class="fas fa-clipboard-list"></i> <span>SCORE SHEETS</span></a></li>
+        <li><a href="rev_main_event.php"><i class="fas fa-chart-line"></i> <span>DATA REVIEWS</span></a></li>
+    </ul>
+  </div>
 
     <!-- Header -->
     <div class="header">
@@ -278,14 +259,14 @@
                     <div class="card-body">
                         <h4 class="font-weight-normal mb-3" style="font-size: 20px;">Ongoing Events</h4>
                         <?php 
-                        $database = mysqli_connect('127.0.0.1', 'u510162695_judging_root', '1Judging_root', 'u510162695_judging');
+                        $database = mysqli_connect('localhost', 'root', '', 'judging');
                         $sql = "SELECT count(1) FROM sub_event";
                         $result = mysqli_query($database, $sql);
                         $row = mysqli_fetch_array($result);
                         $ongoing_events = $row[0];
                         ?>
                         <h2 class="mb-4"><?php echo $ongoing_events; ?></h2>
-                        <a class="btn btn-primary btn-sm" href="#">View Details</a>
+                        <a class="btn btn-primary btn-sm" href="home.php">View Details</a>
                     </div>
                 </div>
             </div>
@@ -301,7 +282,7 @@
                         $upcoming_events = $count;
                         ?>
                         <h2 class="mb-4"><?php echo $upcoming_events; ?></h2>
-                        <a class="btn btn-success btn-sm" href="#">View Events</a>
+                        <a class="btn btn-success btn-sm" href="">View Events</a>
                     </div>
                 </div>
             </div>

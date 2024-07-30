@@ -56,9 +56,8 @@
                 </tr>
               </table>
               <div class="btn-group pull-right">
-                <button name="register" type="submit" class="btn btn-primary">Register</button>
                 <a href="student_login.php" type="button" class="btn btn-default">Cancel</a>
-                
+                <button name="register" type="submit" class="btn btn-primary">Register</button>
               </div>
             </form>
           </div>

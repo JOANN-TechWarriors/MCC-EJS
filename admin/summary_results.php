@@ -30,12 +30,8 @@ $active_main_event=$_GET['main_event_id'];
         
              <center>
              
-<<<<<<< HEAD
              <?php include('doc_header.php'); ?>
 
-=======
-             
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
              
              <table>
         <tr>
