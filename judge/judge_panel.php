@@ -1,5 +1,4 @@
- 
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
  
   <?php
@@ -82,7 +81,11 @@
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
               <li>
+<<<<<<< HEAD
+                <a href="..//index.php">Logout</a>
+=======
                 <a href="../index.php">Logout</a>
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
               </li>
               
       
@@ -114,34 +117,12 @@
           $j_name=$judge_row['fullname'];
           $j_code=$judge_row['code'];
             ?>
-          
-          
-<!-- Subhead
-================================================== -->
-<table style="background-color: darkblue; width: 100% !important; height: 150px; text-indent: 25px;" align="center" border="0">
-<tr>
-<td>
-<h1 style="color: whitesmoke !important;">Judge's Panel</h1>
-<h4 style="color: whitesmoke !important;">Event Judging System</h4>
-</td>
-</tr>
-</table>
  
-
 
          <br />
         <?php } } } else { $j_name="Event is still inactive. Please contact the Event Organizer."; ?>
 
 
-<table style="background-color: blue; width: 100% !important; height: 150px; text-indent: 25px;" align="center" border="0">
-<tr>
-<td>
-<h1 style="color: whitesmoke !important;">Judge's Panel - <font color="red"><?php echo $j_name; ?></font></h1>
-<h4 style="color: whitesmoke !important;">Event Judging System</h4>
-</td>
-</tr>
-</table>
- 
 <?php
  }
          ?>
@@ -150,7 +131,7 @@
 
   <div class="container">
 
-    <center><img width="200" src="img/<?php echo $banner; ?>"></center>
+    <center><img width="200" src="../img/<?php echo $banner; ?>"></center>
 <br />
    <div class="row">
     <div class="span12">
@@ -198,16 +179,17 @@ while ($cont_row = $cont_query->fetch()) {
     
     <?php if($getContestant_id=="allTally"){?>
     <li class="active" ><a href="judge_panel.php?judge_ctr=<?php echo $judge_ctr; ?>&subevent_id=<?php echo $subevent_id; ?>&contestant_id=allTally"><strong>View Tally</strong></a></li>
+<<<<<<< HEAD
+      <li><a href="..//index.php"><strong><font color="red">Exit</font></strong></a></li>
+=======
       <li><a href="../index.php"><strong><font color="red">Exit</font></strong></a></li>
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
     <?php }else{ ?>
         
         <li class="" ><a href="judge_panel.php?judge_ctr=<?php echo $judge_ctr; ?>&subevent_id=<?php echo $subevent_id; ?>&contestant_id=allTally">View Tally</a></li>
       
     <?php   } ?>
       
-     
-  
-
 
 <?php   } ?>
 
@@ -1104,14 +1086,7 @@ if($getContestant_id=="allTally")
                             
                         <?php } ?>
                         
-                        <tr>
-                        <td colspan="5">
-                        
-                        <center>
-                        <p><strong class="aleret alert-danger">In case of tie, please break the tie by clicking the change button and change the scores.</strong></p>
-                        </center>
-                        </td>
-                        </tr>
+                       
                         
                         </table>
                 
@@ -1123,50 +1098,27 @@ if($getContestant_id=="allTally")
                 <footer class="footer">
                 
                  
-                 <?php   
                  
-                     if($pageStat=="Change")
-                     {
-                    $cont_query = $conn->query("select * from contestants where subevent_id='$subevent_id' AND contestant_id='$getContestant_id'") or die(mysql_error());
-                    while ($cont_row = $cont_query->fetch()) { 
-                    $con_idTab=$cont_row['contestant_id'];
-                    ?>
-                     <strong>Edit Score Mode :</strong> <?php echo $cont_row['fullname']; ?>
-                     <?php }
-                     
-                     
-                     } else {
-                        
-                    $cont_query = $conn->query("select * from contestants where subevent_id='$subevent_id' order by contestant_ctr") or die(mysql_error());
-                    while ($cont_row = $cont_query->fetch()) { 
-                    $con_idTab=$cont_row['contestant_id'];
-                    
-                    ?>
-                    <?php if($getContestant_id==$con_idTab){?>
-                       <strong><a href="judge_panel.php?judge_ctr=<?php echo $judge_ctr; ?>&subevent_id=<?php echo $subevent_id; ?>&contestant_id=<?php echo $con_idTab;?>"><?php echo $cont_row['fullname']; ?></a></strong> &middot;
-                    <?php }else{?> 
-                   <a href="judge_panel.php?judge_ctr=<?php echo $judge_ctr; ?>&subevent_id=<?php echo $subevent_id; ?>&contestant_id=<?php echo $con_idTab;?>"><?php echo $cont_row['fullname']; ?></a> &middot;
-                    <?php } } ?>
-                    <?php if($getContestant_id=="allTally"){?>
-                   <strong><a href="judge_panel.php?judge_ctr=<?php echo $judge_ctr; ?>&subevent_id=<?php echo $subevent_id; ?>&contestant_id=allTally">View Tally</a></strong>  
-                   <a> &middot; </a><a href="selection.php"><strong><font color="red">Exit</font></strong></a>
-                    <?php }else{?>
-                   <a href="judge_panel.php?judge_ctr=<?php echo $judge_ctr; ?>&subevent_id=<?php echo $subevent_id; ?>&contestant_id=allTally">View Tally</a>  
-                     <?php  } 
-                     
-                     }?>
                  
                                         <div class="container">
                                           <center>
                                           
+<<<<<<< HEAD
+                                          <font size="3" class="pull-center"><strong> Event Judging  System &COPY; <?= date("Y") ?>  </strong></font> <br />
+=======
                                           <font size="4">Event Judging System &middot; 2024 &COPY;</font>
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
                                           <hr />
                                           
                                           
                                           <table border="0">
       
                                           <tr>
+<<<<<<< HEAD
+                                          <td align="center"><img src="../uploads/<?php echo $company_logo; ?>" width="35" height="35" /></td>
+=======
                                           <td align="center"><img src="img/<?php echo $company_logo; ?>" width="35" height="35" /></td>
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
                                          </tr>
                                          <tr>
                                           <td align="center">
@@ -1236,7 +1188,11 @@ while ($score_row = $score_query->fetch())
 <table align="center" style="width: 100% !important;">
 <tr>
 <td align="center">
+<<<<<<< HEAD
+<a href="../img/<?php echo $picture; ?>"><img style="height: 250px;" src="../img/<?php echo $picture; ?>" /></a>
+=======
 <a href="../img<?php echo $picture; ?>"><img style="height: 250px;" src="img/<?php echo $picture; ?>" /></a>
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
 <h3><?php echo $se_namexx; ?> - <?php echo $cont_row['fullname']; ?> <span style="color: gray;"><?php echo $addon; ?></span></h3>
  
 Total Score Earned:
@@ -1417,9 +1373,9 @@ if( $jstat_rowx == 1 )
                 <strong>The Total Percentage is under 100%. Pls. contact event organizer.</strong> 
                 </div>  
                 <?php } } else {  if($pageStat=="Change") { ?>
-                           
-                <a title="click to cancel, changes made will never be save." href="judge_panel.php?judge_ctr=<?php echo $judge_ctr; ?>&subevent_id=<?php echo $subevent_id; ?>&contestant_id=<?php echo $getContestant_id; ?>&pStat=xChange" class="btn btn-default"><i class="icon-remove"></i> <strong>CANCEL</strong></a>
+                   
                 <button title="Click to update scores." type="submit" class="btn btn-success"><i class="icon-ok"></i> <strong>UPDATE</strong></button>
+                <a title="click to cancel, changes made will never be save." href="judge_panel.php?judge_ctr=<?php echo $judge_ctr; ?>&subevent_id=<?php echo $subevent_id; ?>&contestant_id=<?php echo $getContestant_id; ?>&pStat=xChange" class="btn btn-default"><i class="icon-remove"></i> <strong>CANCEL</strong></a>
                 <?php }else{ ?>
                 <a href="judge_panel.php?judge_ctr=<?php echo $judge_ctr; ?>&subevent_id=<?php echo $subevent_id; ?>&contestant_id=<?php echo $getContestant_id; ?>&pStat=Change" class="btn btn-default"><i class="icon-pencil"></i> <strong>CHANGE</strong></a>
                 <?php } } ?>
@@ -1521,9 +1477,6 @@ if( $jstat_rowx == 1 )
 </table>
 
 
-   
-     
-      
                   <div class="modal-footer">
                    
                        <?php if($totzxzxzxzxz>100 or $totzxzxzxzxz<100)
@@ -1552,19 +1505,22 @@ if( $jstat_rowx == 1 )
       
 <?php }  } ?>
  
-
  
  
  
  
 </div> </div> </div>
 
+<<<<<<< HEAD
+
+=======
                        
                         
 
      
  
      
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
 <?php } } else{ ?> 
 
 <hr />
@@ -1584,30 +1540,25 @@ if( $jstat_rowx == 1 )
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/bootstrap-transition.js"></script>
-    <script src="assets/js/bootstrap-alert.js"></script>
-    <script src="assets/js/bootstrap-modal.js"></script>
-    <script src="assets/js/bootstrap-dropdown.js"></script>
-    <script src="assets/js/bootstrap-scrollspy.js"></script>
-    <script src="assets/js/bootstrap-tab.js"></script>
-    <script src="assets/js/bootstrap-tooltip.js"></script>
-    <script src="assets/js/bootstrap-popover.js"></script>
-    <script src="assets/js/bootstrap-button.js"></script>
-    <script src="assets/js/bootstrap-collapse.js"></script>
-    <script src="assets/js/bootstrap-carousel.js"></script>
-    <script src="assets/js/bootstrap-typeahead.js"></script>
-    <script src="assets/js/bootstrap-affix.js"></script>
+    <script src="..//assets/js/jquery.js"></script>
+    <script src="..//assets/js/bootstrap-transition.js"></script>
+    <script src="..//assets/js/bootstrap-alert.js"></script>
+    <script src="..//assets/js/bootstrap-modal.js"></script>
+    <script src="..//assets/js/bootstrap-dropdown.js"></script>
+    <script src="..//assets/js/bootstrap-scrollspy.js"></script>
+    <script src="..//assets/js/bootstrap-tab.js"></script>
+    <script src="..//assets/js/bootstrap-tooltip.js"></script>
+    <script src="..//assets/js/bootstrap-popover.js"></script>
+    <script src="..//assets/js/bootstrap-button.js"></script>
+    <script src="..//assets/js/bootstrap-collapse.js"></script>
+    <script src="..//assets/js/bootstrap-carousel.js"></script>
+    <script src="..//assets/js/bootstrap-typeahead.js"></script>
+    <script src="..//assets/js/bootstrap-affix.js"></script>
 
-    <script src="assets/js/holder/holder.js"></script>
-    <script src="assets/js/google-code-prettify/prettify.js"></script>
+    <script src="..//assets/js/holder/holder.js"></script>
+    <script src="..//assets/js/google-code-prettify/prettify.js"></script>
 
-    <script src="assets/js/application.js"></script>
+    <script src="..//assets/js/application.js"></script>
   
   </body>
 </html>
- 
-
-
-
-

@@ -27,9 +27,13 @@ else
 { ?>
 
 <script>
-alert('wrong code');
+alert('Please enter code');
  			
+<<<<<<< HEAD
+window.location = 'index.php';
+=======
 window.location = 'welcome.php';
+>>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
 </script>
     
 <?php }

@@ -1,102 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <?php 
-    include('header.php');
-    ?>
+<?php 
+include('../admin/header.php');
+include('../admin/session.php');
+?>
 
-  <body>
-    <!-- Navbar
-    ================================================== -->
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-        </div>
-      </div>
-    </div>
-    <header class="jumbotron subhead" id="overview">
-      <div class="container">
-        <h1>Student Registration</h1>
-        <p class="lead">MCC Event Judging System</p>
-      </div>
-    </header>
-    <div class="container">
-      <div class="col-lg-3"></div>
-      <div class="col-lg-6">
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title">Student Registration Form</h3>
-          </div>
-          <div class="panel-body">
+<body style="background:url(../img/Community-College-Madridejos.jpeg)">
+
+<div class="container">
+   <div class="col-lg-3">  </div>
+   <div class="col-lg-6">
+      <br><br>
+      <div class="panel panel-danger">
+         <div class="panel-heading">
+            <h3 class="panel-title"><strong>STUDENT REGISTRATION FORM</strong></h3>
+         </div>
+         <div class="panel-body">
             <form method="POST">
-              <table align="center">
-                <tr>
-                  <td colspan="3"><strong>Student Information</strong><hr /></td>
-                </tr>
-                <tr>
-                  <td>Name:</td>
-                  <td colspan="2">
-                    <input type="text" name="name" class="form-control" placeholder="Name" required autofocus>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Course/Year/Section:</td>
-                  <td colspan="2">
-                    <input type="text" name="course" class="form-control" placeholder="Course/ Year/ Section" required>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Student ID:</td>
-                  <td colspan="2">
-                    <input type="text" name="student_id" class="form-control" placeholder="Student ID" required>
-                  </td>
-                </tr>
-                <tr>
-                  <td colspan="3">&nbsp;</td>
-                </tr>
-              </table>
-              <div class="btn-group pull-right">
-                <a href="student_login.php" type="button" class="btn btn-default">Cancel</a>
-                <button name="register" type="submit" class="btn btn-primary">Register</button>
-              </div>
+               <table align="center">
+                  <tr><td colspan="5"><strong>Basic Information</strong><hr /></td></tr>
+                  <tr>
+                     <td>
+                        <strong>Firstname:</strong>
+                        <input type="text" name="fname" class="form-control" placeholder="Firstname" aria-describedby="basic-addon1" required autofocus>
+                     </td>
+                     <td>&nbsp;</td>
+                     <td>
+                        <strong>Middlename:</strong>
+                        <input type="text" name="mname" class="form-control" placeholder="Middlename" aria-describedby="basic-addon1" required>
+                     </td>
+                     <td>&nbsp;</td>
+                     <td>
+                        <strong>Lastname:</strong>
+                        <input type="text" name="lname" class="form-control" placeholder="Lastname" aria-describedby="basic-addon1" required>
+                     </td>
+                  </tr>
+                  <tr><td colspan="5">&nbsp;</td></tr>
+                  <tr>
+                     <td>
+                        <strong>Course:</strong>
+                        <input type="text" name="course" class="form-control" placeholder="Course" aria-describedby="basic-addon1" required>
+                     </td>
+                     <td>&nbsp;</td>
+                     <td colspan="3">
+                        <strong>Student ID #:</strong>
+                        <input type="text" name="student_id" class="form-control" placeholder="ID #" aria-describedby="basic-addon1" required>
+                     </td>
+                  </tr>
+               </table>
+               <br />
+               <div class="btn-group pull-right">
+                  <button name="register" type="submit" class="btn btn-primary">Register</button>
+                  <a href="index.php" type="button" class="btn btn-default">Cancel</a>
+               </div>
             </form>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3"></div>
-    </div>
-    
-    <!-- Footer
-    ================================================== -->
-    <footer class="footer">
-      <div class="container">
-        <font size="2" class="pull-left"><strong>MCC Event Judging System &middot; 2023 &COPY;</strong> </font> <br />
-      </div>
-    </footer>      
+         </div><!-- end panel body -->
+      </div> <!-- end panel -->
+   </div><!-- end col-6 -->
+   <div class="col-lg-3">  </div>
+</div> <!-- end container -->
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
-    <script src="javascript/jquery1102.min.js"></script>
-  </body>
-</html>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="javascript/jquery1102.min.js"></script>
+<script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
 
 <?php 
-if(isset($_POST['register']))
-{
-   $name = $_POST['name'];
+if(isset($_POST['register'])) {
+   $fname = $_POST['fname'];
+   $mname = $_POST['mname'];
+   $lname = $_POST['lname'];
    $course = $_POST['course'];
    $student_id = $_POST['student_id'];
 
    // Database connection
-   include('dbcon.php');
+   include('../admin/dbcon.php');
 
-   $conn->query("INSERT INTO students (name, course, student_id) VALUES ('$name', '$course', '$student_id')");
+   $stmt = $conn->prepare("INSERT INTO student (student_id, fname, mname, lname, course) VALUES (:student_id, :fname, :mname, :lname, :course)");
+   
+   $stmt->bindParam(':student_id', $student_id);
+   $stmt->bindParam(':fname', $fname);
+   $stmt->bindParam(':mname', $mname);
+   $stmt->bindParam(':lname', $lname);
+   $stmt->bindParam(':course', $course);
+   
+   if($stmt->execute()) {
+       echo "<script>
+               alert('Student $fname $lname registered successfully!');
+               window.location = 'index.php';
+             </script>";
+   } else {
+       echo "<script>
+               alert('Error: Could not register student.');
+             </script>";
+   }
 
+   $stmt->close();
+   $conn->close();
+}
 ?>
-<script>
-  window.location = 'student_login.php';
-  alert('Student <?php echo $name; ?> registered successfully!');
-</script>
-<?php  
-} 
-?>
+</body>
+</html>
