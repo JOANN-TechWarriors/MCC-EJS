@@ -347,24 +347,6 @@
     
       <!-- blog section end -->
       <!-- footer section start -->
-      <div class="footer_section layout_padding">
-         <div class="container">
-         <div class="row">
-                    <div class="col-md-6 ">
-                         <p class="ms-5 text-light"><i class="fa fa-pin" style="color:#eca62d;"></i> <span style="color:#eca62d;">Location:</span> @Crossing Bunakan, Madridejos, Cebu, Philiphines</p>
-                    </div>
-                    <div class="col-md-6">
-                         <p class="ms-5 text-light"><i class="fa fa-clock" style="color:#eca62d;"></i> <span style="color:#eca62d;">Open Hours:</span>  Monday-Saturday: 08:00 AM - 19:00 PM</p>
-                    </div>
-                    <div class="col-md-6">
-                         <p class="ms-5 text-light"><i class="fa fa-envelope" style="color:#eca62d;"></i> <span style="color:#eca62d;">Contact Email:</span> @joannrebamonte@gmail.com</p>
-                    </div>
-                    <div class="col-md-6">
-                         <p class="ms-5 text-light"><i class="fa fa-phone" style="color:#eca62d;"></i> <span style="color:#eca62d;">Contact Number: </span>   09662314910</p>
-                    </div>
-            </div>
-         </div>
-      </div>
       <!-- footer section end -->
       <!-- copyright section start -->
       <div class="copyright_section">
