@@ -1055,42 +1055,26 @@ if (isset($_POST['activation'])) {
 }
 ?>
 
-<?php 
+<?php
 if (isset($_POST['edit_event'])) {
     $main_event_id = $_POST['main_event_id'];
-    $main_event_name = $_POST['main_event'];
+    $event_name = $_POST['main_event'];
     $date_start = $_POST['date_start'];
     $date_end = $_POST['date_end'];
-    $event_time_start = $_POST['event_time_start'];
-    $event_time_end = $_POST['event_time_end'];
-    $place = $_POST['place'];
+    $event_place = $_POST['place'];
 
-    // Validate time interval
-    $start_time = new DateTime($event_time_start);
-    $end_time = new DateTime($event_time_end);
-    $interval = $start_time->diff($end_time);
-    
-    // Check if the interval is less than 30 minutes
-    if ($interval->h < 0 || ($interval->h == 0 && $interval->i < 30)) {
-        echo "<script>alert('The end time must be at least 30 minutes after the start time.');</script>";
-    } else {
-        // Update the event in the database
-        $sql = "UPDATE main_event SET event_name='$main_event_name', date_start='$date_start', date_end='$date_end', event_time_start='$event_time_start', event_time_end='$event_time_end', place='$place' WHERE mainevent_id='$main_event_id'";
-        
-        if ($conn->query($sql) === TRUE) {
-            echo "<script>
-                Swal.fire({
-                    title: 'Success!',
-                    text: 'Event details updated successfully!',
-                    icon: 'success'
-                }).then(() => {
-                    window.location = 'home.php';
-                });
-            </script>";
-        } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
-        }
-    }
+    $conn->query("UPDATE main_event SET event_name='$event_name', date_start='$date_start', date_end='$date_end', place='$event_place' WHERE mainevent_id='$main_event_id'");
+    ?>
+    <script>
+        Swal.fire({
+            title: 'Success!',
+            text: 'Event <?php echo $event_name; ?> updated successfully!',
+            icon: 'success'
+        }).then(() => {
+            window.location = 'home.php';
+        });
+    </script>
+    <?php
 }
 ?>
 
