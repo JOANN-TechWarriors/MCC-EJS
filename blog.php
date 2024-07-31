@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Live Broadcast - Viewer</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 </head>
 <body>
     <h1>Live Broadcast Viewer</h1>
@@ -13,9 +14,24 @@
     </div>
 
     <script>
-        const streamUrl = 'https://mcceventsjudging.com/admin/live.php'; // URL to fetch the video stream
         const videoElement = document.getElementById('liveStream');
-        videoElement.src = streamUrl;
+        // const streamUrl = 'http://localhost/mcceventjudging.m3u8'; // Update with your actual HLS stream URL
+        const streamUrl = 'http://localhost/hls/mcceventjudging.m3u8'; // Update with your actual HLS stream URL
+        if (Hls.isSupported()) {
+            const hls = new Hls();
+            hls.loadSource(streamUrl);
+            hls.attachMedia(videoElement);
+            hls.on(Hls.Events.MANIFEST_PARSED, function() {
+                videoElement.play();
+            });
+        } else if (videoElement.canPlayType('application/vnd.apple.mpegurl')) {
+            videoElement.src = streamUrl;
+            videoElement.addEventListener('loadedmetadata', function() {
+                videoElement.play();
+            });
+        } else {
+            console.error('This browser does not support HLS.');
+        }
 
         videoElement.addEventListener('error', function() {
             console.error('Error loading the stream. Please check if the broadcast is active.');
