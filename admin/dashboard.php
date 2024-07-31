@@ -191,7 +191,7 @@
 
     @media (max-width: 576px) {
         .sidebar-heading {
-            font-size: 14px;
+            font-size: 16px;
         }
 
         .sidebar ul li a {
@@ -199,7 +199,7 @@
         }
 
         .header {
-            padding: 5px 10px;
+            padding: 5px 20px;
         }
 
         .header .profile-dropdown img {
@@ -246,7 +246,7 @@
            <div style="font-size:small;"> <?php echo $name; ?></div>
             <div class="dropdown-menu">
                 <a href="edit_organizer.php"> Account Settings</a>
-                <a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> <span>LOGOUT</span></a>
+                <a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>
             </div>
         </div>
     </div>
