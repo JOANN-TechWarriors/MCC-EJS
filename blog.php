@@ -13,33 +13,14 @@
     </div>
 
     <script>
+        const streamUrl = 'https://mcceventsjudging.com/admin/live.php'; // URL to fetch the video stream
         const videoElement = document.getElementById('liveStream');
-        const servers = null; // Use default STUN/TURN servers
-        let peerConnection = new RTCPeerConnection(servers);
+        videoElement.src = streamUrl;
 
-        peerConnection.ontrack = (event) => {
-            videoElement.srcObject = event.streams[0];
-        };
-
-        peerConnection.onicecandidate = (event) => {
-            if (event.candidate) {
-                // Send ICE candidates to the admin side
-                console.log('New ICE candidate:', event.candidate);
-            }
-        };
-
-        async function receiveOffer(offer) {
-            await peerConnection.setRemoteDescription(new RTCSessionDescription(offer));
-            const answer = await peerConnection.createAnswer();
-            await peerConnection.setLocalDescription(answer);
-
-            // Send the answer back to the admin side
-            console.log('Answer created:', answer);
-        }
-
-        // Handle receiving the offer and answer from the admin side
-        // This can be done via a WebSocket or other signaling mechanism
-        // Example: receiveOffer(offer);
+        videoElement.addEventListener('error', function() {
+            console.error('Error loading the stream. Please check if the broadcast is active.');
+            alert('Error loading the stream. Please check if the broadcast is active.');
+        });
     </script>
 </body>
 </html>
