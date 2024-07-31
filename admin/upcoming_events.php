@@ -150,6 +150,20 @@
     </ul>
   </div>
 
+  <!-- Header -->
+  <div class="header">
+        <div>
+            <!-- Add any left-aligned content here if needed -->
+        </div>
+        <div class="profile-dropdown">
+           <div style="font-size:small;"> <?php echo $name; ?></div>
+            <div class="dropdown-menu">
+                <a href="edit_organizer.php"> Account Settings</a>
+                <a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> <span>LOGOUT</span></a>
+            </div>
+        </div>
+    </div>
+
   <div class="main" id="main-content">
     <div class="container">
       <div class="row">

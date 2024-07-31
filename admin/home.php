@@ -215,6 +215,20 @@
     </ul>
   </div>
 
+  <!-- Header -->
+  <div class="header">
+        <div>
+            <!-- Add any left-aligned content here if needed -->
+        </div>
+        <div class="profile-dropdown">
+           <div style="font-size:small;"> <?php echo $name; ?></div>
+            <div class="dropdown-menu">
+                <a href="edit_organizer.php"> Account Settings</a>
+                <a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> <span>LOGOUT</span></a>
+            </div>
+        </div>
+    </div>
+
      
 <div class="main" id="main-content">
 <div class="container">
@@ -1080,10 +1094,52 @@ if (isset($_POST['edit_event'])) {
 }
 ?>
 
-
 <?php
+if (isset($_POST['deleteEvent'])) {
+    $main_event_id = $_POST['main_event_id'];
+    $entered_pass = $_POST['entered_pass'];
+    $ma_name = $_POST['ma_name'];
 
+    if ($entered_pass == $check_pass) {
+        $delquery = $conn->query("SELECT * FROM sub_event WHERE mainevent_id='$main_event_id'") or die(mysql_error());
+        while ($del_row = $delquery->fetch()) {
+            $sub_event_id = $del_row['subevent_id'];
+
+            $conn->query("DELETE FROM contestants WHERE subevent_id='$sub_event_id'");
+            $conn->query("DELETE FROM criteria WHERE subevent_id='$sub_event_id'");
+            $conn->query("DELETE FROM judges WHERE subevent_id='$sub_event_id'");
+            $conn->query("DELETE FROM sub_results WHERE subevent_id='$sub_event_id'");
+        }
+
+        $conn->query("DELETE FROM sub_event WHERE mainevent_id='$main_event_id'");
+        $conn->query("DELETE FROM main_event WHERE mainevent_id='$main_event_id'");
+        ?>
+        <script>
+            Swal.fire({
+                title: 'Success!',
+                text: 'Event: <?php echo $ma_name; ?> and its Sub-Events and related data deleted successfully.',
+                icon: 'success'
+            }).then(() => {
+                window.location = 'home.php';
+            });
+        </script>
+        <?php
+    } else {
+        ?>
+        <script>
+            Swal.fire({
+                title: 'Error!',
+                text: 'Confirmation did not match. Try again.',
+                icon: 'error'
+            }).then(() => {
+                window.location = 'home.php';
+            });
+        </script>
+        <?php
+    }
+}
 ?>
+
 </div>
 </section>
 </div>
