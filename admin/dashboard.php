@@ -191,7 +191,7 @@
 
     @media (max-width: 576px) {
         .sidebar-heading {
-            font-size: 16px;
+            font-size: 14px;
         }
 
         .sidebar ul li a {
@@ -199,7 +199,7 @@
         }
 
         .header {
-            padding: 5px 20px;
+            padding: 5px 10px;
         }
 
         .header .profile-dropdown img {
