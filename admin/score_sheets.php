@@ -11,7 +11,7 @@ include('session.php');
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
     body {
-        font-family: Arial, sans-serif;
+        font-family: Bold, sans-serif;
         background-color: #fff;
         margin: 0;
         padding: 0;

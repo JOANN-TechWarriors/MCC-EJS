@@ -284,7 +284,7 @@
       <section >
            
 
-      <video id="video" autoplay></video>
+    <video id="video" autoplay></video>
     <button id="startButton">Start Streaming</button>
     <button id="stopButton">Stop Streaming</button>
     <button id="downloadButton" disabled>Download Recording</button>
