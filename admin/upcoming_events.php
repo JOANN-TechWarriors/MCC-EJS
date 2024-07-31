@@ -528,6 +528,24 @@
     $(this).toggleClass('collapsed');
   });
 </script>
+<!-- SweetAlert JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+<scriptt>
+    document.getElementById('logout').addEventListener('click', function(event) {
+        event.preventDefault();
+        Swal.fire({
+            title: 'Are you sure you want to log out?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes',
+            cancelButtonText: 'No'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = '..//index.php';
+            }
+        });
+    });
+</script>
 </body>
 </html>
