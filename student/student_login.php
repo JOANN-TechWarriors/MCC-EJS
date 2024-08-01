@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit();
     } else {
         $_SESSION['login_error'] = 'Invalid Student ID';
-        header('Location: .index.php');
+        header('Location: index.php');
         exit();
     }
 }
