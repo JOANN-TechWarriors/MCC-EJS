@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $redirect_url = $_SESSION['redirect_after_login'];
                 unset($_SESSION['redirect_after_login']); // Clear the stored URL
                 $_SESSION['login_success'] = true;
-                header("Location: ../" . $redirect_url);
+                header("Location: ../index.php" . $redirect_url);
             } else {
                 $_SESSION['login_success'] = true;
                 header("Location: ../poll/index.php"); // Default redirect if no stored URL
