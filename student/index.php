@@ -16,17 +16,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($stmt->rowCount() > 0) {
             // Student exists, start session
             $_SESSION['student_id'] = $student_id;
+            $_SESSION['login_success'] = true;
 
-            // Check if there's a redirect URL stored in the session
-            if (isset($_SESSION['redirect_after_login'])) {
-                $redirect_url = $_SESSION['redirect_after_login'];
-                unset($_SESSION['redirect_after_login']); // Clear the stored URL
-                $_SESSION['login_success'] = true;
-                header("Location: ../" . $redirect_url);
-            } else {
-                $_SESSION['login_success'] = true;
-                header("Location: ../index.php"); // Default redirect if no stored URL
-            }
+            // Redirect to the login page to trigger JavaScript
+            header("Location: index.php");
             exit();
         } else {
             $_SESSION['login_error'] = "Invalid Student ID";
@@ -38,6 +31,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
 
 <?php
 include_once('../admin/header2.php');
@@ -163,23 +159,21 @@ if (isset($_SESSION['login_error'])) {
 <script src="..//assets/js/holder/holder.js"></script>
 <script src="..//assets/js/google-code-prettify/prettify.js"></script>
 <script src="..//assets/js/application.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
-window.onload = function() {
-    <?php if(isset($_SESSION['login_success']) && $_SESSION['login_success'] == true): ?>
+    document.addEventListener('DOMContentLoaded', function() {
+      <?php if (isset($_SESSION['login_success']) && $_SESSION['login_success'] === true): ?>
         Swal.fire({
-            title: "Success!",
-            text: "You are Successfully logged in!",
-            icon: "success"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                window.location.href = "../poll/index.php?event=<?php echo $_SESSION['sub_event_id']; ?>";
-            }
+          icon: 'success',
+          title: 'Login Successful',
+          timer: 2000, // Duration of the alert in milliseconds
+          showConfirmButton: false
+        }).then(() => {
+          window.location.href = '../index.php'; // Redirect after alert
         });
-        <?php unset($_SESSION['login_success']); ?>
-    <?php endif; ?>
-};
-</script>
+        <?php unset($_SESSION['login_success']); ?> // Clear the session variable
+      <?php endif; ?>
+    });
+  </script>
 </body>
 </html>
