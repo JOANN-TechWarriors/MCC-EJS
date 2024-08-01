@@ -5,8 +5,8 @@ include('../admin/dbcon.php');
 // Check if student is logged in
 if (!isset($_SESSION['student_id'])) {
     // Redirect to login page if not logged in
-    $_SESSION['redirect_after_login'] = 'poll/index.php' . $_GET['event'];
-    header("Location: ../index.php");
+    $_SESSION['redirect_after_login'] = 'poll/index.php?event=' . $_GET['event'];
+    header("Location: ../student/index.php");
     exit();
 }
 
@@ -71,7 +71,7 @@ $has_voted = $stmt->fetch(PDO::FETCH_ASSOC);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="../img/logo.png"/>
+    <link rel="shortcut icon" href="../ejs_logo.png"/>
     <title>POLL VOTE</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
