@@ -501,19 +501,10 @@ CREATE TABLE `organizer` (
 --
 
 INSERT INTO `organizer` (`organizer_id`, `fname`, `mname`, `lname`, `username`, `password`, `email`, `reset_token`, `reset_expires`, `pnum`, `txt_poll_num`, `access`, `org_id`, `status`, `company_name`, `company_address`, `company_logo`, `company_telephone`, `company_email`, `company_website`) VALUES
-<<<<<<< HEAD
 (19, 'AYRES', 'SANTILLAN', 'ILUSTRISIMO', 'blue', 'blue', 'ayresilustrisimo@gmail.com', NULL, NULL, '09385974999', '09385974999', 'Organizer', '', 'online', 'MCC EVENT JUDGING SYSTEM', 'BANTAYAN ISLAND, BUNAKAN, MADRIDEJOS, CEBU', '52985-ejs_logo.png', '9476865867', 'mcceventjudgingsystem@gmail.com', 'mcceventjudging.com'),
 (20, 'JOANN', 'REBAMONTE', 'BILBAO', 'red', 'red', 'thomassalvado15@gmail.com', '13a47eee732480d3c33d459f0c5d46a7c2277c09e09c967c4bd05f22e35f5a56', '2023-05-11 22:56:30', '', '', 'Tabulator', '19', 'offline', '', '', '', '', '', ''),
 (31, 'JOANN', 'REBAMONTE', 'BILBAO', 'ann', 'ann123', 'thomassalvado15@gmail.com', NULL, NULL, '09476875656', '09382451653', 'Organizer', '', 'offline', 'MCC EVENT JUDGING SYSTEM', 'BANTAYAN ISLAND, BUNAKAN, MADRIDEJOS, CEBU', 'logo.png', '9476865867', 'mcceventjudgingsystem@gmail.com', 'mcceventjudging.com'),
 (34, 'Gwendelyn', 'Marabi', 'Escaran', 'gwen', 'gwen', '', NULL, NULL, '', '', 'Tabulator', '31', 'offline', '', '', '', '', '', '');
-=======
-(19, 'CHRISTIAN PAUL', 'LANORIAS', 'SALVADO', 'blue', 'blue', 'salvadochristianpaul5@gmail.com', NULL, NULL, '09385974999', '09385974999', 'Organizer', '', 'online', '', 'BANTAYAN ISLAND CEBU', '', '000-0000', '', ''),
-(20, 'JOHN PAUL', '', 'UNGON', 'red', 'red', 'thomassalvado15@gmail.com', '13a47eee732480d3c33d459f0c5d46a7c2277c09e09c967c4bd05f22e35f5a56', '2023-05-11 22:56:30', '', '', 'Tabulator', '19', 'offline', '', '', '', '', '', ''),
-(27, 'user', 'user', 'user', 'user', 'hello', 'evas.jygona@gmail.com', NULL, NULL, '', '09078262015', 'Organizer', '', 'offline', '', '', '', '', '', ''),
-(28, 'black', 'black', 'black', '123', '123', 'cheskajumantoc@gmail.com', '74cf843a5c9ac73769332b28cd7e79ae5e11698dcec3aa768f1c5a96ffdf0dde', '2023-05-12 11:00:26', '', '', 'Organizer', '', 'offline', '', '', '', '', '', ''),
-(29, 'kin', 'ni', 'chi', 'userr', 'userr', '', NULL, NULL, '', '', 'Organizer', '', 'offline', '', '', '', '', '', ''),
-(30, 'Shiela Mae', 'Ducay', 'Yhapon', 'shie', 'la', 'shielamaeyhapon791@gmail.com', 'dba9ffbaee49e2c2a779e2b214135fae6cd43c48516f267ad21dd65e28dc0cc9', '2023-05-10 16:59:13', '', '', 'Organizer', '', 'offline', '', '', '', '', '', '');
->>>>>>> b77b374fd7ac336d8cec2548774a60ff6476fedd
 
 -- --------------------------------------------------------
 
