@@ -164,10 +164,10 @@ if (isset($_SESSION['login_error'])) {
     document.addEventListener('DOMContentLoaded', function() {
       <?php if (isset($_SESSION['login_success']) && $_SESSION['login_success'] === true): ?>
         Swal.fire({
-          icon: 'success',
-          title: 'Login Successful',
-          timer: 2000, // Duration of the alert in milliseconds
-          showConfirmButton: false
+          ititle: "Success!",
+        text: "You are successfully logged in!",
+        icon: "success",
+        confirmButtonText: "Ok",
         }).then(() => {
           window.location.href = '../index.php'; // Redirect after alert
         });
@@ -177,3 +177,9 @@ if (isset($_SESSION['login_error'])) {
   </script>
 </body>
 </html>
+<!--  -->
+        <!-- title: "Success!",
+        text: "You are successfully logged in!",
+        icon: "success",
+        confirmButtonText: "Ok", -->
+
