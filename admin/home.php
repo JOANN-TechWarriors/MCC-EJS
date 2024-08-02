@@ -998,8 +998,8 @@ if (isset($_POST['create'])) {
 if(isset($_POST['add_event'])) {
     $main_event_id = $_POST['main_event_id']; 
     $banner = $_FILES['banner']['name'];
-    $target = "img/" . basename($banner);
-    
+    $target = "../img/" . basename($banner);
+        
     // Check if all form fields are set
     $sub_event_name = isset($_POST['event_name']) ? $_POST['event_name'] : '';
     $event_date = isset($_POST['event_date']) ? $_POST['event_date'] : '';
