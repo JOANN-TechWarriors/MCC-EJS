@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <link rel="shortcut icon" href="uploads/87713-ejs_logo.png"/>
+      <link rel="shortcut icon" href="im/logo.png"/>
       <title>Event Judging System</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
@@ -52,11 +52,14 @@
             text-align: center;
             background-color: rgba(6, 6, 7, 0.8);
             z-index: 1000;
+            top: 0; /* Ensure it's at the top */
+            left: 0;
         }
         .nav div.logo{
             width: 180px;
             height: 10px;
             position: absolute;
+            left: 15px; /* Adjust as needed */
         }
         .nav div.logo a{
             text-decoration: none;
@@ -232,6 +235,59 @@
             display: block;
         }
 
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        margin: 0;
+    }
+
+    .nav div.logo {
+        margin-left: 15px;
+    }
+
+    .nav div.main_list {
+        width: 100%;
+        margin-top: 65px;
+        height: 0;
+        overflow: hidden;
+    }
+
+    .nav div.show_list {
+        height: 200px;
+    }
+
+    .nav div.main_list ul {
+        flex-direction: column;
+        width: 100%;
+        height: 200px;
+        top: 80px;
+        right: 0;
+        left: 0;
+    }
+
+    .nav div.main_list ul li {
+        width: 100%;
+        height: 40px;
+        background-color: rgba(6, 6, 7, 0.8);
+    }
+
+    .nav div.main_list ul li a {
+        text-align: center;
+        line-height: 40px;
+        width: 100%;
+        height: 40px;
+        display: table;
+    }
+
+    .nav div.media_button {
+        display: block;
+    }
+}
         .dropdown {
             display: none;
             position: absolute;
