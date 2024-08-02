@@ -203,6 +203,44 @@ include('session.php');
     .header .profile-dropdown .dropdown-menu a:hover {
         background-color: #f1f1f1;
     }
+    @media (max-width: 768px) {
+        .sidebar {
+            width: 100%;
+            height: auto;
+            position: relative;
+            overflow: visible;
+        }
+
+        .sidebar.collapsed {
+            width: 100%;
+        }
+
+        .main {
+            margin-left: 0;
+        }
+
+        .sidebar .toggle-btn {
+            display: block;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .sidebar-heading {
+            font-size: 14px;
+        }
+
+        .sidebar ul li a {
+            font-size: 14px;
+        }
+
+        .header {
+            padding: 5px 10px;
+        }
+
+        .header .profile-dropdown img {
+            width: 30px;
+            height: 30px;
+        }
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .sidebar {
@@ -251,7 +289,7 @@ include('session.php');
     <!-- Subhead ================================================== -->
     <div class="main" id="main-content">
         <div class="container">
-            <h1>Score Sheets</h1>
+            <h1 style="font-size:35px;">Score Sheets</h1>
         </div>
 
         <div class="span15">

@@ -248,7 +248,7 @@
      
 <div class="main" id="main-content">
 <div class="container">
-    <h1> Ongoing Events</h1>
+    <h1 style="font-size:35px;"> Ongoing Events</h1>
       </div>
 
       <div class="span15">

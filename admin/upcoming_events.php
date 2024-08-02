@@ -18,97 +18,98 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <style>
     body {
-        font-family: Arial, sans-serif;
-        background-color: #fff;
-        margin: 0;
-        padding: 0;
-    }
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+        }
 
-    .sidebar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 250px;
-        background-color: #27293d;
-        color: #fff;
-        padding-top: 20px;
-        transition: all 0.3s;
-        overflow: hidden;
-    }
+        .sidebar-heading {
+            text-align: center;
+            padding: 10px 0;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
 
-    .sidebar.collapsed {
-        width: 80px;
-    }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 250px;
+            background-color: #27293d;
+            color: #fff;
+            padding-top: 20px;
+            transition: all 0.3s;
+            overflow: hidden;
+        }
 
-    .sidebar .toggle-btn {
-        position: absolute;
-        top: 10px;
-        right: 18px;
-        background-color: transparent;
-        color: #fff;
-        border: none;
-        cursor: pointer;
-        transition: all 0.3s;
-    }
+        .sidebar.collapsed {
+            width: 80px;
+        }
 
-    .sidebar .toggle-btn i {
-        font-size: 20px;
-    }
+        .sidebar .toggle-btn {
+            position: absolute;
+            top: 10px;
+            right: 18px;
+            background-color: transparent;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
 
-    .sidebar-heading {
-        text-align: center;
-        padding: 10px 0;
-        font-size: 18px;
-        margin-bottom: 10px;
-    }
+        .sidebar .toggle-btn i {
+            font-size: 20px;
+        }
 
-    .sidebar-heading img {
-        max-width: 100px;
-        max-height: 100px;
-    }
+        .sidebar-heading img {
+            max-width: 100px;
+            max-height: 100px;
+        }
 
-    .sidebar ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-    }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
 
-    .sidebar ul li {
-        padding: 15px 20px;
-        transition: all 0.3s;
-    }
+        .sidebar ul li {
+            padding: 15px 20px;
+            transition: all 0.3s;
+           
+        }
 
-    .sidebar ul li a {
-        color: #fff;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-    }
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
 
-    .sidebar ul li a i {
-        margin-right: 10px;
-        transition: margin 0.3s;
-    }
+        .sidebar ul li a i {
+            margin-right: 10px;
+            transition: margin 0.3s;
+        }
 
-    .sidebar.collapsed ul li a i {
-        margin-right: 0;
-    }
+        .sidebar.collapsed ul li a i {
+            margin-right: 0;
+        }
 
-    .sidebar ul li a span {
-        display: inline-block;
-        transition: opacity 0.3s;
-    }
+        .sidebar ul li a span {
+            display: inline-block;
+            transition: opacity 0.3s;
+        }
 
-    .sidebar.collapsed ul li a span {
-        opacity: 0;
-        width: 0;
-        overflow: hidden;
-    }
+        .sidebar.collapsed ul li a span {
+            opacity: 0;
+            width: 0;
+            overflow: hidden;
+        }
 
-    .sidebar ul li a:hover {
-        background-color: #1a1a2e;
-    }
+        .sidebar ul li a:hover {
+            background-color: #1a1a2e;
+        }
 
     .main {
         margin-left: 250px;

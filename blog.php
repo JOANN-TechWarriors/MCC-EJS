@@ -6,7 +6,7 @@
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 </head>
 <body>
-    <h1><strong>Live NOW!</strong></h1>
+    <h1><strong><marquee behavior="scroll" direction="right" scrollamount="12">Live NOW!</marquee></strong></h1>
     <div id="videoContainer">
         <video id="liveStream" controls autoplay style="width: 100%; max-width: 90%;">
             Your browser does not support the video tag.
