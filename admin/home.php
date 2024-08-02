@@ -995,36 +995,74 @@ if (isset($_POST['create'])) {
 
 <?php 
 
-if(isset($_POST['add_event']))
-{
-   $main_event_id = $_POST['main_event_id']; 
-   $banner = $_FILES['banner']['name'];
-   $target = "img/".basename($banner);
-   $sub_event_name = $_POST['event_name'];  
-   $event_date = $_POST['event_date']; 
-   $event_time = $_POST['event_time']; 
-   $event_place = $_POST['event_place']; 
-  
-  $conn->query("INSERT INTO sub_event(mainevent_id, event_name, status, eventdate, eventtime, place, organizer_id, banner)
-  VALUES('$main_event_id', '$sub_event_name', 'activated', '$event_date', '$event_time', '$event_place', '$session_id', '$banner')");
+if(isset($_POST['add_event'])) {
+    $main_event_id = $_POST['main_event_id']; 
+    $banner = $_FILES['banner']['name'];
+    $target = "img/" . basename($banner);
+    
+    // Check if all form fields are set
+    $sub_event_name = isset($_POST['event_name']) ? $_POST['event_name'] : '';
+    $event_date = isset($_POST['event_date']) ? $_POST['event_date'] : '';
+    $event_time = isset($_POST['event_time']) ? $_POST['event_time'] : '';
+    $event_place = isset($_POST['event_place']) ? $_POST['event_place'] : '';
 
-  move_uploaded_file($_FILES['banner']['tmp_name'], $target);
-  
-  echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
-  echo '<script type="text/javascript">
-        Swal.fire({
-            icon: "success",
-            title: "Success",
-            text: "Sub-Event ' . $sub_event_name . ' created successfully!",
-            confirmButtonText: "OK"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                window.location = "home.php";
+    // Make sure that $sub_event_name is not empty to avoid SQL errors
+    if (!empty($sub_event_name)) {
+        $conn->query("INSERT INTO sub_event(mainevent_id, event_name, status, eventdate, eventtime, place, organizer_id, banner)
+        VALUES('$main_event_id', '$sub_event_name', 'activated', '$event_date', '$event_time', '$event_place', '$session_id', '$banner')");
+
+        // Check if file was uploaded
+        if ($_FILES['banner']['error'] == UPLOAD_ERR_OK) {
+            if (move_uploaded_file($_FILES['banner']['tmp_name'], $target)) {
+                echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
+                echo '<script type="text/javascript">
+                    Swal.fire({
+                        icon: "success",
+                        title: "Success",
+                        text: "Sub-Event ' . $sub_event_name . ' created successfully!",
+                        confirmButtonText: "OK"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location = "home.php";
+                        }
+                    });
+                    </script>';
+            } else {
+                echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
+                echo '<script type="text/javascript">
+                    Swal.fire({
+                        icon: "error",
+                        title: "Error",
+                        text: "Failed to move uploaded file.",
+                        confirmButtonText: "OK"
+                    });
+                    </script>';
             }
-        });
-        </script>';
+        } else {
+            echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
+            echo '<script type="text/javascript">
+                Swal.fire({
+                    icon: "error",
+                    title: "Error",
+                    text: "File upload error: ' . $_FILES['banner']['error'] . '",
+                    confirmButtonText: "OK"
+                });
+                </script>';
+        }
+    } else {
+        echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
+        echo '<script type="text/javascript">
+            Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: "Sub-event name is required.",
+                confirmButtonText: "OK"
+            });
+            </script>';
+    }
 }
 ?>
+
 
 
  <?php
