@@ -71,8 +71,8 @@ $has_voted = $stmt->fetch(PDO::FETCH_ASSOC);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="../ejs_logo.png"/>
-    <title>POLL VOTE</title>
+    <link rel="shortcut icon" href="../img/logo.png"/>
+    <title>VOTE POLL</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -132,11 +132,17 @@ $has_voted = $stmt->fetch(PDO::FETCH_ASSOC);
         .header .profile-dropdown .dropdown-menu a:hover {
             background-color: #f1f1f1;
         }
+        .back-btn {
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
     <!-- Header -->
     <div class="header">
+        <div>
+            <a href="../index.php" class="btn btn-secondary back-btn">Back</a>
+        </div>
         <div>
             <!-- Add any left-aligned content here if needed -->
         </div>
