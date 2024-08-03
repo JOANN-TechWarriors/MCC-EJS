@@ -264,8 +264,7 @@
                     <h4 class="font-weight-normal mb-3" style="font-size: 20px;">Ongoing Events</h4>
                     <?php 
                     // Securely connect to the database
-                    $database = mysqli_connect('localhost', 'root', '', 'judging');
-
+                    $database = mysqli_connect('127.0.0.1', 'u510162695_judging_root', '1Judging_root', 'u510162695_judging');
                     // Fetching ongoing events for the logged-in organizer
                     $session_id = mysqli_real_escape_string($database, $_SESSION['id']);
                     $sql = "SELECT COUNT(*) FROM sub_event WHERE organizer_id = '$session_id'";
