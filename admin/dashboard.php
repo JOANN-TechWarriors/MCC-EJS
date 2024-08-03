@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <meta name="theme-color" content="#3e454c">
-<link rel="shortcut icon" href="../img/logo.png"/>
+<link rel="shortcut icon" href="../admin/ejs_logo.png"/>
 <title>Event Judging System</title> 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -111,6 +111,7 @@
         background-color: #1a1a2e;
     }
 
+
     .main {
         margin-left: 250px;
         padding: 20px;
@@ -151,6 +152,7 @@
         border-radius: 5px;
         overflow: hidden;
         z-index: 1000;
+        
     }
 
     .header .profile-dropdown:hover .dropdown-menu {
@@ -246,50 +248,61 @@
            <div style="font-size:small;"> <?php echo $name; ?></div>
             <div class="dropdown-menu">
                 <a href="edit_organizer.php"> Account Settings</a>
-                <a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>
+                <a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> <span>LOGOUT</span></a>
             </div>
         </div>
     </div>
 
     <!-- Main content -->
     <div class="main" id="main">
-        <h1>Dashboard</h1>
-        <!-- Event Cards -->
-        <div class="row">
-            <div class="col-md-6 mb-4">
-                <div class="card bg-gradient-info text-black" style="background-color: #e3f7fd;">
-                    <div class="card-body">
-                        <h4 class="font-weight-normal mb-3" style="font-size: 20px;">Ongoing Events</h4>
-                        <?php 
-                        $database = mysqli_connect('127.0.0.1', 'u510162695_judging_root', '1Judging_root', 'u510162695_judging');
-                        $sql = "SELECT count(1) FROM sub_event";
-                        $result = mysqli_query($database, $sql);
-                        $row = mysqli_fetch_array($result);
-                        $ongoing_events = $row[0];
-                        ?>
-                        <h2 class="mb-4"><?php echo $ongoing_events; ?></h2>
-                        <a class="btn btn-primary btn-sm" href="home.php">View Details</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 mb-4">
-                <div class="card bg-gradient-info text-black" style="background-color: #b0ffc3;">
-                    <div class="card-body">
-                        <h4 class="font-weight-normal mb-3" style="font-size: 15px;">Upcoming Events</h4>
-                        <?php 
-                        $currentDate = date("Y-m-d");
-                        $sql = "SELECT COUNT(*) FROM upcoming_events WHERE DATE(start_date) > '$currentDate'";
-                        $result = mysqli_query($database, $sql);
-                        $count = mysqli_fetch_array($result)[0];
-                        $upcoming_events = $count;
-                        ?>
-                        <h2 class="mb-4"><?php echo $upcoming_events; ?></h2>
-                        <a class="btn btn-success btn-sm" href="">View Events</a>
-                    </div>
+    <h1>Dashboard</h1>
+    <!-- Event Cards -->
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card bg-gradient-info text-black" style="background-color: #e3f7fd;">
+                <div class="card-body">
+                    <h4 class="font-weight-normal mb-3" style="font-size: 20px;">Ongoing Events</h4>
+                    <?php 
+                    // Securely connect to the database
+                    $database = mysqli_connect('localhost', 'root', '', 'judging');
+
+                    // Fetching ongoing events for the logged-in organizer
+                    $session_id = mysqli_real_escape_string($database, $_SESSION['id']);
+                    $sql = "SELECT COUNT(*) FROM sub_event WHERE organizer_id = '$session_id'";
+                    $result = mysqli_query($database, $sql);
+                    $row = mysqli_fetch_array($result);
+                    $ongoing_events = $row[0];
+                    ?>
+                    <h2 class="mb-4"><?php echo $ongoing_events; ?></h2>
+                    <a class="btn btn-primary btn-sm" href="home.php">View Details</a>
                 </div>
             </div>
         </div>
-       <!-- Charts -->
+        <div class="col-md-6 mb-4">
+            <div class="card bg-gradient-info text-black" style="background-color: #b0ffc3;">
+                <div class="card-body">
+                    <h4 class="font-weight-normal mb-3" style="font-size: 15px;">Upcoming Events</h4>
+                    <?php 
+                    // Fetching upcoming events for the logged-in organizer
+                   $currentDate = date("Y-m-d");
+$sql_upcoming = "SELECT COUNT(*) FROM upcoming_events WHERE DATE(start_date) > '$currentDate'";
+$result_upcoming = mysqli_query($database, $sql_upcoming);
+
+if ($result_upcoming) {
+    $count_upcoming = mysqli_fetch_array($result_upcoming);
+    $upcoming_events = $count_upcoming[0];
+} else {
+    echo "Error: " . mysqli_error($database);
+    $upcoming_events = 0; // Default value in case of error
+}
+                    ?>
+                    <h2 class="mb-4"><?php echo $upcoming_events; ?></h2>
+                    <a class="btn btn-success btn-sm" href="">View Events</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Charts -->
     <div class="row">
         <div class="col-md-6">
             <div class="card">
@@ -303,17 +316,19 @@
         </div>
         <div class="col-md-6">
             <div class="card">
-            <div class="card-body">
-                <h4 class="font-weight-normal mb-3" style="font-size:20px;">Event Statistics</h4>
-                <div class="chart-container">
-                    <canvas id="eventsBarChart"></canvas>
+                <div class="card-body">
+                    <h4 class="font-weight-normal mb-3" style="font-size:20px;">Event Statistics</h4>
+                    <div class="chart-container">
+                        <canvas id="eventsBarChart"></canvas>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-</div>
+
 <?php include('..//admin/footer.php') ?>
+
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
