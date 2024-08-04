@@ -117,7 +117,7 @@ if (isset($_POST['register'])) {
   
    if ($password == $password2) {
      $stmt =  $conn->query("insert into organizer(fname,mname,lname,username,password,access,status)values('$fname','$mname','$lname','$username','$password','Organizer','offline')");
-     $stmt->bind_param("ssssss", $fname, $mname, $lname, $username, $password, $email);
+     $stmt->bind_param( $fname, $mname, $lname, $username, $password, $email);
      $stmt->execute();
      $stmt->close();
      ?>
