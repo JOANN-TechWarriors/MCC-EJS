@@ -260,8 +260,7 @@
                     <div class="card-body">
                         <h4 class="font-weight-normal mb-3" style="font-size: 20px;">Ongoing Events</h4>
                         <?php 
-                            $database = mysqli_connect('localhost', 'root', '', 'judging');
-
+                             $database = mysqli_connect('127.0.0.1', 'u510162695_judging_root', '1Judging_root', 'u510162695_judging');
                             // Assuming $session_id contains the current organizer's ID
                             $organizer_id = $session_id; 
 
@@ -283,8 +282,7 @@
                     <div class="card-body">
                         <h4 class="font-weight-normal mb-3" style="font-size: 15px;">Upcoming Events</h4>
                         <?php 
-                            $database = mysqli_connect('localhost', 'root', '', 'judging');
-
+                            $database = mysqli_connect('127.0.0.1', 'u510162695_judging_root', '1Judging_root', 'u510162695_judging');
                             // Assuming $session_id contains the current organizer's ID
                             $organizer_id = $session_id;
 
