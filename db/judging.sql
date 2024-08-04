@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 29, 2024 at 01:36 PM
+-- Generation Time: Aug 03, 2024 at 12:58 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -64,9 +64,7 @@ INSERT INTO `contestants` (`contestant_id`, `fullname`, `subevent_id`, `contesta
 (205, 'Dream Squad', 64, 1, 'finish', '', 691591, 0, '../img/Community-College-Madridejos.jpeg', 'Bsit-3 South', 0),
 (206, 'BINI', 64, 2, 'finish', '', 947235, 1, '../img/mcc.jpg', 'Bsit-2 North', 0),
 (214, 'Cristina', 77, 1, '', '', 858911, 1, '../img/66a4c61166f2f_mcc4.jpg', 'Bsit-3 South', 0),
-(215, 'dianna', 77, 2, '', '', 577163, 1, '../img/mcc1.jpg', 'Bsit-2 North', 0),
-(224, 'Joerge Yangao', 79, 1, '', '', 498333, 0, '../img/3d365d87e9ad1563a430c54fcb3a6946.jpg', 'Bsit-3 South', 0),
-(225, 'Joabb', 79, 2, '', '', 127154, 2, '../img/c75f26ff828221ee15e928a648a30b6f.jpg', 'Bsit-2 North', 0);
+(215, 'dianna', 77, 2, '', '', 577163, 1, '../img/mcc1.jpg', 'Bsit-2 North', 0);
 
 -- --------------------------------------------------------
 
@@ -131,9 +129,7 @@ INSERT INTO `criteria` (`criteria_id`, `subevent_id`, `criteria`, `percentage`, 
 (102, 64, 'Good and relevant music', 20, 3),
 (103, 64, 'Facial expressions and body language', 30, 4),
 (110, 77, 'Vocal Quality', 50, 1),
-(111, 77, 'Stage Presence/Audience Communication', 50, 2),
-(115, 79, 'Choreography', 50, 1),
-(116, 79, 'Stage Presence/Audience Communication', 50, 2);
+(111, 77, 'Stage Presence/Audience Communication', 50, 2);
 
 -- --------------------------------------------------------
 
@@ -159,9 +155,7 @@ INSERT INTO `judges` (`judge_id`, `subevent_id`, `judge_ctr`, `fullname`, `code`
 (105, 64, 2, 'James Vincent Pastorillo', 'rnisjp', ''),
 (106, 64, 3, 'Jo Ann R. Bilbao', '6q4tut', ''),
 (113, 77, 1, 'John Fariola', 'tzmuva', ''),
-(114, 77, 2, 'James Pastorillo', 'wocupm', ''),
-(116, 79, 1, 'John Fariola', 'gkfze3', ''),
-(117, 79, 2, 'James Pastorillo', '4cabfr', '');
+(114, 77, 2, 'James Pastorillo', 'wocupm', '');
 
 -- --------------------------------------------------------
 
@@ -187,7 +181,7 @@ CREATE TABLE `main_event` (
 
 INSERT INTO `main_event` (`mainevent_id`, `event_name`, `status`, `organizer_id`, `sy`, `date_start`, `date_end`, `place`, `banner`) VALUES
 (68, 'BSIT DAYS', 'activated', 31, '624', '2024-07-28', '2024-07-30', 'MCC COVERED COURT', '66a5986c29f86_mcc.jpg'),
-(82, 'Binibining Marites', 'activated', 31, '642', '2024-07-28', '2024-07-29', 'MCC COVERED COURT', '66a5986c29f86_mcc.jpg');
+(84, 'Binibining Marites', 'activated', 31, '312', '2024-08-01 08:52:00', '2024-08-01 12:58:00', 'MCC COVERED COURT', '66a8941cc6cfc_a social or political statement.jpg');
 
 -- --------------------------------------------------------
 
@@ -633,6 +627,106 @@ INSERT INTO `schedules` (`id`, `faculty_id`, `title`, `schedule_type`, `descript
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `streaming_status`
+--
+
+CREATE TABLE `streaming_status` (
+  `id` int(11) NOT NULL,
+  `action` enum('start','stop') NOT NULL,
+  `timestamp` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `streaming_status`
+--
+
+INSERT INTO `streaming_status` (`id`, `action`, `timestamp`) VALUES
+(1, 'start', '2024-07-30 18:39:00'),
+(2, 'start', '2024-07-30 18:39:00'),
+(3, 'stop', '2024-07-30 18:39:31'),
+(4, 'start', '2024-07-30 18:48:10'),
+(5, 'stop', '2024-07-30 18:48:39'),
+(6, 'start', '2024-07-30 18:48:47'),
+(7, 'stop', '2024-07-30 18:49:37'),
+(8, 'start', '2024-07-30 19:18:39'),
+(9, 'stop', '2024-07-30 19:20:06'),
+(10, 'start', '2024-07-30 19:21:52'),
+(11, 'start', '2024-07-30 19:24:04'),
+(12, 'start', '2024-07-30 19:24:05'),
+(13, 'stop', '2024-07-30 19:24:08'),
+(14, 'start', '2024-07-30 19:30:19'),
+(15, 'start', '2024-07-30 19:30:25'),
+(16, 'start', '2024-07-30 19:30:57'),
+(17, 'stop', '2024-07-30 19:31:20'),
+(18, 'start', '2024-07-30 19:31:34'),
+(19, 'start', '2024-07-30 19:31:50'),
+(20, 'start', '2024-07-30 19:31:51'),
+(21, 'start', '2024-07-30 19:31:52'),
+(22, 'start', '2024-07-30 19:31:52'),
+(23, 'start', '2024-07-30 19:31:53'),
+(24, 'start', '2024-07-30 19:31:53'),
+(25, 'start', '2024-07-30 19:34:14'),
+(26, 'start', '2024-07-30 19:36:07'),
+(27, 'stop', '2024-07-30 19:36:13'),
+(28, 'start', '2024-07-30 19:36:18'),
+(29, 'stop', '2024-07-30 19:37:21'),
+(30, 'start', '2024-07-30 19:39:22'),
+(31, 'start', '2024-07-30 19:40:57'),
+(32, 'stop', '2024-07-30 19:40:59'),
+(33, 'start', '2024-07-30 19:41:11'),
+(34, 'stop', '2024-07-30 19:41:14'),
+(35, 'start', '2024-07-30 19:41:29'),
+(36, 'stop', '2024-07-30 19:41:39'),
+(37, 'stop', '2024-07-30 19:41:44'),
+(38, 'stop', '2024-07-30 19:41:45'),
+(39, 'stop', '2024-07-30 19:41:46'),
+(40, 'start', '2024-07-31 07:57:11'),
+(41, 'stop', '2024-07-31 07:57:51'),
+(42, 'start', '2024-07-31 07:57:53'),
+(43, 'start', '2024-07-31 07:57:54'),
+(44, 'start', '2024-07-31 07:57:55'),
+(45, 'start', '2024-07-31 07:59:15'),
+(46, 'start', '2024-07-31 07:59:16'),
+(47, 'start', '2024-07-31 07:59:17'),
+(48, 'start', '2024-07-31 07:59:20'),
+(49, 'start', '2024-07-31 07:59:21'),
+(50, 'stop', '2024-07-31 08:18:50'),
+(51, 'stop', '2024-07-31 08:19:33'),
+(52, 'start', '2024-07-31 09:18:50'),
+(53, 'start', '2024-07-31 09:19:12'),
+(54, 'start', '2024-07-31 09:19:14'),
+(55, 'stop', '2024-07-31 09:19:15'),
+(56, 'stop', '2024-07-31 09:31:22'),
+(57, 'start', '2024-07-31 09:39:25'),
+(58, 'stop', '2024-07-31 09:40:04'),
+(59, 'start', '2024-07-31 09:40:09'),
+(60, 'start', '0000-00-00 00:00:00'),
+(61, 'start', '0000-00-00 00:00:00'),
+(62, 'stop', '0000-00-00 00:00:00'),
+(63, 'start', '0000-00-00 00:00:00'),
+(64, 'start', '0000-00-00 00:00:00'),
+(65, 'start', '0000-00-00 00:00:00'),
+(66, 'start', '0000-00-00 00:00:00'),
+(67, 'start', '0000-00-00 00:00:00'),
+(68, 'start', '0000-00-00 00:00:00'),
+(69, 'start', '0000-00-00 00:00:00'),
+(70, 'start', '0000-00-00 00:00:00'),
+(71, 'start', '0000-00-00 00:00:00'),
+(72, 'start', '0000-00-00 00:00:00'),
+(73, 'start', '0000-00-00 00:00:00'),
+(74, 'start', '0000-00-00 00:00:00'),
+(75, 'start', '0000-00-00 00:00:00'),
+(76, 'start', '0000-00-00 00:00:00'),
+(77, 'start', '0000-00-00 00:00:00'),
+(78, 'start', '0000-00-00 00:00:00'),
+(79, 'start', '0000-00-00 00:00:00'),
+(80, 'start', '0000-00-00 00:00:00'),
+(81, 'start', '0000-00-00 00:00:00'),
+(82, 'start', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `student`
 --
 
@@ -680,8 +774,7 @@ CREATE TABLE `sub_event` (
 
 INSERT INTO `sub_event` (`subevent_id`, `mainevent_id`, `organizer_id`, `event_name`, `status`, `eventdate`, `eventtime`, `place`, `txtpoll_status`, `view`, `txtpollview`, `banner`) VALUES
 (64, 68, 31, 'HIPHOP DANCE COMPITATION', 'activated', '2024-07-23', '10:30', 'MCC COVERED COURT', 'deactive', 'deactive', 'deactive', 'mcc3.jpg'),
-(77, 68, 31, '123', 'activated', '2024-07-31', '', '123', 'deactive', 'deactive', 'deactive', 'mcc2.jpg'),
-(79, 82, 31, 'SINGING CONTEST', 'activated', '2024-07-28', '', 'MCC COVERED COURT', 'deactive', 'deactive', 'deactive', 'logo.png');
+(77, 68, 31, '123', 'activated', '2024-07-31', '', '123', 'deactive', 'deactive', 'deactive', 'mcc2.jpg');
 
 -- --------------------------------------------------------
 
@@ -720,8 +813,8 @@ CREATE TABLE `sub_results` (
 INSERT INTO `sub_results` (`subresult_id`, `subevent_id`, `mainevent_id`, `contestant_id`, `judge_id`, `total_score`, `deduction`, `criteria_ctr1`, `criteria_ctr2`, `criteria_ctr3`, `criteria_ctr4`, `criteria_ctr5`, `criteria_ctr6`, `criteria_ctr7`, `criteria_ctr8`, `criteria_ctr9`, `criteria_ctr10`, `comments`, `rank`, `judge_rank_stat`, `place_title`) VALUES
 (365, 64, 68, 205, 105, 85.0, 0, 30.0, 17.0, 18.0, 20.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 'good performance', '2', '', '2nd'),
 (366, 64, 68, 206, 105, 95.0, 0, 29.0, 17.0, 19.5, 29.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, '', '1', '', '1st'),
-(367, 64, 68, 205, 104, 75.5, 0, 5.5, 20.0, 20.0, 30.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, '', '2', '', '2nd'),
-(368, 64, 68, 206, 104, 99.5, 0, 30.0, 19.5, 20.0, 30.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, '', '1', '', '1st'),
+(367, 64, 68, 205, 104, 100.0, 0, 30.0, 20.0, 20.0, 30.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, '', '1.5', 'tie', '2nd'),
+(368, 64, 68, 206, 104, 100.0, 0, 30.0, 20.0, 20.0, 30.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, '', '1.5', 'tie', '1st'),
 (369, 64, 68, 205, 106, 100.0, 0, 30.0, 20.0, 20.0, 30.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, '', '1.5', 'tie', '2nd'),
 (370, 64, 68, 206, 106, 100.0, 0, 30.0, 20.0, 20.0, 30.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, '', '1.5', 'tie', '1st');
 
@@ -749,16 +842,17 @@ CREATE TABLE `upcoming_events` (
   `title` varchar(50) NOT NULL,
   `start_date` datetime NOT NULL,
   `end_date` datetime NOT NULL,
-  `banner` varchar(150) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL
+  `banner` varchar(150) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `organizer_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `upcoming_events`
 --
 
-INSERT INTO `upcoming_events` (`id`, `title`, `start_date`, `end_date`, `banner`) VALUES
-(65, 'Dance Contestant', '2024-08-01 15:30:00', '2024-08-01 16:30:00', '../uploads/66a5986c29f86_mcc.jpg'),
-(67, 'Singing', '2024-08-01 03:00:00', '2024-08-01 04:30:00', '../uploads/66a5986c29f86_mcc.jpg');
+INSERT INTO `upcoming_events` (`id`, `title`, `start_date`, `end_date`, `banner`, `organizer_id`) VALUES
+(68, 'Dance Contest', '2024-08-10 13:30:00', '2024-08-10 13:30:00', '../uploads/Screenshot (94).png', 35),
+(70, '43', '2024-08-22 19:00:00', '2024-08-23 19:00:00', '../uploads/Screenshot (40).png', 35);
 
 -- --------------------------------------------------------
 
@@ -850,6 +944,12 @@ ALTER TABLE `schedules`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `streaming_status`
+--
+ALTER TABLE `streaming_status`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `student`
 --
 ALTER TABLE `student`
@@ -912,7 +1012,7 @@ ALTER TABLE `judges`
 -- AUTO_INCREMENT for table `main_event`
 --
 ALTER TABLE `main_event`
-  MODIFY `mainevent_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+  MODIFY `mainevent_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 
 --
 -- AUTO_INCREMENT for table `messagein`
@@ -936,7 +1036,7 @@ ALTER TABLE `messageout`
 -- AUTO_INCREMENT for table `organizer`
 --
 ALTER TABLE `organizer`
-  MODIFY `organizer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `organizer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `rank_system`
@@ -951,6 +1051,12 @@ ALTER TABLE `schedules`
   MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `streaming_status`
+--
+ALTER TABLE `streaming_status`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+
+--
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
@@ -960,7 +1066,7 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT for table `sub_event`
 --
 ALTER TABLE `sub_event`
-  MODIFY `subevent_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+  MODIFY `subevent_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- AUTO_INCREMENT for table `sub_results`
@@ -978,7 +1084,7 @@ ALTER TABLE `textpoll`
 -- AUTO_INCREMENT for table `upcoming_events`
 --
 ALTER TABLE `upcoming_events`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
 -- AUTO_INCREMENT for table `votes`

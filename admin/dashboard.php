@@ -2,7 +2,46 @@
 <html lang="en">
 <?php 
     include('session.php');
-  ?>
+    // Assuming $organizer_id is retrieved from session
+    $organizer_id = $_SESSION['organizer_id']; 
+
+    // Database connection
+    $database = new mysqli('localhost', 'root', '', 'judging');
+
+    // Check connection
+    if ($database->connect_error) {
+        die("Connection failed: " . $database->connect_error);
+    }
+
+    // Fetch organizer details
+    $stmt = $database->prepare("SELECT `fname`, `lname`, `company_name` FROM `organizer` WHERE `organizer_id` = ?");
+    $stmt->bind_param("i", $organizer_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $organizer = $result->fetch_assoc();
+    $fname = htmlspecialchars($organizer['fname']);
+    $lname = htmlspecialchars($organizer['lname']);
+    $company_name = htmlspecialchars($organizer['company_name']);
+
+    // Fetch ongoing events
+    $stmt = $database->prepare("SELECT COUNT(1) FROM sub_event WHERE organizer_id = ?");
+    $stmt->bind_param("i", $organizer_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $ongoing_events = $result->fetch_array()[0];
+
+    // Fetch upcoming events
+    $currentDate = date("Y-m-d");
+    $stmt = $database->prepare("SELECT COUNT(*) FROM upcoming_events WHERE DATE(start_date) > ? AND organizer_id = ?");
+    $stmt->bind_param("si", $currentDate, $organizer_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $upcoming_events = $result->fetch_array()[0];
+
+    // Close the statement and connection
+    $stmt->close();
+    $database->close();
+?>
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
