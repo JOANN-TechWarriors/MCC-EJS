@@ -2,46 +2,7 @@
 <html lang="en">
 <?php 
     include('session.php');
-    // Assuming $organizer_id is retrieved from session
-    $organizer_id = $_SESSION['organizer_id']; 
-
-    // Database connection
-    $database = new mysqli('localhost', 'root', '', 'judging');
-
-    // Check connection
-    if ($database->connect_error) {
-        die("Connection failed: " . $database->connect_error);
-    }
-
-    // Fetch organizer details
-    $stmt = $database->prepare("SELECT `fname`, `lname`, `company_name` FROM `organizer` WHERE `organizer_id` = ?");
-    $stmt->bind_param("i", $organizer_id);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $organizer = $result->fetch_assoc();
-    $fname = htmlspecialchars($organizer['fname']);
-    $lname = htmlspecialchars($organizer['lname']);
-    $company_name = htmlspecialchars($organizer['company_name']);
-
-    // Fetch ongoing events
-    $stmt = $database->prepare("SELECT COUNT(1) FROM sub_event WHERE organizer_id = ?");
-    $stmt->bind_param("i", $organizer_id);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $ongoing_events = $result->fetch_array()[0];
-
-    // Fetch upcoming events
-    $currentDate = date("Y-m-d");
-    $stmt = $database->prepare("SELECT COUNT(*) FROM upcoming_events WHERE DATE(start_date) > ? AND organizer_id = ?");
-    $stmt->bind_param("si", $currentDate, $organizer_id);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $upcoming_events = $result->fetch_array()[0];
-
-    // Close the statement and connection
-    $stmt->close();
-    $database->close();
-?>
+  ?>
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -150,7 +111,6 @@
         background-color: #1a1a2e;
     }
 
-
     .main {
         margin-left: 250px;
         padding: 20px;
@@ -191,7 +151,6 @@
         border-radius: 5px;
         overflow: hidden;
         z-index: 1000;
-        
     }
 
     .header .profile-dropdown:hover .dropdown-menu {
@@ -274,7 +233,6 @@
         <li><a href="score_sheets.php"><i class="fas fa-clipboard-list"></i> <span>SCORE SHEETS</span></a></li>
         <li><a href="rev_main_event.php"><i class="fas fa-chart-line"></i> <span>DATA REVIEWS</span></a></li>
         <li><a href="live.php"><i class="fas fa-camera"></i> <span>LIVE</span></a></li>
-
     </ul>
   </div>
 
@@ -294,54 +252,59 @@
 
     <!-- Main content -->
     <div class="main" id="main">
-    <h1>Dashboard</h1>
-    <!-- Event Cards -->
-    <div class="row">
-        <div class="col-md-6 mb-4">
-            <div class="card bg-gradient-info text-black" style="background-color: #e3f7fd;">
-                <div class="card-body">
-                    <h4 class="font-weight-normal mb-3" style="font-size: 20px;">Ongoing Events</h4>
-                    <?php 
-                    // Securely connect to the database
-                    $database = mysqli_connect('localhost', 'root', '', 'judging');
+        <h1>Dashboard</h1>
+        <!-- Event Cards -->
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card bg-gradient-info text-black" style="background-color: #e3f7fd;">
+                    <div class="card-body">
+                        <h4 class="font-weight-normal mb-3" style="font-size: 20px;">Ongoing Events</h4>
+                        <?php 
+$database = mysqli_connect('127.0.0.1', 'u510162695_judging_root', '1Judging_root', 'u510162695_judging');
 
-                    // Fetching ongoing events for the logged-in organizer
-                    $session_id = mysqli_real_escape_string($database, $_SESSION['id']);
-                    $sql = "SELECT COUNT(*) FROM sub_event WHERE organizer_id = '$session_id'";
-                    $result = mysqli_query($database, $sql);
-                    $row = mysqli_fetch_array($result);
-                    $ongoing_events = $row[0];
-                    ?>
-                    <h2 class="mb-4"><?php echo $ongoing_events; ?></h2>
-                    <a class="btn btn-primary btn-sm" href="home.php">View Details</a>
+// Assuming $session_id contains the current organizer's ID
+$organizer_id = $session_id; 
+
+$sql = "SELECT COUNT(*) FROM sub_event WHERE organizer_id = ?";
+$stmt = mysqli_prepare($database, $sql);
+mysqli_stmt_bind_param($stmt, "i", $organizer_id);
+mysqli_stmt_execute($stmt);
+mysqli_stmt_bind_result($stmt, $ongoing_events);
+mysqli_stmt_fetch($stmt);
+mysqli_stmt_close($stmt);
+?>
+                        <h2 class="mb-4"><?php echo $ongoing_events; ?></h2>
+                        <a class="btn btn-primary btn-sm" href="home.php">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card bg-gradient-info text-black" style="background-color: #b0ffc3;">
+                    <div class="card-body">
+                        <h4 class="font-weight-normal mb-3" style="font-size: 15px;">Upcoming Events</h4>
+                        <?php 
+$database = mysqli_connect('127.0.0.1', 'u510162695_judging_root', '1Judging_root', 'u510162695_judging');
+
+// Assuming $session_id contains the current organizer's ID
+$organizer_id = $session_id;
+
+$currentDate = date("Y-m-d");
+
+$sql = "SELECT COUNT(*) FROM upcoming_events WHERE DATE(start_date) > ? AND organizer_id = ?";
+$stmt = mysqli_prepare($database, $sql);
+mysqli_stmt_bind_param($stmt, "si", $currentDate, $organizer_id);
+mysqli_stmt_execute($stmt);
+mysqli_stmt_bind_result($stmt, $upcoming_events);
+mysqli_stmt_fetch($stmt);
+mysqli_stmt_close($stmt);
+?>
+                        <h2 class="mb-4"><?php echo $upcoming_events; ?></h2>
+                        <a class="btn btn-success btn-sm" href="">View Events</a>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 mb-4">
-            <div class="card bg-gradient-info text-black" style="background-color: #b0ffc3;">
-                <div class="card-body">
-                    <h4 class="font-weight-normal mb-3" style="font-size: 15px;">Upcoming Events</h4>
-                    <?php 
-                    // Fetching upcoming events for the logged-in organizer
-                   $currentDate = date("Y-m-d");
-$sql_upcoming = "SELECT COUNT(*) FROM upcoming_events WHERE DATE(start_date) > '$currentDate'";
-$result_upcoming = mysqli_query($database, $sql_upcoming);
-
-if ($result_upcoming) {
-    $count_upcoming = mysqli_fetch_array($result_upcoming);
-    $upcoming_events = $count_upcoming[0];
-} else {
-    echo "Error: " . mysqli_error($database);
-    $upcoming_events = 0; // Default value in case of error
-}
-                    ?>
-                    <h2 class="mb-4"><?php echo $upcoming_events; ?></h2>
-                    <a class="btn btn-success btn-sm" href="">View Events</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Charts -->
+       <!-- Charts -->
     <div class="row">
         <div class="col-md-6">
             <div class="card">
@@ -355,19 +318,17 @@ if ($result_upcoming) {
         </div>
         <div class="col-md-6">
             <div class="card">
-                <div class="card-body">
-                    <h4 class="font-weight-normal mb-3" style="font-size:20px;">Event Statistics</h4>
-                    <div class="chart-container">
-                        <canvas id="eventsBarChart"></canvas>
-                    </div>
+            <div class="card-body">
+                <h4 class="font-weight-normal mb-3" style="font-size:20px;">Event Statistics</h4>
+                <div class="chart-container">
+                    <canvas id="eventsBarChart"></canvas>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
+</div>
 <?php include('..//admin/footer.php') ?>
-
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>

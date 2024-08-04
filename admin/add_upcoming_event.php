@@ -1,18 +1,27 @@
 <?php
 include 'dbcon.php';
+session_start(); // Start the session if not already started
+
+if (!isset($_SESSION['id'])) {
+    die("User not logged in");
+}
+
+$organizer_id = $_SESSION['id']; // Get the organizer's ID from the session
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $eventTitle = $_POST['eventtitle'];
     $eventStart = $_POST['eventstart'];
     $eventEnd = $_POST['event_end'];
 
-    // Check for date and time conflicts
+    // Check for date and time conflicts for this organizer
     $checkSQL = "SELECT * FROM upcoming_events WHERE 
+                organizer_id = :organizer_id AND
                 (:start_date BETWEEN start_date AND end_date 
                 OR :end_date BETWEEN start_date AND end_date 
                 OR (start_date BETWEEN :start_date AND :end_date) 
                 OR (end_date BETWEEN :start_date AND :end_date))";
     $checkStmt = $conn->prepare($checkSQL);
+    $checkStmt->bindParam(':organizer_id', $organizer_id);
     $checkStmt->bindParam(':start_date', $eventStart);
     $checkStmt->bindParam(':end_date', $eventEnd);
     $checkStmt->execute();
@@ -54,13 +63,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $bannerPath = $targetFile;
 
                 // Insert data into the database
-                $sql = "INSERT INTO upcoming_events (title, banner, start_date, end_date) VALUES (:title, :banner, :start_date, :end_date)";
+                $sql = "INSERT INTO upcoming_events (title, banner, start_date, end_date, organizer_id) VALUES (:title, :banner, :start_date, :end_date, :organizer_id)";
                 $stmt = $conn->prepare($sql);
 
                 $stmt->bindParam(':title', $eventTitle);
                 $stmt->bindParam(':banner', $bannerPath);
                 $stmt->bindParam(':start_date', $eventStart);
                 $stmt->bindParam(':end_date', $eventEnd);
+                $stmt->bindParam(':organizer_id', $organizer_id);
 
                 if ($stmt->execute()) {
                     $success = "New event added successfully";
