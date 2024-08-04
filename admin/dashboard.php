@@ -245,7 +245,7 @@
            <div style="font-size:small;"> <?php echo $name; ?></div>
             <div class="dropdown-menu">
                 <a href="edit_organizer.php"> Account Settings</a>
-                <a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> <span>LOGOUT</span></a>
+                <a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> <span>Sign out</span></a>
             </div>
         </div>
     </div>
@@ -260,19 +260,19 @@
                     <div class="card-body">
                         <h4 class="font-weight-normal mb-3" style="font-size: 20px;">Ongoing Events</h4>
                         <?php 
-$database = mysqli_connect('127.0.0.1', 'u510162695_judging_root', '1Judging_root', 'u510162695_judging');
+                            $database = mysqli_connect('localhost', 'root', '', 'judging');
 
-// Assuming $session_id contains the current organizer's ID
-$organizer_id = $session_id; 
+                            // Assuming $session_id contains the current organizer's ID
+                            $organizer_id = $session_id; 
 
-$sql = "SELECT COUNT(*) FROM sub_event WHERE organizer_id = ?";
-$stmt = mysqli_prepare($database, $sql);
-mysqli_stmt_bind_param($stmt, "i", $organizer_id);
-mysqli_stmt_execute($stmt);
-mysqli_stmt_bind_result($stmt, $ongoing_events);
-mysqli_stmt_fetch($stmt);
-mysqli_stmt_close($stmt);
-?>
+                            $sql = "SELECT COUNT(*) FROM sub_event WHERE organizer_id = ?";
+                            $stmt = mysqli_prepare($database, $sql);
+                            mysqli_stmt_bind_param($stmt, "i", $organizer_id);
+                            mysqli_stmt_execute($stmt);
+                            mysqli_stmt_bind_result($stmt, $ongoing_events);
+                            mysqli_stmt_fetch($stmt);
+                            mysqli_stmt_close($stmt);
+                        ?>
                         <h2 class="mb-4"><?php echo $ongoing_events; ?></h2>
                         <a class="btn btn-primary btn-sm" href="home.php">View Details</a>
                     </div>
@@ -283,21 +283,21 @@ mysqli_stmt_close($stmt);
                     <div class="card-body">
                         <h4 class="font-weight-normal mb-3" style="font-size: 15px;">Upcoming Events</h4>
                         <?php 
-$database = mysqli_connect('127.0.0.1', 'u510162695_judging_root', '1Judging_root', 'u510162695_judging');
+                            $database = mysqli_connect('localhost', 'root', '', 'judging');
 
-// Assuming $session_id contains the current organizer's ID
-$organizer_id = $session_id;
+                            // Assuming $session_id contains the current organizer's ID
+                            $organizer_id = $session_id;
 
-$currentDate = date("Y-m-d");
+                            $currentDate = date("Y-m-d");
 
-$sql = "SELECT COUNT(*) FROM upcoming_events WHERE DATE(start_date) > ? AND organizer_id = ?";
-$stmt = mysqli_prepare($database, $sql);
-mysqli_stmt_bind_param($stmt, "si", $currentDate, $organizer_id);
-mysqli_stmt_execute($stmt);
-mysqli_stmt_bind_result($stmt, $upcoming_events);
-mysqli_stmt_fetch($stmt);
-mysqli_stmt_close($stmt);
-?>
+                            $sql = "SELECT COUNT(*) FROM upcoming_events WHERE DATE(start_date) > ? AND organizer_id = ?";
+                            $stmt = mysqli_prepare($database, $sql);
+                            mysqli_stmt_bind_param($stmt, "si", $currentDate, $organizer_id);
+                            mysqli_stmt_execute($stmt);
+                            mysqli_stmt_bind_result($stmt, $upcoming_events);
+                            mysqli_stmt_fetch($stmt);
+                            mysqli_stmt_close($stmt);
+                        ?>
                         <h2 class="mb-4"><?php echo $upcoming_events; ?></h2>
                         <a class="btn btn-success btn-sm" href="">View Events</a>
                     </div>

@@ -6,7 +6,7 @@
     // Include your database connection
     include('dbcon.php'); // Make sure this file contains the $conn variable and the connection logic.
     ?>
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <body>
     
     <div class="container">
@@ -110,31 +110,63 @@ if (isset($_POST['register'])) {
    $fname = $_POST['fname']; 
    $mname = $_POST['mname'];  
    $lname = $_POST['lname'];  
-  //  $email = $_POST['email']; 
    $username = $_POST['username'];  
    $password = $_POST['password'];  
    $password2 = $_POST['password2'];  
   
    if ($password == $password2) {
-     $stmt =  $conn->query("insert into organizer(fname,mname,lname,username,password,access,status)values('$fname','$mname','$lname','$username','$password','Organizer','offline')");
-     $stmt->bind_param("ssssss", $fname, $mname, $lname, $username, $password, $email);
-     $stmt->execute();
-     $stmt->close();
-     ?>
-     <script>
-       window.location = 'index.php';
-       alert('Organizer <?php echo $fname . " " . $mname . " " . $lname; ?> registered successfully!');
-     </script>
-     <?php
+     try {
+       $stmt = $conn->prepare("INSERT INTO organizer (fname, mname, lname, username, password, access, status) VALUES (:fname, :mname, :lname, :username, :password, 'Organizer', 'offline')");
+       $stmt->bindParam(':fname', $fname);
+       $stmt->bindParam(':mname', $mname);
+       $stmt->bindParam(':lname', $lname);
+       $stmt->bindParam(':username', $username);
+       $stmt->bindParam(':password', $password);
+       
+       if ($stmt->execute()) {
+         echo "<script>
+           Swal.fire({
+             title: 'Success!',
+             text: 'Organizer $fname $mname $lname registered successfully!',
+             icon: 'success',
+             confirmButtonText: 'OK'
+           }).then((result) => {
+             if (result.isConfirmed) {
+               window.location = 'index.php';
+             }
+           });
+         </script>";
+       } else {
+         echo "<script>
+           Swal.fire({
+             title: 'Error!',
+             text: 'There was an error registering the organizer. Please try again.',
+             icon: 'error',
+             confirmButtonText: 'OK'
+           });
+         </script>";
+       }
+     } catch(PDOException $e) {
+       echo "<script>
+         Swal.fire({
+           title: 'Error!',
+           text: 'Database error: " . $e->getMessage() . "',
+           icon: 'error',
+           confirmButtonText: 'OK'
+         });
+       </script>";
+     }
    } else {
-     ?>
-     <script>
-       alert('Organizer <?php echo $fname . " " . $mname . " " . $lname; ?> registration cannot be done. Password and Re-typed password did not match.');
-     </script>
-     <?php
+     echo "<script>
+       Swal.fire({
+         title: 'Error!',
+         text: 'Organizer $fname $mname $lname registration cannot be done. Password and Re-typed password did not match.',
+         icon: 'error',
+         confirmButtonText: 'OK'
+       });
+     </script>";
    }
 }
 ?>
-
 </body>
 </html>
